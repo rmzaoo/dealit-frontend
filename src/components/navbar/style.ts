@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IoMdPerson, IoMdCart } from "react-icons/io";
-
+import { PrimaryButton } from "../PrimaryButton/style";
 
 const Container = styled.div`
   background-color: #131a22;
@@ -14,6 +14,8 @@ const Container = styled.div`
 const DesktopHeader = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
+  align-items: center;
   justify-content: center;
 
   @media only screen and (max-width: 768px) {
@@ -33,17 +35,15 @@ const MobileHeader = styled.div`
 `;
 
 const CartButton = styled(IoMdCart)`
+  height: 30px;
+  width: 30px;
   padding: 10px;
-  border: 1px solid white;
-  border-radius: 50%;
-  transition: opacity 0.2s ease-in-out;
+  border-radius: 100%;
+  background-color: #131a22;
+  color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: auto;
-  text-align: center;
-  margin: 0 10px;
+  border: 1px solid white;
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
     opacity: 0.8;
@@ -52,17 +52,15 @@ const CartButton = styled(IoMdCart)`
 `;
 
 const LoginButton = styled(IoMdPerson)`
+  height: 30px;
+  width: 30px;
   padding: 10px;
-  border: 1px solid white;
-  border-radius: 50%;
-  transition: opacity 0.2s ease-in-out;
+  border-radius: 100%;
+  background-color: #131a22;
+  color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: auto;
-  text-align: center;
-  margin: 0 10px;
+  border: 1px solid white;
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
     opacity: 0.8;
@@ -70,4 +68,26 @@ const LoginButton = styled(IoMdPerson)`
   }
 `;
 
-export { Container, DesktopHeader, MobileHeader, LoginButton, CartButton };
+const ButtonsBar = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  > * {
+    margin: 0 8px;
+  }
+`;
+
+const SellButton = styled(PrimaryButton)`
+  height: 30px;
+`;
+
+export {
+  Container,
+  DesktopHeader,
+  MobileHeader,
+  LoginButton,
+  CartButton,
+  ButtonsBar,
+  SellButton,
+};

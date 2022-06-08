@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const SearchbarInput = styled.input`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   border: none;
   border-radius: 5px 0 0 5px;
   padding: 0 10px;
@@ -16,7 +16,7 @@ const SearchbarInput = styled.input`
 
 const SearchbarContainer = styled.div`
   margin: 0px 20px;
-  width: 100%;
+  width: 50%;
   display: flex;
   border: 3px solid transparent;
   border-radius: 10px;

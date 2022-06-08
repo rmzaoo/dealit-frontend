@@ -1,4 +1,4 @@
-import { Container, DesktopHeader, MobileHeader, LoginButton, CartButton } from "./style";
+import { Container, DesktopHeader, MobileHeader, LoginButton, CartButton, ButtonsBar, SellButton  } from "./style";
 import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
@@ -13,9 +13,11 @@ const Navbar = () => {
       <Logo />
       <DesktopHeader>
         <Searchbar />
-        <PrimaryButton>Sell With US</PrimaryButton>
-        <LoginButton />
-        <CartButton />
+        <ButtonsBar>
+          <SellButton>Sell With US</SellButton>
+          <LoginButton />
+          <CartButton />
+        </ButtonsBar >
       </DesktopHeader>
     </Container>
   );
