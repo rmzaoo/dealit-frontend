@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
-export const HomepageContainer = styled.div`
-
+const HomepageContainer = styled.div`
+  background-color: blue;
+  height: 100%;
 `;
+
+export { HomepageContainer};

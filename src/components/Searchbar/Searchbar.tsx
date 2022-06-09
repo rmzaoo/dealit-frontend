@@ -3,7 +3,7 @@ import { SearchBarButton, SearchbarContainer, SearchbarInput, SearchBarIcon } fr
 const Searchbar = () => {
   return (
     <SearchbarContainer>
-      <SearchbarInput />
+      <SearchbarInput placeholder="Search" />
       <SearchBarButton>
         <SearchBarIcon />
       </SearchBarButton>
