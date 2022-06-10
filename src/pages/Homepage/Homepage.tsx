@@ -88,7 +88,7 @@ const Homepage = () => {
         }}
       >
         <div>
-          <p>Product 3</p>
+          <p>get recent Products</p>
         </div>
       </ParallaxLayer>
       <ParallaxLayer
@@ -101,7 +101,7 @@ const Homepage = () => {
         }}
       >
         <div>
-          <p>Product 3</p>
+          <p></p>
         </div>
       </ParallaxLayer>
     </Parallax>

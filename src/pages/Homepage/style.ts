@@ -80,7 +80,6 @@ const RandomProduct = styled(Product)`
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 50px;
- 
 
   @media screen and (max-width: 768px) {
     margin: 0;
