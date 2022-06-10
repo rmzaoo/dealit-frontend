@@ -14,6 +14,20 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     margin: 0 auto;
   }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   
 `;
 

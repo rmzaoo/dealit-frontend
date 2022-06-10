@@ -10,6 +10,9 @@ const Container = styled.div`
   justify-content: center;
   padding: 10px 15px;
   height: 50px;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
 `;
 
 const DesktopHeader = styled.div`

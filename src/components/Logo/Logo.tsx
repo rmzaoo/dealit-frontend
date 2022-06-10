@@ -2,7 +2,11 @@ import React from "react";
 import * as Icon from "./style";
 
 const Logo = () => {
-  return <Icon.default>Dealit</Icon.default>;
+  return (
+    <Icon.LogoStyled>
+      Deal<Icon.LogoColor>it</Icon.LogoColor>
+    </Icon.LogoStyled>
+  );
 };
 
 export default Logo;

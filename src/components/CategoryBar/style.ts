@@ -10,6 +10,10 @@ const Container = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   font-size: 13px;
   height: 25px;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  top: 70px;
 
   > * {
     margin: 0 10px;
@@ -18,7 +22,6 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     display: none;
   }
-
 `;
 
 export { Container };
