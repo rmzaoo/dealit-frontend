@@ -7,16 +7,23 @@ import {
   ImageFull,
   FullDivFilter,
   RandomProductsDiv,
-  RandomProduct,
   RandomProductTitle,
   RandomProductSubtitle,
+  RandomProduct,
 } from "./style";
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
 
   return (
-    <Parallax pages={5} style={{ backgroundColor: "#1a212b", color: "white" }}>
+    <Parallax
+      pages={8}
+      style={{
+        backgroundColor: "#27364b",
+        color: "white",
+        backgroundImage: "linear-gradient(175deg, #27364b 5%, #0e1318 100%)",
+      }}
+    >
       <ParallaxLayer
         offset={0}
         speed={0.5}
@@ -33,7 +40,7 @@ const Homepage = () => {
         </FullDiv>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1, end: 3.5 }} style={{ ...alignCenter }}>
+      <ParallaxLayer sticky={{ start: 1, end: 6 }} style={{ ...alignCenter }}>
         <RandomProductsDiv>
           <RandomProductTitle> Don't know what to buy?</RandomProductTitle>
           <RandomProductSubtitle>
@@ -44,32 +51,59 @@ const Homepage = () => {
 
       <ParallaxLayer
         speed={0.5}
-        sticky={{ start: 1.5, end: 2 }}
+        sticky={{ start: 2.2, end: 3 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
-        <RandomProduct>
-          <p>Product 1</p>
-        </RandomProduct>
+        <RandomProduct
+          name="Lorem impsum dolor sit amet consectetur adipisicing elit"
+          photos={[
+            "https://m.media-amazon.com/images/I/61gmXNWdZML._AC_SY355_.jpg",
+          ]}
+          price={99.99}
+        />
       </ParallaxLayer>
 
       <ParallaxLayer
         speed={0.5}
-        sticky={{ start: 3, end: 3.5 }}
+        sticky={{ start: 4.1, end: 6 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
-        <RandomProduct>
-          <p>Product 2</p>
-        </RandomProduct>
+        <RandomProduct
+          name="Lorem impsum dolor sit amet consectetur adipisicing elit"
+          photos={[
+            "https://m.media-amazon.com/images/I/61gmXNWdZML._AC_SY355_.jpg",
+          ]}
+          price={99.99}
+        />
       </ParallaxLayer>
+
       <ParallaxLayer
-        speed={0.5}
-        sticky={{ start: 4.5, end: 5 }}
-        style={{ ...alignCenter, justifyContent: "flex-end" }}
-        >
+        speed={-2.5}
+        offset={6}
+        sticky={{ start: 5.5, end: 6 }}
+        style={{
+          ...alignCenter,
+          justifyContent: "center",
+          backgroundColor: "#141414",
+        }}
+      >
         <div>
           <p>Product 3</p>
         </div>
-        </ParallaxLayer>
+      </ParallaxLayer>
+      <ParallaxLayer
+        speed={0.5}
+        offset={8}
+        sticky={{ start: 7, end: 8 }}
+        style={{
+          ...alignCenter,
+          justifyContent: "center",
+        }}
+      >
+        <div>
+          <p>Product 3</p>
+        </div>
+      </ParallaxLayer>
     </Parallax>
   );
 };

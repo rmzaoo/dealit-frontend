@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "../../components/Logo/Logo";
+import Product from "../../components/Product/Product";
 
 const HomepageContainer = styled.div`
   background-color: blue;
@@ -62,35 +62,34 @@ const RandomProductsDiv = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 50px;
-`;
 
-const RandomProduct = styled.div`
-  width: 500px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(14px) saturate(200%);
-  -webkit-backdrop-filter: blur(14px) saturate(200%);
-  background-color: rgba(31, 37, 45, 0.59);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 50px;
+  @media screen and (max-width: 768px) {
+    margin-left: 10px;
+  }
 `;
-
 
 const RandomProductTitle = styled.h1`
   font-size: 50px;
-
 `;
 
 const RandomProductSubtitle = styled.p`
   font-size: 20px;
 `;
 
+const RandomProduct = styled(Product)`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+ 
+
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    border-radius: 0;
+  }
+`;
 
 export {
   HomepageContainer,
@@ -101,7 +100,7 @@ export {
   ImageFull,
   FullDivFilter,
   RandomProductsDiv,
-  RandomProduct,
   RandomProductTitle,
-  RandomProductSubtitle
+  RandomProductSubtitle,
+  RandomProduct,
 };
