@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MainCategory,
   MainText,
@@ -6,21 +6,35 @@ import {
   MainContainer,
   GoToTop,
   ArrowUp,
+  PageDown,
+  ArrowDown,
 } from "./style";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import ProductListing from "../../components/ProductListing/ProductListing";
-import { IoIosArrowRoundUp } from "react-icons/io";
 
 const PLP = () => {
   const parallax = useRef<IParallax>(null!);
+  const [currentPage, setCurrentPage] = useState(0);
 
+  const scroll = (to: number) => {
+    if (parallax.current) {
+      parallax.current.scrollTo(to);
+      setCurrentPage(to);
+    }
+  };
+  if (currentPage === 2) {
+    setCurrentPage(-1);
+  }
   return (
     <MainContainer>
-      <GoToTop onClick={() => parallax.current.scrollTo(0)}>
+      <GoToTop onClick={() => scroll(0)}>
         <ArrowUp />
       </GoToTop>
+      <PageDown>
+        <ArrowDown onClick={() => scroll(currentPage + 1)} />
+      </PageDown>
       <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           offset={0}
@@ -65,7 +79,7 @@ const PLP = () => {
         </LayerDividing>
 
         <ParallaxLayer
-          offset={1.2}
+          offset={1.12}
           speed={0.5}
           style={{
             display: "flex",

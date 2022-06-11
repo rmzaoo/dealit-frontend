@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { IoIosArrowRoundUp } from "react-icons/io";
+import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -46,7 +46,26 @@ const GoToTop = styled.button`
   align-items: center;
   justify-content: center;
 `;
+const PageDown = styled.button`
+  position: absolute;
+  bottom: 6%;
+  left: 2%;
+  border: none;
+  background-color: rgb(0, 180, 204);
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const ArrowUp = styled(IoIosArrowRoundUp)`
+  height: 40px;
+  width: 40px;
+`;
+const ArrowDown = styled(IoIosArrowRoundDown)`
   height: 40px;
   width: 40px;
 `;
@@ -58,4 +77,6 @@ export {
   MainContainer,
   GoToTop,
   ArrowUp,
+  PageDown,
+  ArrowDown
 };
