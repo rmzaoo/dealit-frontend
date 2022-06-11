@@ -1,5 +1,12 @@
 import data from "../../utils/data.json";
-import { ImgDiv, PageData, ProductDiv, ProductImg } from "./styles";
+import {
+  AddToCart,
+  DataDiv,
+  ImgDiv,
+  PageData,
+  ProductDiv,
+  ProductImg,
+} from "./styles";
 import { useState } from "react";
 
 const ProductListing = () => {
@@ -16,11 +23,13 @@ const ProductListing = () => {
                 alt={value.name}
                 effect={"blur"}
                 onClick={() => console.log("img clicked")}
-                
               />
             </ImgDiv>
-            <h3>{value.name}</h3>
-            <p>{"Price: " + value.price + " €"}</p>
+            <DataDiv>
+              <h3>{value.name}</h3>
+              <p>{"Price: " + value.price + " €"}</p>
+            </DataDiv>
+            <AddToCart>Add to cart</AddToCart>
           </ProductDiv>
         );
       })}

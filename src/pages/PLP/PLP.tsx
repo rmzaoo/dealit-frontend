@@ -25,7 +25,6 @@ const PLP = () => {
         <ParallaxLayer
           offset={0}
           speed={0.1}
-          onClick={() => parallax.current.scrollTo(1)}
           style={{
             display: "flex",
             alignItems: "center",
