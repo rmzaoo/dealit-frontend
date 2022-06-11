@@ -45,9 +45,9 @@ const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
       <DropdownContentOption
         onClick={() => {
           setOptionSelected(index + 1);
-          dropdownToggle();  
+          dropdownToggle();
         }}
-        active ={index + 1 === optionSelected}
+        active={index + 1 === optionSelected}
       >
         {index + 1}
       </DropdownContentOption>

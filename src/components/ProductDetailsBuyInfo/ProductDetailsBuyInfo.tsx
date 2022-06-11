@@ -1,9 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
+  AddToCartButton,
+  ButtonsContainer,
+  BuyInfoBody,
   BuyInfoContainer,
+  BuyNow,
+  IndividualButtonContainer,
+  IndividualProductDeliveryInfoContainer,
+  ProductDeleveryInfoFromBy,
   ProductDelivery,
   ProductDeliveryContainer,
+  ProductDeliveryInfoContainer,
   ProductDeliverySpan,
+  ProductInfoIntities,
   ProductQtnContainer,
 } from "./style";
 import {
@@ -17,6 +26,7 @@ const ProductDetailsBuyInfo = () => {
   const [quantity, setQuantity] = useState(1);
 
   return (
+    <BuyInfoBody>
     <BuyInfoContainer>
       <ProductPriceContainer>
         <ProductPrice>
@@ -32,9 +42,31 @@ const ProductDetailsBuyInfo = () => {
         </ProductDelivery>
       </ProductDeliveryContainer>
       <ProductQtnContainer>
-        <QuantityDropdown optionSelected={quantity} setOptionSelected={setQuantity} />
+        <QuantityDropdown
+          optionSelected={quantity}
+          setOptionSelected={setQuantity}
+        />
       </ProductQtnContainer>
+      <ButtonsContainer>
+        <IndividualButtonContainer>
+          <AddToCartButton>Add to Cart</AddToCartButton>
+        </IndividualButtonContainer>
+        <IndividualButtonContainer>
+          <BuyNow>Buy Now</BuyNow>
+        </IndividualButtonContainer>
+      </ButtonsContainer>
+      <ProductDeliveryInfoContainer>
+        <IndividualProductDeliveryInfoContainer>
+          <ProductDeleveryInfoFromBy>Ships from</ProductDeleveryInfoFromBy>
+          <ProductInfoIntities>Sweden</ProductInfoIntities>
+        </IndividualProductDeliveryInfoContainer>
+        <IndividualProductDeliveryInfoContainer>
+          <ProductDeleveryInfoFromBy>Sold By </ProductDeleveryInfoFromBy>
+          <ProductInfoIntities>Zé Manel</ProductInfoIntities>
+        </IndividualProductDeliveryInfoContainer>
+      </ProductDeliveryInfoContainer>
     </BuyInfoContainer>
+    </BuyInfoBody>
   );
 };
 
