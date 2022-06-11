@@ -9,13 +9,13 @@ const MainContainer = styled.div`
 `;
 const MainCategory = styled.h1`
   color: white;
-  font-size: 30px;
+  font-size: 26px;
   margin: 0;
   text-align: center;
 `;
 const MainText = styled.h1`
   color: white;
-  font-size: 18px;
+  font-size: 15px;
 `;
 
 const LayerInfo = styled(ParallaxLayer)`
