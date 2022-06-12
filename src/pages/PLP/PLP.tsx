@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MainCategory,
   MainText,
@@ -8,6 +8,7 @@ import {
   ArrowUp,
   PageDown,
   ArrowDown,
+  CategoryDiv,
 } from "./style";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
@@ -17,25 +18,32 @@ import ProductListing from "../../components/ProductListing/ProductListing";
 const PLP = () => {
   const parallax = useRef<IParallax>(null!);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isFirstPage, setIsFirstPage] = useState(false);
 
   const scroll = (to: number) => {
     if (parallax.current) {
       parallax.current.scrollTo(to);
       setCurrentPage(to);
+      if (currentPage === 0) {
+        setIsFirstPage(true);
+      }
     }
   };
+
   if (currentPage === 2) {
     setCurrentPage(-1);
   }
   return (
     <MainContainer>
-      <GoToTop onClick={() => scroll(0)}>
-        <ArrowUp />
-      </GoToTop>
+      {isFirstPage && (
+        <GoToTop onClick={() => scroll(0)}>
+          <ArrowUp />
+        </GoToTop>
+      )}
       <PageDown>
         <ArrowDown onClick={() => scroll(currentPage + 1)} />
       </PageDown>
-      <Parallax ref={parallax} pages={3}>
+      <Parallax ref={parallax} pages={3} onScroll={() => scroll(0)}>
         <ParallaxLayer
           offset={0}
           speed={0.1}
@@ -46,18 +54,10 @@ const PLP = () => {
             flexDirection: "column",
           }}
         >
-          <div
-            style={{
-              paddingTop: "12vh",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
+          <CategoryDiv>
             <MainCategory>Category:</MainCategory>
             <MainText>Scroll down to see all the products!</MainText>
-          </div>
+          </CategoryDiv>
           <ProductListing />
         </ParallaxLayer>
 

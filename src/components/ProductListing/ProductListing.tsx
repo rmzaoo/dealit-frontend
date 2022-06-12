@@ -1,6 +1,7 @@
 import data from "../../utils/data.json";
 import {
   AddToCart,
+  AddToCartMobile,
   DataDiv,
   ImgDiv,
   PageData,
@@ -8,9 +9,12 @@ import {
   ProductImg,
 } from "./styles";
 import { useState } from "react";
+import { BsCart2 } from "react-icons/bs";
 
 const ProductListing = () => {
   const [productsArray] = useState(Object.entries(data));
+
+  const width = window.innerWidth;
 
   return (
     <PageData>
@@ -25,11 +29,35 @@ const ProductListing = () => {
                 onClick={() => console.log("img clicked")}
               />
             </ImgDiv>
-            <DataDiv>
-              <h3>{value.name}</h3>
-              <p>{"Price: " + value.price + " €"}</p>
-            </DataDiv>
-            <AddToCart>Add to cart</AddToCart>
+
+            {width > 768 ? (
+              <>
+                <DataDiv>
+                  <h3>{value.name}</h3>
+                  <p>{"Price: " + value.price + " €"}</p>
+                  <AddToCart>Add to cart</AddToCart>
+                </DataDiv>
+              </>
+            ) : (
+              <>
+                <DataDiv>
+                  <h3>{value.name}</h3>
+                  <div
+                    style={{
+                      margin: 0,
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p>{"Price: " + value.price + " €"}</p>
+                    <AddToCartMobile>
+                      <BsCart2 />
+                    </AddToCartMobile>
+                  </div>
+                </DataDiv>
+              </>
+            )}
           </ProductDiv>
         );
       })}

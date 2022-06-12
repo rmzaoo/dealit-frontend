@@ -7,15 +7,36 @@ const MainContainer = styled.div`
   height: 100%;
   background: rgb(37, 50, 55);
 `;
+
+const CategoryDiv = styled.div`
+  padding-top: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 5vh;
+  }
+`;
 const MainCategory = styled.h1`
   color: white;
   font-size: 26px;
   margin: 0;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    padding: 0px;
+  }
 `;
 const MainText = styled.h1`
   color: white;
   font-size: 15px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const LayerInfo = styled(ParallaxLayer)`
@@ -78,5 +99,6 @@ export {
   GoToTop,
   ArrowUp,
   PageDown,
-  ArrowDown
+  ArrowDown,
+  CategoryDiv,
 };

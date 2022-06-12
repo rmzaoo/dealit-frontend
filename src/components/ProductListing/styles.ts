@@ -12,6 +12,11 @@ const ProductDiv = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 170px;
+    height: 190px;
+  }
 `;
 
 const ProductImg = styled(LazyLoadImage)`
@@ -19,6 +24,12 @@ const ProductImg = styled(LazyLoadImage)`
   width: 180px;
   height: 170px;
   object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    width: 110px;
+    height: 100px;
+  }
 `;
 const PageData = styled.div`
   width: 100%;
@@ -29,6 +40,10 @@ const PageData = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    height: 80%;
+  }
 `;
 const ImgDiv = styled.div`
   background-color: #e7e7e7;
@@ -44,6 +59,11 @@ const DataDiv = styled.div`
   justify-content: center;
   flex-direction: column;
   line-height: 10px;
+
+  @media screen and (max-width: 768px) {
+    line-height: 5px;
+    font-size: 12px;
+  }
 `;
 const AddToCart = styled.div`
   display: flex;
@@ -63,5 +83,26 @@ const AddToCart = styled.div`
     transition: 0.5s;
   }
 `;
+const AddToCartMobile = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 180, 204);
+  border-radius: 3px;
+  margin: 6px;
+  font-size: 14px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  color: rgb(19, 25, 31);
+`;
 
-export { ProductDiv, ProductImg, PageData, ImgDiv, AddToCart, DataDiv };
+export {
+  ProductDiv,
+  ProductImg,
+  PageData,
+  ImgDiv,
+  AddToCart,
+  DataDiv,
+  AddToCartMobile,
+};
