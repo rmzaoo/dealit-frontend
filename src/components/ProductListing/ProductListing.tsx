@@ -34,8 +34,17 @@ const ProductListing = () => {
               <>
                 <DataDiv>
                   <h3>{value.name}</h3>
-                  <p>{"Price: " + value.price + " €"}</p>
-                  <AddToCart>Add to cart</AddToCart>
+                  <div
+                    style={{
+                      margin: 0,
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p>{"Price: " + value.price + " €"}</p>
+                    <AddToCart>Add to cart</AddToCart>
+                  </div>
                 </DataDiv>
               </>
             ) : (
