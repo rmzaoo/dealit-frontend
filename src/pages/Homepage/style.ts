@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Faq from "../../components/Faq/Faq";
 import Product from "../../components/Product/Product";
 
 const HomepageContainer = styled.div`
@@ -90,6 +91,26 @@ const RandomProduct = styled(Product)`
   }
 `;
 
+const ContainerDealitDetails = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+`;
+
+const DetailsInfo = styled.div`
+  padding: 20px;
+  width: 100%;
+
+`;
+const FaqContainer = styled(Faq)`
+  padding: 20px;
+  width: 100%;
+`;
+
 export {
   HomepageContainer,
   FullDiv,
@@ -102,4 +123,7 @@ export {
   RandomProductTitle,
   RandomProductSubtitle,
   RandomProduct,
+  ContainerDealitDetails,
+  DetailsInfo,
+  FaqContainer,
 };
