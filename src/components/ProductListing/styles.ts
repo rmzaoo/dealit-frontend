@@ -1,66 +1,281 @@
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Product from "../Product/Product";
 
-const ProductDiv = styled.div`
-  background-color: rgb(255, 255, 255);
-  color: rgb(19, 25, 31);
-  height: 300px;
-  border: solid 1px rgb(0, 180, 204);
-  border-radius: 10px;
+const MainProductCard = styled(Product)`
+  width: 80px;
   margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-
-  @media screen and (max-width: 768px) {
-    width: 170px;
-    height: 190px;
-  }
-  @media screen and (max-height: 835px) {
-    height: 290px;
-    font-size: 14px;
-  }
-  @media screen and (max-height: 812px) {
-    height: 240px;
-    font-size: 12px;
-  }
-  @media screen and (max-height: 698px) {
-    height: 200px;
-    font-size: 11px;
-  }
-  @media screen and (max-height: 608px) {
+  font-size: 14px;
+  img {
     height: 170px;
-    font-size: 11px;
+    width: 180px;
+    object-fit: cover;
+    position: relative;
+    left: 30%;
   }
-`;
-
-const ProductImg = styled(LazyLoadImage)`
-  padding: 20px 30px 20px 30px;
-  width: 180px;
-  height: 170px;
-  object-fit: cover;
-
-  @media screen and (max-width: 768px) {
-    padding: 10px 20px 10px 20px;
-    width: 110px;
-    height: 100px;
+  h1 {
+    width: 16vh;
+    text-align: center;
+    margin: 0px;
+    font-size: 18px;
+    position: relative;
+    right: 55%;
+    bottom: 6%;
   }
-  @media screen and (max-height: 812px) {
+  span {
+    position: relative;
+    right: 40%;
+  }
+  section {
+    position: relative;
+    top: 10%;
+    right: 75%;
+  }
+
+  @media only screen and (min-width: 200px) {
+    width: 130px;
+    height: 140px;
+
+    h1 {
+      width: 22vh;
+      right: 24%;
+      font-size: 10px;
+    }
+    img {
+      height: 50px;
+      width: 60px;
+      left: 100%;
+      bottom: 1%;
+    }
+    section {
+      position: relative;
+      font-size: 10px;
+      top: 10%;
+      right: 54%;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  @media only screen and (min-width: 360px) {
+    width: 160px;
+    height: 170px;
+
+    h1 {
+      width: 22vh;
+      right: 30%;
+      font-size: 12px;
+    }
+    img {
+      height: 70px;
+      width: 80px;
+      left: 90%;
+      bottom: 1%;
+    }
+    section {
+      position: relative;
+      font-size: 10px;
+      top: 10%;
+      right: 54%;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  @media only screen and (min-width: 375px) {
     width: 140px;
-    height: 130px;
+    height: 140px;
+
+    h1 {
+      width: 22vh;
+      right: 30%;
+      font-size: 11px;
+    }
+    img {
+      height: 60px;
+      width: 70px;
+      left: 90%;
+      bottom: 1%;
+    }
+    section {
+      position: relative;
+      font-size: 10px;
+      top: 12%;
+      right: 54%;
+    }
+    span {
+      font-size: 14px;
+    }
   }
-  @media screen and (max-height: 698px) {
-    padding: 16px 26px 16px 26px;
-    width: 110px;
-    height: 100px;
+  @media only screen and (min-width: 390px) {
+    width: 160px;
+    height: 190px;
+    img {
+      height: 80px;
+      width: 90px;
+      left: 84%;
+      bottom: 1%;
+    }
+    h1 {
+      right: 24%;
+      font-size: 12px;
+    }
+    section {
+      position: relative;
+      font-size: 10px;
+      top: 12%;
+      right: 60%;
+    }
+    span {
+      font-size: 14px;
+    }
   }
-  @media screen and (max-height: 608px) {
-    padding: 12px 22px 12px 22px;
-    width: 90px;
-    height: 80px;
+  @media only screen and (min-width: 400px) {
+    width: 170px;
+    height: 200px;
+
+    h1 {
+      width: 22vh;
+      right: 21%;
+      font-size: 13px;
+    }
+    img {
+      height: 70px;
+      width: 80px;
+      left: 90%;
+      bottom: 1%;
+    }
+    section {
+      position: relative;
+      font-size: 11px;
+      top: 10%;
+      right: 54%;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    width: 220px;
+    height: 230px;
+
+    h1 {
+      width: 22vh;
+      right: 30%;
+      font-size: 16px;
+    }
+    img {
+      height: 110px;
+      width: 120px;
+      left: 74%;
+    }
+
+    section {
+      position: relative;
+      top: 10%;
+      right: 58%;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    width: 320px;
+    height: 240px;
+
+    h1 {
+      font-size: 16px;
+    }
+    img {
+      height: 130px;
+      width: 140px;
+      left: 50%;
+    }
+    section {
+      position: relative;
+      font-size: 14px;
+      top: 14%;
+      right: 58%;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    width: 300px;
+    height: 320px;
+
+    h1 {
+      width: 22vh;
+      right: 39%;
+    }
+    img {
+      left: 50%;
+      height: 150px;
+      width: 160px;
+    }
+    section {
+      position: relative;
+      right: 67%;
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    height: 340px;
+
+    h1 {
+      width: 22vh;
+      right: 38%;
+    }
+    img {
+      left: 60%;
+    }
+    span {
+      font-size: 16px;
+    }
+    section {
+      position: relative;
+      right: 65%;
+      font-size: 16px;
+    }
   }
 `;
+
+const MainProductCardOneColumn = styled(Product)`
+  width: 280px;
+  height: 400px;
+  margin: 14px;
+  font-size: 14px;
+
+  img {
+    height: 170px;
+    width: 180px;
+    object-fit: cover;
+    position: relative;
+    left: 60%;
+  }
+  h1 {
+    width: 22vh;
+    text-align: center;
+    margin: 0px;
+    font-size: 18px;
+    position: relative;
+    right: 42%;
+    bottom: 6%;
+  }
+  span {
+    position: relative;
+    right: 40%;
+  }
+  section {
+    position: relative;
+    font-size: 16px;
+    top: 10%;
+    right: 68%;
+  }
+`;
+
 const PageData = styled.div`
   width: 100%;
   height: 100%;
@@ -70,78 +285,19 @@ const PageData = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    height: 80%;
-  }
 `;
-const ImgDiv = styled.div`
-  background-color: #e7e7e7;
+const PageDataOneColumn = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 10px 10px 0px 0px;
-`;
-const DataDiv = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  line-height: 5px;
-
-  @media screen and (max-width: 768px) {
-    line-height: 5px;
-    font-size: 12px;
-  }
-`;
-const AddToCart = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(0, 180, 204);
-  border-radius: 3px;
-  margin: 6px;
-  font-size: 14px;
-  width: 90px;
-  height: 28px;
-  cursor: pointer;
-  color: rgb(19, 25, 31);
-  &:hover {
-    color: rgb(0, 180, 204);
-    background-color: rgb(19, 25, 31);
-    transition: 0.5s;
-  }
-  @media screen and (max-height: 835px) {
-    height: 25px;
-    font-size: 14px;
-  }
-  @media screen and (max-height: 698px) {
-    height:18px;
-    width: 76px;
-    font-size: 12px;
-  }
-`;
-const AddToCartMobile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(0, 180, 204);
-  border-radius: 3px;
-  margin: 6px;
-  font-size: 14px;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  color: rgb(19, 25, 31);
+  overflow: hidden;
 `;
 
 export {
-  ProductDiv,
-  ProductImg,
   PageData,
-  ImgDiv,
-  AddToCart,
-  DataDiv,
-  AddToCartMobile,
+  PageDataOneColumn,
+  MainProductCard,
+  MainProductCardOneColumn,
 };

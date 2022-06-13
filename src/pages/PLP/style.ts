@@ -15,8 +15,14 @@ const CategoryDiv = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  @media screen and (max-width: 768px) {
-    padding-top: 5vh;
+  @media screen and (min-width: 200px) {
+    padding-top: 12vh;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-top: 9vh;
+  }
+  @media only screen and (min-width: 992px) {
+    padding-top: 12vh;
   }
 `;
 const MainCategory = styled.h1`
@@ -25,17 +31,22 @@ const MainCategory = styled.h1`
   margin: 0;
   text-align: center;
 
-  @media screen and (max-width: 768px) {
-    font-size: 20px;
-    padding: 0px;
+  @media screen and (min-width: 200px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 22px;
   }
 `;
 const MainText = styled.h1`
   color: white;
   font-size: 15px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 200px) {
     font-size: 12px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 18px;
   }
 `;
 
@@ -46,6 +57,7 @@ const LayerInfo = styled(ParallaxLayer)`
   justify-content: center;
   align-itms: center;
   overflow: hidden;
+  z-index: 9999;
 `;
 const LayerDividing = styled(ParallaxLayer)`
   clip-path: polygon(100% 14%, 100% 56%, 0 100%, 0 66%);

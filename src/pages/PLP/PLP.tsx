@@ -19,6 +19,7 @@ const PLP = () => {
   const parallax = useRef<IParallax>(null!);
   const [currentPage, setCurrentPage] = useState(0);
   const [isFirstPage, setIsFirstPage] = useState(false);
+  const [isLastPage, setIsLastPage] = useState(true);
 
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -30,9 +31,16 @@ const PLP = () => {
     }
   };
 
-  if (currentPage === 2) {
-    setCurrentPage(-1);
-  }
+  const handlePage = () => {
+    if (currentPage === 2) {
+      setCurrentPage(-1);
+      setIsLastPage(false);
+    } else {
+      setIsLastPage(true);
+    }
+  };
+
+  console.log(currentPage);
   return (
     <MainContainer>
       {isFirstPage && (
@@ -40,9 +48,12 @@ const PLP = () => {
           <ArrowUp />
         </GoToTop>
       )}
-      <PageDown>
-        <ArrowDown onClick={() => scroll(currentPage + 1)} />
-      </PageDown>
+      {isLastPage && (
+        <PageDown>
+          <ArrowDown onClick={() => scroll(currentPage + 1)} />
+        </PageDown>
+      )}
+
       <Parallax ref={parallax} pages={3} onScroll={() => scroll(0)}>
         <ParallaxLayer
           offset={0}
@@ -58,7 +69,7 @@ const PLP = () => {
             <MainCategory>Category:</MainCategory>
             <MainText>Scroll down to see all the products!</MainText>
           </CategoryDiv>
-          <ProductListing />
+          <ProductListing oneColumn={false} />
         </ParallaxLayer>
 
         <LayerDividing
@@ -85,10 +96,10 @@ const PLP = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            objectFit: "cover",
+            flexDirection: "column",
           }}
         >
-          <ProductListing />
+          <ProductListing oneColumn={false} />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1.9}
