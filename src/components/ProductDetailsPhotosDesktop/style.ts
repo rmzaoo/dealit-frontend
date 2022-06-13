@@ -10,6 +10,15 @@ export const ProductPhotosContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 33%;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const ProductShowcasedPhotoContainer = styled.div`
@@ -17,13 +26,12 @@ export const ProductShowcasedPhotoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 85%;
-  height: 270px;
+  height: 250px;
   padding: 5px;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
-    height: 220px;
-    padding: 10px;
+    height: 200px;
   }
 
   //Tablets
@@ -48,6 +56,11 @@ export const OtherProductPhotosContainer = styled.div`
   flex-direction: row;
   padding: 10px 5px;
   width: 85%;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const OtherPhotoContainer = styled.div`
@@ -63,9 +76,9 @@ export const OtherPhoto = styled.img<Props>`
   height: 100%;
   cursor: pointer;
   box-shadow: ${(props) =>
-    props.active ? "0 0 2px 2px #00bcd4" : "0 0 3px 3px #1b2533"};
+    props.active ? "0 0 1px 1px #02a4e3" : "0 0 3px 3px #1b2533"};
 
   &:hover {
-    box-shadow: 0 0 2px 2px #00bcd4;
+    box-shadow: 0 0 1px 1px #02a4e3;
   }
 `;

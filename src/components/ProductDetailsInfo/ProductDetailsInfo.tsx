@@ -9,13 +9,21 @@ import {
   ProductPriceContainer,
 } from "./style";
 import products from "../../products.json";
+import ProductDetailsPhotosMobileTablet from "../ProductDetailsPhotosMobileTablet/ProductDetailsPhotosMobileTablet";
 
-const ProductDetailsInfo = () => {
+interface Props {
+  deviceType?: string;
+}
+
+const ProductDetailsInfo = (Props: Props) => {
   return (
     <ProductInfoContainer>
       <ProductNameContainer>
         <ProductName>{products.name}</ProductName>
       </ProductNameContainer>
+      {Props.deviceType !== "desktop" && (
+        <ProductDetailsPhotosMobileTablet deviceType={Props.deviceType} />
+      )}
       <ProductPriceContainer>
         <ProductPrice>
           Price:&nbsp;

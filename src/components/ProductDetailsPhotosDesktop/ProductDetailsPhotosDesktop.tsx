@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {
@@ -11,24 +11,18 @@ import {
 } from "./style";
 import products from "../../products.json";
 
-const ProductDetailsPhotos = () => {
+interface Props {
+  deviceType?: string;
+}
+
+const ProductDetailsPhotos = (Props: Props) => {
   const [chosenPhoto, setChosenPhoto] = useState(0);
 
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2,
-      paritialVisibilityGutter: 60,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1.2,
-      paritialVisibilityGutter: 60,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      paritialVisibilityGutter: 60,
+      items: 3,
+      slidesToSlide: 2,
     },
   };
 
@@ -58,9 +52,9 @@ const ProductDetailsPhotos = () => {
           partialVisbile
           itemClass="image-item"
           responsive={responsive}
-          deviceType="desktop"
+          deviceType={Props.deviceType}
           removeArrowOnDeviceType={["tablet", "mobile"]}
-          infinite={true}
+          infinite={false}
           autoPlay={false}
           containerClass="carousel-container"
         >

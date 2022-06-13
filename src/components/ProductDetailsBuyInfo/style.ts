@@ -6,10 +6,20 @@ export const BuyInfoBody = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18%;
-  margin-right: 5%;
-  padding-left: 10px;
+  width: 20%;
+  margin-right: 4%;
+  padding: 5px;
   height: 100%;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    
+  }
 `;
 
 export const BuyInfoContainer = styled.div`
@@ -21,6 +31,16 @@ export const BuyInfoContainer = styled.div`
   border: 1px solid white;
   border-radius: 10px;
   height: 60%;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    
+  }
 `;
 
 export const ProductDeliveryContainer = styled.div`
@@ -32,7 +52,7 @@ export const ProductDeliveryContainer = styled.div`
 `;
 
 export const ProductDelivery = styled.p`
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: white;
 `;
@@ -48,6 +68,7 @@ export const ProductQtnContainer = styled.div`
   flex-direction: row;
   width: 90%;
   margin: 10px;
+
 `;
 
 export const ButtonsContainer = styled.div`
@@ -83,18 +104,19 @@ export const ProductDeliveryInfoContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 70%;
-  margin-top: 5%;
+  width: 80%;
+  margin-left: 10%;
   padding: 2%;
 `;
 
 export const IndividualProductDeliveryInfoContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   width: 100%;
   margin-left: 5%;
+  margin-top: 5%;
 `;
 
 export const ProductDeleveryInfoFromBy = styled.span`
@@ -104,8 +126,22 @@ export const ProductDeleveryInfoFromBy = styled.span`
   flex-direction: column;
   width: 45%;
   font-size: 0.9rem;
-  color: #565959;
   color: gray;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    font-size: 0.8rem;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const ProductInfoIntities = styled.div`
@@ -116,4 +152,18 @@ export const ProductInfoIntities = styled.div`
   width: 50%;
   font-size: 0.9rem;
   color: white;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.8rem;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;

@@ -27,6 +27,7 @@ export const ProductContainer = styled.div`
   //Tablets
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    margin-top: 20px;
   }
 
   //Mobile
