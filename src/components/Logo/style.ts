@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
-const Logo = styled.span`
-    font-weight: 100;
-    font-size: 30px;
-    letter-spacing: 8px;
-    color: #fff;
+const LogoStyled = styled.span`
+  font-weight: 100;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 0 0 10px #000;
+`;
 
+const LogoColor = styled.span`
+  letter-spacing: 0px;
+  color: whitesmoke;
+  font-weight: bold;
 `;
 
 
-export default Logo
+export { LogoStyled, LogoColor };

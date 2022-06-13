@@ -9,7 +9,6 @@ import {
 } from "./style";
 import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import OpenMobileLateralMenu from "../OpenMobileLateralMenu/OpenMobileLateralMenu";
 
 const Navbar = () => {
