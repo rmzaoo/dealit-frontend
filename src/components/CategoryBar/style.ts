@@ -14,6 +14,8 @@ const Container = styled.div`
   z-index: 99999;
   width: 100%;
   top: 70px;
+  border-bottom: 1px solid #168;
+
 
   > * {
     margin: 0 10px;

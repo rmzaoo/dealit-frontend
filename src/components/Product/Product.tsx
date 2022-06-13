@@ -22,7 +22,7 @@ const Product = ({ name, photos, price, className }: Props) => {
       <ProductDetails>
         <h1>{name}</h1>
         <span>${price}</span>
-        <PrimaryButton>Add to cart</PrimaryButton>
+        <PrimaryButton>View Product</PrimaryButton>
       </ProductDetails>
     </Container>
   );
