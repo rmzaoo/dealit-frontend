@@ -31,7 +31,7 @@ const ProductDetailsBuyInfo = () => {
             {products.price
               .toLocaleString()
               .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            &nbsp; €
+            €
           </ProductPrice>
         </PdpBuyDetailsPriceContainer>
         <ProductDeliveryContainer>

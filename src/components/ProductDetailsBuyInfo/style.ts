@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { PrimaryButton } from "../PrimaryButton/style";
-import {
-  ProductPrice,
-  ProductPriceContainer,
-} from "../ProductDetailsInfo/style";
+import { ProductPriceContainer } from "../ProductDetailsInfo/style";
+import { SecundaryButton } from "../SecundaryButton/style";
 
 export const BuyInfoBody = styled.div`
   display: flex;
@@ -13,7 +10,7 @@ export const BuyInfoBody = styled.div`
   margin-right: 5%;
   padding-left: 10px;
   height: 100%;
-`
+`;
 
 export const BuyInfoContainer = styled.div`
   display: flex;
@@ -21,7 +18,7 @@ export const BuyInfoContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 10px;
   height: 60%;
 `;
@@ -37,6 +34,7 @@ export const ProductDeliveryContainer = styled.div`
 export const ProductDelivery = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
+  color: white;
 `;
 
 export const ProductDeliverySpan = styled.span`
@@ -57,9 +55,10 @@ export const ButtonsContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  width: 90%;
+  width: 80%;
   height: 10%;
-  margin: 1%;
+  margin: 3%;
+  padding: 5px;
 `;
 
 export const IndividualButtonContainer = styled.div`
@@ -72,32 +71,16 @@ export const IndividualButtonContainer = styled.div`
 
 export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
   justify-content: center;
-`
-
-export const AddToCartButton = styled(PrimaryButton)`
-  background-color: #ffd814;
-  width: 70%;
-  border-radius: 20px;
-  border: none;
-  height: 80%;
-
-  &:hover {
-    cursor: pointer;
-    border-radius: 20px;
-  }
 `;
 
-export const BuyNow = styled(PrimaryButton)`
-  width: 70%;
-  background-color: #ffa41c;
-  border-radius: 20px;
-  border: none;
-  height: 80%;
+export const AddToCartButton = styled(SecundaryButton)`
+  width: 90%;
+  background-color: #00bcd4;
+`;
 
-  &:hover {
-    cursor: pointer;
-    border-radius: 20px;
-  }
+export const BuyNow = styled(SecundaryButton)`
+  width: 90%;
+  background-color: #009bd4;
 `;
 
 export const ProductDeliveryInfoContainer = styled.div`
@@ -127,6 +110,7 @@ export const ProductDeleveryInfoFromBy = styled.span`
   width: 45%;
   font-size: 0.9rem;
   color: #565959;
+  color: gray;
 `;
 
 export const ProductInfoIntities = styled.div`
@@ -136,4 +120,5 @@ export const ProductInfoIntities = styled.div`
   flex-direction: column;
   width: 50%;
   font-size: 0.9rem;
+  color: white;
 `;

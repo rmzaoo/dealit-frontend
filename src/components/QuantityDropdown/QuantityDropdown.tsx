@@ -62,7 +62,7 @@ const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
         <Text>Quantity:</Text>
       </TextContainer>
       <DropdownContainer ref={wrapperRef}>
-        <StyledDropdown onClick={() => dropdownToggle()}>
+        <StyledDropdown onClick={() => dropdownToggle()} active={isOpen}>
           <DropdownText>{optionSelected}</DropdownText>
           <DrodownArrowContainer>
             {isOpen ? (

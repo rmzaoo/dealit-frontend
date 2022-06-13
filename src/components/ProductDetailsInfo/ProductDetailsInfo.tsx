@@ -22,13 +22,11 @@ const ProductDetailsInfo = () => {
           {products.price
             .toLocaleString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-          &nbsp; €
+          €
         </ProductPrice>
       </ProductPriceContainer>
       <ProductDescriptionContainer>
-        <ProductDescription>
-          {products.description}
-        </ProductDescription>
+        <ProductDescription>{products.description}</ProductDescription>
       </ProductDescriptionContainer>
     </ProductInfoContainer>
   );
