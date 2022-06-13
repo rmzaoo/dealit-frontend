@@ -154,12 +154,11 @@ const FaqContainer = styled(Faq)`
       -webkit-overflow-scrolling: touch;
 
       div {
-        scroll-snap-align: start;
         flex-shrink: 0;
         margin-right: 10px;
-        transform-origin: center center;
-        transform: scale(1);
-        transition: transform 0.5s;
+        /* transform-origin: center center; */
+        /* transform: scale(1); */
+        /* transition: transform 0.5s; */
         position: relative;
         width: 60vw;
         
