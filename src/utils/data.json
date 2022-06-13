@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "name": "Eclairs",
+    "price": 1.3,
+    "description": "A delicious eclair with a hint of chocolate and a touch of cream.",
+    "img": [
+      "https://media-cdn.tripadvisor.com/media/photo-s/19/4d/30/05/parisian-eclair-by-christophe.jpg",
+      "https://vandemoortele.com/sites/default/files/styles/square_product/public/84c0a0e551261c6fdf26a935f4bbd4843020599f.jpg?itok=OkpTb7we",
+      "https://blog.novasafra.com.br/wp-content/uploads/2019/08/304811-eclair-o-que-e-essa-sobremesa-e-quais-os-segredos-para-produzila-780x450.jpg",
+      "https://mychefrecipe.com/wp-content/uploads/2021/06/Eclair-presentation-14-1200.jpg"
+    ],
+    "category": {
+      "0": "dessert",
+      "1": "eclair",
+      "2": "chocolate"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Chocolate-chip cookies",
+    "price": 1,
+    "description": "A delicious chocolate chip cookie.",
+    "img": [
+      "https://static01.nyt.com/images/2022/02/12/dining/JT-Chocolate-Chip-Cookies/JT-Chocolate-Chip-Cookies-articleLarge.jpg",
+      "https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg",
+      "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/58F5ACB9-F758-4CB5-AD56-FFB26C60F283/Derivates/0B1F7F84-57D8-4050-AC4E-7CF8C0C50FEA.jpg",
+      "https://www.janespatisserie.com/wp-content/uploads/2015/03/IMG_2594_1-scaled.jpg"
+    ],
+    "category": {
+      "0": "dessert",
+      "1": "cookie",
+      "2": "chocolate"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Chocolate muffin",
+    "price": 1.1,
+    "description": "A delicious chocolate muffin.",
+    "img": [
+      "https://www.onceuponachef.com/images/2020/02/Double-Chocolate-Muffins.jpg",
+      "https://jajabakes.com/wp-content/uploads/2021/04/sour-cream-double-chocolate-muffins-7-720x720.jpg",
+      "https://theviewfromgreatisland.com/wp-content/uploads/2021/01/chocolate-muffins-17.jpg",
+      "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2021/03/double-chocolate-chip-muffins.jpg"
+    ],
+    "category": {
+      "0": "dessert",
+      "1": "muffin",
+      "2": "chocolate"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Chocolate cake",
+    "price": 3,
+    "description": "A delicious chocolate cake.",
+    "img": [
+      "https://assets.epicurious.com/photos/61f4370abf67bb5e52649829/2:3/w_3068,h_4602,c_limit/DoubleDhocolateLayerCake_RECIPE_012622_26397.jpg",
+      "https://www.tasteofhome.com/wp-content/uploads/2018/01/Best-Chocolate-Cake_exps47786._THCA1917912C10_02_1bC_RMS-4.jpg?fit=700,1024",
+      "https://www.recipetineats.com/wp-content/uploads/2018/03/Chocolate-Cake_9-SQ.jpg",
+      "https://www.cookingclassy.com/wp-content/uploads/2019/10/chocolate-cake-3.jpg"
+    ],
+    "category": {
+      "0": "dessert",
+      "1": "cake",
+      "2": "chocolate"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Vanilla ice cream",
+    "price": 1.4,
+    "description": "A delicious vanilla ice cream.",
+    "img": [
+      "https://tarateaspoon.com/wp-content/uploads/2021/06/Vanilla-Ice-Cream-cone-glass-sq.jpeg",
+      "https://addapinch.com/wp-content/uploads/2017/07/old-fashioned-vanilla-ice-cream-recipe-DSC_4239.jpg",
+      "https://handletheheat.com/wp-content/uploads/2021/06/homemade-vanilla-ice-cream.jpg",
+      "https://static.toiimg.com/thumb/63971154.cms?width=573&height=430"
+    ],
+    "category": {
+      "0": "dessert",
+      "1": "ice cream",
+      "2": "vanilla"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Vanilla cake",
+    "price": 3,
+    "description": "A delicious vanilla cake.",
+    "img": [
+      "https://img.taste.com.au/8LH23yb5/taste/2021/06/feather-crumb-vanilla-cake-171754-2.jpg",
+      "https://www.recipetineats.com/wp-content/uploads/2020/08/My-best-Vanilla-Cake_9.jpg",
+      "https://natashaskitchen.com/wp-content/uploads/2020/07/Vanilla-Cake-SQ.jpg",
+      "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Best-Vanilla-Cake_EXPS_TOHAM20_245451_E11_13_19b.jpg"
+    ],
+    "category": {
+      "0": "dessert",
+      "1": "cake",
+      "2": "vanilla"
+    }
+  }
+]

@@ -1,10 +1,6 @@
 import React from "react";
 import { PrimaryButton } from "../PrimaryButton/style";
-import {
-  Container,
-  ProductDetails,
-  ProductPhotoDiv,
-} from "./styled";
+import { Container, ProductDetails, ProductPhotoDiv } from "./styled";
 
 interface Props {
   name: string;
@@ -22,7 +18,9 @@ const Product = ({ name, photos, price, className }: Props) => {
       <ProductDetails>
         <h1>{name}</h1>
         <span>${price}</span>
-        <PrimaryButton>View Product</PrimaryButton>
+        <section>
+          <PrimaryButton>View Product</PrimaryButton>
+        </section>
       </ProductDetails>
     </Container>
   );
