@@ -4,16 +4,11 @@ const Container = styled.div`
   border-radius: 10px;
 
   h1 {
-    transition: color 0.3s ease-in-out;
     color: #02a4e3;
 
     &:hover {
       cursor: pointer;
     }
-  }
-
-  p {
-    color: white;
   }
 `;
 
@@ -34,6 +29,19 @@ const ContainerQuestion = styled.div`
       color: #0082b5;
       cursor: pointer;
       border-color: #168;
+    }
+  }
+
+  p {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 `;

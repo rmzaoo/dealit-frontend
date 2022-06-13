@@ -4,6 +4,7 @@ import App from "./pages/App/App";
 import Homepage from "./pages/Homepage/Homepage";
 import PDP from "./pages/PDP/PDP";
 
+import PLP from "./pages/PLP/PLP";
 
 const Navigation = () => {
   return (
@@ -12,6 +13,7 @@ const Navigation = () => {
         <Route path="/" element={<App />}>
           <Route index element={<Homepage />} />
           <Route path="/products/:key" element={<PDP />} />
+          <Route path="/plp" element={<PLP />} />
         </Route>
       </Routes>
     </BrowserRouter>

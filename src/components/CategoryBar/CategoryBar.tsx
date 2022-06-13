@@ -1,19 +1,23 @@
-import React from 'react'
-import { PrimaryButton } from '../PrimaryButton/style'
-import TextLink from '../TextLink/TextLink'
-import { Container } from './style'
+import React, { useLayoutEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { fetchCategories } from "../../api/productsFetch";
+import TextLink from "../TextLink/TextLink";
+import { Container } from "./style";
 
 const CategoryBar = () => {
-  return (
+  const navigate = useNavigate();
+  const categories = fetchCategories();
+  
+  return categories && (
     <Container>
-      <TextLink>Category 1</TextLink>
-      <TextLink>Category 2</TextLink>
-      <TextLink>Category 3</TextLink>
-      <TextLink>Category 4</TextLink>
-      <TextLink>Category 5</TextLink>
-      <TextLink>Category 6</TextLink>
+      {categories.map((category: string) => (
+        // <TextLink onClick={() => navigate(`/products?category=${category}`)}>
+        <TextLink onClick={() => navigate(`/plp`)}>
+        {category}
+        </TextLink>
+      ))}
     </Container>
-  )
-}
+  );
+};
 
-export default CategoryBar
+export default CategoryBar;

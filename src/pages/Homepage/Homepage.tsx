@@ -1,5 +1,4 @@
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import Faq from "../../components/Faq/Faq";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import {
   FullDiv,
   LogoStyled,
@@ -13,38 +12,29 @@ import {
   RandomProduct,
   ContainerDealitDetails,
   DetailsInfo,
-  FaqContainer
+  FaqContainer,
 } from "./style";
+import detailsSVG from "../../assets/details.svg";
+import { faqQuestions } from "../../api/faqFetch";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { fetchRandomProduct } from "../../api/productsFetch";
+import LoadingPage from "../../components/LoadingPage/LoadingPage";
+
+const useRandomProductFetcher = (size: number) => {
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    fetchRandomProduct(size).then((data) => {
+      setProduct(data);
+    });
+  }, []);
+  return product;
+};
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
+  const randomProduct: any = useRandomProductFetcher(2);
 
-  const faqQuestions = [
-    {
-      question: "What is Dealit?",
-      answer:
-        "Dealit is a platform that allows you to buy and sell products in a safe and secure way. You can also buy and sell products with your friends and family.",
-    },
-    {
-      question: "How do I buy products?",
-      answer: "You can buy products from the products page.",
-    },
-    {
-      question: "How do I sell products?",
-      answer: "You can sell products from your profile page.",
-    },
-    {
-      question: "What is the payment method?",
-      answer: "You can pay with Paypal.",
-    },
-    {
-      question: "What is the shipping method?",
-      answer:
-        "We send ourselves through DHL, but each seller sends for his preference.",
-    },
-  ];
-
-  return (
+  return(
     <Parallax
       pages={8}
       style={{
@@ -69,7 +59,7 @@ const Homepage = () => {
         </FullDiv>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1, end: 6 }} style={{ ...alignCenter }}>
+      <ParallaxLayer sticky={{ start: 1, end: 5.5 }} style={{ ...alignCenter }}>
         <RandomProductsDiv>
           <RandomProductTitle> Don't know what to buy?</RandomProductTitle>
           <RandomProductSubtitle>
@@ -83,33 +73,36 @@ const Homepage = () => {
         sticky={{ start: 2.2, end: 3 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
-        <RandomProduct
-          name="Lorem impsum dolor sit amet consectetur adipisicing elit"
-          photos={[
-            "https://m.media-amazon.com/images/I/61gmXNWdZML._AC_SY355_.jpg",
-          ]}
-          price={99.99}
-        />
+        {
+        randomProduct && (
+          <RandomProduct
+            id={randomProduct[0].id}
+            name={randomProduct[0].name}
+            photos={randomProduct[0].photos}
+            price={randomProduct[0].price}
+          />
+        )}
       </ParallaxLayer>
 
       <ParallaxLayer
         speed={0.5}
-        sticky={{ start: 4.1, end: 6 }}
+        sticky={{ start: 4.1, end: 5.5 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
-      >
-        <RandomProduct
-          name="Lorem impsum dolor sit amet consectetur adipisicing elit"
-          photos={[
-            "https://m.media-amazon.com/images/I/61gmXNWdZML._AC_SY355_.jpg",
-          ]}
-          price={99.99}
-        />
+      >{
+         randomProduct && (
+          <RandomProduct
+            id={randomProduct[1].id}
+            name={randomProduct[1].name}
+            photos={randomProduct[1].photos}
+            price={randomProduct[1].price}
+          />
+        )}
       </ParallaxLayer>
 
       <ParallaxLayer
         speed={-2.5}
         offset={6}
-        sticky={{ start: 5.5, end: 6 }}
+        sticky={{ start: 5.5, end: 5.8 }}
         style={{
           ...alignCenter,
           justifyContent: "center",
@@ -122,8 +115,8 @@ const Homepage = () => {
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.5}
-        offset={8}
-        sticky={{ start: 7, end: 8 }}
+        offset={7}
+        sticky={{ start: 7 }}
         style={{
           ...alignCenter,
           justifyContent: "center",
@@ -132,12 +125,11 @@ const Homepage = () => {
         <ContainerDealitDetails>
           <DetailsInfo>
             <h1>About Us</h1>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, quisquam.
-              </p>
-            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum, quisquam.
+            </p>
+            <img src={detailsSVG} alt="details" />
           </DetailsInfo>
           <FaqContainer
             title="FAQ"
