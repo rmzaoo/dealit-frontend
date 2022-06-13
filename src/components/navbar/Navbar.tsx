@@ -10,14 +10,16 @@ import {
 import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import OpenMobileLateralMenu from "../OpenMobileLateralMenu/OpenMobileLateralMenu";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <MobileHeader>
         <OpenMobileLateralMenu />
       </MobileHeader>
-      <Logo />
+      <Logo onClick={() => navigate("/")} />
       <DesktopHeader>
         <Searchbar />
         <ButtonsBar>

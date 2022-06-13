@@ -156,12 +156,9 @@ const FaqContainer = styled(Faq)`
       div {
         flex-shrink: 0;
         margin-right: 10px;
-        /* transform-origin: center center; */
-        /* transform: scale(1); */
-        /* transition: transform 0.5s; */
         position: relative;
         width: 60vw;
-        
+
         h3 {
           height: 50px;
           display: flex;
@@ -172,7 +169,6 @@ const FaqContainer = styled(Faq)`
           bottom: 0;
           left: 0;
           height: 100%;
-          
         }
       }
     }
