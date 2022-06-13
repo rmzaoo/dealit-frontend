@@ -19,6 +19,7 @@ import ProductListing from "../../components/ProductListing/ProductListing";
 import { faqQuestions } from "../../api/faqFetch";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { fetchRandomProduct } from "../../api/productsFetch";
+import LoadingPage from "../../components/LoadingPage/LoadingPage";
 
 const useRandomProductFetcher = (size: number) => {
   const [product, setProduct] = useState(null);
@@ -34,7 +35,7 @@ const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
   const randomProduct: any = useRandomProductFetcher(2);
 
-  return !randomProduct ? null : (
+  return(
     <Parallax
       pages={8}
       style={{
@@ -73,25 +74,30 @@ const Homepage = () => {
         sticky={{ start: 2.2, end: 3 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
-        <RandomProduct
-          id={randomProduct[0].id}
-          name={randomProduct[0].name}
-          photos={randomProduct[0].photos}
-          price={randomProduct[0].price}
-        />
+        {
+        randomProduct && (
+          <RandomProduct
+            id={randomProduct[0].id}
+            name={randomProduct[0].name}
+            photos={randomProduct[0].photos}
+            price={randomProduct[0].price}
+          />
+        )}
       </ParallaxLayer>
 
       <ParallaxLayer
         speed={0.5}
         sticky={{ start: 4.1, end: 5.5 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
-      >
-        <RandomProduct
-          id={randomProduct[1].id}
-          name={randomProduct[1].name}
-          photos={randomProduct[1].photos}
-          price={randomProduct[1].price}
-        />
+      >{
+         randomProduct && (
+          <RandomProduct
+            id={randomProduct[1].id}
+            name={randomProduct[1].name}
+            photos={randomProduct[1].photos}
+            price={randomProduct[1].price}
+          />
+        )}
       </ParallaxLayer>
 
       <ParallaxLayer
