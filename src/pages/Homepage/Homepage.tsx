@@ -13,8 +13,9 @@ import {
   RandomProduct,
   ContainerDealitDetails,
   DetailsInfo,
-  FaqContainer
+  FaqContainer,
 } from "./style";
+import detailsSVG from "../../assets/details.svg";
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
@@ -69,7 +70,7 @@ const Homepage = () => {
         </FullDiv>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1, end: 6 }} style={{ ...alignCenter }}>
+      <ParallaxLayer sticky={{ start: 1, end: 5.5 }} style={{ ...alignCenter }}>
         <RandomProductsDiv>
           <RandomProductTitle> Don't know what to buy?</RandomProductTitle>
           <RandomProductSubtitle>
@@ -94,7 +95,7 @@ const Homepage = () => {
 
       <ParallaxLayer
         speed={0.5}
-        sticky={{ start: 4.1, end: 6 }}
+        sticky={{ start: 4.1, end: 5.5 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
         <RandomProduct
@@ -109,7 +110,7 @@ const Homepage = () => {
       <ParallaxLayer
         speed={-2.5}
         offset={6}
-        sticky={{ start: 5.5, end: 6 }}
+        sticky={{ start: 5.5, end: 5.8 }}
         style={{
           ...alignCenter,
           justifyContent: "center",
@@ -122,8 +123,8 @@ const Homepage = () => {
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.5}
-        offset={8}
-        sticky={{ start: 7, end: 8 }}
+        offset={7}
+        sticky={{ start: 7}}
         style={{
           ...alignCenter,
           justifyContent: "center",
@@ -132,12 +133,11 @@ const Homepage = () => {
         <ContainerDealitDetails>
           <DetailsInfo>
             <h1>About Us</h1>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, quisquam.
-              </p>
-            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum, quisquam.
+            </p>
+            <img src={detailsSVG} alt="details" />
           </DetailsInfo>
           <FaqContainer
             title="FAQ"
