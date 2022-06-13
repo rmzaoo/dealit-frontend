@@ -14,6 +14,17 @@ const FullDiv = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
+
+  animation: fadeIn 1s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const LogoStyled = styled.span`

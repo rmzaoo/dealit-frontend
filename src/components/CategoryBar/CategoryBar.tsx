@@ -8,11 +8,12 @@ const CategoryBar = () => {
   const navigate = useNavigate();
   const categories = fetchCategories();
   
-  return !categories ? null : (
+  return categories && (
     <Container>
       {categories.map((category: string) => (
-        <TextLink onClick={() => navigate(`/products?category=${category}`)}>
-          {category}
+        // <TextLink onClick={() => navigate(`/products?category=${category}`)}>
+        <TextLink onClick={() => navigate(`/plp`)}>
+        {category}
         </TextLink>
       ))}
     </Container>
