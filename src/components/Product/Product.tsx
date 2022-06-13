@@ -11,7 +11,7 @@ interface Props {
   className?: string;
 }
 
-const Product = ({ name, photos, price, className }: Props) => {
+const Product = ({ id, name, photos, price, className }: Props) => {
   const navigate = useNavigate();
   return (
     <Container className={className} onClick={() => navigate(`/product/${id}`)}>
@@ -21,9 +21,9 @@ const Product = ({ name, photos, price, className }: Props) => {
       <ProductDetails>
         <h1>{name}</h1>
         <span>${price}</span>
-        <section>
+        {/* <section>
           <PrimaryButton>View Product</PrimaryButton>
-        </section>
+        </section> */}
       </ProductDetails>
     </Container>
   );

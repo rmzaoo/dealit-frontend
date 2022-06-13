@@ -12,7 +12,6 @@ import {
 } from "./style";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import ProductListing from "../../components/ProductListing/ProductListing";
 
 const PLP = () => {
