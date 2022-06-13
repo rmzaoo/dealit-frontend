@@ -16,6 +16,7 @@ import {
   FaqContainer,
 } from "./style";
 import detailsSVG from "../../assets/details.svg";
+import ProductListing from "../../components/ProductListing/ProductListing";
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
@@ -117,14 +118,12 @@ const Homepage = () => {
           backgroundColor: "#141414",
         }}
       >
-        <div>
-          <p>get recent Products</p>
-        </div>
+        <ProductListing oneColumn={true} />
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.5}
         offset={7}
-        sticky={{ start: 7}}
+        sticky={{ start: 7 }}
         style={{
           ...alignCenter,
           justifyContent: "center",
