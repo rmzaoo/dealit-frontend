@@ -6,6 +6,10 @@ const LogoStyled = styled.span`
   letter-spacing: 5px;
   color: white;
   text-shadow: 0 0 10px #000;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const LogoColor = styled.span`

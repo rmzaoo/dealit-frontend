@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Faq from "../../components/Faq/Faq";
 import Product from "../../components/Product/Product";
 
 const HomepageContainer = styled.div`
@@ -90,6 +91,90 @@ const RandomProduct = styled(Product)`
   }
 `;
 
+const ContainerDealitDetails = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+  }
+`;
+
+const DetailsInfo = styled.div`
+  padding: 20px;
+  width: 100%;
+
+  h1 {
+    color: #02a4e3;
+  }
+
+  img {
+    width: 100%;
+    height: 500px;
+
+    @media screen and (max-width: 768px) {
+      height: 50%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 30%;
+    width: 90%;
+  }
+`;
+const FaqContainer = styled(Faq)`
+  padding: 20px;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    height: 55%;
+    width: 95%;
+
+    .questions {
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+
+      div {
+        flex-shrink: 0;
+        margin-right: 10px;
+        position: relative;
+        width: 60vw;
+
+        h3 {
+          height: 50px;
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+        p {
+          bottom: 0;
+          left: 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+`;
+
 export {
   HomepageContainer,
   FullDiv,
@@ -102,4 +187,7 @@ export {
   RandomProductTitle,
   RandomProductSubtitle,
   RandomProduct,
+  ContainerDealitDetails,
+  DetailsInfo,
+  FaqContainer,
 };

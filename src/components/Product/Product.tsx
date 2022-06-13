@@ -19,7 +19,7 @@ const Product = ({ name, photos, price, className }: Props) => {
         <h1>{name}</h1>
         <span>${price}</span>
         <section>
-          <PrimaryButton>Add to cart</PrimaryButton>
+          <PrimaryButton>View Product</PrimaryButton>
         </section>
       </ProductDetails>
     </Container>
