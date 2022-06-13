@@ -1,5 +1,4 @@
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import Faq from "../../components/Faq/Faq";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import {
   FullDiv,
   LogoStyled,
@@ -17,36 +16,25 @@ import {
 } from "./style";
 import detailsSVG from "../../assets/details.svg";
 import ProductListing from "../../components/ProductListing/ProductListing";
+import { faqQuestions } from "../../api/faqFetch";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { fetchRandomProduct } from "../../api/productsFetch";
+
+const useRandomProductFetcher = (size: number) => {
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    fetchRandomProduct(size).then((data) => {
+      setProduct(data);
+    });
+  }, []);
+  return product;
+};
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
+  const randomProduct: any = useRandomProductFetcher(2);
 
-  const faqQuestions = [
-    {
-      question: "What is Dealit?",
-      answer:
-        "Dealit is a platform that allows you to buy and sell products in a safe and secure way. You can also buy and sell products with your friends and family.",
-    },
-    {
-      question: "How do I buy products?",
-      answer: "You can buy products from the products page.",
-    },
-    {
-      question: "How do I sell products?",
-      answer: "You can sell products from your profile page.",
-    },
-    {
-      question: "What is the payment method?",
-      answer: "You can pay with Paypal.",
-    },
-    {
-      question: "What is the shipping method?",
-      answer:
-        "We send ourselves through DHL, but each seller sends for his preference.",
-    },
-  ];
-
-  return (
+  return !randomProduct ? null : (
     <Parallax
       pages={8}
       style={{
@@ -86,11 +74,10 @@ const Homepage = () => {
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
         <RandomProduct
-          name="Lorem impsum dolor sit amet consectetur adipisicing elit"
-          photos={[
-            "https://m.media-amazon.com/images/I/61gmXNWdZML._AC_SY355_.jpg",
-          ]}
-          price={99.99}
+          id={randomProduct[0].id}
+          name={randomProduct[0].name}
+          photos={randomProduct[0].photos}
+          price={randomProduct[0].price}
         />
       </ParallaxLayer>
 
@@ -100,11 +87,10 @@ const Homepage = () => {
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
         <RandomProduct
-          name="Lorem impsum dolor sit amet consectetur adipisicing elit"
-          photos={[
-            "https://m.media-amazon.com/images/I/61gmXNWdZML._AC_SY355_.jpg",
-          ]}
-          price={99.99}
+          id={randomProduct[1].id}
+          name={randomProduct[1].name}
+          photos={randomProduct[1].photos}
+          price={randomProduct[1].price}
         />
       </ParallaxLayer>
 

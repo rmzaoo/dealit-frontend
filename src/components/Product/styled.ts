@@ -16,6 +16,10 @@ const Container = styled.div`
   > * {
     margin: 0px 10px;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ProductPhotoDiv = styled.div`
@@ -42,7 +46,6 @@ const ProductDetails = styled.div`
   align-items: flex-end;
   text-align: right;
   margin: 0px 20px;
-
 
   h1 {
     font-size: 30px;

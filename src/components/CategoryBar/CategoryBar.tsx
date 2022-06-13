@@ -1,21 +1,22 @@
-import React from 'react'
-import { PrimaryButton } from '../PrimaryButton/style'
-import TextLink from '../TextLink/TextLink'
-import { Container } from './style'
-import { useNavigate } from 'react-router'
+import React, { useLayoutEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { fetchCategories } from "../../api/productsFetch";
+import TextLink from "../TextLink/TextLink";
+import { Container } from "./style";
 
 const CategoryBar = () => {
   const navigate = useNavigate();
-  return (
-    <Container>
-      <TextLink onClick={() => navigate("/plp",{state:{name:'Category 1'}})}>Category 1</TextLink>
-      <TextLink onClick={() => navigate("/plp",{state:{name:'Category 2'}})}>Category 2</TextLink>
-      <TextLink onClick={() => navigate("/plp",{state:{name:'Category 3'}})}>Category 3</TextLink>
-      <TextLink onClick={() => navigate("/plp",{state:{name:'Category 4'}})}>Category 4</TextLink>
-      <TextLink onClick={() => navigate("/plp",{state:{name:'Category 5'}})}>Category 5</TextLink>
-      <TextLink onClick={() => navigate("/plp",{state:{name:'Category 6'}})}>Category 6</TextLink>
-    </Container>
-  )
-}
+  const categories = fetchCategories();
 
-export default CategoryBar
+  return !categories ? null : (
+    <Container>
+      {categories.map((category: string) => (
+        <TextLink onClick={() => navigate(`/products?category=${category}`)}>
+          {category}
+        </TextLink>
+      ))}
+    </Container>
+  );
+};
+
+export default CategoryBar;
