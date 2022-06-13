@@ -17,6 +17,21 @@ export const ProductContainer = styled.div`
   flex-direction: row;
   width: 100%;
   height: 85%;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+
+  }
 `;
 
 export const SimilarProducts = styled.div`

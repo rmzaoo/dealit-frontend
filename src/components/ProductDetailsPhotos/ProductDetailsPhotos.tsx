@@ -13,10 +13,21 @@ import products from "../../products.json";
 
 const ProductDetailsPhotos = () => {
   const [chosenPhoto, setChosenPhoto] = useState(0);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 2,
+      paritialVisibilityGutter: 60,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1.2,
+      paritialVisibilityGutter: 60,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
       paritialVisibilityGutter: 60,
     },
   };
@@ -24,7 +35,6 @@ const ProductDetailsPhotos = () => {
   let prodImageList: any[] = [];
 
   products.img.forEach((value, index) => {
-    console.log(value === products.img[index]);
     prodImageList.push(
       <OtherPhotoContainer>
         <OtherPhoto
@@ -47,8 +57,9 @@ const ProductDetailsPhotos = () => {
           ssr
           partialVisbile
           itemClass="image-item"
-          deviceType="desktop"
           responsive={responsive}
+          deviceType="desktop"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
           infinite={true}
           autoPlay={false}
           containerClass="carousel-container"
