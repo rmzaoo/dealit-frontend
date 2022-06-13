@@ -42,7 +42,6 @@ const ProductDetailsPhotos = () => {
           src={value}
           onClick={() => setChosenPhoto(index)}
           active={value === products.img[chosenPhoto]}
-          
         />
       </OtherPhotoContainer>
     );

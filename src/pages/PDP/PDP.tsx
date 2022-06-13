@@ -15,6 +15,8 @@ const PDP = () => {
       <SimilarProducts>
           <h1>Similar product area!</h1>
       </SimilarProducts>
+      <h1>cenas</h1>
+      <h1>cenas</h1>
     </PDPContainer>
   );
 };

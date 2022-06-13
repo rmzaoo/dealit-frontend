@@ -6,7 +6,7 @@ export const PDPContainer = styled.div`
   align-items: center;
   background-color: #27364b;
   flex-direction: column;
-  height: 100%;
+  height: fit-content;
   width: 100%;
   padding-top: 20px;
   background-image: linear-gradient(175deg, #27364b 5%, #0e1318 100%);
@@ -14,10 +14,11 @@ export const PDPContainer = styled.div`
 
 export const ProductContainer = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-around;
   flex-direction: row;
   width: 100%;
-  height: 85%;
+  height: 100vh;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
@@ -35,4 +36,8 @@ export const ProductContainer = styled.div`
 
 export const SimilarProducts = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 `;

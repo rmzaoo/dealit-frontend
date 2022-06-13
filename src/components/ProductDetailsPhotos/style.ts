@@ -17,13 +17,28 @@ export const ProductShowcasedPhotoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 85%;
-  height: 35%;
-  padding: 10px;
+  height: 270px;
+  padding: 5px;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    height: 220px;
+    padding: 10px;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const ProductShowcasedPhoto = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: contain;
 `;
 
 export const OtherProductPhotosContainer = styled.div`
@@ -33,7 +48,6 @@ export const OtherProductPhotosContainer = styled.div`
   flex-direction: row;
   padding: 10px 5px;
   width: 85%;
-  margin: 10px 0px;
 `;
 
 export const OtherPhotoContainer = styled.div`

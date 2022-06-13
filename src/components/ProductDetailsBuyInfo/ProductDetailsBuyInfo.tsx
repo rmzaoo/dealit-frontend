@@ -4,8 +4,6 @@ import {
   ButtonsContainer,
   BuyInfoBody,
   BuyInfoContainer,
-  BuyNow,
-  IndividualButtonContainer,
   IndividualProductDeliveryInfoContainer,
   ProductDeleveryInfoFromBy,
   ProductDelivery,
@@ -46,12 +44,7 @@ const ProductDetailsBuyInfo = () => {
           />
         </ProductQtnContainer>
         <ButtonsContainer>
-          <IndividualButtonContainer>
-            <AddToCartButton>Add to Cart</AddToCartButton>
-          </IndividualButtonContainer>
-          <IndividualButtonContainer>
-            <BuyNow>Buy Now</BuyNow>
-          </IndividualButtonContainer>
+          <AddToCartButton>Add to Cart</AddToCartButton>
         </ButtonsContainer>
         <ProductDeliveryInfoContainer>
           <IndividualProductDeliveryInfoContainer>

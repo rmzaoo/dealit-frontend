@@ -56,7 +56,7 @@ export const ButtonsContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  height: 10%;
+  height: 8%;
   margin: 3%;
   padding: 5px;
 `;
@@ -76,11 +76,6 @@ export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
 export const AddToCartButton = styled(SecundaryButton)`
   width: 90%;
   background-color: #00bcd4;
-`;
-
-export const BuyNow = styled(SecundaryButton)`
-  width: 90%;
-  background-color: #009bd4;
 `;
 
 export const ProductDeliveryInfoContainer = styled.div`
