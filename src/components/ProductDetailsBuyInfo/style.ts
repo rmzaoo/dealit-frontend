@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { PrimaryButton } from "../PrimaryButton/style";
-
+import {
+  ProductPrice,
+  ProductPriceContainer,
+} from "../ProductDetailsInfo/style";
 
 export const BuyInfoBody = styled.div`
   display: flex;
@@ -67,6 +70,10 @@ export const IndividualButtonContainer = styled.div`
   padding: 5px;
 `;
 
+export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
+  justify-content: center;
+`
+
 export const AddToCartButton = styled(PrimaryButton)`
   background-color: #ffd814;
   width: 70%;
@@ -105,10 +112,11 @@ export const ProductDeliveryInfoContainer = styled.div`
 
 export const IndividualProductDeliveryInfoContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   width: 100%;
+  margin-left: 5%;
 `;
 
 export const ProductDeleveryInfoFromBy = styled.span`

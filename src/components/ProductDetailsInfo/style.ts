@@ -19,6 +19,7 @@ export const ProductNameContainer = styled.div`
 export const ProductName = styled.p`
   font-size: 2rem;
   font-weight: bold;
+  color: white;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
@@ -44,6 +45,7 @@ export const ProductPriceContainer = styled.div`
 export const ProductPrice = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
+  color: white;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
@@ -68,6 +70,7 @@ export const ProductDescriptionContainer = styled.div`
 
 export const ProductDescription = styled.p`
   font-size: 1.3rem;
+  color: white;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {

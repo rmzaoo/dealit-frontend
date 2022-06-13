@@ -49,9 +49,9 @@ export const OtherPhoto = styled.img<Props>`
   height: 100%;
   cursor: pointer;
   box-shadow: ${(props) =>
-    props.active ? "0 0 3px 3px rgba(19, 26, 34, 0.8)" : "0 0 3px 3px white"};
+    props.active ? "0 0 2px 2px #00bcd4" : "0 0 3px 3px #1b2533"};
 
   &:hover {
-    box-shadow: 0 0 3px 3px rgba(19, 26, 34, 0.8);
+    box-shadow: 0 0 2px 2px #00bcd4;
   }
 `;
