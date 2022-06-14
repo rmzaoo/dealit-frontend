@@ -20,7 +20,7 @@ const Product = ({ id, name, photos, price, className }: Props) => {
       </ProductPhotoDiv>
       <ProductDetails>
         <h1>{name}</h1>
-        <span>${price}</span>
+        <span>Price: ${price}</span>
         {/* <section>
           <PrimaryButton>View Product</PrimaryButton>
         </section> */}

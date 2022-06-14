@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Product from "../Product/Product";
+import { ProductPhotoDiv } from "../Product/styled";
 
 const MainProductCard = styled(Product)`
   width: 80px;
@@ -229,15 +229,12 @@ const MainProductCard = styled(Product)`
       right: 38%;
     }
     img {
-      left: 60%;
+      left: 87%;
+      bottom: 2%;
     }
     span {
       font-size: 16px;
-    }
-    section {
-      position: relative;
-      right: 65%;
-      font-size: 16px;
+      right: 70%;
     }
   }
 `;
@@ -253,7 +250,8 @@ const MainProductCardOneColumn = styled(Product)`
     width: 180px;
     object-fit: cover;
     position: relative;
-    left: 60%;
+    left: 78%;
+    bottom: 4%;
   }
   h1 {
     width: 22vh;
@@ -266,13 +264,22 @@ const MainProductCardOneColumn = styled(Product)`
   }
   span {
     position: relative;
-    right: 40%;
+    right: 70%;
   }
-  section {
-    position: relative;
-    font-size: 16px;
-    top: 10%;
-    right: 68%;
+`;
+
+const ImageDiv = styled(ProductPhotoDiv)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -300,4 +307,5 @@ export {
   PageDataOneColumn,
   MainProductCard,
   MainProductCardOneColumn,
+  ImageDiv,
 };

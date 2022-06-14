@@ -24,6 +24,7 @@ const ProductListing = ({ oneColumn }: Props) => {
                 name={value.name}
                 photos={value.img}
                 price={value.price}
+                id={0}
               />
             );
           })}
@@ -36,6 +37,7 @@ const ProductListing = ({ oneColumn }: Props) => {
                 name={value.name}
                 photos={value.img}
                 price={value.price}
+                id={0}
               />
             );
           })}
