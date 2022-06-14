@@ -5,20 +5,43 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  height: 350px;
   color: black;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   background-color: #ffffff;
   background-image: linear-gradient(135deg, #ffffff 54%, #aeaeae 100%);
 
-  > * {
+  /* > * {
     margin: 0px 10px;
-  }
+  } */
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media only screen and (min-width: 300px) {
+    display: none;
+  }
+  @media only screen and (min-width: 500px) {
+    display: flex;
+    width: 280px;
+    height: 150px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 420px;
+    height: 200px;
+  }
+  @media only screen and (min-width: 762px) {
+    width: 460px;
+    height: 250px;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 520px;
+    height: 300px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 600px;
+    height: 350px;
   }
 `;
 
@@ -27,13 +50,14 @@ const ProductPhotoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 450px;
+  width: 540px;
   height: 100%;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: scale-down;
+    object-fit: cover;
+    border-radius: 10px 0px 0px 10px;
   }
 `;
 

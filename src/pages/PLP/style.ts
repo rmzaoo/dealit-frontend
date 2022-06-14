@@ -21,7 +21,7 @@ const CategoryDiv = styled.div`
     padding-top: 12vh;
   }
   @media only screen and (min-width: 768px) {
-    padding-top: 9vh;
+    padding-top: 14vh;
   }
   @media only screen and (min-width: 992px) {
     padding-top: 12vh;

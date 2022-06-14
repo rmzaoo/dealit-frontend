@@ -1,46 +1,44 @@
-import data from "../../utils/data.json";
+import { ProductProps } from "../Product/Product";
 import {
   PageData,
   MainProductCard,
   MainProductCardOneColumn,
   PageDataOneColumn,
 } from "./styles";
-import { useState } from "react";
 
 interface Props {
   oneColumn: boolean;
+  products: ProductProps[];
 }
 
-const ProductListing = ({ oneColumn }: Props) => {
-  const [productsArray] = useState(Object.entries(data));
-
+const ProductListing = ({ oneColumn, products }: Props) => {
   return (
     <>
       {oneColumn === false ? (
         <PageData>
-          {productsArray.map(([key, value]: any) => {
+          {products.map((element) => {
             return (
               <MainProductCard
-                name={value.name}
-                photos={value.img}
-                price={value.price}
-                id={0}
+                name={element.name}
+                photos={element.photos}
+                price={element.price}
+                id={element.id}
               />
             );
           })}
         </PageData>
       ) : (
         <PageDataOneColumn>
-          {productsArray.map(([key, value]: any) => {
-            return (
-              <MainProductCardOneColumn
-                name={value.name}
-                photos={value.img}
-                price={value.price}
-                id={0}
-              />
-            );
-          })}
+            {products.map((element) => {
+              return (
+                <MainProductCardOneColumn
+                  name={element.name}
+                  photos={element.photos}
+                  price={element.price}
+                  id={element.id}
+                />
+              );
+            })}
         </PageDataOneColumn>
       )}
     </>
