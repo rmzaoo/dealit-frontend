@@ -9,8 +9,6 @@ interface Props {
 }
 
 const Faq = ({ title, description, mapQuestions, className }: Props) => {
-  // on click show the answer and hide the question
-
   const [showAnswer, setShowAnswer] = React.useState(false);
   const [selectedQuestion, setSelectedQuestion] = React.useState(0);
   const handleClick = (index: number) => {
