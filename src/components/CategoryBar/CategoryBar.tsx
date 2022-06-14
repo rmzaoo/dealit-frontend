@@ -11,8 +11,7 @@ const CategoryBar = () => {
   return categories && (
     <Container>
       {categories.map((category: string) => (
-        // <TextLink onClick={() => navigate(`/products?category=${category}`)}>
-        <TextLink onClick={() => navigate(`/plp`)}>
+        <TextLink onClick={() => navigate(`/products?category=${category}`)} key={category}>
         {category}
         </TextLink>
       ))}

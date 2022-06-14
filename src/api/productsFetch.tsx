@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://10.10.225.145:3220";
+const baseURL = "http://10.10.225.145:3220/dealit/api";
 
 export const fetchRandomProduct = (size: number) => {
   return axios
