@@ -12,7 +12,7 @@ const CategoryBar = () => {
     <Container>
       {categories.map((category: string) => (
         <TextLink
-          onClick={() => navigate(`/products?category=${category}`)}
+          onClick={() => navigate(`/products?category=${category.toLowerCase()}`)}
           key={category}
         >
           {category}
