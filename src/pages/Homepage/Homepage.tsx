@@ -13,6 +13,7 @@ import {
   ContainerDealitDetails,
   DetailsInfo,
   FaqContainer,
+  RecentProductsContainer,
 } from "./style";
 import detailsSVG from "../../assets/details.svg";
 import ProductListing from "../../components/ProductListing/ProductListing";
@@ -97,7 +98,10 @@ const Homepage = () => {
           backgroundColor: "#141414",
         }}
       >
-        <ProductListing oneColumn={true} />
+        <RecentProductsContainer>
+          <h2>Recent Products</h2>
+          <ProductListing oneColumn={true} />
+        </RecentProductsContainer>
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.5}
