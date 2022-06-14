@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ProductDetailsInfo from "../../components/ProductDetailsInfo/ProductDetailsInfo";
-import ProductDetailsPhotos from "../../components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop";
+import ProductDetailsPhotosDesktop from "../../components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop";
 import ProductDetailsBuyInfo from "../../components/ProductDetailsBuyInfo/ProductDetailsBuyInfo";
 import { PDPContainer, ProductContainer, SimilarProducts } from "./style";
+import axios from "axios";
 
 const PDP = () => {
   const [deviceType, setDeviceType] = useState("");
+  const [product, setProduct] = useState("");
+  const { productId } = useParams();
+  const Url = "http://localhost:3220";
 
   useEffect(() => {
     let deviceWidth = window.innerWidth;
-    console.log(deviceWidth);
+    let link = Url + "/dealit/api/products/" + productId;
+
+    const getProduct = async () => {
+      let res = await axios.get(link);
+      setProduct(res.data);
+    };
+
     const getDeviceType = () => {
       if (deviceWidth < 464) {
         setDeviceType("mobile");
@@ -20,16 +31,16 @@ const PDP = () => {
       }
     };
 
+    getProduct();
+    console.log(product);
     getDeviceType();
   }, [window.innerWidth, deviceType]);
-
-  console.log(deviceType);
 
   return (
     <PDPContainer>
       <ProductContainer>
         {deviceType === "desktop" && (
-          <ProductDetailsPhotos deviceType={deviceType} />
+          <ProductDetailsPhotosDesktop deviceType={deviceType} />
         )}
         <ProductDetailsInfo deviceType={deviceType} />
         <ProductDetailsBuyInfo />
