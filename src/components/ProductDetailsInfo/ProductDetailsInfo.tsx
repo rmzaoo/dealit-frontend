@@ -10,31 +10,36 @@ import {
 } from "./style";
 import products from "../../products.json";
 import ProductDetailsPhotosMobileTablet from "../ProductDetailsPhotosMobileTablet/ProductDetailsPhotosMobileTablet";
+import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 
 interface Props {
+  product: ProductDetailsProp;
   deviceType?: string;
 }
 
-const ProductDetailsInfo = (Props: Props) => {
+const ProductDetailsInfo = (props: Props) => {
+  const product = props.product;
+
   return (
     <ProductInfoContainer>
       <ProductNameContainer>
-        <ProductName>{products.name}</ProductName>
+        <ProductName>{product.name}</ProductName>
       </ProductNameContainer>
-      {Props.deviceType !== "desktop" && (
-        <ProductDetailsPhotosMobileTablet deviceType={Props.deviceType} />
+      {props.deviceType !== "desktop" && (
+        <ProductDetailsPhotosMobileTablet
+          product={product}
+          deviceType={props.deviceType}
+        />
       )}
       <ProductPriceContainer>
         <ProductPrice>
           Price:&nbsp;
-          {products.price
-            .toLocaleString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          {product.price.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           €
         </ProductPrice>
       </ProductPriceContainer>
       <ProductDescriptionContainer>
-        <ProductDescription>{products.description}</ProductDescription>
+        <ProductDescription>{product.description}</ProductDescription>
       </ProductDescriptionContainer>
     </ProductInfoContainer>
   );

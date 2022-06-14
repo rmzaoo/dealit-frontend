@@ -51,7 +51,7 @@ export const ProductShowcasedPhoto = styled.img`
 
 export const OtherProductPhotosContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   padding: 10px 5px;
