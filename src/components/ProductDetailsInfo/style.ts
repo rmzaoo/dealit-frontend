@@ -96,7 +96,7 @@ export const ProductPrice = styled.p`
 
 export const ProductDescriptionContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   width: 90%;
 `;

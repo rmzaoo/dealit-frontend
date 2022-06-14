@@ -1,17 +1,20 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import products from "../../products.json";
-import {
-  ProductShowcasedPhoto,
-} from "../ProductDetailsPhotosDesktop/style";
+import { ProductShowcasedPhoto } from "../ProductDetailsPhotosDesktop/style";
 import { MobileProductImgContainer } from "./style";
+import noImage from "../../assets/noImageAvailable.png";
 
 interface Props {
+  product: ProductDetailsProp;
   deviceType?: string;
 }
 
-const ProductDetailsPhotosMobileTablet = (Props: Props) => {
+const ProductDetailsPhotosMobileTablet = (props: Props) => {
+  const product = props.product;
+
   const responsive = {
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -25,13 +28,6 @@ const ProductDetailsPhotosMobileTablet = (Props: Props) => {
     },
   };
 
-  let prodImageList: any[] = [];
-
-  products.img.forEach((value, index) => {
-    prodImageList.push(
-      <ProductShowcasedPhoto alt="product photo" src={value} />
-    );
-  });
   return (
     <MobileProductImgContainer>
       <Carousel
@@ -39,12 +35,20 @@ const ProductDetailsPhotosMobileTablet = (Props: Props) => {
         partialVisbile
         itemClass="image-item"
         responsive={responsive}
-        deviceType={Props.deviceType}
+        deviceType={props.deviceType}
         infinite={false}
         autoPlay={false}
         containerClass="carousel-container"
       >
-        {prodImageList}
+        {product.photos.map((value, index) => {
+          return (
+            <ProductShowcasedPhoto
+              onError={(e) => (e.currentTarget.src = noImage)}
+              alt="product photo"
+              src={value}
+            />
+          );
+        })}
       </Carousel>
     </MobileProductImgContainer>
   );

@@ -9,14 +9,18 @@ import {
   ProductShowcasedPhoto,
   ProductShowcasedPhotoContainer,
 } from "./style";
+import noImage from "../../assets/noImageAvailable.png";
 import products from "../../products.json";
+import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 
 interface Props {
+  product: ProductDetailsProp;
   deviceType?: string;
 }
 
-const ProductDetailsPhotos = (Props: Props) => {
+const ProductDetailsPhotos = (props: Props) => {
   const [chosenPhoto, setChosenPhoto] = useState(0);
+  const product = props.product;
 
   const responsive = {
     desktop: {
@@ -26,25 +30,14 @@ const ProductDetailsPhotos = (Props: Props) => {
     },
   };
 
-  let prodImageList: any[] = [];
-
-  products.img.forEach((value, index) => {
-    prodImageList.push(
-      <OtherPhotoContainer>
-        <OtherPhoto
-          alt="product photo"
-          src={value}
-          onClick={() => setChosenPhoto(index)}
-          active={value === products.img[chosenPhoto]}
-        />
-      </OtherPhotoContainer>
-    );
-  });
-
   return (
     <ProductPhotosContainer>
       <ProductShowcasedPhotoContainer>
-        <ProductShowcasedPhoto src={products.img[chosenPhoto]} />
+        <ProductShowcasedPhoto
+          alt="Product showcased photo"
+          src={product.photos[chosenPhoto]}
+          onError={(e) => (e.currentTarget.src = noImage)}
+        />
       </ProductShowcasedPhotoContainer>
       <OtherProductPhotosContainer>
         <Carousel
@@ -52,13 +45,25 @@ const ProductDetailsPhotos = (Props: Props) => {
           partialVisbile
           itemClass="image-item"
           responsive={responsive}
-          deviceType={Props.deviceType}
+          deviceType={props.deviceType}
           removeArrowOnDeviceType={["tablet", "mobile"]}
           infinite={false}
           autoPlay={false}
           containerClass="carousel-container"
         >
-          {prodImageList}
+          {product.photos.map((value, index) => {
+            return (
+              <OtherPhotoContainer>
+                <OtherPhoto
+                  alt="product photo"
+                  src={value}
+                  onClick={() => setChosenPhoto(index)}
+                  active={value === product.photos[chosenPhoto]}
+                  onError={(e) => (e.currentTarget.src = noImage)}
+                />
+              </OtherPhotoContainer>
+            );
+          })}
         </Carousel>
       </OtherProductPhotosContainer>
     </ProductPhotosContainer>

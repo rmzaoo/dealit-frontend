@@ -4,23 +4,15 @@ import ProductDetailsInfo from "../../components/ProductDetailsInfo/ProductDetai
 import ProductDetailsPhotosDesktop from "../../components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop";
 import ProductDetailsBuyInfo from "../../components/ProductDetailsBuyInfo/ProductDetailsBuyInfo";
 import { PDPContainer, ProductContainer, SimilarProducts } from "./style";
-import axios from "axios";
+import { useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
 
 const PDP = () => {
   const [deviceType, setDeviceType] = useState("");
-  const [product, setProduct] = useState("");
-  const { productId } = useParams();
-  const Url = "http://localhost:3220";
+  const { id } = useParams();
+  const product = useProductByIdFetcher(Number(id));
 
   useEffect(() => {
     let deviceWidth = window.innerWidth;
-    let link = Url + "/dealit/api/products/" + productId;
-
-    const getProduct = async () => {
-      let res = await axios.get(link);
-      setProduct(res.data);
-    };
-
     const getDeviceType = () => {
       if (deviceWidth < 464) {
         setDeviceType("mobile");
@@ -31,25 +23,33 @@ const PDP = () => {
       }
     };
 
-    getProduct();
-    console.log(product);
     getDeviceType();
   }, [window.innerWidth, deviceType]);
-
-  return (
-    <PDPContainer>
-      <ProductContainer>
-        {deviceType === "desktop" && (
-          <ProductDetailsPhotosDesktop deviceType={deviceType} />
-        )}
-        <ProductDetailsInfo deviceType={deviceType} />
-        <ProductDetailsBuyInfo />
-      </ProductContainer>
-      <SimilarProducts>
-        <h1>Similar product area!</h1>
-      </SimilarProducts>
-    </PDPContainer>
-  );
+  if (product) {
+    return (
+      <PDPContainer>
+        <ProductContainer>
+          {deviceType === "desktop" && (
+            <ProductDetailsPhotosDesktop
+              product={product}
+              deviceType={deviceType}
+            />
+          )}
+          <ProductDetailsInfo deviceType={deviceType} product={product} />
+          <ProductDetailsBuyInfo product={product} />
+        </ProductContainer>
+        <SimilarProducts>
+          <h1>Similar product area!</h1>
+        </SimilarProducts>
+      </PDPContainer>
+    );
+  } else {
+    return (
+      <PDPContainer>
+        <h1>NOT FOUND CARAGO!</h1>
+      </PDPContainer>
+    );
+  }
 };
 
 export default PDP;

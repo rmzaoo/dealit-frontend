@@ -17,16 +17,24 @@ import {
 import { ProductPrice } from "../ProductDetailsInfo/style";
 import products from "../../products.json";
 import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
+import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 
-const ProductDetailsBuyInfo = () => {
+interface Props {
+  product: ProductDetailsProp;
+}
+
+const ProductDetailsBuyInfo = (props: Props) => {
+  const product = props.product;
   const [quantity, setQuantity] = useState(1);
+
+  console.log(product)
 
   return (
     <BuyInfoBody>
       <BuyInfoContainer>
         <PdpBuyDetailsPriceContainer>
           <ProductPrice>
-            {products.price
+            {product.price
               .toLocaleString()
               .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             €
