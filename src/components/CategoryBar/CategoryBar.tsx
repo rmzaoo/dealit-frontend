@@ -7,12 +7,15 @@ import { Container } from "./style";
 const CategoryBar = () => {
   const navigate = useNavigate();
   const categories = fetchCategories();
-  
-  return categories && (
+
+  return !categories ? null : (
     <Container>
       {categories.map((category: string) => (
-        <TextLink onClick={() => navigate(`/products?category=${category}`)} key={category}>
-        {category}
+        <TextLink
+          onClick={() => navigate(`/products?category=${category}`)}
+          key={category}
+        >
+          {category}
         </TextLink>
       ))}
     </Container>

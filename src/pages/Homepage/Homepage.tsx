@@ -15,6 +15,7 @@ import {
   FaqContainer,
 } from "./style";
 import detailsSVG from "../../assets/details.svg";
+import ProductListing from "../../components/ProductListing/ProductListing";
 import { faqQuestions } from "../../api/faqFetch";
 import { useEffect, useState } from "react";
 import { fetchRandomProduct } from "../../api/productsFetch";
@@ -107,9 +108,7 @@ const Homepage = () => {
           backgroundColor: "#141414",
         }}
       >
-        <div>
-          <p>get recent Products</p>
-        </div>
+        <ProductListing oneColumn={true} />
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.5}
