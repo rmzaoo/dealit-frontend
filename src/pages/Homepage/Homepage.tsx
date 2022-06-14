@@ -17,19 +17,8 @@ import {
 import detailsSVG from "../../assets/details.svg";
 import ProductListing from "../../components/ProductListing/ProductListing";
 import { faqQuestions } from "../../api/faqFetch";
-import { useEffect, useState } from "react";
-import { fetchRandomProduct } from "../../api/productsFetch";
 import { ProductProps } from "../../components/Product/Product";
-
-const useRandomProductFetcher = (size: number) => {
-  const [product, setProduct] = useState(null);
-  useEffect(() => {
-    fetchRandomProduct(size).then((data) => {
-      setProduct(data);
-    });
-  }, []);
-  return product;
-};
+import { useRandomProductFetcher } from "../../hooks/products/useRandomProductFetcher";
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
