@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../PrimaryButton/style";
 import { Container, ProductDetails, ProductPhotoDiv } from "./styled";
-import loadingGif from "../../assets/loading.gif";
+import noImage from '../../assets/noImageAvailable.png';
 
 export interface ProductProps {
   id: number;
@@ -19,7 +19,7 @@ const Product = ({ id, name, photos, price, className }: ProductProps) => {
       <ProductPhotoDiv>
         <img
           src={photos[0]}
-          onError={(e) => (e.currentTarget.src = loadingGif)}
+          onError={(e) => (e.currentTarget.src = noImage)}
           alt="product"
         />
       </ProductPhotoDiv>
