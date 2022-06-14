@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../PrimaryButton/style";
 import { Container, ProductDetails, ProductPhotoDiv } from "./styled";
+import noImage from '../../assets/noImageAvailable.png';
 
-interface Props {
+export interface ProductProps {
   id: number;
   name: string;
   photos: string[];
@@ -11,16 +12,20 @@ interface Props {
   className?: string;
 }
 
-const Product = ({ id, name, photos, price, className }: Props) => {
+const Product = ({ id, name, photos, price, className }: ProductProps) => {
   const navigate = useNavigate();
   return (
     <Container className={className} onClick={() => navigate(`/product/${id}`)}>
       <ProductPhotoDiv>
-        <img src={photos[0]} />
+        <img
+          src={photos[0]}
+          onError={(e) => (e.currentTarget.src = noImage)}
+          alt="product"
+        />
       </ProductPhotoDiv>
       <ProductDetails>
         <h1>{name}</h1>
-        <span>${price}</span>
+        <span>Price: ${price}</span>
         {/* <section>
           <PrimaryButton>View Product</PrimaryButton>
         </section> */}

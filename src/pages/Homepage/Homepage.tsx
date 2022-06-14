@@ -13,28 +13,22 @@ import {
   ContainerDealitDetails,
   DetailsInfo,
   FaqContainer,
+  RecentProductsContainer,
 } from "./style";
 import detailsSVG from "../../assets/details.svg";
+import ProductListing from "../../components/ProductListing/ProductListing";
 import { faqQuestions } from "../../api/faqFetch";
-import { useEffect, useLayoutEffect, useState } from "react";
-import { fetchRandomProduct } from "../../api/productsFetch";
-import LoadingPage from "../../components/LoadingPage/LoadingPage";
-
-const useRandomProductFetcher = (size: number) => {
-  const [product, setProduct] = useState(null);
-  useEffect(() => {
-    fetchRandomProduct(size).then((data) => {
-      setProduct(data);
-    });
-  }, []);
-  return product;
-};
+import { ProductProps } from "../../components/Product/Product";
+import { useRandomProductFetcher } from "../../hooks/products/useRandomProductFetcher";
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
-  const randomProduct: any = useRandomProductFetcher(2);
+  const randomProduct: ProductProps[] = useRandomProductFetcher(2) || [
+    { id: 0, name: "Loading...", photos: [""], price: 0 },
+    { id: 0, name: "Loading...", photos: [""], price: 0 },
+  ];
 
-  return(
+  return (
     <Parallax
       pages={8}
       style={{
@@ -73,30 +67,25 @@ const Homepage = () => {
         sticky={{ start: 2.2, end: 3 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
       >
-        {
-        randomProduct && (
-          <RandomProduct
-            id={randomProduct[0].id}
-            name={randomProduct[0].name}
-            photos={randomProduct[0].photos}
-            price={randomProduct[0].price}
-          />
-        )}
+        <RandomProduct
+          id={randomProduct[0].id}
+          name={randomProduct[0].name}
+          photos={randomProduct[0].photos}
+          price={randomProduct[0].price}
+        />
       </ParallaxLayer>
 
       <ParallaxLayer
         speed={0.5}
         sticky={{ start: 4.1, end: 5.5 }}
         style={{ ...alignCenter, justifyContent: "flex-end" }}
-      >{
-         randomProduct && (
-          <RandomProduct
-            id={randomProduct[1].id}
-            name={randomProduct[1].name}
-            photos={randomProduct[1].photos}
-            price={randomProduct[1].price}
-          />
-        )}
+      >
+        <RandomProduct
+          id={randomProduct[1].id}
+          name={randomProduct[1].name}
+          photos={randomProduct[1].photos}
+          price={randomProduct[1].price}
+        />
       </ParallaxLayer>
 
       <ParallaxLayer
@@ -109,9 +98,10 @@ const Homepage = () => {
           backgroundColor: "#141414",
         }}
       >
-        <div>
-          <p>get recent Products</p>
-        </div>
+        <RecentProductsContainer>
+          <h2>Recent Products</h2>
+          <ProductListing oneColumn={true} />
+        </RecentProductsContainer>
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.5}

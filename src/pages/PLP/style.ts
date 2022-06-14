@@ -5,7 +5,9 @@ import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
 const MainContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: rgb(37, 50, 55);
+  background-color: #27364b;
+  color: white;
+  background-image: linear-gradient(175deg, #27364b 5%, #0e1318 100%);
 `;
 
 const CategoryDiv = styled.div`

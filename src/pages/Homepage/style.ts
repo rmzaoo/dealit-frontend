@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Faq from "../../components/Faq/Faq";
 import Product from "../../components/Product/Product";
+import ProductListing from "../../components/ProductListing/ProductListing";
 
 const HomepageContainer = styled.div`
   background-color: blue;
@@ -141,6 +142,7 @@ const DetailsInfo = styled.div`
     width: 90%;
   }
 `;
+
 const FaqContainer = styled(Faq)`
   padding: 20px;
   width: 90%;
@@ -186,6 +188,23 @@ const FaqContainer = styled(Faq)`
   }
 `;
 
+const RecentProductsContainer = styled.div`
+  width: 80%;
+  height: 50%;
+
+  h2 {
+    color: white;
+    border-bottom: 1px solid #02a4e3;
+    padding: 10px 5px;
+    font-size: 30px;
+
+    &:hover {
+      color: #02a4e3;
+    }
+  }
+`;
+
+
 export {
   HomepageContainer,
   FullDiv,
@@ -201,4 +220,5 @@ export {
   ContainerDealitDetails,
   DetailsInfo,
   FaqContainer,
+  RecentProductsContainer
 };
