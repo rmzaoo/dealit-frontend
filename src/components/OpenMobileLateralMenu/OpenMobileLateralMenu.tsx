@@ -1,12 +1,41 @@
-import React from 'react'
-import { Container, IconHamburger } from './style'
+import { useState } from "react";
+import CategoryBar from "../CategoryBar/CategoryBar";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import {
+  ButtonsMobile,
+  CartButton,
+  Container,
+  IconHamburger,
+  LoginButton,
+  MobileCategoryBar,
+  MobileLateralMenu,
+  MobileSearchbar,
+} from "./style";
 
 const OpenMobileLateralMenu = () => {
+  const [opened, setOpened] = useState(false);
+
   return (
     <Container>
-      <IconHamburger />
+      <IconHamburger onClick={() => setOpened(!opened)} />
+      {opened && (
+        <MobileLateralMenu>
+          <MobileSearchbar />
+          <div
+            onClick={() => setOpened(!opened)}
+            style={{ height: "100%", width: "80%" }}
+          >
+            <ButtonsMobile>
+              <LoginButton />
+              <CartButton />
+              <PrimaryButton>Sell With US</PrimaryButton>
+            </ButtonsMobile>
+            <MobileCategoryBar />
+          </div>
+        </MobileLateralMenu>
+      )}
     </Container>
-  )
-}
+  );
+};
 
-export default OpenMobileLateralMenu
+export default OpenMobileLateralMenu;

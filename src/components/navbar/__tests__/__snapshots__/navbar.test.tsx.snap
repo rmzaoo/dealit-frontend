@@ -12,10 +12,10 @@ exports[`navbar > renders 1`] = `
           class="sc-hKMtZM bJIqJb"
         >
           <div
-            class="sc-evZas jPGWqt"
+            class="sc-ksZaOG bVHygR"
           >
             <svg
-              class="sc-breuTD gobpCh"
+              class="sc-hAZoDl dzGtzF"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -118,10 +118,10 @@ exports[`navbar > renders 1`] = `
         class="sc-hKMtZM bJIqJb"
       >
         <div
-          class="sc-evZas jPGWqt"
+          class="sc-ksZaOG bVHygR"
         >
           <svg
-            class="sc-breuTD gobpCh"
+            class="sc-hAZoDl dzGtzF"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
