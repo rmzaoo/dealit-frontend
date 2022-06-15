@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Product from "../Product";
 
 describe("product", () => {
-  test("should first", () => {
+  test("renders", () => {
     const result = render(
       <BrowserRouter>
         <Product
@@ -16,12 +16,12 @@ describe("product", () => {
       </BrowserRouter>
     );
 
-    // const img = screen.getByAltText("product");
-    // expect(img.getAttribute("src")).toBe("https://via.placeholder.com/300");
+    const img = screen.getByAltText("product");
+    expect(img.getAttribute("src")).toBe("https://via.placeholder.com/300");
 
-    // expect(screen.getByText("test"));
-    // expect(screen.getByText("1"));
+    expect(screen.getByText("test"));
+    expect(screen.getByText("Price: $1"));
 
-    // expect(result).toMatchSnapshot();
+    expect(result).toMatchSnapshot();
   });
 });
