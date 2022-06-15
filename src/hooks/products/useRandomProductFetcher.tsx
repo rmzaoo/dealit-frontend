@@ -10,5 +10,3 @@ export const useRandomProductFetcher = (size: number) => {
   }, []);
   return product;
 };
-
-
