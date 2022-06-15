@@ -1,8 +1,12 @@
 import { SearchBarButton, SearchbarContainer, SearchbarInput, SearchBarIcon } from "./style";
 
-const Searchbar = () => {
+interface Props {
+  className?: string;
+}
+
+const Searchbar = ({className}: Props) => {
   return (
-    <SearchbarContainer>
+    <SearchbarContainer className={className}>
       <SearchbarInput placeholder="Search" />
       <SearchBarButton>
         <SearchBarIcon />
