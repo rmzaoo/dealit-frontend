@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
+import { SecundaryButton } from "../../components/SecundaryButton/style";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -8,6 +8,22 @@ const MainContainer = styled.div`
   background-color: #27364b;
   color: white;
   background-image: linear-gradient(175deg, #27364b 5%, #0e1318 100%);
+  display: flex;
+  justify-content: center;
+  align-items: end;
+`;
+const ScrollTo = styled(SecundaryButton)`
+  border: none;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+  height: 30px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4vh 2vh;
 `;
 
 const CategoryDiv = styled.div`
@@ -21,7 +37,7 @@ const CategoryDiv = styled.div`
     padding-top: 12vh;
   }
   @media only screen and (min-width: 768px) {
-    padding-top: 9vh;
+    padding-top: 14vh;
   }
   @media only screen and (min-width: 992px) {
     padding-top: 12vh;
@@ -66,53 +82,12 @@ const LayerDividing = styled(ParallaxLayer)`
   width: "100%";
 `;
 
-const GoToTop = styled.button`
-  position: absolute;
-  bottom: 6%;
-  right: 2%;
-  border: none;
-  background-color: rgb(0, 180, 204);
-  cursor: pointer;
-  z-index: 20;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const PageDown = styled.button`
-  position: absolute;
-  bottom: 6%;
-  left: 2%;
-  border: none;
-  background-color: rgb(0, 180, 204);
-  cursor: pointer;
-  z-index: 20;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const ArrowUp = styled(IoIosArrowRoundUp)`
-  height: 40px;
-  width: 40px;
-`;
-const ArrowDown = styled(IoIosArrowRoundDown)`
-  height: 40px;
-  width: 40px;
-`;
 export {
   MainCategory,
   LayerInfo,
   MainText,
   LayerDividing,
   MainContainer,
-  GoToTop,
-  ArrowUp,
-  PageDown,
-  ArrowDown,
   CategoryDiv,
+  ScrollTo,
 };

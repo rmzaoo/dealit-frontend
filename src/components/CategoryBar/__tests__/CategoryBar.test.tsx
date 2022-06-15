@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import * as api from "../../../api/productsFetch";
 
 describe("CategoryBar", () => {
-  test("renders without crashing", () => {
+  test("renders", () => {
     const result = render(
       <BrowserRouter>
         <CategoryBar />

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`CategoryBar > renders without crashing 1`] = `
+exports[`CategoryBar > renders 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -129,4 +129,52 @@ exports[`CategoryBar > renders without crashing 1`] = `
   "rerender": [Function],
   "unmount": [Function],
 }
+`;
+
+exports[`CategoryBar > renders categories 1`] = `
+<div
+  class="sc-bczRLJ jGjlZq"
+>
+  category1
+</div>
+`;
+
+exports[`CategoryBar > renders categories 2`] = `
+<div
+  class="sc-bczRLJ jGjlZq"
+>
+  category2
+</div>
+`;
+
+exports[`CategoryBar > renders categories 3`] = `
+<div
+  class="sc-bczRLJ jGjlZq"
+>
+  category3
+</div>
+`;
+
+exports[`CategoryBar > renders categories 4`] = `
+<div
+  class="sc-bczRLJ jGjlZq"
+>
+  category4
+</div>
+`;
+
+exports[`CategoryBar > renders categories 5`] = `
+<div
+  class="sc-bczRLJ jGjlZq"
+>
+  category5
+</div>
+`;
+
+exports[`CategoryBar > renders categories 6`] = `
+<div
+  class="sc-bczRLJ jGjlZq"
+>
+  category6
+</div>
 `;

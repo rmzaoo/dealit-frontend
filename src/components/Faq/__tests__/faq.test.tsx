@@ -3,8 +3,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Faq from "../Faq";
 
 describe("Faq", () => {
-  test("renders without crashing and testing props component", () => {
-    render(
+  test("renders", () => {
+    const result = render(
       <Faq
         title="faq title"
         description="faq description"
@@ -17,5 +17,6 @@ describe("Faq", () => {
     expect(screen.getByText("faq title"));
     expect(screen.getByText("faq description"));
     expect(screen.getByText("answer1"));
+    expect(result).toMatchSnapshot();
   });
 });
