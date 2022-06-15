@@ -167,7 +167,7 @@ const MainProductCard = styled(Product)`
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    height: 380px;
+    height: 350px;
     h1 {
       font-size: 20px;
       margin: 0;
@@ -178,7 +178,7 @@ const MainProductCard = styled(Product)`
       justify-content: center;
     }
     img {
-      height: 224px;
+      height: 210px;
       border-radius: 10px 10px 0px 0px;
       width: 300px;
     }
@@ -410,6 +410,7 @@ const ImageDiv = styled(ProductPhotoDiv)`
 const PageData = styled.div`
   width: 100%;
   height: 100%;
+  margin-bottom: 4%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
