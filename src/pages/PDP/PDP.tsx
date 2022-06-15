@@ -4,12 +4,23 @@ import ProductDetailsInfo from "../../components/ProductDetailsInfo/ProductDetai
 import ProductDetailsPhotosDesktop from "../../components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop";
 import ProductDetailsBuyInfo from "../../components/ProductDetailsBuyInfo/ProductDetailsBuyInfo";
 import { PDPContainer, ProductContainer, SimilarProducts } from "./style";
-import { useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
+import {
+  useProductByIdFetcher,
+} from "../../hooks/products/useProductByIdFetcher";
+import LoadingPage from "../../components/LoadingPage/LoadingPage";
 
 const PDP = () => {
+  const [isLoading, setLoading] = useState(true);
   const [deviceType, setDeviceType] = useState("");
   const { id } = useParams();
+
   const product = useProductByIdFetcher(Number(id));
+
+  useEffect(() => {
+    if (product !== undefined) {
+      setLoading(false);
+    }
+  });
 
   useEffect(() => {
     let deviceWidth = window.innerWidth;
@@ -25,6 +36,16 @@ const PDP = () => {
 
     getDeviceType();
   }, [window.innerWidth, deviceType]);
+
+  if (isLoading) {
+    return (
+      <PDPContainer>
+        <ProductContainer>
+          <LoadingPage />
+        </ProductContainer>
+      </PDPContainer>
+    );
+  }
   if (product) {
     return (
       <PDPContainer>
@@ -36,7 +57,11 @@ const PDP = () => {
             />
           )}
           <ProductDetailsInfo deviceType={deviceType} product={product} />
-          <ProductDetailsBuyInfo product={product} />
+          <ProductDetailsBuyInfo
+            product={product}
+            isLoading={isLoading}
+            setLoading={setLoading}
+          />
         </ProductContainer>
         <SimilarProducts>
           <h1>Similar product area!</h1>
