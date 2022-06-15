@@ -35,7 +35,6 @@ export const fetchCategories = () => {
     "Kitchen",
     "Outdoor",
     "Gaming",
-    "sub",
   ];
 };
 
