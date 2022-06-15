@@ -150,7 +150,7 @@ export const ProductInfoIntities = styled.div`
   align-items: flex-start;
   flex-direction: column;
   width: 50%;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: white;
 
   @media screen and (max-width: 1024px) {
@@ -167,3 +167,11 @@ export const ProductInfoIntities = styled.div`
     font-size: 0.7rem;
   }
 `;
+
+export const ProductInfoSeller = styled(ProductInfoIntities)`
+  cursor: pointer;
+
+  &:hover {
+    color: #02a4e3;
+  }
+`

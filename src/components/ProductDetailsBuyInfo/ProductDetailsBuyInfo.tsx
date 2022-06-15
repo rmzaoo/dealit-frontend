@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   AddToCartButton,
   ButtonsContainer,
@@ -13,9 +14,9 @@ import {
   ProductInfoIntities,
   ProductQtnContainer,
   PdpBuyDetailsPriceContainer,
+  ProductInfoSeller,
 } from "./style";
 import { ProductPrice } from "../ProductDetailsInfo/style";
-import products from "../../products.json";
 import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 
@@ -24,47 +25,81 @@ interface Props {
 }
 
 const ProductDetailsBuyInfo = (props: Props) => {
-  const product = props.product;
+  const [address, setAddress] = useState<any>();
+  const [name, setName] = useState();
   const [quantity, setQuantity] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const product = props.product;
+  const options: any = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  };
 
-  console.log(product)
+  const currentDate = new Date();
+  const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
+  const id = Number(product.userId);
+
+  useEffect(() => {
+    axios
+      .get(`http://10.10.225.129:3220/dealit/api/users/${id}`)
+      .then((response) => {
+        const favoriteAddress = response.data.addresses.filter(
+          (e: { isFavorite: boolean }) => {
+            if (e.isFavorite) {
+              return e;
+            }
+          }
+        );
+        setAddress(favoriteAddress);
+        setName(response.data.username);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <BuyInfoBody>
-      <BuyInfoContainer>
-        <PdpBuyDetailsPriceContainer>
-          <ProductPrice>
-            {product.price
-              .toLocaleString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            €
-          </ProductPrice>
-        </PdpBuyDetailsPriceContainer>
-        <ProductDeliveryContainer>
-          <ProductDelivery>
-            <ProductDeliverySpan>Delivery </ProductDeliverySpan> Monday, June 27
-          </ProductDelivery>
-        </ProductDeliveryContainer>
-        <ProductQtnContainer>
-          <QuantityDropdown
-            optionSelected={quantity}
-            setOptionSelected={setQuantity}
-          />
-        </ProductQtnContainer>
-        <ButtonsContainer>
-          <AddToCartButton>Add to Cart</AddToCartButton>
-        </ButtonsContainer>
-        <ProductDeliveryInfoContainer>
-          <IndividualProductDeliveryInfoContainer>
-            <ProductDeleveryInfoFromBy>Ships from</ProductDeleveryInfoFromBy>
-            <ProductInfoIntities>Sweden</ProductInfoIntities>
-          </IndividualProductDeliveryInfoContainer>
-          <IndividualProductDeliveryInfoContainer>
-            <ProductDeleveryInfoFromBy>Sold By </ProductDeleveryInfoFromBy>
-            <ProductInfoIntities>Zé Manel</ProductInfoIntities>
-          </IndividualProductDeliveryInfoContainer>
-        </ProductDeliveryInfoContainer>
-      </BuyInfoContainer>
+      {name !== undefined && (
+        <BuyInfoContainer>
+          <PdpBuyDetailsPriceContainer>
+            <ProductPrice>
+              {product.price
+                .toLocaleString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              €
+            </ProductPrice>
+          </PdpBuyDetailsPriceContainer>
+          <ProductDeliveryContainer>
+            <ProductDelivery>
+              <ProductDeliverySpan>Delivery </ProductDeliverySpan>
+              {deliveryDate.toLocaleDateString("en-US", options)}
+            </ProductDelivery>
+          </ProductDeliveryContainer>
+          <ProductQtnContainer>
+            <QuantityDropdown
+              optionSelected={quantity}
+              setOptionSelected={setQuantity}
+            />
+          </ProductQtnContainer>
+          <ButtonsContainer>
+            <AddToCartButton>Add to Cart</AddToCartButton>
+          </ButtonsContainer>
+          <ProductDeliveryInfoContainer>
+            <IndividualProductDeliveryInfoContainer>
+              <ProductDeleveryInfoFromBy>Ships from</ProductDeleveryInfoFromBy>
+              <ProductInfoIntities>{address[0].country}</ProductInfoIntities>
+            </IndividualProductDeliveryInfoContainer>
+            <IndividualProductDeliveryInfoContainer>
+              <ProductDeleveryInfoFromBy>Sold By </ProductDeleveryInfoFromBy>
+              <ProductInfoSeller
+                onClick={() => console.log("move to user profile")}
+              >
+                {name}
+              </ProductInfoSeller>
+            </IndividualProductDeliveryInfoContainer>
+          </ProductDeliveryInfoContainer>
+        </BuyInfoContainer>
+      )}
     </BuyInfoBody>
   );
 };
