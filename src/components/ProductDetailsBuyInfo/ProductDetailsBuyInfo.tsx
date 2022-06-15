@@ -22,14 +22,13 @@ import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 
 interface Props {
   product: ProductDetailsProp;
-  isLoading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ProductDetailsBuyInfo = (props: Props) => {
   const [address, setAddress] = useState<any>();
   const [name, setName] = useState();
   const [quantity, setQuantity] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
   const product = props.product;
   const options: any = {
     weekday: "long",
@@ -43,7 +42,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
 
   useEffect(() => {
     axios
-      .get(`http://10.10.225.145:3220/dealit/api/users/${id}`)
+      .get(`http://10.10.225.129:3220/dealit/api/users/${id}`)
       .then((response) => {
         const favoriteAddress = response.data.addresses.filter(
           (e: { isFavorite: boolean }) => {
@@ -54,7 +53,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
         );
         setAddress(favoriteAddress);
         setName(response.data.username);
-        props.setLoading(false);
+        setIsLoading(false);
       });
   }, []);
 
