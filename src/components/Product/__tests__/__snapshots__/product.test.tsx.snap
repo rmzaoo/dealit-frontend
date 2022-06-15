@@ -1,79 +1,57 @@
 // Vitest Snapshot v1
 
-exports[`CategoryBar > renders 1`] = `
+exports[`product > should first 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="sc-gsnTZi jBqAIi"
+        class="sc-bczRLJ hZLqxf"
       >
         <div
-          class="sc-bczRLJ jGjlZq"
+          class="sc-gsnTZi gmHuzv"
         >
-          Eletronics
+          <img
+            alt="product"
+            src="https://via.placeholder.com/300"
+          />
         </div>
         <div
-          class="sc-bczRLJ jGjlZq"
+          class="sc-dkzDqf fLVvgG"
         >
-          Clothing
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Automotive
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Kitchen
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Outdoor
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Gaming
+          <h1>
+            test
+          </h1>
+          <span>
+            Price: $
+            1
+          </span>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-gsnTZi jBqAIi"
+      class="sc-bczRLJ hZLqxf"
     >
       <div
-        class="sc-bczRLJ jGjlZq"
+        class="sc-gsnTZi gmHuzv"
       >
-        Eletronics
+        <img
+          alt="product"
+          src="https://via.placeholder.com/300"
+        />
       </div>
       <div
-        class="sc-bczRLJ jGjlZq"
+        class="sc-dkzDqf fLVvgG"
       >
-        Clothing
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Automotive
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Kitchen
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Outdoor
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Gaming
+        <h1>
+          test
+        </h1>
+        <span>
+          Price: $
+          1
+        </span>
       </div>
     </div>
   </div>,
@@ -129,52 +107,4 @@ exports[`CategoryBar > renders 1`] = `
   "rerender": [Function],
   "unmount": [Function],
 }
-`;
-
-exports[`CategoryBar > renders categories 1`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category1
-</div>
-`;
-
-exports[`CategoryBar > renders categories 2`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category2
-</div>
-`;
-
-exports[`CategoryBar > renders categories 3`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category3
-</div>
-`;
-
-exports[`CategoryBar > renders categories 4`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category4
-</div>
-`;
-
-exports[`CategoryBar > renders categories 5`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category5
-</div>
-`;
-
-exports[`CategoryBar > renders categories 6`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category6
-</div>
 `;
