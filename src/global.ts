@@ -27,8 +27,6 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-track {
     background: transparent;
   }
-
-  
 `;
 
 export default GlobalStyle;

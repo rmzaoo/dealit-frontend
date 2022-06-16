@@ -2,6 +2,7 @@ import React from "react";
 import {
   ProductDescription,
   ProductDescriptionContainer,
+  ProductDetailsPhotosMobileTabletContainer,
   ProductInfoContainer,
   ProductName,
   ProductNameContainer,
@@ -26,10 +27,12 @@ const ProductDetailsInfo = (props: Props) => {
         <ProductName>{product.name}</ProductName>
       </ProductNameContainer>
       {props.deviceType !== "desktop" && (
-        <ProductDetailsPhotosMobileTablet
-          product={product}
-          deviceType={props.deviceType}
-        />
+        <ProductDetailsPhotosMobileTabletContainer>
+          <ProductDetailsPhotosMobileTablet
+            product={product}
+            deviceType={props.deviceType}
+          />
+        </ProductDetailsPhotosMobileTabletContainer>
       )}
       <ProductPriceContainer>
         <ProductPrice>

@@ -16,10 +16,17 @@ export const MobileProductImgContainer = styled.div`
   }
 `;
 
+export const ProductMobileShowcasedPhoto = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 150px;
+  padding: 10px;
+`
+
 export const MobileProductImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-
-  
 `;
