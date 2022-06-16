@@ -40,7 +40,7 @@ const CategoryDiv = styled.div`
     padding-top: 14vh;
   }
   @media only screen and (min-width: 992px) {
-    padding-top: 12vh;
+    padding-top: 14vh;
   }
 `;
 const MainCategory = styled.h1`
