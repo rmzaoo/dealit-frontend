@@ -5,7 +5,7 @@ const localUrl = "http://localhost:3220/dealit/api";
 
 export const fetchRandomProduct = (size: number) => {
   return axios
-    .get(`${baseURL}/products/random?size=${size}`)
+    .get(`${localUrl}/products/random?size=${size}`)
     .then((response: any) => {
       return response.data;
     });
@@ -13,7 +13,7 @@ export const fetchRandomProduct = (size: number) => {
 
 export const fetchAllProducts = (limit: number) => {
   return axios
-    .get(`${baseURL}/products?limit=${limit}`)
+    .get(`${localUrl}/products?limit=${limit}`)
     .then((response: any) => {
       return response.data;
     });
@@ -21,7 +21,7 @@ export const fetchAllProducts = (limit: number) => {
 
 export const fetchProductByCategory = (limit: number, category: string) => {
   return axios
-    .get(`${baseURL}/products/category/${category}?limit=${limit}`)
+    .get(`${localUrl}/products/category/${category}?limit=${limit}`)
     .then((response: any) => {
       return response.data;
     });
@@ -29,7 +29,7 @@ export const fetchProductByCategory = (limit: number, category: string) => {
 
 export const fetchCategories = () => {
   return [
-    "Eletronics",
+    "Electronics",
     "Clothing",
     "Automotive",
     "Kitchen",

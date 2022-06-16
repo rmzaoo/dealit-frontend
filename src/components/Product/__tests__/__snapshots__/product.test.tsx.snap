@@ -1,5 +1,7 @@
 // Vitest Snapshot v1
 
+<<<<<<< HEAD
+=======
 exports[`product > renders 1`] = `
 {
   "asFragment": [Function],
@@ -109,6 +111,7 @@ exports[`product > renders 1`] = `
 }
 `;
 
+>>>>>>> master
 exports[`product > should first 1`] = `
 {
   "asFragment": [Function],
