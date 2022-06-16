@@ -29,7 +29,7 @@ export const fetchProductByCategory = (limit: number, category: string) => {
 
 export const fetchCategories = () => {
   return [
-    "Eletronics",
+    "Electronics",
     "Clothing",
     "Automotive",
     "Kitchen",

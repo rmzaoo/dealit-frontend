@@ -9,7 +9,7 @@ const Container = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   background-color: #ffffff;
-  background-image: linear-gradient(135deg, #ffffff 54%, #aeaeae 100%);
+  background-image: linear-gradient(170deg, #ffffff 70%, #aeaeae 100%);
 
   /* > * {
     margin: 0px 10px;
@@ -50,7 +50,7 @@ const ProductPhotoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 540px;
+  width: auto;
   height: 100%;
 
   img {
