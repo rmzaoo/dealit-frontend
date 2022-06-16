@@ -17,7 +17,7 @@ const ScrollTo = styled(SecundaryButton)`
   border: 1px solid white;
   color: white;
   cursor: pointer;
-  z-index: 20;
+  z-index: 4;
   height: 30px;
   width: 60px;
   display: flex;
