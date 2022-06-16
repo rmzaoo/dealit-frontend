@@ -39,7 +39,7 @@ export const fetchCategories = () => {
 };
 
 export const fetchProductById = (id: number) => {
-  return axios.get(`${baseURL}/products/${id}`).then((response: any) => {
+  return axios.get(`${localUrl}/products/${id}`).then((response: any) => {
     return response.data;
   });
 };

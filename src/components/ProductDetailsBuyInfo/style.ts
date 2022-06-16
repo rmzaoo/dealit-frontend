@@ -14,6 +14,7 @@ export const BuyInfoBody = styled.div`
   //Tablets
   @media screen and (max-width: 768px) {
     width: 50%;
+    height: fit-content;
   }
 
   //Mobile
@@ -30,11 +31,11 @@ export const BuyInfoContainer = styled.div`
   width: 100%;
   border: 1px solid white;
   border-radius: 10px;
-  height: 60%;
+  padding: 5px;
+  height: fit-content;
 
   //Tablets
   @media screen and (max-width: 768px) {
-    height: 100%;
   }
 
   //Mobile

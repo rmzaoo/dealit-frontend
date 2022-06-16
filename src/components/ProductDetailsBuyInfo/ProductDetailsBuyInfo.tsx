@@ -39,10 +39,12 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const currentDate = new Date();
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
+  const baseURL = "http://10.10.225.129:3220/dealit/api";
+  const localUrl = "http://localhost:3220/dealit/api";
 
   useEffect(() => {
     axios
-      .get(`http://10.10.225.129:3220/dealit/api/users/${id}`)
+      .get(`${localUrl}/users/${id}`)
       .then((response) => {
         const favoriteAddress = response.data.addresses.filter(
           (e: { isFavorite: boolean }) => {
