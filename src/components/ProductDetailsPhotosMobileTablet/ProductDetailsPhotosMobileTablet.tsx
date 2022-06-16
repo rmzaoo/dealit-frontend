@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
-import products from "../../products.json";
 import { ProductShowcasedPhoto } from "../ProductDetailsPhotosDesktop/style";
 import { MobileProductImgContainer } from "./style";
 import noImage from "../../assets/noImageAvailable.png";

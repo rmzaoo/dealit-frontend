@@ -99,11 +99,13 @@ export const ProductDescriptionContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   width: 90%;
+  white-space: pre-line;
 `;
 
 export const ProductDescription = styled.p`
   font-size: 1.2rem;
   color: white;
+  white-space: pre-line;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {

@@ -8,7 +8,6 @@ import {
   ProductPrice,
   ProductPriceContainer,
 } from "./style";
-import products from "../../products.json";
 import ProductDetailsPhotosMobileTablet from "../ProductDetailsPhotosMobileTablet/ProductDetailsPhotosMobileTablet";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 
@@ -19,6 +18,7 @@ interface Props {
 
 const ProductDetailsInfo = (props: Props) => {
   const product = props.product;
+  const description = product.description;
 
   return (
     <ProductInfoContainer>
@@ -39,7 +39,9 @@ const ProductDetailsInfo = (props: Props) => {
         </ProductPrice>
       </ProductPriceContainer>
       <ProductDescriptionContainer>
-        <ProductDescription>{product.description}</ProductDescription>
+        <ProductDescription>
+          {description.replaceAll(/\\n/g, "\n")}
+        </ProductDescription>
       </ProductDescriptionContainer>
     </ProductInfoContainer>
   );

@@ -59,9 +59,7 @@ const PDP = () => {
     );
   } else {
     return (
-      <PDPContainer>
-        <h1>NOT FOUND CARAGO!</h1>
-      </PDPContainer>
+      <LoadingPage />
     );
   }
 };
