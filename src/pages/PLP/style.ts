@@ -81,7 +81,7 @@ const LayerInfo = styled(ParallaxLayer)`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-itms: center;
+  align-items: center;
   overflow: hidden;
   z-index: 9999;
 `;

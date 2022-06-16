@@ -2,9 +2,8 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
-import products from "../../products.json";
 import { ProductShowcasedPhoto } from "../ProductDetailsPhotosDesktop/style";
-import { MobileProductImgContainer } from "./style";
+import { MobileProductImgContainer, ProductMobileShowcasedPhoto } from "./style";
 import noImage from "../../assets/noImageAvailable.png";
 
 interface Props {
@@ -42,7 +41,7 @@ const ProductDetailsPhotosMobileTablet = (props: Props) => {
       >
         {product.photos.map((value, index) => {
           return (
-            <ProductShowcasedPhoto
+            <ProductMobileShowcasedPhoto
               onError={(e) => (e.currentTarget.src = noImage)}
               alt="product photo"
               src={value}

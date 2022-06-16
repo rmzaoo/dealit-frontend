@@ -3,18 +3,28 @@ import { useParams } from "react-router-dom";
 import ProductDetailsInfo from "../../components/ProductDetailsInfo/ProductDetailsInfo";
 import ProductDetailsPhotosDesktop from "../../components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop";
 import ProductDetailsBuyInfo from "../../components/ProductDetailsBuyInfo/ProductDetailsBuyInfo";
-import { PDPContainer, ProductContainer, SimilarProducts } from "./style";
+import {
+  BreadCrumbDiv,
+  PDPContainer,
+  ProductContainer,
+  ProductDetailsContainer,
+  SimilarProducts,
+} from "./style";
 import { useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 const PDP = () => {
   const [isLoading, setLoading] = useState(true);
+  const [subCategory, setSubCategory] = useState<string>("");
   const [deviceType, setDeviceType] = useState("");
   const { id } = useParams();
   const product = useProductByIdFetcher(Number(id));
 
   useEffect(() => {
     if (product !== undefined) {
+      setSubCategory(product.categoryName);
+
       setLoading(false);
     }
   });
@@ -40,29 +50,28 @@ const PDP = () => {
   if (product) {
     return (
       <PDPContainer>
-        <ProductContainer>
-          {deviceType === "desktop" && (
-            <ProductDetailsPhotosDesktop
-              product={product}
-              deviceType={deviceType}
-            />
-          )}
-          <ProductDetailsInfo deviceType={deviceType} product={product} />
-          <ProductDetailsBuyInfo
-            product={product}
-          />
-        </ProductContainer>
+        <ProductDetailsContainer>
+          <BreadCrumbDiv>
+            <Breadcrumb subCategory={subCategory} />
+          </BreadCrumbDiv>
+          <ProductContainer>
+            {deviceType === "desktop" && (
+              <ProductDetailsPhotosDesktop
+                product={product}
+                deviceType={deviceType}
+              />
+            )}
+            <ProductDetailsInfo deviceType={deviceType} product={product} />
+            <ProductDetailsBuyInfo product={product} />
+          </ProductContainer>
+        </ProductDetailsContainer>
         <SimilarProducts>
           <h1>Similar product area!</h1>
         </SimilarProducts>
       </PDPContainer>
     );
   } else {
-    return (
-      <PDPContainer>
-        <h1>NOT FOUND CARAGO!</h1>
-      </PDPContainer>
-    );
+    return <LoadingPage />;
   }
 };
 
