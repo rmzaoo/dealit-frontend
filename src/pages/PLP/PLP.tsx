@@ -10,19 +10,33 @@ import {
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import ProductListing from "../../components/ProductListing/ProductListing";
-import { useAllProductsFetcher } from "../../hooks/products/useAllProductsFetcher";
 import { ProductProps } from "../../components/Product/Product";
 import { useSearchParams } from "react-router-dom";
 import { useProductByCategoryFetcher } from "../../hooks/products/useProductByCategoryFetcher";
+import { useProductByCategoryPerPageFetcher } from "../../hooks/products/useProductByCategoryPerPageFetcher";
 
 const PLP = () => {
   const parallax = useRef<IParallax>(null!);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
-
-  let mainProductsCategory: ProductProps[];
   const category = searchParams.get("category");
-  if (category !== null) {
+  const [currentCategory, setCurrentCategory]: any = useState(category);
+
+  function refreshPage() {
+    window.location.reload();
+  }
+  if (category !== currentCategory) {
+    refreshPage();
+  }
+  let mainProductsCategory: ProductProps[];
+  function handlePage(page: number) {
+    mainProductsCategory =
+      useProductByCategoryPerPageFetcher(page, currentCategory) || [];
+
+    return mainProductsCategory;
+  }
+
+  /*if (category !== null) {
     mainProductsCategory = useProductByCategoryFetcher(3, category) || [
       {
         id: 0,
@@ -31,8 +45,8 @@ const PLP = () => {
         price: 0,
       },
     ];
-  }
-  console.log(currentPage);
+  }*/
+
   const scroll = (to: number) => {
     if (parallax.current) {
       parallax.current.scrollTo(to);
@@ -58,7 +72,7 @@ const PLP = () => {
             <MainCategory>Category: {category}</MainCategory>
             <MainText>Scroll down to see all the products!</MainText>
           </CategoryDiv>
-          <ProductListing oneColumn={false} products={mainProductsCategory} />
+          <ProductListing oneColumn={false} products={handlePage(1)} />
         </ParallaxLayer>
 
         <LayerDividing
@@ -88,7 +102,7 @@ const PLP = () => {
             flexDirection: "column",
           }}
         >
-          <ProductListing oneColumn={false} products={mainProductsCategory} />
+          <ProductListing oneColumn={false} products={handlePage(2)} />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1.9}

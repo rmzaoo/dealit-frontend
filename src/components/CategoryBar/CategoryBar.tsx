@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-const CategoryBar = ({className}: Props) => {
+const CategoryBar = ({ className }: Props) => {
   const navigate = useNavigate();
   const categories = fetchCategories();
 

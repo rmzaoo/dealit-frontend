@@ -26,6 +26,16 @@ export const fetchProductByCategory = (limit: number, category: string) => {
       return response.data;
     });
 };
+export const fetchProductByCategoryPerPage = (
+  page: number,
+  category: string | null
+) => {
+  return axios
+    .get(`${localUrl}/products/category/${category}?page=${page}`)
+    .then((response: any) => {
+      return response.data;
+    });
+};
 
 export const fetchCategories = () => {
   return [
@@ -39,7 +49,7 @@ export const fetchCategories = () => {
 };
 
 export const fetchProductById = (id: number) => {
-  return axios.get(`${baseURL}/products/${id}`).then((response: any) => {
+  return axios.get(`${localUrl}/products/${id}`).then((response: any) => {
     return response.data;
   });
 };

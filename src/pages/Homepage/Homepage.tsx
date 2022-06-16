@@ -28,7 +28,7 @@ const Homepage = () => {
     { id: 0, name: "Loading...", photos: [""], price: 0 },
     { id: 0, name: "Loading...", photos: [""], price: 0 },
   ];
-  const mainProducts: ProductProps[] = useAllProductsFetcher(3) || [
+  const mainProducts: ProductProps[] = useAllProductsFetcher(10) || [
     { id: 0, name: "Loading...", photos: [""], price: 0 },
   ];
   //useAllProductsFetcher(3) ||

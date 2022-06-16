@@ -18,12 +18,20 @@ const ScrollTo = styled(SecundaryButton)`
   color: white;
   cursor: pointer;
   z-index: 4;
-  height: 30px;
-  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 4vh 2vh;
+
+  @media only screen and (min-width: 200px) {
+    height: 20px;
+    width: 60px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    height: 30px;
+    width: 60px;
+  }
 `;
 
 const CategoryDiv = styled.div`
