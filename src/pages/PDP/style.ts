@@ -57,7 +57,7 @@ export const ProductContainer = styled.div`
   }
 `;
 
-export const SimilarProducts = styled.div`
+export const SimilarProductsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

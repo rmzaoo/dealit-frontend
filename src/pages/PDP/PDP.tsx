@@ -8,11 +8,12 @@ import {
   PDPContainer,
   ProductContainer,
   ProductDetailsContainer,
-  SimilarProducts,
+  SimilarProductsContainer,
 } from "./style";
 import { useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import SimilarProducts from "../../components/SimilarProducts/SimilarProducts";
 
 const PDP = () => {
   const [isLoading, setLoading] = useState(true);
@@ -65,9 +66,9 @@ const PDP = () => {
             <ProductDetailsBuyInfo product={product} />
           </ProductContainer>
         </ProductDetailsContainer>
-        <SimilarProducts>
-          <h1>Similar product area!</h1>
-        </SimilarProducts>
+        <SimilarProductsContainer>
+          <SimilarProducts subCategory={subCategory} product = {product}/>
+        </SimilarProductsContainer>
       </PDPContainer>
     );
   } else {
