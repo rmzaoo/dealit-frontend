@@ -36,9 +36,7 @@ const ProductDetailsInfo = (props: Props) => {
       )}
       <ProductPriceContainer>
         <ProductPrice>
-          Price:&nbsp;
-          {product.price.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-          €
+          Price:&nbsp; ${product.price.toLocaleString()}
         </ProductPrice>
       </ProductPriceContainer>
       <ProductDescriptionContainer>

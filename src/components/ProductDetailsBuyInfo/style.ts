@@ -13,8 +13,9 @@ export const BuyInfoBody = styled.div`
 
   //Tablets
   @media screen and (max-width: 768px) {
-    width: 50%;
+    width: 70%;
     height: fit-content;
+    padding: 2px;
   }
 
   //Mobile
@@ -36,6 +37,8 @@ export const BuyInfoContainer = styled.div`
 
   //Tablets
   @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 90%;
   }
 
   //Mobile
@@ -56,7 +59,19 @@ export const ProductDelivery = styled.p`
   font-size: 1rem;
   font-weight: bold;
   color: white;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
+
+
 
 export const ProductDeliverySpan = styled.span`
   font-weight: normal;
@@ -93,11 +108,31 @@ export const IndividualButtonContainer = styled.div`
 
 export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
   justify-content: center;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    
+  }
 `;
 
 export const AddToCartButton = styled(SecundaryButton)`
   width: 90%;
   background-color: #00bcd4;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    
+  }
 `;
 
 export const ProductDeliveryInfoContainer = styled.div`
@@ -136,12 +171,12 @@ export const ProductDeleveryInfoFromBy = styled.span`
 
   //Tablets
   @media screen and (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   //Mobile
   @media screen and (max-width: 480px) {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 `;
 

@@ -25,13 +25,14 @@ export const ProductShowcasedPhotoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  height: 250px;
+  width: 340px;
+  height: 310px;
   padding: 5px;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
-    height: 200px;
+    height: 240px;
+    width: 260px;
   }
 
   //Tablets
@@ -55,7 +56,7 @@ export const OtherProductPhotosContainer = styled.div`
   align-items: center;
   flex-direction: row;
   padding: 10px 5px;
-  width: 85%;
+  width: 80%;
 
   //Tablets
   @media screen and (max-width: 768px) {
@@ -68,7 +69,8 @@ export const OtherPhotoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  height: 90%;
+  height: 80px;
+  width: 80px;
 `;
 
 export const OtherPhoto = styled.img<Props>`

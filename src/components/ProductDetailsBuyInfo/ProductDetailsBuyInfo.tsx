@@ -39,24 +39,23 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const currentDate = new Date();
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
+
   const baseURL = "http://10.10.225.129:3220/dealit/api";
   const localUrl = "http://localhost:3220/dealit/api";
 
   useEffect(() => {
-    axios
-      .get(`${localUrl}/users/${id}`)
-      .then((response) => {
-        const favoriteAddress = response.data.addresses.filter(
-          (e: { isFavorite: boolean }) => {
-            if (e.isFavorite) {
-              return e;
-            }
+    axios.get(`${localUrl}/users/${id}`).then((response) => {
+      const favoriteAddress = response.data.addresses.filter(
+        (e: { isFavorite: boolean }) => {
+          if (e.isFavorite) {
+            return e;
           }
-        );
-        setAddress(favoriteAddress);
-        setName(response.data.username);
-        setIsLoading(false);
-      });
+        }
+      );
+      setAddress(favoriteAddress);
+      setName(response.data.username);
+      setIsLoading(false);
+    });
   }, []);
 
   return (
@@ -65,10 +64,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
         <BuyInfoContainer>
           <PdpBuyDetailsPriceContainer>
             <ProductPrice>
-              {product.price
-                .toLocaleString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              €
+              &nbsp; ${product.price.toLocaleString()}
             </ProductPrice>
           </PdpBuyDetailsPriceContainer>
           <ProductDeliveryContainer>
