@@ -10,25 +10,38 @@ import {
   ProductDetailsContainer,
   SimilarProductsContainer,
 } from "./style";
-import { useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
+import { ProductDetailsProp, useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import SimilarProducts from "../../components/SimilarProducts/SimilarProducts";
+import { fetchProductById } from "../../api/productsFetch";
 
 const PDP = () => {
   const [isLoading, setLoading] = useState(true);
   const [subCategory, setSubCategory] = useState<string>("");
   const [deviceType, setDeviceType] = useState("");
+  const [product, setProduct] = useState<ProductDetailsProp>();
   const { id } = useParams();
-  const product = useProductByIdFetcher(Number(id));
+  //const product = useProductByIdFetcher(Number(id));
+  console.log(id);
+
+  useEffect(() => {
+    if (id) {
+      fetchProductById(parseInt(id)).then((data) => {
+        setProduct(data);
+        console.log(data);
+      });
+    }
+  }, [id]);
 
   useEffect(() => {
     if (product !== undefined) {
+      console.log(product);
       setSubCategory(product.categoryName);
-
       setLoading(false);
     }
-  });
+  }, [product]);
+
 
   useEffect(() => {
     let deviceWidth = window.innerWidth;
@@ -67,7 +80,7 @@ const PDP = () => {
           </ProductContainer>
         </ProductDetailsContainer>
         <SimilarProductsContainer>
-          <SimilarProducts subCategory={subCategory} product = {product}/>
+          <SimilarProducts subCategory={subCategory} product={product} />
         </SimilarProductsContainer>
       </PDPContainer>
     );

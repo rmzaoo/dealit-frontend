@@ -5,11 +5,22 @@ export const BreadCrumbContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin-top: 10px;
 `;
 export const BreadCrumbText = styled.p`
   font-size: 0.9rem;
   padding-left: 2px;
   color: gray;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const BreadCrumbAnchor = styled.a`

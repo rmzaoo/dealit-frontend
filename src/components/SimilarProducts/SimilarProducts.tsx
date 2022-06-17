@@ -16,7 +16,6 @@ const SimilarProducts = ({ subCategory, product }: Props) => {
     subCategory
   ) || [{ id: 0, name: "Loading...", photos: [""], price: 0 }];
 
-  console.log(mainProducts);
   return <ProductListing oneColumn={true} products={mainProducts} />;
 };
 
