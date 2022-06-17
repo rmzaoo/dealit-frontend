@@ -19,6 +19,8 @@ export const faqQuestions = [
   {
     question: "What is the shipping method?",
     answer:
-      "We send ourselves through DHL, but each seller sends for his preference.",
+      "Our preferred shipping method is FedEx, but each seller will soon have the option to set up his own courier service! ",
   },
 ];
+
+
