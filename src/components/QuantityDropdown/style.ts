@@ -136,6 +136,18 @@ export const DropdownContentContainer = styled.div`
   background-color: #e9e9ed;
   animation: ${fadeIn} 0.4s ease-in-out;
   cursor: pointer;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+    overflow-y: scroll;
+    height: 100px;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const DropdownContentOption = styled.button<Props>`

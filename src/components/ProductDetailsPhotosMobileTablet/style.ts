@@ -5,10 +5,11 @@ export const MobileProductImgContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 90%;
+  height: 100%;
 
   //Tablets
   @media screen and (max-width: 768px) {
-    width: 60%;
+    width: 70%;
   }
 
   //Mobile
@@ -20,7 +21,7 @@ export const ProductMobileShowcasedPhoto = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 90%;
   height: 150px;
   padding: 10px;
 `
