@@ -9,13 +9,14 @@ import {
 interface Props {
   oneColumn: boolean;
   products: ProductProps[];
+  className?: string;
 }
 
-const ProductListing = ({ oneColumn, products }: Props) => {
+const ProductListing = ({ oneColumn, products , className }: Props) => {
   return (
     <>
       {oneColumn === false ? (
-        <PageData>
+        <PageData className={className}>
           {products.map((element) => {
             return (
               <MainProductCard
@@ -28,7 +29,7 @@ const ProductListing = ({ oneColumn, products }: Props) => {
           })}
         </PageData>
       ) : (
-        <PageDataOneColumn>
+        <PageDataOneColumn className={className}>
             {products.map((element) => {
               return (
                 <MainProductCardOneColumn

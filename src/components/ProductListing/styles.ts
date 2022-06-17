@@ -9,6 +9,7 @@ const MainProductCard = styled(Product)`
   display: flex;
   flex-direction: column;
 
+
   @media only screen and (min-width: 200px) {
     width: 130px;
     height: 140px;
