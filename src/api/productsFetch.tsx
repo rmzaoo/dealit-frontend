@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const baseURL = "http://10.10.225.129:3220/dealit/api";
-const localUrl = "http://localhost:3220/dealit/api";
+const baseUrl = "http://localhost:3220/dealit/api";
 
-export const fetchRandomProduct = (size: number) => {
+export const fetchRandomProduct = (limit: number) => {
   return axios
-    .get(`${localUrl}/products/random?size=${size}`)
+    .get(`${baseUrl}/products/random?limit=${limit}`)
     .then((response: any) => {
       return response.data;
     });
@@ -13,7 +12,7 @@ export const fetchRandomProduct = (size: number) => {
 
 export const fetchAllProducts = (limit: number) => {
   return axios
-    .get(`${localUrl}/products?limit=${limit}`)
+    .get(`${baseUrl}/products?limit=${limit}`)
     .then((response: any) => {
       return response.data;
     });
@@ -21,7 +20,7 @@ export const fetchAllProducts = (limit: number) => {
 
 export const fetchProductByCategory = (limit: number, category: string) => {
   return axios
-    .get(`${localUrl}/products/category/${category}?limit=${limit}`)
+    .get(`${baseUrl}/products/category/${category}?limit=${limit}`)
     .then((response: any) => {
       return response.data;
     });
@@ -39,7 +38,7 @@ export const fetchCategories = () => {
 };
 
 export const fetchProductById = (id: number) => {
-  return axios.get(`${localUrl}/products/${id}`).then((response: any) => {
+  return axios.get(`${baseUrl}/products/${id}`).then((response: any) => {
     return response.data;
   });
 };
