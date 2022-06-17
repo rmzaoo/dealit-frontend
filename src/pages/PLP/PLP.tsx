@@ -7,7 +7,7 @@ import {
   SafeContainer,
   StyledProductListing,
 } from "./style";
-import { queryParam } from "../../utils/queryparams";
+import { queryParam } from "../../utils/queryParams";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
 import { fetchProductByCategoryPerPage } from "../../api/productsFetch";
 
@@ -30,6 +30,60 @@ const PLP = () => {
       setProducts(data);
     });
   }, [categoryQueryParam, pageQueryParam]);
+
+  /*const { category1, category2 } = useParams();
+  let mainProductsCategory: ProductProps[] = [];
+
+  if (category2) {
+    mainProductsCategory = useProductByCategoryFetcher(3, category2) || [
+      {
+        id: 0,
+        name: "Loading...",
+        photos: [""],
+        price: 0,
+      },
+    ];
+  }
+
+  else if (category1) {
+    mainProductsCategory = useProductByCategoryFetcher(3, category1) || [
+      {
+        id: 0,
+        name: "Loading...",
+        photos: [""],
+        price: 0,
+      },
+    ];
+  }
+
+  console.log(currentPage);
+  const scroll = (to: number) => {
+    if (parallax.current) {
+      parallax.current.scrollTo(to);
+      setCurrentPage(to);
+    }
+  };
+
+  return (
+    <MainContainer>
+      <Parallax ref={parallax} pages={3} onScroll={() => scroll(0)}>
+        <ParallaxLayer
+          offset={0}
+          speed={0.1}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            position: "sticky",
+          }}
+        >
+          <CategoryDiv>
+            <MainCategory>Category: {category2 ? (category2) : (category1)}</MainCategory>
+            <MainText>Scroll down to see all the products!</MainText>
+          </CategoryDiv>
+          <ProductListing oneColumn={false} products={mainProductsCategory} />
+        </ParallaxLayer>*/
 
 
   return (

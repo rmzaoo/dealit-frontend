@@ -15,7 +15,7 @@ const CategoryBar = ({ className }: Props) => {
     <Container className={className}>
       {categories.map((category: string) => (
         <TextLink
-          onClick={() => navigate(`/products?category=${category}`)}
+          onClick={() => navigate(`/products/${category}`)}
           key={category}
         >
           {category}
