@@ -1,11 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import {
-  Category,
-  Container,
-  ContainerProducts,
-  PageBottoms,
-  SafeContainer,
-  StyledProductListing,
+  CategoryDiv,
+  LayerDividing,
+  MainCategory,
+  MainContainer,
+  MainText,
+  ScrollTo,
 } from "./style";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useParams } from "react-router-dom";
