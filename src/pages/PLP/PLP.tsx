@@ -20,7 +20,7 @@ const PLP = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  let mainProductsCategory: ProductProps[];
+  let mainProductsCategory: ProductProps[] = [];
   const category = searchParams.get("category");
   if (category !== null) {
     mainProductsCategory = useProductByCategoryFetcher(3, category) || [
