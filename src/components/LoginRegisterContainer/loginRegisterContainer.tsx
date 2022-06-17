@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchlogin, fetchregister } from "../../api/authFetch";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import PrimaryInput from "../PrimaryInput/PrimaryInput";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
@@ -13,14 +14,72 @@ interface Props {
 const loginContainer = ({ type, className }: Props) => {
   const navigate = useNavigate();
 
-  const onLogin = () => {};
+  const [values, setValues] = React.useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    country: "",
+    city: "",
+    zipCode: "",
+    street: "",
+    houseNumber: "",
+  });
 
-  const onRegister = () => {};
+  const [alert, setAlert] = useState("");
+
+  const onLogin = () => {
+    fetchlogin(values.email, values.password)
+      .then((data) => {
+        if (data.status === 200) {
+          setAlert(data.data.message);
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+          return;
+        }
+      })
+      .catch((error) => {
+        error.response.status === 401
+          ? setAlert("Wrong email or password")
+          : setAlert(error.response.data.message);
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setAlert("");
+        }, 5000);
+      });
+  };
+
+  const onRegister = () => {
+    console.log(values);
+    const resp = fetchregister(values);
+
+    console.log(resp);
+  };
+
+  const onInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
 
   return type === "login" ? (
     <Container className={className}>
-      <PrimaryInput type="text" placeholder="Email" />
-      <PrimaryInput type="password" placeholder="Password" />
+      {alert && <p>{alert}</p>}
+      <PrimaryInput
+        type="text"
+        placeholder="Email"
+        value={values.email}
+        name="email"
+        onChange={onInputChange}
+      />
+      <PrimaryInput
+        type="password"
+        placeholder="Password"
+        value={values.password}
+        name="password"
+        onChange={onInputChange}
+      />
 
       <ButtonsContainer>
         <PrimaryButton onClick={onLogin}>Login</PrimaryButton>
@@ -33,19 +92,73 @@ const loginContainer = ({ type, className }: Props) => {
     <Container className={className}>
       <p>Account Details</p>
       <div className="register-divider">
-        <PrimaryInput type="text" placeholder="Name" />
-        <PrimaryInput type="text" placeholder="Phone" />
-        <PrimaryInput type="text" placeholder="Email" />
-        <PrimaryInput type="password" placeholder="Password" />
+        <PrimaryInput
+          type="text"
+          placeholder="Name"
+          value={values.name}
+          name="name"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="text"
+          placeholder="Phone"
+          value={values.phone}
+          name="phone"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="text"
+          placeholder="Email"
+          value={values.email}
+          name="email"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="password"
+          placeholder="Password"
+          value={values.password}
+          name="password"
+          onChange={onInputChange}
+        />
       </div>
 
-      <p>Adress</p>
-      <div className="register-divider" >
-        <PrimaryInput type="text" placeholder="Coutry" />
-        <PrimaryInput type="text" placeholder="City" />
-        <PrimaryInput type="text" placeholder="Zip Code" />
-        <PrimaryInput type="text" placeholder="Street" />
-        <PrimaryInput type="text" placeholder="House Number" />
+      <p>Address</p>
+      <div className="register-divider">
+        <PrimaryInput
+          type="text"
+          placeholder="Country"
+          value={values.country}
+          name="country"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="text"
+          placeholder="City"
+          value={values.city}
+          name="city"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="text"
+          placeholder="Zip Code"
+          value={values.zipCode}
+          name="zipCode"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="text"
+          placeholder="Street"
+          value={values.street}
+          name="street"
+          onChange={onInputChange}
+        />
+        <PrimaryInput
+          type="text"
+          placeholder="House Number"
+          value={values.houseNumber}
+          name="houseNumber"
+          onChange={onInputChange}
+        />
       </div>
 
       <ButtonsContainer>
