@@ -1,79 +1,107 @@
 // Vitest Snapshot v1
 
-exports[`CategoryBar > renders 1`] = `
+exports[`ProductDetailsInfo > Renders without crashing 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="sc-gsnTZi jBqAIi"
+        class="sc-bczRLJ ka-DuUH"
       >
         <div
-          class="sc-bczRLJ jGjlZq"
+          class="sc-gsnTZi imsNKS"
         >
-          Electronics
+          <p
+            class="sc-dkzDqf fvdPih"
+          >
+            product1
+          </p>
         </div>
         <div
-          class="sc-bczRLJ jGjlZq"
+          class="sc-iBkjds jDPVho"
         >
-          Clothing
+          <div
+            class="sc-ftvSup dFbHJp"
+          >
+            <div
+              class="react-multi-carousel-list carousel-container "
+            >
+              <ul
+                class="react-multi-carousel-track "
+                style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+              />
+            </div>
+          </div>
         </div>
         <div
-          class="sc-bczRLJ jGjlZq"
+          class="sc-hKMtZM dCrtyI"
         >
-          Automotive
+          <p
+            class="sc-eCYdqJ ilROUH"
+          >
+            Price:  $
+            69
+          </p>
         </div>
         <div
-          class="sc-bczRLJ jGjlZq"
+          class="sc-jSMfEi bihBZq"
         >
-          Kitchen
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Outdoor
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Gaming
+          <p
+            class="sc-gKXOVf kubglE"
+          >
+            One, two, cacete...
+          </p>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-gsnTZi jBqAIi"
+      class="sc-bczRLJ ka-DuUH"
     >
       <div
-        class="sc-bczRLJ jGjlZq"
+        class="sc-gsnTZi imsNKS"
       >
-        Electronics
+        <p
+          class="sc-dkzDqf fvdPih"
+        >
+          product1
+        </p>
       </div>
       <div
-        class="sc-bczRLJ jGjlZq"
+        class="sc-iBkjds jDPVho"
       >
-        Clothing
+        <div
+          class="sc-ftvSup dFbHJp"
+        >
+          <div
+            class="react-multi-carousel-list carousel-container "
+          >
+            <ul
+              class="react-multi-carousel-track "
+              style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="sc-bczRLJ jGjlZq"
+        class="sc-hKMtZM dCrtyI"
       >
-        Automotive
+        <p
+          class="sc-eCYdqJ ilROUH"
+        >
+          Price:  $
+          69
+        </p>
       </div>
       <div
-        class="sc-bczRLJ jGjlZq"
+        class="sc-jSMfEi bihBZq"
       >
-        Kitchen
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Outdoor
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Gaming
+        <p
+          class="sc-gKXOVf kubglE"
+        >
+          One, two, cacete...
+        </p>
       </div>
     </div>
   </div>,
@@ -129,52 +157,4 @@ exports[`CategoryBar > renders 1`] = `
   "rerender": [Function],
   "unmount": [Function],
 }
-`;
-
-exports[`CategoryBar > renders categories 1`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category1
-</div>
-`;
-
-exports[`CategoryBar > renders categories 2`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category2
-</div>
-`;
-
-exports[`CategoryBar > renders categories 3`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category3
-</div>
-`;
-
-exports[`CategoryBar > renders categories 4`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category4
-</div>
-`;
-
-exports[`CategoryBar > renders categories 5`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category5
-</div>
-`;
-
-exports[`CategoryBar > renders categories 6`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category6
-</div>
 `;

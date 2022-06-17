@@ -44,6 +44,7 @@ const ProductDetailsPhotosMobileTablet = (props: Props) => {
             <ProductMobileShowcasedPhoto
               onError={(e) => (e.currentTarget.src = noImage)}
               alt="product photo"
+              key={index.toString()}
               src={value}
             />
           );

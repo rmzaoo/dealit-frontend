@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ProductPriceContainer } from "../ProductDetailsInfo/style";
-import { SecundaryButton } from "../SecundaryButton/style";
+import SecundaryButton from "../SecundaryButton/SecundaryButton";
 
 export const BuyInfoBody = styled.div`
   display: flex;

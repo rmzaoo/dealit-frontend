@@ -40,8 +40,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
 
-  const baseURL = "http://10.10.225.129:3220/dealit/api";
-  const localUrl = "http://localhost:3220/dealit/api";
+  const localUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
   useEffect(() => {
     axios.get(`${localUrl}/users/${id}`).then((response) => {

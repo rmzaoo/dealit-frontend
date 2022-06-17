@@ -1,81 +1,19 @@
 // Vitest Snapshot v1
 
-exports[`CategoryBar > renders 1`] = `
+exports[`ProductDetails > renders without crashing 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="sc-gsnTZi jBqAIi"
-      >
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Electronics
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Clothing
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Automotive
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Kitchen
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Outdoor
-        </div>
-        <div
-          class="sc-bczRLJ jGjlZq"
-        >
-          Gaming
-        </div>
-      </div>
+        class="sc-papXJ fUdRPA"
+      />
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-gsnTZi jBqAIi"
-    >
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Electronics
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Clothing
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Automotive
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Kitchen
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Outdoor
-      </div>
-      <div
-        class="sc-bczRLJ jGjlZq"
-      >
-        Gaming
-      </div>
-    </div>
+      class="sc-papXJ fUdRPA"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -129,52 +67,4 @@ exports[`CategoryBar > renders 1`] = `
   "rerender": [Function],
   "unmount": [Function],
 }
-`;
-
-exports[`CategoryBar > renders categories 1`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category1
-</div>
-`;
-
-exports[`CategoryBar > renders categories 2`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category2
-</div>
-`;
-
-exports[`CategoryBar > renders categories 3`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category3
-</div>
-`;
-
-exports[`CategoryBar > renders categories 4`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category4
-</div>
-`;
-
-exports[`CategoryBar > renders categories 5`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category5
-</div>
-`;
-
-exports[`CategoryBar > renders categories 6`] = `
-<div
-  class="sc-bczRLJ jGjlZq"
->
-  category6
-</div>
 `;

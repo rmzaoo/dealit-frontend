@@ -55,6 +55,7 @@ const ProductDetailsPhotos = (props: Props) => {
               <OtherPhotoContainer>
                 <OtherPhoto
                   alt="product photo"
+                  key={index.toString()} 
                   src={value}
                   onClick={() => setChosenPhoto(index)}
                   active={value === product.photos[chosenPhoto]}

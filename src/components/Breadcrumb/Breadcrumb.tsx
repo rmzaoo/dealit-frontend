@@ -16,6 +16,7 @@ interface Props {
 const Breadcrumb = ({ subCategory }: Props) => {
   const mainCat = useMainCategoryBySubFetcher(subCategory)?.main.name;
   const navigate = useNavigate();
+  console.log(useMainCategoryBySubFetcher(subCategory)?.main.name);
 
   return (
     <BreadCrumbContainer>

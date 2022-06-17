@@ -1,4 +1,3 @@
-import { sumBy } from "lodash";
 import { useEffect, useState } from "react";
 import { fetchMainCategory } from "../../api/categoryFetch";
 
@@ -23,6 +22,7 @@ export const useMainCategoryBySubFetcher = (sub: string) => {
   const [mainCategory, setMainCategory] = useState<mainCategoryProps>();
   useEffect(() => {
     fetchMainCategory(sub).then((data) => {
+      console.log(data);
       setMainCategory(data);
     });
   }, []);
