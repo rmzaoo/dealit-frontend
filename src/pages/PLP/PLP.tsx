@@ -12,18 +12,17 @@ import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import ProductListing from "../../components/ProductListing/ProductListing";
 import { useAllProductsFetcher } from "../../hooks/products/useAllProductsFetcher";
 import { ProductProps } from "../../components/Product/Product";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useParams } from "react-router-dom";
 import { useProductByCategoryFetcher } from "../../hooks/products/useProductByCategoryFetcher";
 
 const PLP = () => {
   const parallax = useRef<IParallax>(null!);
   const [currentPage, setCurrentPage] = useState(0);
-  const [searchParams, setSearchParams] = useSearchParams();
-
+  const { category1, category2 } = useParams();
   let mainProductsCategory: ProductProps[] = [];
-  const category = searchParams.get("category");
-  if (category !== null) {
-    mainProductsCategory = useProductByCategoryFetcher(3, category) || [
+
+  if (category2) {
+    mainProductsCategory = useProductByCategoryFetcher(3, category2) || [
       {
         id: 0,
         name: "Loading...",
@@ -32,6 +31,18 @@ const PLP = () => {
       },
     ];
   }
+
+  else if (category1) {
+    mainProductsCategory = useProductByCategoryFetcher(3, category1) || [
+      {
+        id: 0,
+        name: "Loading...",
+        photos: [""],
+        price: 0,
+      },
+    ];
+  }
+
   console.log(currentPage);
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -55,7 +66,7 @@ const PLP = () => {
           }}
         >
           <CategoryDiv>
-            <MainCategory>Category: {category}</MainCategory>
+            <MainCategory>Category: {category2 ? (category2) : (category1)}</MainCategory>
             <MainText>Scroll down to see all the products!</MainText>
           </CategoryDiv>
           <ProductListing oneColumn={false} products={mainProductsCategory} />
