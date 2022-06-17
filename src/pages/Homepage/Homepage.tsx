@@ -31,7 +31,8 @@ const Homepage = () => {
   const mainProducts: ProductProps[] = useAllProductsFetcher(3) || [
     { id: 0, name: "Loading...", photos: [""], price: 0 },
   ];
-  //useAllProductsFetcher(3) ||
+
+  
   return (
     <Parallax
       pages={8}

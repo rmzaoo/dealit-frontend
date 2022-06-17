@@ -1,4 +1,5 @@
 import React from "react";
+import { SecundaryButton as StyledSecundaryButton } from "./style";
 
 interface Props {
     children?: React.ReactNode;
@@ -6,11 +7,10 @@ interface Props {
   }
 
 const SecundaryButton = ({ onClick, children }: Props) => {
-    
     return(
-    <SecundaryButton onClick={onClick}>
+    <StyledSecundaryButton onClick={onClick}>
       {children}
-    </SecundaryButton>
+    </StyledSecundaryButton>
     );
 }
 
