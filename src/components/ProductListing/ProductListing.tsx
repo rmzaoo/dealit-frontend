@@ -16,26 +16,28 @@ const ProductListing = ({ oneColumn, products }: Props) => {
     <>
       {oneColumn === false ? (
         <PageData>
-          {products.map((element) => {
+          {products.map((element, index) => {
             return (
               <MainProductCard
                 name={element.name}
                 photos={element.photos}
                 price={element.price}
                 id={element.id}
+                key={index.toString()}
               />
             );
           })}
         </PageData>
       ) : (
         <PageDataOneColumn>
-            {products.map((element) => {
+            {products.map((element, index) => {
               return (
                 <MainProductCardOneColumn
                   name={element.name}
                   photos={element.photos}
                   price={element.price}
                   id={element.id}
+                  key={index.toString()}
                 />
               );
             })}
