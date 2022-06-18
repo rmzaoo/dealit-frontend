@@ -10,14 +10,14 @@ interface Props {
 const CategoryBar = ({ className }: Props) => {
   const navigate = useNavigate();
   const categories = fetchCategories();
-
+  function handleCategory(category: string) {
+    navigate(`/products/${category}`);
+    window.location.reload();
+  }
   return !categories ? null : (
     <Container className={className}>
       {categories.map((category: string) => (
-        <TextLink
-          onClick={() => navigate(`/products/${category}`)}
-          key={category}
-        >
+        <TextLink onClick={() => handleCategory(category)} key={category}>
           {category}
         </TextLink>
       ))}

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3220/dealit/api";
+const baseUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
 export const fetchRandomProduct = (limit: number) => {
   return axios
@@ -21,6 +21,13 @@ export const fetchAllProducts = (limit: number) => {
 export const fetchProductByCategory = (limit: number, category: string) => {
   return axios
     .get(`${baseUrl}/products/category/${category}?limit=${limit}`)
+    .then((response: any) => {
+      return response.data;
+    });
+};
+export const fetchProductByCategoryWithoutLimit = (category: string) => {
+  return axios
+    .get(`${baseUrl}/products/category/${category}`)
     .then((response: any) => {
       return response.data;
     });

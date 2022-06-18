@@ -1,26 +1,38 @@
-import React, { useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import {
+  Category,
   CategoryDiv,
+  Container,
+  ContainerProducts,
   LayerDividing,
   MainCategory,
   MainContainer,
   MainText,
+  PageBottoms,
+  SafeContainer,
   ScrollTo,
+  StyledProductListing,
 } from "./style";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ProductProps } from "../../components/Product/Product";
 import ProductListing from "../../components/ProductListing/ProductListing";
 import { useProductByCategoryFetcher } from "../../hooks/products/useProductByCategoryFetcher";
+import { PrimaryButton } from "../../components/PrimaryButton/style";
+import { useProductByCategoryPerPageFetcher } from "../../hooks/products/useProductByCategoryPerPageFetcher";
 
 const PLP = () => {
   const parallax = useRef<IParallax>(null!);
   const [currentPage, setCurrentPage] = useState(0);
   const { category1, category2 } = useParams();
   let mainProductsCategory: ProductProps[] = [];
+  const navigate = useNavigate();
 
   if (category2) {
-    mainProductsCategory = useProductByCategoryFetcher(3, category2) || [
+    mainProductsCategory = useProductByCategoryPerPageFetcher(
+      currentPage,
+      category2
+    ) || [
       {
         id: 0,
         name: "Loading...",
@@ -28,10 +40,11 @@ const PLP = () => {
         price: 0,
       },
     ];
-  }
-
-  else if (category1) {
-    mainProductsCategory = useProductByCategoryFetcher(3, category1) || [
+  } else if (category1) {
+    mainProductsCategory = useProductByCategoryPerPageFetcher(
+      currentPage,
+      category1
+    ) || [
       {
         id: 0,
         name: "Loading...",
@@ -42,14 +55,43 @@ const PLP = () => {
   }
 
   console.log(currentPage);
-  const scroll = (to: number) => {
-    if (parallax.current) {
-      parallax.current.scrollTo(to);
-      setCurrentPage(to);
-    }
-  };
+
+  function useStateUpdate() {
+    return () => setCurrentPage((currentPage) => currentPage + 1);
+  }
 
   return (
+    <Container>
+      <SafeContainer>
+        <Category>
+          <h1>Category</h1>
+          <span>{category1}</span>
+        </Category>
+
+        <ContainerProducts>
+          <StyledProductListing
+            oneColumn={false}
+            products={mainProductsCategory}
+          />
+        </ContainerProducts>
+        <PageBottoms>
+          <PrimaryButton
+            onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
+          >
+            Previous
+          </PrimaryButton>
+          <span>Page {currentPage + 1}</span>
+          <PrimaryButton
+            onClick={() =>
+              navigate(`/products/${category1}?page=${currentPage + 2}`)
+            }
+          >
+            Next
+          </PrimaryButton>
+        </PageBottoms>
+      </SafeContainer>
+    </Container>
+    /*
     <MainContainer>
       <Parallax ref={parallax} pages={3} onScroll={() => scroll(0)}>
         <ParallaxLayer
@@ -126,7 +168,7 @@ const PLP = () => {
       <ScrollTo onClick={() => scroll(2)}>
         <p>Page 3</p>
       </ScrollTo>
-    </MainContainer>
+    </MainContainer>*/
   );
 };
 export default PLP;
