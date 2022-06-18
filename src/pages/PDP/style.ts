@@ -80,10 +80,13 @@ export const BreadCrumbDiv = styled.div`
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
+    height: 0%;
+    margin-top: 50px;
   }
 
   //Tablets
   @media screen and (max-width: 768px) {
+    margin-top: 10px;
     height: 100%;
     width: 90%;
   }

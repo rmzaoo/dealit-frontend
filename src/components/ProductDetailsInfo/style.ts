@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const ProductInfoContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   padding: 10px;
   width: 33%;
-  height: 70%;
+  height: 100%;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
@@ -31,11 +31,13 @@ export const ProductNameContainer = styled.div`
   align-items: flex-start;
   width: 90%;
   height: 25%;
+  padding: 6px;
 
   //Tablets
   @media screen and (max-width: 768px) {
     justify-content: center;
-    height:10%
+    padding: 5px;
+    height: 10%;
   }
 
   //Mobile
@@ -119,12 +121,13 @@ export const ProductDescription = styled.p`
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
     font-size: 1rem;
+    height: 40%;
   }
 
   //Tablets
   @media screen and (max-width: 768) {
     font-size: 1rem;
-    height: 30%
+    height: 30%;
   }
 
   //Mobile
@@ -135,8 +138,9 @@ export const ProductDescription = styled.p`
 
 export const ProductDetailsPhotosMobileTabletContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 40%;
+  padding: 2px;
+  width: 80%;
+  height: 70%;
 `;
