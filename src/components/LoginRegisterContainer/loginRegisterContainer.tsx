@@ -5,6 +5,7 @@ import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import PrimaryInput from "../PrimaryInput/PrimaryInput";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { Container, ButtonsContainer } from "./styled";
+import { useDispatch } from "react-redux";
 
 interface Props {
   type: string;
@@ -13,6 +14,7 @@ interface Props {
 
 const loginContainer = ({ type, className }: Props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [values, setValues] = React.useState({
     name: "",
@@ -33,10 +35,11 @@ const loginContainer = ({ type, className }: Props) => {
       .then((data) => {
         if (data.status === 200) {
           setAlert(data.data.message);
+          dispatch({ type: "SET_USER", payload: data.data.user });
+
           setTimeout(() => {
             navigate("/");
           }, 2000);
-          return;
         }
       })
       .catch((error) => {
@@ -52,10 +55,24 @@ const loginContainer = ({ type, className }: Props) => {
   };
 
   const onRegister = () => {
-    console.log(values);
-    const resp = fetchregister(values);
-
-    console.log(resp);
+    fetchregister(values)
+      .then((data) => {
+        if (data.status === 200) {
+          setAlert(data.data.message);
+          setTimeout(() => {
+            navigate("/login");
+          }, 2000);
+          return;
+        }
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response.data.error);
+          error.response.status === 401
+            ? setAlert("Verify if you have entered the correct data")
+            : setAlert("Something went wrong");
+        }
+      });
   };
 
   const onInputChange = (e: any) => {
@@ -90,6 +107,7 @@ const loginContainer = ({ type, className }: Props) => {
     </Container>
   ) : (
     <Container className={className}>
+      {alert && <p>{alert}</p>}
       <p>Account Details</p>
       <div className="register-divider">
         <PrimaryInput
