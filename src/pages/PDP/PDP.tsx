@@ -8,9 +8,13 @@ import {
   PDPContainer,
   ProductContainer,
   ProductDetailsContainer,
+  SecondHalfOfScreenContainer,
   SimilarProductsContainer,
 } from "./style";
-import { ProductDetailsProp, useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
+import {
+  ProductDetailsProp,
+  useProductByIdFetcher,
+} from "../../hooks/products/useProductByIdFetcher";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import SimilarProducts from "../../components/SimilarProducts/SimilarProducts";
@@ -37,7 +41,6 @@ const PDP = () => {
       setLoading(false);
     }
   }, [product]);
-
 
   useEffect(() => {
     let deviceWidth = window.innerWidth;
@@ -75,9 +78,12 @@ const PDP = () => {
             <ProductDetailsBuyInfo product={product} />
           </ProductContainer>
         </ProductDetailsContainer>
-        <SimilarProductsContainer>
-          <SimilarProducts subCategory={subCategory} product={product} />
-        </SimilarProductsContainer>
+        <SecondHalfOfScreenContainer>
+          <SimilarProductsContainer>
+            <h2>You may Also Like</h2>
+            <SimilarProducts subCategory={subCategory} product={product} />
+          </SimilarProductsContainer>
+        </SecondHalfOfScreenContainer>
       </PDPContainer>
     );
   } else {

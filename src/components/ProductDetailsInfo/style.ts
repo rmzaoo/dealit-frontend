@@ -106,7 +106,7 @@ export const ProductDescriptionContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   width: 90%;
-  height: 50%;
+  height: 60%;
 `;
 
 export const ProductDescription = styled.p`
