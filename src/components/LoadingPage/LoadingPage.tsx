@@ -8,9 +8,6 @@ const LoadingPage = () => {
     <LoadingPageContainer>
       <div>
         <img src={loadingGif} alt="loading" />
-        <div>
-          <h1>Dealit </h1>
-        </div>
       </div>
     </LoadingPageContainer>
   );
