@@ -2,7 +2,6 @@ import React from "react";
 import S from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
-import SimpleImageSlider from "react-simple-image-slider";
 import {
   MobileProductImgContainer,
   MobileProductImg,
