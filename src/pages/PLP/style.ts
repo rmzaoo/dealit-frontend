@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
 import ProductListing from "../../components/ProductListing/ProductListing";
 import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -171,6 +172,9 @@ const PageBottoms = styled.div`
 const StyledSpan = styled.span`
   width: auto;
 `;
+const DisabledButton = styled(PrimaryButton)`
+  pointer-events: none;
+`;
 
 export {
   MainCategory,
@@ -187,4 +191,5 @@ export {
   PageBottoms,
   StyledProductListing,
   StyledSpan,
+  DisabledButton,
 };

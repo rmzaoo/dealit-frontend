@@ -3,6 +3,7 @@ import {
   Category,
   Container,
   ContainerProducts,
+  DisabledButton,
   PageBottoms,
   SafeContainer,
   StyledProductListing,
@@ -15,7 +16,6 @@ import axios from "axios";
 const PLP = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProds, setCurrentProds]: any = useState([]);
-  const [cuurentCategory, setCurrentCategory] = useState();
   const { category1, category2 }: any = useParams();
 
   useLayoutEffect(() => {
@@ -54,18 +54,27 @@ const PLP = () => {
         <ContainerProducts>
           <StyledProductListing oneColumn={false} products={currentProds} />
         </ContainerProducts>
+
         <PageBottoms>
-          <PrimaryButton
-            onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
-          >
-            Previous
-          </PrimaryButton>
+          {currentPage === 1 ? (
+            <DisabledButton>Previous</DisabledButton>
+          ) : (
+            <PrimaryButton
+              onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
+            >
+              Previous
+            </PrimaryButton>
+          )}
           <StyledSpan>Page {currentPage}</StyledSpan>
-          <PrimaryButton
-            onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
-          >
-            Next
-          </PrimaryButton>
+          {currentPage === 2 ? (
+            <DisabledButton>Next</DisabledButton>
+          ) : (
+            <PrimaryButton
+              onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
+            >
+              Next
+            </PrimaryButton>
+          )}
         </PageBottoms>
       </SafeContainer>
     </Container>
