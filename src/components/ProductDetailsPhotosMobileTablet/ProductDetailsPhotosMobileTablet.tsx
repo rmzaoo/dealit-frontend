@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "react-multi-carousel";
+import S from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import SimpleImageSlider from "react-simple-image-slider";
@@ -16,6 +16,9 @@ interface Props {
 }
 
 const ProductDetailsPhotosMobileTablet = (props: Props) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const Carousel = S.default ? S.default : S;
   const product = props.product;
 
   const responsive = {

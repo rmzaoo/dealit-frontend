@@ -19,6 +19,7 @@ import {
 import { ProductPrice } from "../ProductDetailsInfo/style";
 import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
+import { fetchUserById } from "../../api/userFetch";
 
 interface Props {
   product: ProductDetailsProp;
@@ -43,6 +44,15 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const localUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
   useEffect(() => {
+    fetchUserById(id).then((data) => {
+      console.log(data);
+      setName(data.username);
+      setAddress(data.address);
+    });
+    console.log(name);
+    console.log(address);
+    setIsLoading(false);
+    /*
     axios.get(`${localUrl}/users/${id}`).then((response) => {
       const favoriteAddress = response.data.addresses.filter(
         (e: { isFavorite: boolean }) => {
@@ -54,7 +64,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
       setAddress(favoriteAddress);
       setName(response.data.username);
       setIsLoading(false);
-    });
+    });*/
   }, []);
 
   return (
@@ -84,7 +94,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
           <ProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
               <ProductDeleveryInfoFromBy>Ships from</ProductDeleveryInfoFromBy>
-              <ProductInfoIntities>{address[0].country}</ProductInfoIntities>
+              <ProductInfoIntities>{address.country}</ProductInfoIntities>
             </IndividualProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
               <ProductDeleveryInfoFromBy>Sold By </ProductDeleveryInfoFromBy>

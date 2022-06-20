@@ -22,7 +22,6 @@ export const useMainCategoryBySubFetcher = (sub: string) => {
   const [mainCategory, setMainCategory] = useState<mainCategoryProps>();
   useEffect(() => {
     fetchMainCategory(sub).then((data) => {
-      console.log(data);
       setMainCategory(data);
     });
   }, []);
