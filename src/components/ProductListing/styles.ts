@@ -9,7 +9,6 @@ const MainProductCard = styled(Product)`
   display: flex;
   flex-direction: column;
 
-
   @media only screen and (min-width: 200px) {
     width: 130px;
     height: 140px;
@@ -287,7 +286,7 @@ const MainProductCardOneColumn = styled(Product)`
     img {
       width: 70px;
       height: 70px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 8px;
@@ -314,7 +313,7 @@ const MainProductCardOneColumn = styled(Product)`
     img {
       width: 80px;
       height: 80px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 10px;
@@ -341,7 +340,7 @@ const MainProductCardOneColumn = styled(Product)`
     img {
       width: 120px;
       height: 140px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 12px;
@@ -368,7 +367,7 @@ const MainProductCardOneColumn = styled(Product)`
     img {
       width: 130px;
       height: 160px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 12px;
@@ -394,7 +393,7 @@ const MainProductCardOneColumn = styled(Product)`
     img {
       width: 170px;
       height: 212px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 13px;
@@ -420,7 +419,7 @@ const MainProductCardOneColumn = styled(Product)`
     img {
       width: 200px;
       height: 212px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 15px;
@@ -444,9 +443,9 @@ const MainProductCardOneColumn = styled(Product)`
     height: 400px;
 
     img {
-      height: 238px;
+      height: 230px;
       width: 230px;
-      margin-top: 5px;
+      margin: 10px;
     }
     h1 {
       font-size: 15px;

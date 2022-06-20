@@ -21,6 +21,7 @@ import { faqQuestions } from "../../api/faqFetch";
 import { ProductProps } from "../../components/Product/Product";
 import { useRandomProductFetcher } from "../../hooks/products/useRandomProductFetcher";
 import { useAllProductsFetcher } from "../../hooks/products/useAllProductsFetcher";
+import { useRecentProductsFetcher } from "../../hooks/products/useRecentProductsFetcher";
 
 const Homepage = () => {
   const alignCenter = { display: "flex", alignItems: "center" };
@@ -28,11 +29,10 @@ const Homepage = () => {
     { id: 0, name: "Loading...", photos: [""], price: 0 },
     { id: 0, name: "Loading...", photos: [""], price: 0 },
   ];
-  const mainProducts: ProductProps[] = useAllProductsFetcher(10) || [
+  const recentProducts: ProductProps[] = useRecentProductsFetcher(10) || [
     { id: 0, name: "Loading...", photos: [""], price: 0 },
   ];
 
-  
   return (
     <Parallax
       pages={8}
@@ -105,7 +105,7 @@ const Homepage = () => {
       >
         <RecentProductsContainer>
           <h2>Recent Products</h2>
-          <ProductListing oneColumn={true} products={mainProducts} />
+          <ProductListing oneColumn={true} products={recentProducts} />
         </RecentProductsContainer>
       </ParallaxLayer>
       <ParallaxLayer

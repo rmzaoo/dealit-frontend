@@ -59,3 +59,10 @@ export const fetchProductById = (id: number) => {
     return response.data;
   });
 };
+export const fetchRecentProducts = (limit: number) => {
+  return axios
+    .get(`${baseUrl}/products/latest/?limit=${limit}`)
+    .then((response: any) => {
+      return response.data;
+    });
+};
