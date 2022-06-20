@@ -1,65 +1,48 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import {
   Category,
-  CategoryDiv,
   Container,
   ContainerProducts,
-  LayerDividing,
-  MainCategory,
-  MainContainer,
-  MainText,
   PageBottoms,
   SafeContainer,
-  ScrollTo,
   StyledProductListing,
+  StyledSpan,
 } from "./style";
-import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { useParams, useNavigate } from "react-router-dom";
-import { ProductProps } from "../../components/Product/Product";
-import ProductListing from "../../components/ProductListing/ProductListing";
-import { useProductByCategoryFetcher } from "../../hooks/products/useProductByCategoryFetcher";
+import { useParams } from "react-router-dom";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
-import { useProductByCategoryPerPageFetcher } from "../../hooks/products/useProductByCategoryPerPageFetcher";
+import axios from "axios";
 
 const PLP = () => {
-  const parallax = useRef<IParallax>(null!);
-  const [currentPage, setCurrentPage] = useState(0);
-  const { category1, category2 } = useParams();
-  let mainProductsCategory: ProductProps[] = [];
-  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentProds, setCurrentProds]: any = useState([]);
+  const [cuurentCategory, setCurrentCategory] = useState();
+  const { category1, category2 }: any = useParams();
 
-  if (category2) {
-    mainProductsCategory = useProductByCategoryPerPageFetcher(
-      currentPage,
-      category2
-    ) || [
-      {
-        id: 0,
-        name: "Loading...",
-        photos: [""],
-        price: 0,
-      },
-    ];
-  } else if (category1) {
-    mainProductsCategory = useProductByCategoryPerPageFetcher(
-      currentPage,
-      category1
-    ) || [
-      {
-        id: 0,
-        name: "Loading...",
-        photos: [""],
-        price: 0,
-      },
-    ];
-  }
+  useLayoutEffect(() => {
+    if (category1) {
+      axios
+        .get(
+          `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category1}?page=${currentPage}`
+        )
+        .then((response: any) => {
+          setCurrentProds(response.data);
+          return currentProds;
+        });
+    }
+    if (category2) {
+      axios
+        .get(
+          `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category2}?page=${currentPage}`
+        )
+        .then((response: any) => {
+          setCurrentProds(response.data);
+          return currentProds;
+        });
+    }
+  }, [currentPage]);
 
+  console.log(currentProds);
   console.log(currentPage);
-
-  function useStateUpdate() {
-    return () => setCurrentPage((currentPage) => currentPage + 1);
-  }
-
   return (
     <Container>
       <SafeContainer>
@@ -69,10 +52,7 @@ const PLP = () => {
         </Category>
 
         <ContainerProducts>
-          <StyledProductListing
-            oneColumn={false}
-            products={mainProductsCategory}
-          />
+          <StyledProductListing oneColumn={false} products={currentProds} />
         </ContainerProducts>
         <PageBottoms>
           <PrimaryButton
@@ -80,11 +60,9 @@ const PLP = () => {
           >
             Previous
           </PrimaryButton>
-          <span>Page {currentPage + 1}</span>
+          <StyledSpan>Page {currentPage}</StyledSpan>
           <PrimaryButton
-            onClick={() =>
-              navigate(`/products/${category1}?page=${currentPage + 2}`)
-            }
+            onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
           >
             Next
           </PrimaryButton>

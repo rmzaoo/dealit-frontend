@@ -12,12 +12,12 @@ interface Props {
   className?: string;
 }
 
-const ProductListing = ({ oneColumn, products , className }: Props) => {
+const ProductListing = ({ oneColumn, products, className }: Props) => {
   return (
     <>
       {oneColumn === false ? (
         <PageData className={className}>
-          {products.map((element) => {
+          {Object.values(products).map((element) => {
             return (
               <MainProductCard
                 name={element.name}
@@ -30,16 +30,16 @@ const ProductListing = ({ oneColumn, products , className }: Props) => {
         </PageData>
       ) : (
         <PageDataOneColumn className={className}>
-            {products.map((element) => {
-              return (
-                <MainProductCardOneColumn
-                  name={element.name}
-                  photos={element.photos}
-                  price={element.price}
-                  id={element.id}
-                />
-              );
-            })}
+          {products.map((element) => {
+            return (
+              <MainProductCardOneColumn
+                name={element.name}
+                photos={element.photos}
+                price={element.price}
+                id={element.id}
+              />
+            );
+          })}
         </PageDataOneColumn>
       )}
     </>

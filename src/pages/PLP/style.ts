@@ -106,11 +106,21 @@ const SafeContainer = styled.div`
 `;
 
 const Category = styled.div`
+  margin-top: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 992px) {
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 1100px) {
+    font-size: 14px;
+  }
 `;
 
 const ContainerProducts = styled.div`
@@ -119,10 +129,24 @@ const ContainerProducts = styled.div`
   align-items: center;
   justify-content: center;
   height: 76%;
+
+  @media screen and (min-width: 300px) {
+    height: 70%;
+  }
+  @media screen and (min-width: 792px) {
+    height: 72%;
+  }
+  @media screen and (min-width: 992px) {
+    height: 76%;
+  }
 `;
 
 const StyledProductListing = styled(ProductListing)`
   margin: 0;
+
+  @media screen and (min-width: 1600px) {
+    width: 60%;
+  }
 `;
 
 const PageBottoms = styled.div`
@@ -130,12 +154,22 @@ const PageBottoms = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-
   > * {
     width: 6vh;
     margin: 0 10px;
+
+    @media screen and (min-width: 992px) {
+      width: 2vh;
+      margin: 0 8px;
+    }
+    @media screen and (min-width: 1000px) {
+      width: 6vh;
+      margin: 0 10px;
+    }
   }
+`;
+const StyledSpan = styled.span`
+  width: auto;
 `;
 
 export {
@@ -152,4 +186,5 @@ export {
   SafeContainer,
   PageBottoms,
   StyledProductListing,
+  StyledSpan,
 };
