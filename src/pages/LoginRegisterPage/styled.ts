@@ -29,6 +29,16 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 0.8s ease-in-out;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
