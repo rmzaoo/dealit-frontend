@@ -7,6 +7,8 @@ import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { Container, ButtonsContainer } from "./styled";
 import { useDispatch } from "react-redux";
 import { getCookie, setCookie } from "../../utils/cookies";
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Props {
   type: string;
@@ -29,13 +31,19 @@ const loginContainer = ({ type, className }: Props) => {
     houseNumber: "",
   });
 
-  const [alert, setAlert] = useState("");
-
   const onLogin = () => {
     fetchlogin(values.email, values.password)
       .then((data) => {
         if (data.status === 200) {
-          setAlert(data.data.message);
+          toast.success(data.data.message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
           dispatch({ type: "SET_USER", payload: data.data.res });
           setCookie("token", data.data.res.token, 2);
 
@@ -46,13 +54,8 @@ const loginContainer = ({ type, className }: Props) => {
       })
       .catch((error) => {
         error.response.status === 401
-          ? setAlert("Wrong email or password")
-          : setAlert(error.response.data.message);
-      })
-      .finally(() => {
-        setTimeout(() => {
-          setAlert("");
-        }, 5000);
+          ? toast.error("Wrong email or password")
+          : toast.error(error.response.data.message);
       });
   };
 
@@ -60,7 +63,7 @@ const loginContainer = ({ type, className }: Props) => {
     fetchregister(values)
       .then((data) => {
         if (data.status === 200) {
-          setAlert(data.data.message);
+          toast.success(data.data.message);
           setTimeout(() => {
             navigate("/login");
           }, 2000);
@@ -70,8 +73,8 @@ const loginContainer = ({ type, className }: Props) => {
       .catch((error) => {
         if (error.response) {
           error.response.status === 401
-            ? setAlert("Verify if you have entered the correct data")
-            : setAlert("Something went wrong");
+            ? toast.error("Verify if you have entered the correct data")
+            : toast.error("Something went wrong");
         }
       });
   };
@@ -83,7 +86,6 @@ const loginContainer = ({ type, className }: Props) => {
 
   return type === "login" ? (
     <Container className={className}>
-      {alert && <p>{alert}</p>}
       <PrimaryInput
         type="text"
         placeholder="Email"
@@ -108,7 +110,6 @@ const loginContainer = ({ type, className }: Props) => {
     </Container>
   ) : (
     <Container className={className}>
-      {alert && <p>{alert}</p>}
       <p>Account Details</p>
       <div className="register-divider">
         <PrimaryInput
