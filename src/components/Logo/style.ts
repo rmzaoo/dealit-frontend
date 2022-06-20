@@ -9,6 +9,11 @@ const LogoStyled = styled.span`
 
   &:hover {
     cursor: pointer;
+    color: #0495cf;
+    span {
+      color: #fff;
+     
+    }
   }
 `;
 
@@ -16,7 +21,7 @@ const LogoColor = styled.span`
   letter-spacing: 0px;
   color: whitesmoke;
   font-weight: bold;
+  color: #0495cf;
 `;
-
 
 export { LogoStyled, LogoColor };

@@ -7,7 +7,6 @@ interface Props {
   }
 
 const SecundaryButton = ({ onClick, children }: Props) => {
-    
     return(
     <SecundaryButtonStyle onClick={onClick}>
       {children}

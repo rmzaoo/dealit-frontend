@@ -40,7 +40,6 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const currentDate = new Date();
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
-
   const localUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
   useEffect(() => {
