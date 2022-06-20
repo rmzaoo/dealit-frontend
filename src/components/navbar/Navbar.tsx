@@ -24,8 +24,8 @@ const Navbar = () => {
         <Searchbar />
         <ButtonsBar>
           <SellButton>Sell With US</SellButton>
-          <LoginButton />
-          <CartButton />
+          <LoginButton onClick={() => navigate("/login")} />
+          <CartButton onClick={() => navigate("/cart")} />
         </ButtonsBar>
       </DesktopHeader>
     </Container>

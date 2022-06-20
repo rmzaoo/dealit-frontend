@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3220/dealit/api";
+const baseUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
 export const fetchMainCategory = async (subCategory: string) => {
   const response = await axios
