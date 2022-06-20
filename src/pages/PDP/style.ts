@@ -19,7 +19,7 @@ export const ProductDetailsContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   padding-top: 10px;
 
   //Laptops and small screens

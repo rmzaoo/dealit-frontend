@@ -420,7 +420,7 @@ const PageDataOneColumn = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  overflow: scroll;
+  overflow: auto;
   padding-left: 20px;
 `;
 

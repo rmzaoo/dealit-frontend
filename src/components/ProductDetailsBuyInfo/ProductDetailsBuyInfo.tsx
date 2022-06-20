@@ -40,30 +40,14 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const currentDate = new Date();
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
-  const localUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
   useEffect(() => {
     fetchUserById(id).then((data) => {
-      console.log(data);
       setName(data.username);
       setAddress(data.address);
     });
-    console.log(name);
-    console.log(address);
+    
     setIsLoading(false);
-    /*
-    axios.get(`${localUrl}/users/${id}`).then((response) => {
-      const favoriteAddress = response.data.addresses.filter(
-        (e: { isFavorite: boolean }) => {
-          if (e.isFavorite) {
-            return e;
-          }
-        }
-      );
-      setAddress(favoriteAddress);
-      setName(response.data.username);
-      setIsLoading(false);
-    });*/
   }, []);
 
   return (
