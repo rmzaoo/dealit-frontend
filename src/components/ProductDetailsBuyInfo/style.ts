@@ -20,7 +20,6 @@ export const BuyInfoBody = styled.div`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -43,7 +42,6 @@ export const BuyInfoContainer = styled.div`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -71,8 +69,6 @@ export const ProductDelivery = styled.p`
   }
 `;
 
-
-
 export const ProductDeliverySpan = styled.span`
   font-weight: normal;
 `;
@@ -84,7 +80,6 @@ export const ProductQtnContainer = styled.div`
   flex-direction: row;
   width: 90%;
   margin: 10px;
-
 `;
 
 export const ButtonsContainer = styled.div`
@@ -116,7 +111,6 @@ export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -131,7 +125,6 @@ export const AddToCartButton = styled(SecundaryButton)`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -210,4 +203,4 @@ export const ProductInfoSeller = styled(ProductInfoIntities)`
   &:hover {
     color: #02a4e3;
   }
-`
+`;
