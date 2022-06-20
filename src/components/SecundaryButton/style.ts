@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SecundaryButton = styled.div`
+export const SecundaryButtonStyle = styled.div`
   padding: 5px 10px;
   border: 1px solid #169;
   border-radius: 5px;

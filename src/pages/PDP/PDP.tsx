@@ -22,21 +22,17 @@ const PDP = () => {
   const [deviceType, setDeviceType] = useState("");
   const [product, setProduct] = useState<ProductDetailsProp>();
   const { id } = useParams();
-  //const product = useProductByIdFetcher(Number(id));
-  console.log(id);
 
   useEffect(() => {
     if (id) {
       fetchProductById(parseInt(id)).then((data) => {
         setProduct(data);
-        console.log(data);
       });
     }
   }, [id]);
 
   useEffect(() => {
-    if (product !== undefined) {
-      console.log(product);
+    if (product) {
       setSubCategory(product.categoryName);
       setLoading(false);
     }

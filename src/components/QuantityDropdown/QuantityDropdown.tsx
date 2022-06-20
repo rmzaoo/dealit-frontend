@@ -48,6 +48,7 @@ const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
           dropdownToggle();
         }}
         active={index + 1 === optionSelected}
+        key={index.toString()}
       >
         {index + 1}
       </DropdownContentOption>
