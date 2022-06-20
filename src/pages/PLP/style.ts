@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { SecundaryButton } from "../../components/SecundaryButton/style";
+import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
 
 const MainContainer = styled.div`
   width: 100%;

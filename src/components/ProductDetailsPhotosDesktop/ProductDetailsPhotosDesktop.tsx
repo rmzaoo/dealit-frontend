@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Carousel from "react-multi-carousel";
+import S from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {
   OtherPhoto,
@@ -18,6 +18,9 @@ interface Props {
 }
 
 const ProductDetailsPhotos = (props: Props) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const Carousel = S.default ? S.default : S;
   const [chosenPhoto, setChosenPhoto] = useState(0);
   const product = props.product;
 
@@ -59,6 +62,7 @@ const ProductDetailsPhotos = (props: Props) => {
                   onClick={() => setChosenPhoto(index)}
                   active={value === product.photos[chosenPhoto]}
                   onError={(e) => (e.currentTarget.src = noImage)}
+                  key={index.toString()}
                 />
               </OtherPhotoContainer>
             );

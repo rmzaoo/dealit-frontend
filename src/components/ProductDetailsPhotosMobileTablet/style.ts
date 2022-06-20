@@ -4,27 +4,32 @@ export const MobileProductImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  flex-direction: row;
+  padding: 10px;
+  width: 100%;
   height: 100%;
+`;
+
+export const ProductMobileShowcasedPhotoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 210px;
+  width: 100%;
+  padding: 0px 10px;
 
   //Tablets
   @media screen and (max-width: 768px) {
-    width: 70%;
+    height: 280px;
   }
 
   //Mobile
   @media screen and (max-width: 480px) {
+    height: 250px;
+    width: 90%;
   }
 `;
-
-export const ProductMobileShowcasedPhoto = styled.img`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 150px;
-  padding: 10px;
-`
 
 export const MobileProductImg = styled.img`
   width: 100%;

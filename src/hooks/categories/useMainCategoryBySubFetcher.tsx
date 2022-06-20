@@ -1,4 +1,3 @@
-import { sumBy } from "lodash";
 import { useEffect, useState } from "react";
 import { fetchMainCategory } from "../../api/categoryFetch";
 
