@@ -17,7 +17,7 @@ import {
 } from "./style";
 import detailsSVG from "../../assets/details.svg";
 import ProductListing from "../../components/ProductListing/ProductListing";
-import { faqQuestions } from "../../api/faqFetch";
+import { faqQuestions } from "../../api/fetch/faqFetch";
 import { ProductProps } from "../../components/Product/Product";
 import { useRandomProductFetcher } from "../../hooks/products/useRandomProductFetcher";
 import { useAllProductsFetcher } from "../../hooks/products/useAllProductsFetcher";

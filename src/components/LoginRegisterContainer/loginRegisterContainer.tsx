@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchlogin, fetchregister } from "../../api/authFetch";
+import { fetchlogin, fetchregister } from "../../api/fetch/authFetch";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import PrimaryInput from "../PrimaryInput/PrimaryInput";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { Container, ButtonsContainer } from "./styled";
 import { useDispatch } from "react-redux";
+import { getCookie, setCookie } from "../../utils/cookies";
 
 interface Props {
   type: string;
@@ -15,12 +16,6 @@ interface Props {
 const loginContainer = ({ type, className }: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  /**
-   * 
-   * verify if user is logged in, verify cookies and state. 
-   * If user is logged go to /dashboard
-   */
 
   const [values, setValues] = React.useState({
     name: "",
@@ -41,12 +36,11 @@ const loginContainer = ({ type, className }: Props) => {
       .then((data) => {
         if (data.status === 200) {
           setAlert(data.data.message);
-          console.log(data.data);
           dispatch({ type: "SET_USER", payload: data.data.res });
-
+          setCookie("token", data.data.res.token, 2);
 
           setTimeout(() => {
-            navigate("/");
+            navigate("/dashboard");
           }, 2000);
         }
       })
@@ -75,7 +69,6 @@ const loginContainer = ({ type, className }: Props) => {
       })
       .catch((error) => {
         if (error.response) {
-          console.log(error.response.data.error);
           error.response.status === 401
             ? setAlert("Verify if you have entered the correct data")
             : setAlert("Something went wrong");

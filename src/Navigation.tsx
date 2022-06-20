@@ -20,9 +20,13 @@ const Navigation = () => {
               <Route path=":category2" element={<PLP />} />
             </Route>
           </Route>
+          <Route path="/dashboard" element={<div style={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}> <h1>Dashboard</h1> </div>} />
         </Route>
         <Route path="/login" element={<LoginRegisterPage type="login" />} />
-        <Route path="/register" element={<LoginRegisterPage type="register"/>} />
+        <Route
+          path="/register"
+          element={<LoginRegisterPage type="register" />}
+        />
       </Routes>
     </BrowserRouter>
   );

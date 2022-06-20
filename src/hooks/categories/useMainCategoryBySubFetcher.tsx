@@ -1,6 +1,5 @@
-import { sumBy } from "lodash";
 import { useEffect, useState } from "react";
-import { fetchMainCategory } from "../../api/categoryFetch";
+import { fetchMainCategory } from "../../api/fetch/categoryFetch";
 
 export interface mainCategoryProps {
   main: {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchRandomProduct } from "../../api/productsFetch";
+import { fetchRandomProduct } from "../../api/fetch/productsFetch";
 
 export const useRandomProductFetcher = (size: number) => {
   const [product, setProduct] = useState(null);

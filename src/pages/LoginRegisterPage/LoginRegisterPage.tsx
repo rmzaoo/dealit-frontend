@@ -7,6 +7,10 @@ import {
 import shoopingIMG from "../../assets/shopping.svg";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
+import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { getCookie } from "../../utils/cookies";
+import { useLayoutEffect } from "react";
+import { useDispatch } from "react-redux";
 
 interface Props {
   type: string;
@@ -15,8 +19,19 @@ interface Props {
 const LoginRegisterPage = ({ type = "login" }: Props) => {
   const navigate = useNavigate();
   const year = new Date().getFullYear();
+  const dispatch = useDispatch();
 
-  return (
+  const { isLogged, isLoading, error } = useAuthenticationValidation(
+    getCookie("token")
+  );
+
+  useLayoutEffect(() => {
+    if (isLogged) {
+      navigate("/dashboard");
+    }
+  }, [isLogged]);
+
+  return !isLoading ? (
     <Container>
       <div className="navbar-login-container">
         <Logo onClick={() => navigate("/")} />
@@ -39,7 +54,7 @@ const LoginRegisterPage = ({ type = "login" }: Props) => {
         <span>&#169; Dealit {year}</span>
       </div>
     </Container>
-  );
+  ) : null;
 };
 
 export default LoginRegisterPage;

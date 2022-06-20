@@ -14,7 +14,7 @@ import { ProductDetailsProp, useProductByIdFetcher } from "../../hooks/products/
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import SimilarProducts from "../../components/SimilarProducts/SimilarProducts";
-import { fetchProductById } from "../../api/productsFetch";
+import { fetchProductById } from "../../api/fetch/productsFetch";
 
 const PDP = () => {
   const [isLoading, setLoading] = useState(true);
