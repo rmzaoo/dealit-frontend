@@ -25,6 +25,23 @@ export const fetchProductByCategory = (limit: number, category: string) => {
       return response.data;
     });
 };
+export const fetchProductByCategoryWithoutLimit = (category: string) => {
+  return axios
+    .get(`${baseUrl}/products/category/${category}`)
+    .then((response: any) => {
+      return response.data;
+    });
+};
+export const fetchProductByCategoryPerPage = (
+  page: number,
+  category: string | null
+) => {
+  return axios
+    .get(`${baseUrl}/products/category/${category}?page=${page}`)
+    .then((response: any) => {
+      return response.data;
+    });
+};
 
 export const fetchCategories = () => {
   return [
@@ -41,4 +58,11 @@ export const fetchProductById = (id: number) => {
   return axios.get(`${baseUrl}/products/${id}`).then((response: any) => {
     return response.data;
   });
+};
+export const fetchRecentProducts = (limit: number) => {
+  return axios
+    .get(`${baseUrl}/products/latest/?limit=${limit}`)
+    .then((response: any) => {
+      return response.data;
+    });
 };
