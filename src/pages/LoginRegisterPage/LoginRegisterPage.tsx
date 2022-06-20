@@ -7,9 +7,6 @@ import {
 import shoopingIMG from "../../assets/shopping.svg";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
-import PrimaryInput from "../../components/PrimaryInput/PrimaryInput";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
 
 interface Props {
   type: string;

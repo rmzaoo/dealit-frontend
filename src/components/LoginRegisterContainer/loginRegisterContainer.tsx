@@ -16,6 +16,12 @@ const loginContainer = ({ type, className }: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  /**
+   * 
+   * verify if user is logged in, verify cookies and state. 
+   * If user is logged go to /dashboard
+   */
+
   const [values, setValues] = React.useState({
     name: "",
     phone: "",
@@ -35,7 +41,9 @@ const loginContainer = ({ type, className }: Props) => {
       .then((data) => {
         if (data.status === 200) {
           setAlert(data.data.message);
-          dispatch({ type: "SET_USER", payload: data.data.user });
+          console.log(data.data);
+          dispatch({ type: "SET_USER", payload: data.data.res });
+
 
           setTimeout(() => {
             navigate("/");
