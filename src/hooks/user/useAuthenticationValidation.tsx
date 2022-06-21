@@ -12,7 +12,6 @@ const useAuthenticationValidation = (jwt: string) => {
     setIsLoading(true);
     fetchUser(jwt)
       .then((data) => {
-        console.log(data);
         dispatch({ type: "SET_USER", payload: data });
         setIsLogged(true);
       })
