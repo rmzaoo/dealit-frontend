@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./pages/App/App";
+import Cart from "./pages/Cart/Cart";
 import Homepage from "./pages/Homepage/Homepage";
 import LoginRegisterPage from "./pages/LoginRegisterPage/LoginRegisterPage";
 import PDP from "./pages/PDP/PDP";
@@ -22,7 +23,11 @@ const Navigation = () => {
           </Route>
         </Route>
         <Route path="/login" element={<LoginRegisterPage type="login" />} />
-        <Route path="/register" element={<LoginRegisterPage type="register"/>} />
+        <Route
+          path="/register"
+          element={<LoginRegisterPage type="register" />}
+        />
+        <Route path="/cart" element={<Cart></Cart>} />
       </Routes>
     </BrowserRouter>
   );

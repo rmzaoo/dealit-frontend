@@ -11,8 +11,12 @@ import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import OpenMobileLateralMenu from "../OpenMobileLateralMenu/OpenMobileLateralMenu";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../Sidebar/Sidebar";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [opened, setOpened]: any = useState(false);
+  console.log(opened)
   const navigate = useNavigate();
   return (
     <Container>
@@ -25,9 +29,10 @@ const Navbar = () => {
         <ButtonsBar>
           <SellButton>Sell With US</SellButton>
           <LoginButton onClick={() => navigate("/login")} />
-          <CartButton onClick={() => navigate("/cart")} />
+          <CartButton onClick={() => setOpened(!opened)} />
         </ButtonsBar>
       </DesktopHeader>
+      {opened && <Sidebar openedBoolean={opened} />}
     </Container>
   );
 };

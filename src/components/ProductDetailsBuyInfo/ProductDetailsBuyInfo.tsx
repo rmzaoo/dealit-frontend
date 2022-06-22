@@ -20,6 +20,7 @@ import { ProductPrice } from "../ProductDetailsInfo/style";
 import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Props {
   product: ProductDetailsProp;
@@ -28,6 +29,8 @@ interface Props {
 const ProductDetailsBuyInfo = (props: Props) => {
   const [address, setAddress] = useState<any>();
   const [name, setName] = useState();
+  const [opened, setOpened] = useState(false);
+  const [counter, setCounter] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const product = props.product;
@@ -41,6 +44,9 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
   const localUrl = "https://dealit-backend.herokuapp.com/dealit/api";
+
+  const cart = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchUserById(id).then((data) => {
@@ -65,7 +71,11 @@ const ProductDetailsBuyInfo = (props: Props) => {
       setIsLoading(false);
     });*/
   }, []);
-
+  function handleDispatch() {
+    setCounter(counter + 1);
+    setOpened(true);
+    dispatch({ type: "ADD", payload: { product, quantity, counter, opened } });
+  }
   return (
     <BuyInfoBody>
       {name !== undefined && (
@@ -88,7 +98,9 @@ const ProductDetailsBuyInfo = (props: Props) => {
             />
           </ProductQtnContainer>
           <ButtonsContainer>
-            <AddToCartButton>Add to Cart</AddToCartButton>
+            <AddToCartButton onClick={() => handleDispatch()}>
+              Add to Cart
+            </AddToCartButton>
           </ButtonsContainer>
           <ProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>

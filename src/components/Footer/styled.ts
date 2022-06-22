@@ -13,7 +13,7 @@ const Container = styled.div`
     span {
         font-size: 13px;
     }
-    z-index: 10;
+    z-index: 9;
 `;
 
 export { Container };
