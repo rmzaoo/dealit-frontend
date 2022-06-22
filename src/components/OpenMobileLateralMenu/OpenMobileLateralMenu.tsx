@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CategoryBar from "../CategoryBar/CategoryBar";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import {
@@ -14,6 +15,7 @@ import {
 
 const OpenMobileLateralMenu = () => {
   const [opened, setOpened] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -26,8 +28,8 @@ const OpenMobileLateralMenu = () => {
             style={{ height: "100%", width: "80%" }}
           >
             <ButtonsMobile>
-              <LoginButton />
-              <CartButton />
+              <LoginButton onClick={() => navigate("/login")} />
+              <CartButton onClick={() => navigate("/cart")} />
               <PrimaryButton>Sell With US</PrimaryButton>
             </ButtonsMobile>
             <MobileCategoryBar />

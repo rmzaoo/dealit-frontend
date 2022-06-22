@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProductInfoContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 10px;
@@ -30,7 +30,7 @@ export const ProductNameContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
-  height: 25%;
+  height: 15%;
   padding: 6px;
 
   //Tablets
@@ -46,7 +46,7 @@ export const ProductNameContainer = styled.div`
 `;
 
 export const ProductName = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #02a4e3;
 
@@ -71,7 +71,7 @@ export const ProductPriceContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 90%;
-  height: 10%;
+  height: 8%;
 
   //Tablets
   @media screen and (max-width: 768px) {
@@ -106,7 +106,7 @@ export const ProductDescriptionContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   width: 90%;
-  height: 60%;
+  height: 50%;
 `;
 
 export const ProductDescription = styled.p`
@@ -115,8 +115,8 @@ export const ProductDescription = styled.p`
   color: white;
   text-indent: 10px;
   white-space: pre-line;
-  max-height: 100%;
-  overflow-y: scroll;
+  max-height: 90%;
+  overflow-y: auto;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {

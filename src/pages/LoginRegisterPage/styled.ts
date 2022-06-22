@@ -12,7 +12,7 @@ const Container = styled.div`
   color: white;
 
   @media screen and (max-width: 768px) {
-    height: auto;
+    height: 100%;
   }
 
   .navbar-login-container {
@@ -29,9 +29,20 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 0.8s ease-in-out;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
+      overflow-y: auto;
     }
   }
 
@@ -81,6 +92,14 @@ const ContainerLoginRegister = styled.div`
   .login-register-header {
     width: 80%;
     margin: 30px 0;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 35px;
   }
 `;
 const StyledLoginRegisterContainer = styled(LoginRegisterContainer)`

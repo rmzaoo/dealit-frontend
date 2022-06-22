@@ -8,19 +8,23 @@ const initialState = {
     username: null,
     email: null,
     phone: null,
-    orders: [],
-    addresses: [],
-    creditCards: [],
+    photo: null,
+    token: null,
   },
   cart: [],
+  orders: [],
+  addresses: [],
+  creditCards: [],
   cartData: [],
 };
 
 function reducer(
-  state: any = initialState,
+  state = initialState,
   action: { type: string; payload: any }
-) {
+): any {
   switch (action.type) {
+    case "SET_USER":
+      return { ...state, user: action.payload };
     case "ADD":
       let check = false;
       state.cart.forEach((element: any, i: number) => {

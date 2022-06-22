@@ -7,9 +7,11 @@ import {
 import shoopingIMG from "../../assets/shopping.svg";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
-import PrimaryInput from "../../components/PrimaryInput/PrimaryInput";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
+import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { getCookie } from "../../utils/cookies";
+import { useLayoutEffect } from "react";
+import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 interface Props {
   type: string;
@@ -19,7 +21,17 @@ const LoginRegisterPage = ({ type = "login" }: Props) => {
   const navigate = useNavigate();
   const year = new Date().getFullYear();
 
-  return (
+  const { isLogged, isLoading, error } = useAuthenticationValidation(
+    getCookie("token")
+  );
+
+  useLayoutEffect(() => {
+    if (isLogged) {
+      navigate("/dashboard");
+    }
+  }, [isLogged]);
+
+  return !isLoading ? (
     <Container>
       <div className="navbar-login-container">
         <Logo onClick={() => navigate("/")} />
@@ -42,7 +54,7 @@ const LoginRegisterPage = ({ type = "login" }: Props) => {
         <span>&#169; Dealit {year}</span>
       </div>
     </Container>
-  );
+  ) : null;
 };
 
 export default LoginRegisterPage;

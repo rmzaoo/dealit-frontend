@@ -5,7 +5,6 @@ export const BreadCrumbContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-top: 10px;
 `;
 export const BreadCrumbText = styled.p`
   font-size: 0.9rem;
