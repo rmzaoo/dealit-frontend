@@ -1,5 +1,5 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useLayoutEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
   DashboardPageContainer,
   DashboardPageContentContainer,
@@ -10,6 +10,8 @@ import { BsBoxSeam, BsFillSignpost2Fill } from "react-icons/bs";
 import { AiOutlineSecurityScan } from "react-icons/ai";
 import { FaWallet } from "react-icons/fa";
 import DashboardSideBarButton from "../../components/DashboardSideBarButton/DashboardSideBarButton";
+import { getCookie } from "../../utils/cookies";
+import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
 
 interface DashboardOptions {
   icon: any;
@@ -33,8 +35,21 @@ const DashboardPage = () => {
     },
     { icon: <FaWallet size={28} />, text: "My cards", path: "./cards" },
   ];
+  const { isLogged, isLoading, error } = useAuthenticationValidation(
+    getCookie("token")
+  );
+  const navigate = useNavigate();
 
-  return (
+  useLayoutEffect(() => {
+    if (!isLoading && !isLogged) {
+      navigate("/");
+    }
+  }, [isLoading]);
+
+  console.log(isLoading);
+  console.log(isLogged);
+
+  return !isLoading && isLogged ? (
     <DashboardPageContainer>
       <DashboardPageSideBarContainer>
         <DashboardSideBarButton options={options} />
@@ -43,7 +58,7 @@ const DashboardPage = () => {
         <Outlet />
       </DashboardPageContentContainer>
     </DashboardPageContainer>
-  );
+  ) : null;
 };
 
 export default DashboardPage;
