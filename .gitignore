@@ -23,5 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 /coverage/**
-
-__tests__/__snapshots__/*.snap
+**/__snapshots__/**
