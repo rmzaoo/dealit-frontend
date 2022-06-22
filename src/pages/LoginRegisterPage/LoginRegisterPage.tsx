@@ -13,7 +13,6 @@ import { useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 
-
 interface Props {
   type: string;
 }
