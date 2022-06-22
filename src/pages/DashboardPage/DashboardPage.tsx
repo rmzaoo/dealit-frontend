@@ -12,9 +12,10 @@ import { FaWallet } from "react-icons/fa";
 import DashboardSideBarButton from "../../components/DashboardSideBarButton/DashboardSideBarButton";
 import { getCookie } from "../../utils/cookies";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { IconType } from "react-icons";
 
-interface DashboardOptions {
-  icon: any;
+export interface DashboardOptions {
+  icon: JSX.Element;
   text: string;
   path: string;
 }

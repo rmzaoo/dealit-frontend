@@ -22,10 +22,6 @@ export const ProductDetailsContainer = styled.div`
   height: 100vh;
   padding-top: 10px;
 
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-  }
-
   //Tablets
   @media screen and (max-width: 768px) {
     overflow-x: hidden;
@@ -45,10 +41,6 @@ export const ProductContainer = styled.div`
   flex-direction: row;
   width: 100%;
   height: fit-content;
-
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-  }
 
   //Tablets
   @media screen and (max-width: 768px) {

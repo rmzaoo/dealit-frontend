@@ -71,7 +71,6 @@ const QuantityDropdown = ({
         {isOpen && (
           <DropdownContentContainer>
             {options.map((value, key) => {
-              console.log(key, value);
               return (
                 <DropdownContentOption
                   onClick={() => {

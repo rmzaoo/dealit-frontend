@@ -8,7 +8,7 @@ import PDP from "./pages/PDP/PDP";
 import PLP from "./pages/PLP/PLP";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import OrdersPage from "./pages/OrdersPage/OrdersPage";
-import LogInSecurityPage from "./pages/LogInSecurityPage/LogInSecurityPage";
+import AccountSettingsPage from "./pages/AccountSettingsPage/AccountSettingsPage";
 import AddressesPage from "./pages/AddressesPage/AddressesPage";
 import CreditCardPage from "./pages/CreditCardPage/CreditCardPage";
 
@@ -27,9 +27,9 @@ const Navigation = () => {
             </Route>
           </Route>
           <Route path="/dashboard" element={<DashboardPage />}>
-            <Route path="profile" element={<ProfilePage />} />
+            <Route index element={<ProfilePage />} />
             <Route path="orders" element={<OrdersPage />} />
-            <Route path="settings" element={<LogInSecurityPage />} />
+            <Route path="settings" element={<AccountSettingsPage />} />
             <Route path="addresses" element={<AddressesPage />} />
             <Route path="cards" element={<CreditCardPage />} />
           </Route>

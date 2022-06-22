@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import {
   AddToCartButton,
   ButtonsContainer,
@@ -14,23 +14,23 @@ import {
   ProductQtnContainer,
   PdpBuyDetailsPriceContainer,
   ProductInfoSeller,
-  StyledQuantityDropown,
+  StyledQuantityLabel,
+  StyledQuantityInput,
 } from "./style";
 import { ProductPrice } from "../ProductDetailsInfo/style";
-import Dropdown from "../Dropdown/Dropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
+import { AddressesDetailsProp } from "../../hooks/user/useUserByIdFetcher";
 
 interface Props {
   product: ProductDetailsProp;
 }
 
 const ProductDetailsBuyInfo = (props: Props) => {
-  const [address, setAddress] = useState<any>();
+  const [address, setAddress] = useState<AddressesDetailsProp>();
   const [name, setName] = useState();
   const [quantity, setQuantity] = useState<string>("1");
   const [isLoading, setIsLoading] = useState(false);
-  const quantityOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const product = props.product;
   const options: any = {
     weekday: "long",
@@ -47,7 +47,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
       setName(data.username);
       setAddress(data.address);
     });
-    
+
     setIsLoading(false);
   }, []);
 
@@ -67,11 +67,20 @@ const ProductDetailsBuyInfo = (props: Props) => {
             </ProductDelivery>
           </ProductDeliveryContainer>
           <ProductQtnContainer>
-            <StyledQuantityDropown
-              optionSelected={quantity}
-              setOptionSelected={setQuantity}
-              options={quantityOptions}
-            />
+            <StyledQuantityLabel>
+              Quantity:{" "}
+              <StyledQuantityInput
+                type="text"
+                name="quantity"
+                pattern="[0-9]*"
+                value={quantity}
+                onChange={(e) => {
+                  setQuantity((val) =>
+                    e.target.validity.valid ? e.target.value : val
+                  );
+                }}
+              ></StyledQuantityInput>
+            </StyledQuantityLabel>
           </ProductQtnContainer>
           <ButtonsContainer>
             <AddToCartButton>Add to Cart</AddToCartButton>
@@ -79,7 +88,9 @@ const ProductDetailsBuyInfo = (props: Props) => {
           <ProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
               <ProductDeleveryInfoFromBy>Ships from</ProductDeleveryInfoFromBy>
-              <ProductInfoIntities>{address.country}</ProductInfoIntities>
+              {address !== undefined && (
+                <ProductInfoIntities>{address.country}</ProductInfoIntities>
+              )}
             </IndividualProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
               <ProductDeleveryInfoFromBy>Sold By </ProductDeleveryInfoFromBy>

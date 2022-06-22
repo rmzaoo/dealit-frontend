@@ -1,14 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { DashboardOptions } from "../../pages/DashboardPage/DashboardPage";
 import {
   DashboardButtonLogoContainer,
   DashboardButtonsContainer,
   DashboardTextContainer,
-  SecundaryButton,
+  StyledSecundaryButton,
 } from "./style";
 
 interface Props {
-  options?: any;
+  options: DashboardOptions[];
 }
 
 const AccountSideBarButtons = ({ options }: Props) => {
@@ -16,14 +17,14 @@ const AccountSideBarButtons = ({ options }: Props) => {
 
   return (
     <DashboardButtonsContainer>
-      {Object.entries(options).map((value: any[], key: any) => {
+      {Object.entries(options).map((value, key) => {
         return (
-          <SecundaryButton onClick={() => navigate(value[1].path)}>
+          <StyledSecundaryButton onClick={() => navigate(value[1].path)}>
             <DashboardButtonLogoContainer>
               {value[1].icon}
             </DashboardButtonLogoContainer>
             <DashboardTextContainer>{value[1].text}</DashboardTextContainer>
-          </SecundaryButton>
+          </StyledSecundaryButton>
         );
       })}
     </DashboardButtonsContainer>
