@@ -20,7 +20,6 @@ interface Props {
 const LoginRegisterPage = ({ type = "login" }: Props) => {
   const navigate = useNavigate();
   const year = new Date().getFullYear();
-  const dispatch = useDispatch();
 
   const { isLogged, isLoading, error } = useAuthenticationValidation(
     getCookie("token")

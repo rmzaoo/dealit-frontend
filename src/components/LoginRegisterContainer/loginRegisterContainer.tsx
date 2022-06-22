@@ -16,13 +16,25 @@ interface Props {
   className?: string;
 }
 
+export interface LoginRegisterProps {
+  name: string;
+  phone: string;
+  email: string;
+  password: string;
+  country: string;
+  city: string;
+  zipCode: string;
+  street: string;
+  houseNumber: string;
+}
+
 const loginContainer = ({ type, className }: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [registerPage, setRegisterPage] = useState(0);
   const [showSuggestion, setShowSuggestion] = useState(false);
 
-  const [values, setValues] = React.useState<any>({
+  const [values, setValues] = React.useState<LoginRegisterProps>({
     name: "",
     phone: "",
     email: "",

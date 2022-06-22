@@ -1,13 +1,13 @@
-import { values } from "lodash";
 import React from "react";
 import useSearchAddressComplete from "../../hooks/user/useSearchAddressComplete";
+import { LoginRegisterProps } from "../LoginRegisterContainer/loginRegisterContainer";
 import { ContainerSuggestion } from "./styled";
 
 interface AddressSearchProps {
   addressSearched: string;
-  values: any;
-  setValues: any;
-  setShowSuggestion: any;
+  values: LoginRegisterProps;
+  setValues: React.Dispatch<React.SetStateAction<LoginRegisterProps>>;
+  setShowSuggestion: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AddressContainerSuggestion = ({

@@ -72,7 +72,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
               <ProductDeliverySpan>Delivery </ProductDeliverySpan>
               {deliveryDate.toLocaleDateString("en-US", options)}
             </ProductDelivery>
-          </ProductDeliveryContainer>x3
+          </ProductDeliveryContainer>
           <ProductQtnContainer>
             <QuantityDropdown
               optionSelected={quantity}
