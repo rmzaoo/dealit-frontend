@@ -7,3 +7,35 @@ export const fetchUserById = async (id: number) => {
     return response.data;
   });
 };
+
+export const fetchUser = async (jwt: string) => {
+  const headers = {
+    "Content-Type": "application/json",
+    "x-access-token": jwt || "null"
+  };
+  return await axios
+    .get(`${baseUrl}/users`, { headers })
+    .then((response: any) => {
+      return response.data;
+    })
+    .catch((error: any) => {
+      throw new Error(error);
+    });
+};
+
+
+
+export const fetchAdress = async (address: string) => {
+  const headers = {
+    "Content-Type": "application/json",
+    "x-access-token": address || ""
+  };
+  return await axios
+    .get(`${baseUrl}/addresses/autocomplete?text=${address}`, { headers })
+    .then((response: any) => {
+      return response.data;
+    })
+    .catch((error: any) => {
+      throw new Error(error);
+    });
+};
