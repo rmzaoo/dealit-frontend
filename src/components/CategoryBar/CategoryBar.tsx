@@ -12,7 +12,6 @@ const CategoryBar = ({ className }: Props) => {
   const categories = fetchCategories();
   function handleCategory(category: string) {
     navigate(`/products/${category}`);
-    window.location.reload();
   }
   return !categories ? null : (
     <Container className={className}>

@@ -73,7 +73,7 @@ const Sidebar = (openedBoolean: any) => {
                 style={{
                   fontSize: "20px",
                   position: "fixed",
-                  top: "10px",
+                  top: "100px",
                   textAlign: "center",
                 }}
               >

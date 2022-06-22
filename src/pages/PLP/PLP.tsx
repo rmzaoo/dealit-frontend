@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   Category,
   Container,
@@ -12,6 +12,7 @@ import {
 import { useParams } from "react-router-dom";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
 import axios from "axios";
+import { MdStayCurrentLandscape } from "react-icons/md";
 
 const PLP = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,10 +40,10 @@ const PLP = () => {
           return currentProds;
         });
     }
-  }, [currentPage]);
+  }, [currentPage, category1, category2]);
 
-  console.log(currentProds);
-  console.log(currentPage);
+  console.log(category1);
+
   return (
     <Container>
       <SafeContainer>
