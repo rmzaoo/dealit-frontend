@@ -8,7 +8,6 @@ import { Container, ButtonsContainer } from "./styled";
 import { useDispatch } from "react-redux";
 import { setCookie } from "../../utils/cookies";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import AddressContainerSuggestion from "../AddressContainerSuggestion/AddressContainerSuggestion";
 
 interface Props {
