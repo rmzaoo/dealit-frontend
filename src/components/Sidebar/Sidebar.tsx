@@ -4,27 +4,32 @@ import {
   CloseButton,
   CombinedPrice,
   PageOutSidebar,
-  ProductCart,
   SidebarContainer,
   SidebarOut,
 } from "./style";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CartProduct from "../CartProduct/CartProduct";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import emptyCart from "../../assets/emptyCart.svg";
-import SecundaryButton from "../SecundaryButton/SecundaryButton";
+import { useNavigate } from "react-router";
 
 const Sidebar: any = () => {
   let productCounter = 1;
   const [productPrice, setProductPrice] = useState(0);
   const [animateOut, setAnimateOut] = useState(false);
+  const navigate = useNavigate();
 
-  const context: any = useSelector((state: any) => state);
+  const context: any = useSelector((state) => state);
+
   //const dispatch = useDispatch();
 
   console.log(context.cart);
   console.log(context);
-  
+
+  function handleNavigate() {
+    navigate("/");
+    setAnimateOut(true);
+  }
   if (context.cart.length === 0) {
     return (
       <>
@@ -57,6 +62,9 @@ const Sidebar: any = () => {
                 src={emptyCart}
                 style={{ width: "80%", height: "100%", marginBottom: "200px" }}
               />
+              <CheckoutButton onClick={() => handleNavigate()}>
+                DISCOVER!
+              </CheckoutButton>
             </SidebarContainer>
           </>
         ) : (
@@ -87,6 +95,9 @@ const Sidebar: any = () => {
                 src={emptyCart}
                 style={{ width: "80%", height: "100%", marginBottom: "200px" }}
               />
+              <CheckoutButton onClick={() => handleNavigate()}>
+                DISCOVER!
+              </CheckoutButton>
             </SidebarOut>
           </>
         )}

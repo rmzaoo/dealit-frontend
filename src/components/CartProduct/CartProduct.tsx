@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router";
 import noImage from "../../assets/noImageAvailable.png";
 import { Container, ProductPhotoDiv, ProductDetails, Trash } from "./style";
 import { useDispatch } from "react-redux";
-import store from "../../redux/store";
 
 export interface CartProps {
   id: number;
@@ -26,7 +25,6 @@ const CartProduct = ({
   const [hideProduct, setHideProduct] = useState(true);
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   function handleProductPlus() {
     setProdQuantity(() => prodQuantity + 1);
