@@ -42,7 +42,6 @@ const PLP = () => {
     }
   }, [currentPage, category1, category2]);
 
-  console.log(category1);
 
   return (
     <Container>

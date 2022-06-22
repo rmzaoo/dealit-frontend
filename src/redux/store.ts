@@ -13,6 +13,7 @@ const initialState = {
     creditCards: [],
   },
   cart: [],
+  cartData: [],
 };
 
 function reducer(
@@ -38,28 +39,8 @@ function reducer(
               return e;
             }),
           };
-
-    case "REMOVE":
-      return state.cart.filter((item: any) => item.id !== action.payload.id);
-
-    case "INCREASE":
-      let tempcart2 = state.cart.map((item: any) => {
-        if (item.id === action.payload.id) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        return item;
-      });
-      return tempcart2;
-
-    case "DECREASE":
-      let tempcart3 = state.cart.map((item: any) => {
-        if (item.id === action.payload.id) {
-          return { ...item, quantity: item.quantity - 1 };
-        }
-        return item;
-      });
-      return tempcart3;
-
+    case "SEND_DATA":
+      return { ...state, cartData: action.payload.data };
     default:
       return state;
   }

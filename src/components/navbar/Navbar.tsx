@@ -16,7 +16,6 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [opened, setOpened]: any = useState(false);
-  console.log(opened)
   const navigate = useNavigate();
   return (
     <Container>
@@ -32,7 +31,7 @@ const Navbar = () => {
           <CartButton onClick={() => setOpened(!opened)} />
         </ButtonsBar>
       </DesktopHeader>
-      {opened && <Sidebar openedBoolean={opened} />}
+      {opened && <Sidebar/>}
     </Container>
   );
 };

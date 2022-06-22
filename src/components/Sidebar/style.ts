@@ -36,7 +36,7 @@ const PageOutSidebar = styled.div`
   width: 100%;
   height: 200%;
   background-color: rgba(0, 0, 0, 0.8);
-  
+  cursor: pointer;
 `;
 
 const SidebarOut = styled.div`
@@ -73,7 +73,31 @@ const CloseButton = styled.button`
   margin: 5px;
   cursor: pointer;
 `;
-const MainTitle = styled.h1``;
+const CheckoutButton = styled.button`
+  position: fixed;
+  bottom: 50px;
+  width: 12%;
+  font-size: 18px;
+  color: white;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  padding: 14px 10px;
+  border: 1px solid #169;
+  border-radius: 5px;
+  transition: opacity 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #169;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+`;
 
 const ArrowRight = styled(IoMdArrowRoundForward)`
   width: 4vh;
@@ -124,10 +148,13 @@ const ProductCart = styled(Product)`
     }
   }
 `;
-const CombinedPrice = styled.span`
+const CombinedPrice = styled.div`
   position: fixed;
-  bottom: 50px;
-  rigth: 10%;
+  font-size: 20px;
+  bottom: 130px;
+  display: flex;
+  justify-content: space-between;
+  width: 12%;
 `;
 
 export {
@@ -138,4 +165,5 @@ export {
   ProductCart,
   CombinedPrice,
   PageOutSidebar,
+  CheckoutButton,
 };
