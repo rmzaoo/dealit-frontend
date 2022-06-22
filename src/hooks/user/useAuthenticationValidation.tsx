@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchUser } from "../../api/fetch/userFetch";
+import { fetchUser } from "../../api/userFetch";
 import { useDispatch } from "react-redux";
 
 const useAuthenticationValidation = (jwt: string) => {

@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchCategories } from "../../api/fetch/productsFetch";
+import { fetchCategories } from "../../api/productsFetch";
 import TextLink from "../TextLink/TextLink";
 import { Container } from "./style";
 interface Props {

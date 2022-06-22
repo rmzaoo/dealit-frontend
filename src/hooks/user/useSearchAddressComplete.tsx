@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchAdress } from "../../api/fetch/userFetch";
+import { fetchAdress } from "../../api/userFetch";
 
 const useSearchAddressComplete = (address: string) => {
   const [addressComplete, setAddressComplete] = React.useState([]);

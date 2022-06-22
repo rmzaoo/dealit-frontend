@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchMainCategory } from "../../api/fetch/categoryFetch";
+import { fetchMainCategory } from "../../api/categoryFetch";
 
 export interface mainCategoryProps {
   main: {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchlogin, fetchregister } from "../../api/fetch/authFetch";
+import { fetchlogin, fetchregister } from "../../api/authFetch";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import PrimaryInput from "../PrimaryInput/PrimaryInput";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";

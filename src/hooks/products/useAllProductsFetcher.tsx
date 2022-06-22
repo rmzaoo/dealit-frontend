@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAllProducts } from "../../api/fetch/productsFetch";
+import { fetchAllProducts } from "../../api/productsFetch";
 
 export const useAllProductsFetcher = (limit: number) => {
   const [product, setProduct] = useState(null);
