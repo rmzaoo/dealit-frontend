@@ -75,18 +75,37 @@ const loginContainer = ({ type, className }: Props) => {
   };
 
   const onRegister = () => {
-    for (const key in values) {
-      if (values[key] === "") {
-        toast.error("Please fill all fields");
-        return;
-      }
+    if (
+      values.name === "" ||
+      values.phone === "" ||
+      values.email === "" ||
+      values.password === "" ||
+      values.country === "" ||
+      values.city === "" ||
+      values.zipCode === "" ||
+      values.street === "" ||
+      values.houseNumber === ""
+    ) {
+      toast.error("Please fill all fields");
+      return;
     }
 
     fetchregister(values)
       .then((data) => {
         toast.success(" Registration successful. Redirecting to login page");
         setTimeout(() => {
-          setValues({});
+          setValues({
+            name: "",
+            phone: "",
+            email: "",
+            password: "",
+            country: "",
+            city: "",
+            zipCode: "",
+            street: "",
+            houseNumber: "",
+          });
+
           setRegisterPage(0);
           navigate("/login");
         }, 1000);
