@@ -24,8 +24,6 @@ describe("useRandomProductFetcher", () => {
       await waitFor(() => expect(api.fetchRandomProduct).toHaveBeenCalled());
     });
 
-    console.log(result);
-
     expect(result.current).toEqual(product);
   });
 });

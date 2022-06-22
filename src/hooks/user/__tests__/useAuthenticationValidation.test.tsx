@@ -40,9 +40,7 @@ describe("useAuthenticationValidation", () => {
       wrapper,
     });
 
-    await act(async () => {
-      await waitFor(() => expect(api.fetchUser).toHaveBeenCalled());
-    });
+    await waitFor(() => expect(api.fetchUser).toHaveBeenCalled());
 
     expect(result.current.isLogged);
   });

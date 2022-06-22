@@ -25,7 +25,7 @@ export const fetchUser = async (jwt: string) => {
 
 
 
-export const fetchAdress = async (address: string) => {
+export const fetchAddress = async (address: string) => {
   const headers = {
     "Content-Type": "application/json",
     "x-access-token": address || ""
