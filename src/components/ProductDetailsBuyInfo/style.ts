@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import Dropdown from "../Dropdown/Dropdown";
 import { ProductPriceContainer } from "../ProductDetailsInfo/style";
-import SecundaryButton from "../SecundaryButton/SecundaryButton";
+import { SecundaryButtonStyle } from "../SecundaryButton/style";
 
 export const BuyInfoBody = styled.div`
   display: flex;
@@ -114,9 +115,8 @@ export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
   }
 `;
 
-export const AddToCartButton = styled(SecundaryButton)`
-  width: 90%;
-  background-color: #00bcd4;
+export const AddToCartButton = styled(SecundaryButtonStyle)`
+  color: white;
 
   //Tablets
   @media screen and (max-width: 768px) {
@@ -203,4 +203,8 @@ export const ProductInfoSeller = styled(ProductInfoIntities)`
   &:hover {
     color: #02a4e3;
   }
+`;
+
+export const StyledQuantityDropown = styled(Dropdown)`
+  width: 20%;
 `;

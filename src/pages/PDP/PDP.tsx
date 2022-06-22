@@ -32,6 +32,7 @@ const PDP = () => {
       fetchProductById(parseInt(id)).then((data) => {
         setProduct(data);
       });
+      window.scroll(0,0);
     }
   }, [id]);
 

@@ -68,11 +68,12 @@ export const SecondHalfOfScreenContainer = styled.div`
   align-items: flex-start;
   width: 90%;
   height: 70vh;
+  padding: 20px;
 `;
 
 export const SimilarProductsContainer = styled.div`
   width: 80%;
-  height: 70%;
+  height: 80%;
 
   h2 {
     color: white;

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react"
 import {
   AddToCartButton,
   ButtonsContainer,
@@ -15,9 +14,10 @@ import {
   ProductQtnContainer,
   PdpBuyDetailsPriceContainer,
   ProductInfoSeller,
+  StyledQuantityDropown,
 } from "./style";
 import { ProductPrice } from "../ProductDetailsInfo/style";
-import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
+import Dropdown from "../Dropdown/Dropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
 
@@ -28,8 +28,9 @@ interface Props {
 const ProductDetailsBuyInfo = (props: Props) => {
   const [address, setAddress] = useState<any>();
   const [name, setName] = useState();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<string>("1");
   const [isLoading, setIsLoading] = useState(false);
+  const quantityOptions = ["1", "2", "bra", "bru", "5", "6", "7", "8", "9", "10"];
   const product = props.product;
   const options: any = {
     weekday: "long",
@@ -66,9 +67,10 @@ const ProductDetailsBuyInfo = (props: Props) => {
             </ProductDelivery>
           </ProductDeliveryContainer>
           <ProductQtnContainer>
-            <QuantityDropdown
+            <StyledQuantityDropown
               optionSelected={quantity}
               setOptionSelected={setQuantity}
+              options={quantityOptions}
             />
           </ProductQtnContainer>
           <ButtonsContainer>
