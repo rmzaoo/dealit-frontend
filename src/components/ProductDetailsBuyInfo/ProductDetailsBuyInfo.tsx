@@ -30,7 +30,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const [name, setName] = useState();
   const [quantity, setQuantity] = useState<string>("1");
   const [isLoading, setIsLoading] = useState(false);
-  const quantityOptions = ["1", "2", "bra", "bru", "5", "6", "7", "8", "9", "10"];
+  const quantityOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const product = props.product;
   const options: any = {
     weekday: "long",
