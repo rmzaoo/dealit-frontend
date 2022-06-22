@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
 import App from "./pages/App/App";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Homepage from "./pages/Homepage/Homepage";
 import LoginRegisterPage from "./pages/LoginRegisterPage/LoginRegisterPage";
 import PDP from "./pages/PDP/PDP";

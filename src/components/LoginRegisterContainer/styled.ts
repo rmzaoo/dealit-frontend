@@ -8,6 +8,16 @@ const Container = styled.div`
 
   > div {
     margin: 20px 0;
+    animation: fadeIn 0.5s ease-in-out;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 
   p {

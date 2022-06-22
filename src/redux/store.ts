@@ -8,16 +8,19 @@ const initialState = {
     username: null,
     email: null,
     phone: null,
-    orders: [],
-    addresses: [],
-    creditCards: [],
+    photo: null,
+    token: null,
   },
   cart: [],
+  orders: [],
+  addresses: [],
+  creditCards: [],
 };
-
 
 function reducer(state = initialState, action: { type: string; payload: any }) {
   switch (action.type) {
+    case "SET_USER":
+      return { ...state, user: action.payload };
     default:
       return state;
   }
