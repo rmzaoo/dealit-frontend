@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchAdress } from "../../api/userFetch";
+import { fetchAddress } from "../../api/userFetch";
 
 const useSearchAddressComplete = (address: string) => {
   const [addressComplete, setAddressComplete] = React.useState([]);
@@ -10,7 +10,7 @@ const useSearchAddressComplete = (address: string) => {
     setIsLoading(true);
 
     const delayDebounceFn = setTimeout(() => {
-      fetchAdress(address)
+      fetchAddress(address)
         .then((data) => {
           setAddressComplete(data.features);
         })
