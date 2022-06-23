@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import DashboardPageTitle from "../../components/DashboardPageTitle/DashboardPageTitle";
 
 export const OrderPageBody = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const OrderPageBody = styled.div`
   padding: 10px;
 `;
 
-export const OrderPageHeader = styled(HeaderComponent)`
+export const OrderPageHeader = styled(DashboardPageTitle)`
   display: flex;
   justify-content: flex-start;
   align-items: center;

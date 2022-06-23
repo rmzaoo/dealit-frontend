@@ -5,8 +5,8 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const HeaderComponent = ({ children }: Props) => {
+const DashboardPageTitle = ({ children }: Props) => {
   return <HeaderComponentContainer>{children}</HeaderComponentContainer>;
 };
 
-export default HeaderComponent;
+export default DashboardPageTitle;
