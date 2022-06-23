@@ -13,7 +13,17 @@ import {
   DropdownContentOption,
 } from "./style";
 
-const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
+interface Props {
+  optionSelected: string;
+  setOptionSelected: React.Dispatch<React.SetStateAction<string>>;
+  options: string[];
+}
+
+const QuantityDropdown = ({
+  optionSelected,
+  setOptionSelected,
+  options,
+}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -40,21 +50,6 @@ const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
     }, [ref, isOpen]);
   };
 
-  const getDropdownOptions = (index: number) => {
-    return (
-      <DropdownContentOption
-        onClick={() => {
-          setOptionSelected(index + 1);
-          dropdownToggle();
-        }}
-        active={index + 1 === optionSelected}
-        key={index.toString()}
-      >
-        {index + 1}
-      </DropdownContentOption>
-    );
-  };
-
   useOutsideAlerter(wrapperRef);
 
   return (
@@ -75,7 +70,20 @@ const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
         </StyledDropdown>
         {isOpen && (
           <DropdownContentContainer>
-            {_.times(15, getDropdownOptions)}
+            {options.map((value, key) => {
+              return (
+                <DropdownContentOption
+                  onClick={() => {
+                    setOptionSelected(value);
+                    dropdownToggle();
+                  }}
+                  active={value === optionSelected}
+                  key={key.toString()}
+                >
+                  {value}
+                </DropdownContentOption>
+              );
+            })}
           </DropdownContentContainer>
         )}
       </DropdownContainer>

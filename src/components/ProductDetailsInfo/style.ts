@@ -19,10 +19,6 @@ export const ProductInfoContainer = styled.div`
     height: 100%;
     padding: 2px;
   }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-  }
 `;
 
 export const ProductNameContainer = styled.div`
@@ -38,10 +34,6 @@ export const ProductNameContainer = styled.div`
     justify-content: center;
     padding: 5px;
     height: 10%;
-  }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -103,10 +95,10 @@ export const ProductPrice = styled.p`
 
 export const ProductDescriptionContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
-  height: 50%;
+  height: 60%;
 `;
 
 export const ProductDescription = styled.p`

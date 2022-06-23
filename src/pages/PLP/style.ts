@@ -114,8 +114,6 @@ const Category = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (min-width: 992px) {
-  }
   @media screen and (min-width: 1000px) {
     font-size: 12px;
   }

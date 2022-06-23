@@ -42,10 +42,6 @@ export const OtherProductPhotosContainer = styled.div`
   padding: 10px 5px;
   width: 70%;
 
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-  }
-
   //Tablets
   @media screen and (max-width: 768px) {
     display: none;
