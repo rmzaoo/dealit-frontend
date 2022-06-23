@@ -22,10 +22,6 @@ export const ProductDetailsContainer = styled.div`
   height: 100vh;
   padding-top: 10px;
 
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-  }
-
   //Tablets
   @media screen and (max-width: 768px) {
     overflow-x: hidden;
@@ -46,10 +42,6 @@ export const ProductContainer = styled.div`
   width: 100%;
   height: fit-content;
 
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-  }
-
   //Tablets
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -62,12 +54,40 @@ export const ProductContainer = styled.div`
   }
 `;
 
-export const SimilarProductsContainer = styled.div`
+export const SecondHalfOfScreenContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+  align-items: flex-start;
+  width: 90%;
+  height: 70vh;
+  padding: 20px;
+`;
+
+export const SimilarProductsContainer = styled.div`
+  width: 80%;
+  height: 80%;
+
+  h2 {
+    color: white;
+    border-bottom: 1px solid #02a4e3;
+    padding: 10px 5px;
+    font-size: 30px;
+
+    //Laptops and small screens
+    @media screen and (max-width: 1024px) {
+      font-size: 26px;
+    }
+
+    //Tablets
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    //Mobile
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const BreadCrumbDiv = styled.div`
@@ -90,5 +110,4 @@ export const BreadCrumbDiv = styled.div`
     height: 100%;
     width: 90%;
   }
-
 `;

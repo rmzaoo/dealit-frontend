@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ProductPriceContainer } from "../ProductDetailsInfo/style";
+import Dropdown from "../Dropdown/Dropdown";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 
 export const BuyInfoBody = styled.div`
@@ -16,11 +16,6 @@ export const BuyInfoBody = styled.div`
     width: 70%;
     height: fit-content;
     padding: 2px;
-  }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -39,11 +34,6 @@ export const BuyInfoContainer = styled.div`
   @media screen and (max-width: 768px) {
     height: 100%;
     width: 90%;
-  }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -71,8 +61,6 @@ export const ProductDelivery = styled.p`
   }
 `;
 
-
-
 export const ProductDeliverySpan = styled.span`
   font-weight: normal;
 `;
@@ -84,7 +72,6 @@ export const ProductQtnContainer = styled.div`
   flex-direction: row;
   width: 90%;
   margin: 10px;
-
 `;
 
 export const ButtonsContainer = styled.div`
@@ -106,32 +93,25 @@ export const IndividualButtonContainer = styled.div`
   padding: 5px;
 `;
 
-export const PdpBuyDetailsPriceContainer = styled(ProductPriceContainer)`
+export const PdpBuyDetailsPriceContainer = styled.div`
+  display: flex;
   justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 8%;
 
   //Tablets
   @media screen and (max-width: 768px) {
     display: none;
   }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-    
-  }
 `;
 
 export const AddToCartButton = styled(SecundaryButton)`
-  width: 90%;
-  background-color: #00bcd4;
+  color: white;
 
   //Tablets
   @media screen and (max-width: 768px) {
     font-size: 0.9rem;
-  }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-    
   }
 `;
 
@@ -210,4 +190,53 @@ export const ProductInfoSeller = styled(ProductInfoIntities)`
   &:hover {
     color: #02a4e3;
   }
-`
+`;
+
+export const StyledQuantityDropown = styled(Dropdown)`
+  width: 20%;
+`;
+
+export const StyledQuantityLabel = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.1rem;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    font-size: 1rem;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+`;
+
+export const StyledQuantityInput = styled.input`
+  margin-left: 10px;
+  width: 20%;
+  text-align: center;
+  font-size: 1rem;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+  }
+`;

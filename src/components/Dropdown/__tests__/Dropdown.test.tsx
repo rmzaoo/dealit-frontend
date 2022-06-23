@@ -1,14 +1,19 @@
-import React from "react";
+import React, { SetStateAction, useState } from "react";
 import { describe, test, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import QuantityDropdown from "../QuantityDropdown";
+import Dropdown from "../Dropdown";
 
-describe("QuantityDropdown", () => {
+describe("Dropdown", () => {
   test("Renders without crashin", () => {
+    const [mockState, setMockState] = useState("1");
     const result = render(
       <BrowserRouter>
-        <QuantityDropdown />
+        <Dropdown
+          optionSelected={mockState}
+          setOptionSelected={setMockState}
+          options={["1","2","3"]}
+        />
       </BrowserRouter>
     );
 

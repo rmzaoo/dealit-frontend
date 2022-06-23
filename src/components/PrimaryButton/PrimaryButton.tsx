@@ -4,11 +4,12 @@ import { PrimaryButton as StyledPrimaryButton } from "./style";
 interface Props {
   children?: React.ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
-const PrimaryButton = ({ onClick, children }: Props) => {
+const PrimaryButton = ({ onClick, children, className }: Props) => {
   return (
-    <StyledPrimaryButton onClick={onClick}>
+    <StyledPrimaryButton onClick={onClick} className={className}>
       {children}
     </StyledPrimaryButton>
   );

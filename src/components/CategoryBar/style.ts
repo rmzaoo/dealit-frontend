@@ -11,11 +11,10 @@ const Container = styled.div`
   font-size: 13px;
   height: 25px;
   position: fixed;
-  z-index: 10;
+  z-index: 1001;
   width: 100%;
   top: 70px;
   border-bottom: 1px solid #168;
-
 
   > * {
     margin: 0 10px;

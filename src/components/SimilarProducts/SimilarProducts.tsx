@@ -10,7 +10,6 @@ interface Props {
 }
 
 const SimilarProducts = ({ subCategory, product }: Props) => {
-  const [filteredProducts, setFilteredProduct] = useState<ProductProps[]>();
   const mainCat = useMainCategoryBySubFetcher(subCategory)?.main.name;
   const mainProducts: ProductProps[] = useProductByCategoryFetcher(
     10,
