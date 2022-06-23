@@ -14,8 +14,8 @@ export const BuyInfoBody = styled.div`
   //Tablets
   @media screen and (max-width: 768px) {
     width: 70%;
-    height: fit-content;
-    padding: 2px;
+    height: 30%;
+    padding: 0px;
   }
 `;
 
@@ -32,7 +32,7 @@ export const BuyInfoContainer = styled.div`
 
   //Tablets
   @media screen and (max-width: 768px) {
-    height: 100%;
+    height: 90%;
     width: 90%;
   }
 `;
@@ -43,6 +43,11 @@ export const ProductDeliveryContainer = styled.div`
   align-items: center;
   width: 90%;
   margin: 10px;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+   margin: 5px;
+  }
 `;
 
 export const ProductDelivery = styled.p`

@@ -1,10 +1,13 @@
 import React from "react";
+import { SecurityPageBody, SecurityPageTitle } from "./style";
 
 const AccountSettingsPage = () => {
   return (
-    <div>
-      <h2 style={{ color: "white" }}>This is Log In Securtiy page!</h2>
-    </div>
+    <SecurityPageBody>
+      <SecurityPageTitle>
+        <h2>Log In and Securitiy</h2>
+      </SecurityPageTitle>
+    </SecurityPageBody>
   );
 };
 
