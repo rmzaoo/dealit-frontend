@@ -22,7 +22,7 @@ export interface DashboardOptions {
 
 const DashboardPage = () => {
   const options: DashboardOptions[] = [
-    { icon: <CgProfile size={28} />, text: "My Profile", path: "./profile" },
+    { icon: <CgProfile size={28} />, text: "My Profile", path: "" },
     { icon: <BsBoxSeam size={28} />, text: "My Orders", path: "./orders" },
     {
       icon: <AiOutlineSecurityScan size={28} />,

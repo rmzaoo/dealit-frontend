@@ -17,7 +17,7 @@ export const DashboardPageSideBarContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 15%;
-  height: 100%;
+  height: 95%;
   background-color: #131a22;
   padding: 10px;
   border-right: 1px solid #168;
@@ -28,6 +28,6 @@ export const DashboardPageContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 85%;
-  height: 100%;
+  height: 70%;
   padding: 10px;
 `;
