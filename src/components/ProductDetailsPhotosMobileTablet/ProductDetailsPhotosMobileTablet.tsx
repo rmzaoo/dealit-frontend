@@ -39,8 +39,6 @@ const ProductDetailsPhotosMobileTablet = (props: Props) => {
     productImages.push(value);
   });
 
-  const images = () => {};
-
   return (
     <MobileProductImgContainer>
       <Carousel

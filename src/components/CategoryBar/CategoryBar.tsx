@@ -17,6 +17,7 @@ const CategoryBar = ({ className }: Props) => {
     window.location.reload();
   }
   function navigateSubCat(category: string) {
+    
     navigate(`/products/${category}`);
     window.location.reload();
   }

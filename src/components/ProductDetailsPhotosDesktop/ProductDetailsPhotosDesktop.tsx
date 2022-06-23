@@ -44,7 +44,7 @@ const ProductDetailsPhotos = (props: Props) => {
       <OtherProductPhotosContainer>
         <Carousel
           ssr
-          partialVisbile
+          partialVisible
           itemClass="image-item"
           responsive={responsive}
           deviceType={props.deviceType}

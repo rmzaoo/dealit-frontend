@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`QuantityDropdown > Renders without crashin 1`] = `
+exports[`Dropdown > Renders without crashin 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -25,7 +25,9 @@ exports[`QuantityDropdown > Renders without crashin 1`] = `
           >
             <p
               class="sc-jSMfEi jvVtXX"
-            />
+            >
+              1
+            </p>
             <div
               class="sc-gKXOVf bRKVfn"
             >
@@ -74,7 +76,9 @@ exports[`QuantityDropdown > Renders without crashin 1`] = `
         >
           <p
             class="sc-jSMfEi jvVtXX"
-          />
+          >
+            1
+          </p>
           <div
             class="sc-gKXOVf bRKVfn"
           >
