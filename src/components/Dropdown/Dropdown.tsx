@@ -19,11 +19,7 @@ interface Props {
   options: string[];
 }
 
-const Dropdown = ({
-  optionSelected,
-  setOptionSelected,
-  options,
-}: Props) => {
+const Dropdown = ({ optionSelected, setOptionSelected, options }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
 

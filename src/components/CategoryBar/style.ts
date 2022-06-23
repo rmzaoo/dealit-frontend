@@ -25,4 +25,12 @@ const Container = styled.div`
   }
 `;
 
-export { Container };
+const SubsContainer = styled(Container)`
+  background-color: #9cb8d9;
+  color: black;
+  top: 108px;
+  height: 20px;
+  font-size: 11px;
+`;
+
+export { Container, SubsContainer };
