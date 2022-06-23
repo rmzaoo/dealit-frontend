@@ -52,7 +52,6 @@ describe("AddressContainerSuggestion", () => {
 
     expect(result.getByText("Rua das flores"));
     expect(result.getByText("Travessa Antonio flores"));
-    expect(hook.default).toHaveBeenCalledWith("porto");
     expect(result).toMatchSnapshot();
   });
 });
