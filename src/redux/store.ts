@@ -15,6 +15,7 @@ const initialState = {
   orders: [],
   addresses: [],
   creditCards: [],
+  categories: []
 };
 
 function reducer(state = initialState, action: { type: string; payload: any }) {

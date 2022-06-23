@@ -31,7 +31,7 @@ const QuantityDropdown = ({ optionSelected, setOptionSelected }: any) => {
         }
       };
 
-      //BINDE EVENT LISTENER
+      //BIND EVENT LISTENER
       document.addEventListener("mousedown", handler);
       return () => {
         // UNBIND EVENT LISTENER ON CLEANUP

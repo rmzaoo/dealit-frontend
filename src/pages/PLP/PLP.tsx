@@ -40,9 +40,6 @@ const PLP = () => {
         });
     }
   }, [currentPage]);
-
-  console.log(currentProds);
-  console.log(currentPage);
   return (
     <Container>
       <SafeContainer>
