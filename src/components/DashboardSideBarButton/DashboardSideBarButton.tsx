@@ -14,6 +14,7 @@ import {
   StyledLogoutButton,
   StyledSecundaryButton,
 } from "./style";
+import { toast } from "react-toastify";
 
 interface Props {
   options: DashboardOptions[];
@@ -35,6 +36,7 @@ const AccountSideBarButtons = ({ options, logout }: Props) => {
 
   const logoutFunc = () => {
     deleteCookie("token");
+    toast.success("Logged out!")
     navigate("/");
   };
 
