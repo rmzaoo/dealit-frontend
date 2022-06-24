@@ -20,7 +20,7 @@ const PLP = () => {
   const navigate = useNavigate();
 
   useLayoutEffect(() => {
-    if (category2 !== undefined) {
+    if (category2) {
       axios
         .get(
           `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category2}?page=${currentPage}`
