@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import DashboardPageTitle from "../../components/DashboardPageTitle/DashboardPageTitle";
 
-export const AddressPageBody = styled.div`
+export const CardPageBody = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -11,10 +11,11 @@ export const AddressPageBody = styled.div`
   padding: 10px;
 `;
 
-export const AddressPageTitle = styled(DashboardPageTitle)`
+export const CardPageTitle = styled(DashboardPageTitle)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 80%;
   height: 20%;
 `;
+
