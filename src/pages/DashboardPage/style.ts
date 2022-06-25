@@ -21,6 +21,16 @@ export const DashboardPageSideBarContainer = styled.div`
   background-color: #131a22;
   padding: 10px;
   border-right: 1px solid #168;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 10%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    width: 8%;
+  }
 `;
 
 export const DashboardPageContentContainer = styled.div`

@@ -18,9 +18,25 @@ export const DashboardNavButtonsContainer = styled.div`
 `
 
 export const StyledSecundaryButton = styled(SecundaryButton)`
+  justify-content: space-between;
   color: white;
   width: 80%;
   margin: 10px;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    width: 60%;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+   width: 25%;
+  }
 `;
 
 export const StyledLogoutButton = styled(SecundaryButton)`
@@ -29,6 +45,21 @@ export const StyledLogoutButton = styled(SecundaryButton)`
   margin: 10px;
   border: 1px solid #b23b3b;
   margin-top: 40px;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    width: 60%;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    width: 25%;
+  }
 `
 
 export const DashboardButtonLogoContainer = styled.div`
@@ -36,11 +67,35 @@ export const DashboardButtonLogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 20%;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const DashboardTextContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 70%;
+  margin-left: 5px;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+  }
 `;

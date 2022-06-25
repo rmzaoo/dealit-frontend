@@ -26,7 +26,12 @@ export const ProductDetailsContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 50%;
-  margin-top: 15%;
+  margin-top: 10%;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    margin-top: 15%;
+  }
 
   //Tablets
   @media screen and (max-width: 768px) {
@@ -104,10 +109,6 @@ export const BreadCrumbDiv = styled.div`
   width: 90%;
   padding-left: 1%;
 
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-    
-  }
 
   //Tablets
   @media screen and (max-width: 768px) {

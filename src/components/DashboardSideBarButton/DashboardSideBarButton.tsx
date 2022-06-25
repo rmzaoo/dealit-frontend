@@ -36,7 +36,7 @@ const AccountSideBarButtons = ({ options, logout }: Props) => {
 
   const logoutFunc = () => {
     deleteCookie("token");
-    toast.success("Logged out!")
+    toast.success("Logged out!");
     navigate("/");
   };
 
@@ -57,13 +57,11 @@ const AccountSideBarButtons = ({ options, logout }: Props) => {
           );
         })}
       </DashboardNavButtonsContainer>
-      <StyledLogoutButton>
+      <StyledLogoutButton onClick={() => logoutFunc()}>
         <DashboardButtonLogoContainer>
           {logout.icon}
         </DashboardButtonLogoContainer>
-        <DashboardTextContainer onClick={() => logoutFunc()}>
-          {logout.text}
-        </DashboardTextContainer>
+        <DashboardTextContainer>{logout.text}</DashboardTextContainer>
       </StyledLogoutButton>
     </DashboardButtonsContainer>
   );

@@ -13,6 +13,11 @@ const Container = styled.div`
   position: fixed;
   z-index: 1001;
   width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    border-bottom: 1px solid #168;
+  }
+
 `;
 
 const DesktopHeader = styled.div`
