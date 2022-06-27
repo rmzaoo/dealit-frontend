@@ -13,4 +13,7 @@ export default defineConfig({
       include: ["src/**/*.tsx"],
     }
   },
+  build: {
+    target: 'esnext'
+  }
 });

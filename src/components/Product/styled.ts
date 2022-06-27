@@ -6,42 +6,16 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   color: black;
-  border-radius: 10px;
+  border-radius: 3px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  background-color: #ffffff;
-  background-image: linear-gradient(170deg, #ffffff 70%, #aeaeae 100%);
-
-  /* > * {
-    margin: 0px 10px;
-  } */
+  background-color: white;
+  width: 600px;
+  height: 350px;
+  transition: transform 0.3s ease-in-out;
 
   &:hover {
+    transform: scale(0.98);
     cursor: pointer;
-  }
-
-  @media only screen and (min-width: 300px) {
-    display: none;
-  }
-  @media only screen and (min-width: 500px) {
-    display: flex;
-    width: 280px;
-    height: 150px;
-  }
-  @media only screen and (min-width: 600px) {
-    width: 420px;
-    height: 200px;
-  }
-  @media only screen and (min-width: 762px) {
-    width: 460px;
-    height: 250px;
-  }
-  @media only screen and (min-width: 992px) {
-    width: 520px;
-    height: 300px;
-  }
-  @media only screen and (min-width: 1200px) {
-    width: 600px;
-    height: 350px;
   }
 `;
 
@@ -50,14 +24,14 @@ const ProductPhotoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: 100%;
+  height: 330px;
+  width: 450px;
+  margin: 10px;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 10px 0px 0px 10px;
+    object-fit: scale-down;
   }
 `;
 
@@ -72,6 +46,7 @@ const ProductDetails = styled.div`
   margin: 0px 20px;
 
   h1 {
+
     font-size: 30px;
     font-weight: bold;
   }
