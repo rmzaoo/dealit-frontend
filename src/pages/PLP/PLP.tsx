@@ -30,8 +30,7 @@ const PLP = () => {
           console.log(response.data);
           return currentProds;
         });
-    }
-    else if (category1) {
+    } else if (category1) {
       axios
         .get(
           `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category1}?page=${currentPage}`
@@ -48,13 +47,16 @@ const PLP = () => {
       <SafeContainer>
         <Category>
           <div>
-            <span style={{fontSize: "18px",cursor: category2 ? 'pointer' : ""}} onClick={() => navigate(`/products/${category1}`)}>
+            <span
+              style={{ fontSize: "18px", cursor: category2 ? "pointer" : "" }}
+              onClick={() => navigate(`/products/${category1}`)}
+            >
               {category1}
             </span>
             {category2 && (
               <>
-                <span style={{fontSize: "18px"}}> &#62; </span>
-                <span style={{fontSize: "18px"}}>{category2}</span>
+                <span style={{ fontSize: "18px" }}> &#62; </span>
+                <span style={{ fontSize: "18px" }}>{category2}</span>
               </>
             )}
           </div>
