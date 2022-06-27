@@ -1,13 +1,9 @@
-import { values } from "lodash";
-import React from "react";
-import { AiOutlineCamera } from "react-icons/ai";
-import { MdArrowRight } from "react-icons/md";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import ImageProductUploader from "../../components/ImageProductUploader/ImageProductUploader";
 import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
 import {
   BoxCategoriesButton,
-  HideInput,
-  ImageUploadArea,
-  ImageUploader,
   SellDetailsContainer,
   SellProductsContainer,
   StyledDescriptionInput,
@@ -17,35 +13,7 @@ import {
 } from "./style";
 
 const SellProducts = () => {
-  const [productsImage, setProductsImage] = React.useState<
-    Array<string | null>
-  >([null, null, null, null, null, null]);
-
-  const onFileUpload = (e: any) => {
-    const files = e.target.files;
-
-    if (!productsImage.includes(null)) {
-      alert("You can only upload 6 images");
-      return;
-    }
-
-    Object.values(files).map((file: any) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = (event) => {
-        const image = event.target?.result;
-
-        productsImage.find((item, index) => {
-          if (item === null) {
-            productsImage[index] = "" + image;
-            setProductsImage([...productsImage]);
-            console.log(productsImage[0]);
-            return true;
-          }
-        });
-      };
-    });
-  };
+  const [productsImage, setProductsImage] = useState([]);
 
   return (
     <SellProductsContainer>
@@ -67,64 +35,7 @@ const SellProducts = () => {
       </SellDetailsContainer>
       <SellDetailsContainer>
         <h3>Photos</h3>
-        <ImageUploadArea>
-          <ImageUploader>
-            {!productsImage[0] ? (
-              <>
-                Upload your photos
-                <HideInput
-                  id="photo-attachment-files"
-                  type="file"
-                  accept="image/heic, image/png, image/jpeg, image/webp"
-                  data-testid="attach-photos-input"
-                  data-cy="attach-photos-input"
-                  title=""
-                  multiple
-                  onChange={(e) => onFileUpload(e)}
-                />
-              </>
-            ) : (
-              <img
-                src={productsImage[0]}
-                alt="product image"
-                style={{
-                  objectFit: "scale-down",
-                  width: "100%",
-                  height: "100%",
-                }}
-              />
-            )}
-          </ImageUploader>
-          {productsImage.slice(1).map((image, index) => {
-            return image ? (
-              <ImageUploader>
-                <img
-                  src={image}
-                  alt="product image"
-                  style={{
-                    objectFit: "scale-down",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
-              </ImageUploader>
-            ) : (
-              <ImageUploader>
-                <AiOutlineCamera style={{ fontSize: "50px" }} />
-                <HideInput
-                  id="photo-attachment-files"
-                  type="file"
-                  accept="image/heic, image/png, image/jpeg, image/webp"
-                  data-testid="attach-photos-input"
-                  data-cy="attach-photos-input"
-                  title=""
-                  multiple
-                  onChange={(e) => onFileUpload(e)}
-                />
-              </ImageUploader>
-            );
-          })}
-        </ImageUploadArea>
+        <ImageProductUploader />
       </SellDetailsContainer>
       <SellDetailsContainer>
         <h3>How it is your product?</h3>
@@ -135,9 +46,19 @@ const SellProducts = () => {
         <div className="input-sell-container">
           <span>price? We work with prices in US dollars</span>
           <div>
-            <StyledPrimaryInput placeholder="e.g. 100" /> 
+            <StyledPrimaryInput placeholder="e.g. 100" />
           </div>
         </div>
+      </SellDetailsContainer>
+
+      <SellDetailsContainer>
+        <h3>You read the rules?</h3>
+        <p>
+          <input type="checkbox" />
+          To publish your product, you must agree to the{" "}
+          <Link to="/rules">rules</Link>
+        </p>
+        <SecundaryButton>Publish my product</SecundaryButton>
       </SellDetailsContainer>
     </SellProductsContainer>
   );
