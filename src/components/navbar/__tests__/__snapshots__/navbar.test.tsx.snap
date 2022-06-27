@@ -6,16 +6,16 @@ exports[`navbar > renders 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-gsnTZi ijINVp"
+        class="sc-gsnTZi jmPbkY"
       >
         <div
           class="sc-hKMtZM bJIqJb"
         >
           <div
-            class="sc-ksZaOG bVHygR"
+            class="sc-hAZoDl dHlNIe"
           >
             <svg
-              class="sc-hAZoDl dzGtzF"
+              class="sc-fnykZs fAlUVy"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -31,11 +31,11 @@ exports[`navbar > renders 1`] = `
           </div>
         </div>
         <span
-          class="sc-ftvSup MMXFg"
+          class="sc-ftvSup jyTjMH"
         >
           Deal
           <span
-            class="sc-papXJ cBDAwL"
+            class="sc-papXJ bAAelj"
           >
             it
           </span>
@@ -112,16 +112,16 @@ exports[`navbar > renders 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-gsnTZi ijINVp"
+      class="sc-gsnTZi jmPbkY"
     >
       <div
         class="sc-hKMtZM bJIqJb"
       >
         <div
-          class="sc-ksZaOG bVHygR"
+          class="sc-hAZoDl dHlNIe"
         >
           <svg
-            class="sc-hAZoDl dzGtzF"
+            class="sc-fnykZs fAlUVy"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -137,11 +137,11 @@ exports[`navbar > renders 1`] = `
         </div>
       </div>
       <span
-        class="sc-ftvSup MMXFg"
+        class="sc-ftvSup jyTjMH"
       >
         Deal
         <span
-          class="sc-papXJ cBDAwL"
+          class="sc-papXJ bAAelj"
         >
           it
         </span>

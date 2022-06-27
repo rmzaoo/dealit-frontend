@@ -6,10 +6,11 @@ exports[`ProductDetailsPhotosMobileTablet > Renders without crashing. 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-bczRLJ cxyGag"
+        class="sc-bczRLJ endbaq"
       >
         <div
           class="react-multi-carousel-list carousel-container "
+          dir="ltr"
         >
           <ul
             class="react-multi-carousel-track "
@@ -21,10 +22,11 @@ exports[`ProductDetailsPhotosMobileTablet > Renders without crashing. 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-bczRLJ cxyGag"
+      class="sc-bczRLJ endbaq"
     >
       <div
         class="react-multi-carousel-list carousel-container "
+        dir="ltr"
       >
         <ul
           class="react-multi-carousel-track "

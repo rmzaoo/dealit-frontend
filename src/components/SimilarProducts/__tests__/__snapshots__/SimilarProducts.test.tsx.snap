@@ -6,10 +6,10 @@ exports[`SimilarProducts > Renders without crashing. 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-iBkjds fmyerv"
+        class="sc-iBkjds cYlUlV"
       >
         <div
-          class="sc-bczRLJ dfWKUG sc-eCYdqJ jOdbXJ"
+          class="sc-bczRLJ dfWKUG sc-eCYdqJ gpRsUL"
         >
           <div
             class="sc-gsnTZi btTGBR"
@@ -36,10 +36,10 @@ exports[`SimilarProducts > Renders without crashing. 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-iBkjds fmyerv"
+      class="sc-iBkjds cYlUlV"
     >
       <div
-        class="sc-bczRLJ dfWKUG sc-eCYdqJ jOdbXJ"
+        class="sc-bczRLJ dfWKUG sc-eCYdqJ gpRsUL"
       >
         <div
           class="sc-gsnTZi btTGBR"

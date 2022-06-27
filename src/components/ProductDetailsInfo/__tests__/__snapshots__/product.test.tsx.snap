@@ -6,25 +6,26 @@ exports[`ProductDetailsInfo > Renders without crashing 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-bczRLJ ka-DuUH"
+        class="sc-bczRLJ cnKRsc"
       >
         <div
-          class="sc-gsnTZi imsNKS"
+          class="sc-gsnTZi hkOjIk"
         >
           <p
-            class="sc-dkzDqf fvdPih"
+            class="sc-dkzDqf iDobmW"
           >
             product1
           </p>
         </div>
         <div
-          class="sc-iBkjds jDPVho"
+          class="sc-iBkjds kgQcCH"
         >
           <div
-            class="sc-ftvSup dFbHJp"
+            class="sc-ftvSup bEJYYv"
           >
             <div
               class="react-multi-carousel-list carousel-container "
+              dir="ltr"
             >
               <ul
                 class="react-multi-carousel-track "
@@ -34,7 +35,7 @@ exports[`ProductDetailsInfo > Renders without crashing 1`] = `
           </div>
         </div>
         <div
-          class="sc-hKMtZM dCrtyI"
+          class="sc-hKMtZM iHYiMt"
         >
           <p
             class="sc-eCYdqJ ilROUH"
@@ -44,10 +45,10 @@ exports[`ProductDetailsInfo > Renders without crashing 1`] = `
           </p>
         </div>
         <div
-          class="sc-jSMfEi bihBZq"
+          class="sc-jSMfEi fHcMWZ"
         >
           <p
-            class="sc-gKXOVf kubglE"
+            class="sc-gKXOVf jTUhEM"
           >
             One, two, cacete...
           </p>
@@ -57,25 +58,26 @@ exports[`ProductDetailsInfo > Renders without crashing 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-bczRLJ ka-DuUH"
+      class="sc-bczRLJ cnKRsc"
     >
       <div
-        class="sc-gsnTZi imsNKS"
+        class="sc-gsnTZi hkOjIk"
       >
         <p
-          class="sc-dkzDqf fvdPih"
+          class="sc-dkzDqf iDobmW"
         >
           product1
         </p>
       </div>
       <div
-        class="sc-iBkjds jDPVho"
+        class="sc-iBkjds kgQcCH"
       >
         <div
-          class="sc-ftvSup dFbHJp"
+          class="sc-ftvSup bEJYYv"
         >
           <div
             class="react-multi-carousel-list carousel-container "
+            dir="ltr"
           >
             <ul
               class="react-multi-carousel-track "
@@ -85,7 +87,7 @@ exports[`ProductDetailsInfo > Renders without crashing 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKMtZM dCrtyI"
+        class="sc-hKMtZM iHYiMt"
       >
         <p
           class="sc-eCYdqJ ilROUH"
@@ -95,10 +97,10 @@ exports[`ProductDetailsInfo > Renders without crashing 1`] = `
         </p>
       </div>
       <div
-        class="sc-jSMfEi bihBZq"
+        class="sc-jSMfEi fHcMWZ"
       >
         <p
-          class="sc-gKXOVf kubglE"
+          class="sc-gKXOVf jTUhEM"
         >
           One, two, cacete...
         </p>

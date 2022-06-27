@@ -6,10 +6,10 @@ exports[`ProductDetailsPhotosDesktop > Renders without crashing 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-bczRLJ dNAflp"
+        class="sc-bczRLJ gBkxpc"
       >
         <div
-          class="sc-gsnTZi cPrsJE"
+          class="sc-gsnTZi bHtBWt"
         >
           <img
             alt="Product showcased photo"
@@ -18,10 +18,11 @@ exports[`ProductDetailsPhotosDesktop > Renders without crashing 1`] = `
           />
         </div>
         <div
-          class="sc-hKMtZM eSHRbW"
+          class="sc-hKMtZM icEjEt"
         >
           <div
             class="react-multi-carousel-list carousel-container "
+            dir="ltr"
           >
             <ul
               class="react-multi-carousel-track "
@@ -34,10 +35,10 @@ exports[`ProductDetailsPhotosDesktop > Renders without crashing 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-bczRLJ dNAflp"
+      class="sc-bczRLJ gBkxpc"
     >
       <div
-        class="sc-gsnTZi cPrsJE"
+        class="sc-gsnTZi bHtBWt"
       >
         <img
           alt="Product showcased photo"
@@ -46,10 +47,11 @@ exports[`ProductDetailsPhotosDesktop > Renders without crashing 1`] = `
         />
       </div>
       <div
-        class="sc-hKMtZM eSHRbW"
+        class="sc-hKMtZM icEjEt"
       >
         <div
           class="react-multi-carousel-list carousel-container "
+          dir="ltr"
         >
           <ul
             class="react-multi-carousel-track "

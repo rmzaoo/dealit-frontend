@@ -6,13 +6,13 @@ exports[`ProductDetails > renders without crashing 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-papXJ fUdRPA"
+        class="sc-jqUVSM jXgbPq"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-papXJ fUdRPA"
+      class="sc-jqUVSM jXgbPq"
     />
   </div>,
   "debug": [Function],

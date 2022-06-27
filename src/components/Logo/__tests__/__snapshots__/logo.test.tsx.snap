@@ -6,11 +6,11 @@ exports[`logo > renders 1`] = `
   "baseElement": <body>
     <div>
       <span
-        class="sc-bczRLJ dBPwXl"
+        class="sc-bczRLJ eMedti"
       >
         Deal
         <span
-          class="sc-gsnTZi laHpJN"
+          class="sc-gsnTZi cJASOR"
         >
           it
         </span>
@@ -19,11 +19,11 @@ exports[`logo > renders 1`] = `
   </body>,
   "container": <div>
     <span
-      class="sc-bczRLJ dBPwXl"
+      class="sc-bczRLJ eMedti"
     >
       Deal
       <span
-        class="sc-gsnTZi laHpJN"
+        class="sc-gsnTZi cJASOR"
       >
         it
       </span>
