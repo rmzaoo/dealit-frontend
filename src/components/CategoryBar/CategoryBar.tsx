@@ -3,24 +3,26 @@ import { useNavigate, useParams } from "react-router-dom";
 import TextLink from "../TextLink/TextLink";
 import { Container, SubsContainer } from "./style";
 import { useSelector } from "react-redux";
-import PLP from "../../pages/PLP/PLP";
 
 interface Props {
   className?: string;
 }
+
+
 
 const CategoryBar = ({ className }: Props) => {
   const params = useParams();
   const categories = useSelector((state: any) => state.categories);
   const navigate = useNavigate();
 
-  function navigateMainCat(this: any, category: string) {
+  const navigateMainCat = (category: string) => {
     navigate(`/products/${category}`);
-    window.location.reload();
+
   }
-  function navigateSubCat(category: string) {
+
+  const navigateSubCat = (category: string) => {
     navigate(`/products/${params.category1}/${category}`);
-    window.location.reload();
+
   }
 
   return !categories ? null : (
