@@ -35,10 +35,6 @@ export const fetchProductByCategoryPerPage = async (
   return response.data;
 };
 
-export const fetchCategories = async () => {
-  const response = await axios.get(`${baseUrl}/categories`);
-  return response.data;
-};
 
 export const fetchProductById = async (id: number) => {
   const response = await axios.get(`${baseUrl}/products/${id}`);
