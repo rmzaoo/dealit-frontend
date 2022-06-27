@@ -9,7 +9,7 @@ import {
   StyledProductListing,
   StyledSpan,
 } from "./style";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
 import axios from "axios";
 
@@ -17,18 +17,9 @@ const PLP = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProds, setCurrentProds]: any = useState([]);
   const { category1, category2 }: any = useParams();
+  const navigate = useNavigate();
 
   useLayoutEffect(() => {
-    if (category1) {
-      axios
-        .get(
-          `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category1}?page=${currentPage}`
-        )
-        .then((response: any) => {
-          setCurrentProds(response.data);
-          return currentProds;
-        });
-    }
     if (category2) {
       axios
         .get(
@@ -36,17 +27,38 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
+          console.log(response.data);
           return currentProds;
         });
     }
-  }, [currentPage]);
-
+    else if (category1) {
+      axios
+        .get(
+          `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category1}?page=${currentPage}`
+        )
+        .then((response: any) => {
+          setCurrentProds(response.data);
+          console.log(response.data);
+          return currentProds;
+        });
+    }
+  }, [currentPage, category1, category2]);
   return (
     <Container>
       <SafeContainer>
         <Category>
           <h1>Category</h1>
-          <span>{category1}</span>
+          <div>
+            <span style={{textDecoration: category2 ? 'underline': "none", cursor: category2 ? 'pointer' : ""}} onClick={() => navigate(`/products/${category1}`)}>
+              {category1}
+            </span>
+            {category2 && (
+              <>
+                <span> &#62; </span>
+                <span>{category2}</span>
+              </>
+            )}
+          </div>
         </Category>
 
         <ContainerProducts>
