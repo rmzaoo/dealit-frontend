@@ -76,10 +76,9 @@ const CloseButton = styled.button`
 const CheckoutButton = styled.button`
   position: fixed;
   bottom: 50px;
-  width: 12%;
+  width: 14vh;
   font-size: 18px;
   color: white;
-  border: none;
   margin: 5px;
   cursor: pointer;
   padding: 14px 10px;

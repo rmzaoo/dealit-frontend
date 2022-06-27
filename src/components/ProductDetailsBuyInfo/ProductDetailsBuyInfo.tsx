@@ -20,7 +20,7 @@ import { ProductPrice } from "../ProductDetailsInfo/style";
 import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 interface Props {
   product: ProductDetailsProp;
@@ -44,7 +44,6 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
 
-  const cart = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -52,14 +51,15 @@ const ProductDetailsBuyInfo = (props: Props) => {
       setName(data.username);
       setAddress(data.address);
     });
-    
     setIsLoading(false);
   }, []);
+
   function handleDispatch() {
     setCounter(counter + 1);
     setOpened(true);
     dispatch({ type: "ADD", payload: { product, quantity, counter, opened } });
   }
+
   return (
     <BuyInfoBody>
       {name !== undefined && (

@@ -16,14 +16,15 @@ import { useNavigate } from "react-router";
 const Sidebar: any = () => {
   let productCounter = 1;
   const [productPrice, setProductPrice] = useState(0);
-  const [animateOut, setAnimateOut] = useState(false);
-  const navigate = useNavigate();
-
   const context: any = useSelector((state) => state);
+  const [animateOut, setAnimateOut] = useState(
+    context.cart.opened === true ? true : false
+  );
+  const navigate = useNavigate();
 
   //const dispatch = useDispatch();
 
-  console.log(context.cart);
+  console.log(context.cart[0].opened);
   console.log(context);
 
   function handleNavigate() {
