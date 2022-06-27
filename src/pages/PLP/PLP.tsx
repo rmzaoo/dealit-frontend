@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   Category,
   Container,
@@ -42,6 +42,11 @@ const PLP = () => {
         });
     }
   }, [currentPage, category1, category2]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [category1, category2]);
+
   return (
     <Container>
       <SafeContainer>
