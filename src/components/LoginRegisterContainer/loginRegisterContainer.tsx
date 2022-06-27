@@ -27,7 +27,7 @@ export interface LoginRegisterProps {
   houseNumber: string;
 }
 
-const loginContainer = ({ type, className }: Props) => {
+const LoginRegisterContainer = ({ type, className }: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [registerPage, setRegisterPage] = useState(0);
@@ -278,4 +278,4 @@ const loginContainer = ({ type, className }: Props) => {
   );
 };
 
-export default loginContainer;
+export default LoginRegisterContainer;
