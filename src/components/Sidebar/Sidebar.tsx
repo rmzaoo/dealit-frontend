@@ -9,7 +9,7 @@ import {
 } from "./style";
 import { useState } from "react";
 import CartProduct from "../CartProduct/CartProduct";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import emptyCart from "../../assets/emptyCart.svg";
 import { useNavigate } from "react-router";
 
@@ -18,18 +18,21 @@ const Sidebar: any = () => {
   const [productPrice, setProductPrice] = useState(0);
   const context: any = useSelector((state) => state);
   const [animateOut, setAnimateOut] = useState(
-    context.cart.opened === true ? true : false
+    context.cart.opened === false ? true : false
   );
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   //const dispatch = useDispatch();
 
-  console.log(context.cart[0].opened);
   console.log(context);
 
   function handleNavigate() {
     navigate("/");
     setAnimateOut(true);
+  }
+  function handleClick() {
+    setAnimateOut(true);
+    dispatch({ type: "SEND_DATA", payload: { animateOut } });
   }
   if (context.cart.length === 0) {
     return (
@@ -38,7 +41,7 @@ const Sidebar: any = () => {
           <>
             <PageOutSidebar onClick={() => setAnimateOut(true)} />
             <SidebarContainer>
-              <CloseButton onClick={() => setAnimateOut(true)}>
+              <CloseButton onClick={() => handleClick()}>
                 <ArrowRight />
               </CloseButton>
               <h2

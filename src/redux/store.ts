@@ -16,6 +16,8 @@ const initialState = {
   addresses: [],
   creditCards: [],
   cartData: [],
+  cartIsOpen: false,
+  cartIsOpenSidebar: false,
 };
 
 function reducer(
@@ -44,7 +46,12 @@ function reducer(
             }),
           };
     case "SEND_DATA":
-      return { ...state, cartData: action.payload.data };
+      console.log(action.payload);
+      return {
+        ...state,
+        cartisOpen: action.payload.opened,
+        cartIsOpenSidebar: action.payload.animateOut,
+      };
     default:
       return state;
   }
