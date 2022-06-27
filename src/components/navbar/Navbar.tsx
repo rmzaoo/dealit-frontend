@@ -23,7 +23,7 @@ const Navbar = () => {
       <DesktopHeader>
         <Searchbar />
         <ButtonsBar>
-          <SellButton>Sell With US</SellButton>
+          <SellButton onClick={() => navigate("/sell-product")}>Sell With US</SellButton>
           <LoginButton onClick={() => navigate("/login")} />
           <CartButton onClick={() => navigate("/cart")} />
         </ButtonsBar>

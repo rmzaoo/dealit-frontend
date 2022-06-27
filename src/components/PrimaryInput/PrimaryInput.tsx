@@ -7,7 +7,8 @@ interface InputProps {
   value?: string;
   name?: string;
   required?: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 }
 
 const PrimaryInput = ({
@@ -17,6 +18,7 @@ const PrimaryInput = ({
   onChange,
   name,
   required,
+  className,
 }: InputProps) => {
   return (
     <StyledInput
@@ -26,6 +28,7 @@ const PrimaryInput = ({
       name={name}
       onChange={onChange}
       required={required}
+      className={className}
     />
   );
 };

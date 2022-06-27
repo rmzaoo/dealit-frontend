@@ -47,8 +47,6 @@ const DashboardPage = () => {
     }
   }, [isLoading]);
 
-  console.log(isLoading);
-  console.log(isLogged);
 
   return !isLoading && isLogged ? (
     <DashboardPageContainer>
