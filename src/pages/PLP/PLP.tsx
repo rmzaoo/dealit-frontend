@@ -47,15 +47,14 @@ const PLP = () => {
     <Container>
       <SafeContainer>
         <Category>
-          <h1>Category</h1>
           <div>
-            <span style={{textDecoration: category2 ? 'underline': "none", cursor: category2 ? 'pointer' : ""}} onClick={() => navigate(`/products/${category1}`)}>
+            <span style={{fontSize: "18px",cursor: category2 ? 'pointer' : ""}} onClick={() => navigate(`/products/${category1}`)}>
               {category1}
             </span>
             {category2 && (
               <>
-                <span> &#62; </span>
-                <span>{category2}</span>
+                <span style={{fontSize: "18px"}}> &#62; </span>
+                <span style={{fontSize: "18px"}}>{category2}</span>
               </>
             )}
           </div>
@@ -76,7 +75,7 @@ const PLP = () => {
             </PrimaryButton>
           )}
           <StyledSpan>Page {currentPage}</StyledSpan>
-          {currentPage === 2 ? (
+          {currentProds.length < 6 ? (
             <DisabledButton>Next</DisabledButton>
           ) : (
             <PrimaryButton
