@@ -26,9 +26,6 @@ const Product = ({ id, name, photos, price, className }: ProductProps) => {
       <ProductDetails>
         <h1>{name}</h1>
         <span>Price: ${price}</span>
-        {/* <section>
-          <PrimaryButton>View Product</PrimaryButton>
-        </section> */}
       </ProductDetails>
     </Container>
   );

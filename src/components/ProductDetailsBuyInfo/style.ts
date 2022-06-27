@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Dropdown from "../Dropdown/Dropdown";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 
 export const BuyInfoBody = styled.div`
@@ -190,10 +189,6 @@ export const ProductInfoSeller = styled(ProductInfoIntities)`
   &:hover {
     color: #02a4e3;
   }
-`;
-
-export const StyledQuantityDropown = styled(Dropdown)`
-  width: 20%;
 `;
 
 export const StyledQuantityLabel = styled.label`
