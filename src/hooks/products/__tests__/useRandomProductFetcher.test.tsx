@@ -5,23 +5,25 @@ import {
   fireEvent,
   renderHook,
   act,
+  waitFor,
 } from "@testing-library/react";
 
 import { useRandomProductFetcher } from "../useRandomProductFetcher";
 import * as api from "../../../api/productsFetch";
 
 describe("useRandomProductFetcher", () => {
-  test("render hook", () => {
+  test("render hook", async () => {
+    const product = { id: "1", name: "product 1" };
     vi.spyOn(api, "fetchRandomProduct").mockReturnValue(
-        
-      Promise.resolve({ id: 1, name: "product1" })
+      Promise.resolve(product)
     );
-
-
 
     const { result } = renderHook(() => useRandomProductFetcher(1));
 
-    
-    expect(result.current)
+    await act(async () => {
+      await waitFor(() => expect(api.fetchRandomProduct).toHaveBeenCalled());
+    });
+
+    expect(result.current).toEqual(product);
   });
 });

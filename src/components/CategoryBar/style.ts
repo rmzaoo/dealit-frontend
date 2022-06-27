@@ -11,7 +11,11 @@ const Container = styled.div`
   font-size: 13px;
   height: 25px;
   position: fixed;
+<<<<<<< HEAD
   z-index: 9;
+=======
+  z-index: 1001;
+>>>>>>> master
   width: 100%;
   top: 70px;
   border-bottom: 1px solid #168;

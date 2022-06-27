@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductDetailsInfo from "../../components/ProductDetailsInfo/ProductDetailsInfo";
 import ProductDetailsPhotosDesktop from "../../components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop";
@@ -8,10 +8,10 @@ import {
   PDPContainer,
   ProductContainer,
   ProductDetailsContainer,
+  SecondHalfOfScreenContainer,
   SimilarProductsContainer,
 } from "./style";
-import { ProductDetailsProp, useProductByIdFetcher } from "../../hooks/products/useProductByIdFetcher";
-import LoadingPage from "../../components/LoadingPage/LoadingPage";
+import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import SimilarProducts from "../../components/SimilarProducts/SimilarProducts";
 import { fetchProductById } from "../../api/productsFetch";
@@ -21,23 +21,31 @@ const PDP = () => {
   const [subCategory, setSubCategory] = useState<string>("");
   const [deviceType, setDeviceType] = useState("");
   const [product, setProduct] = useState<ProductDetailsProp>();
+
   const { id } = useParams();
 
-  useEffect(() => {
+  const scroolToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useLayoutEffect(() => {
     if (id) {
       fetchProductById(parseInt(id)).then((data) => {
         setProduct(data);
+        scroolToTop();
       });
     }
   }, [id]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (product) {
       setSubCategory(product.categoryName);
       setLoading(false);
     }
   }, [product]);
-
 
   useEffect(() => {
     let deviceWidth = window.innerWidth;
@@ -54,35 +62,46 @@ const PDP = () => {
     getDeviceType();
   }, [window.innerWidth, deviceType]);
 
-  if (isLoading) {
-    return <LoadingPage />;
-  }
-  if (product) {
-    return (
-      <PDPContainer>
-        <ProductDetailsContainer>
-          <BreadCrumbDiv>
-            <Breadcrumb subCategory={subCategory} />
-          </BreadCrumbDiv>
-          <ProductContainer>
-            {deviceType === "desktop" && (
-              <ProductDetailsPhotosDesktop
-                product={product}
-                deviceType={deviceType}
-              />
+  return (
+    <PDPContainer>
+      <ProductDetailsContainer>
+        {!isLoading && (
+          <>
+            <BreadCrumbDiv>
+              <Breadcrumb subCategory={subCategory} />
+            </BreadCrumbDiv>
+            <ProductContainer>
+              {product && (
+                <>
+                  {deviceType === "desktop" && (
+                    <ProductDetailsPhotosDesktop
+                      product={product}
+                      deviceType={deviceType}
+                    />
+                  )}
+                  <ProductDetailsInfo
+                    deviceType={deviceType}
+                    product={product}
+                  />
+                  <ProductDetailsBuyInfo product={product} />
+                </>
+              )}
+            </ProductContainer>
+          </>
+        )}
+      </ProductDetailsContainer>
+      {!isLoading && (
+        <SecondHalfOfScreenContainer>
+          <SimilarProductsContainer>
+            <h2>You may Also Like</h2>
+            {product && (
+              <SimilarProducts subCategory={subCategory} product={product} />
             )}
-            <ProductDetailsInfo deviceType={deviceType} product={product} />
-            <ProductDetailsBuyInfo product={product} />
-          </ProductContainer>
-        </ProductDetailsContainer>
-        <SimilarProductsContainer>
-          <SimilarProducts subCategory={subCategory} product={product} />
-        </SimilarProductsContainer>
-      </PDPContainer>
-    );
-  } else {
-    return <LoadingPage />;
-  }
+          </SimilarProductsContainer>
+        </SecondHalfOfScreenContainer>
+      )}
+    </PDPContainer>
+  );
 };
 
 export default PDP;

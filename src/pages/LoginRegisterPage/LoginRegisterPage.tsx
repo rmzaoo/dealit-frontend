@@ -10,8 +10,6 @@ import Logo from "../../components/Logo/Logo";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
 import { getCookie } from "../../utils/cookies";
 import { useLayoutEffect } from "react";
-import { useDispatch } from "react-redux";
-import { ToastContainer } from "react-toastify";
 
 interface Props {
   type: string;

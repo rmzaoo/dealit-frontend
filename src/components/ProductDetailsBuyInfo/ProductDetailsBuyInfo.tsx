@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import {
   AddToCartButton,
   ButtonsContainer,
@@ -15,25 +14,28 @@ import {
   ProductQtnContainer,
   PdpBuyDetailsPriceContainer,
   ProductInfoSeller,
+  StyledQuantityLabel,
+  StyledQuantityInput,
 } from "./style";
 import { ProductPrice } from "../ProductDetailsInfo/style";
-import QuantityDropdown from "../QuantityDropdown/QuantityDropdown";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
 import { useDispatch } from "react-redux";
+import { AddressesDetailsProp } from "../../hooks/user/useUserByIdFetcher";
 
 interface Props {
   product: ProductDetailsProp;
 }
 
 const ProductDetailsBuyInfo = (props: Props) => {
-  const [address, setAddress] = useState<any>();
+  const [address, setAddress] = useState<AddressesDetailsProp>();
   const [name, setName] = useState();
   const [opened, setOpened] = useState(false);
   const [counter, setCounter] = useState(0);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<string>("1");
   const [isLoading, setIsLoading] = useState(false);
   const product = props.product;
+
   const options: any = {
     weekday: "long",
     month: "long",
@@ -76,10 +78,20 @@ const ProductDetailsBuyInfo = (props: Props) => {
             </ProductDelivery>
           </ProductDeliveryContainer>
           <ProductQtnContainer>
-            <QuantityDropdown
-              optionSelected={quantity}
-              setOptionSelected={setQuantity}
-            />
+            <StyledQuantityLabel>
+              Quantity:
+              <StyledQuantityInput
+                type="text"
+                name="quantity"
+                pattern="[0-9]*"
+                value={quantity}
+                onChange={(e) => {
+                  setQuantity((val) =>
+                    e.target.validity.valid ? e.target.value : val
+                  );
+                }}
+              ></StyledQuantityInput>
+            </StyledQuantityLabel>
           </ProductQtnContainer>
           <ButtonsContainer>
             <AddToCartButton onClick={() => handleDispatch()}>
@@ -89,7 +101,9 @@ const ProductDetailsBuyInfo = (props: Props) => {
           <ProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
               <ProductDeleveryInfoFromBy>Ships from</ProductDeleveryInfoFromBy>
-              <ProductInfoIntities>{address.country}</ProductInfoIntities>
+              {address !== undefined && (
+                <ProductInfoIntities>{address.country}</ProductInfoIntities>
+              )}
             </IndividualProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
               <ProductDeleveryInfoFromBy>Sold By </ProductDeleveryInfoFromBy>
