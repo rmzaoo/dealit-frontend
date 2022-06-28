@@ -78,6 +78,8 @@ const AccountSettingsPage = () => {
         />
       </SecurityPageBody>
     );
+  } else {
+    return null;
   }
 };
 
