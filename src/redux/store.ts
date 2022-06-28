@@ -16,6 +16,8 @@ const initialState = {
   orders: [],
   addresses: [],
   creditCards: [],
+  cartData: [],
+  cartIsOpened:false,
   categories: await fetchCategories().then((data) =>
     data.map((e: any) => {
       return {
@@ -26,10 +28,39 @@ const initialState = {
   ),
 };
 
-function reducer(state = initialState, action: { type: string; payload: any }) {
+function reducer(
+  state = initialState,
+  action: { type: string; payload: any }
+): any {
   switch (action.type) {
     case "SET_USER":
       return { ...state, user: action.payload };
+    case "ADD":
+      let check = false;
+      state.cart.forEach((element: any, i: number) => {
+        if (element.product.id === action.payload.product.id) {
+          check = true;
+        }
+      });
+      console.log(!check);
+      return !check
+        ? { ...state, cart: [...state.cart, action.payload] }
+        : {
+            ...state,
+            cart: state.cart.map((e: any) => {
+              if (e.product.id === action.payload.product.id) {
+                let numberQuantity = parseInt(e.quantity);
+                e.quantity = numberQuantity + 1;
+                
+                return e;
+              }
+            }),
+          };
+    case "SEND_OPENED":
+      return {
+        ...state,
+        cartIsOpened: action.payload.opened,
+      };
     default:
       return state;
   }
