@@ -11,7 +11,7 @@ export const fetchUserById = async (id: number) => {
 export const fetchUser = async (jwt: string) => {
   const headers = {
     "Content-Type": "application/json",
-    "x-access-token": jwt || "null"
+    "x-access-token": jwt || "null",
   };
   return await axios
     .get(`${baseUrl}/users`, { headers })
@@ -23,12 +23,10 @@ export const fetchUser = async (jwt: string) => {
     });
 };
 
-
-
 export const fetchAddress = async (address: string) => {
   const headers = {
     "Content-Type": "application/json",
-    "x-access-token": address || ""
+    "x-access-token": address || "",
   };
   return await axios
     .get(`${baseUrl}/addresses/autocomplete?text=${address}`, { headers })

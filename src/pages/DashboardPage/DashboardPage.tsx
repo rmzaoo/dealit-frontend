@@ -13,7 +13,6 @@ import { BiLogOut } from "react-icons/bi";
 import DashboardSideBarButton from "../../components/DashboardSideBarButton/DashboardSideBarButton";
 import { getCookie } from "../../utils/cookies";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
-import { IconType } from "react-icons";
 
 export interface DashboardOptions {
   icon: JSX.Element;
@@ -56,9 +55,6 @@ const DashboardPage = () => {
       navigate("/");
     }
   }, [isLoading]);
-
-  console.log("Is Loading:" + " " + isLoading);
-  console.log("Is Logged:" + " " + isLogged);
 
   return !isLoading && isLogged ? (
     <DashboardPageContainer>
