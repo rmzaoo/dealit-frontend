@@ -11,9 +11,15 @@ import {
 
 interface ChooseCategoryModalProps {
   closeModal: () => void;
+  onCategorySelected: (category: string) => void;
+  onSubCategorySelected: (subCategory: string) => void;
 }
 
-const ChooseCategoryModal = ({ closeModal }: ChooseCategoryModalProps) => {
+const ChooseCategoryModal = ({
+  closeModal,
+  onCategorySelected,
+  onSubCategorySelected,
+}: ChooseCategoryModalProps) => {
   const { categories } = useCategoriesFetcher();
 
   const [choosedPrincipalCategory, setChoosedPrincipalCategory] =
@@ -21,17 +27,16 @@ const ChooseCategoryModal = ({ closeModal }: ChooseCategoryModalProps) => {
   const [choosedSecondaryCategory, setChoosedSecondaryCategory] =
     React.useState("");
 
-  const { subCategories, isLoading } = useSubCategoriesFetcher(
-    choosedPrincipalCategory
-  );
+  const { subCategories } = useSubCategoriesFetcher(choosedPrincipalCategory);
 
   const onPrincipalCategoryClick = (category: string) => {
     setChoosedPrincipalCategory(category);
+    onCategorySelected(category);
   };
 
-  const onSecondaryCategoryClick = (category: string) => {
-    setChoosedSecondaryCategory(category);
-    closeModal();
+  const onSecondaryCategoryClick = (subCategory: string) => {
+    setChoosedSecondaryCategory(subCategory);
+    onSubCategorySelected(subCategory);
   };
 
   return (

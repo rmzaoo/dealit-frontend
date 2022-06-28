@@ -1,4 +1,5 @@
 import axios from "axios";
+import { MdPhotoSizeSelectActual } from "react-icons/md";
 
 const baseUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
@@ -35,14 +36,36 @@ export const fetchProductByCategoryPerPage = async (
   return response.data;
 };
 
-
 export const fetchProductById = async (id: number) => {
   const response = await axios.get(`${baseUrl}/products/${id}`);
   return response.data;
 };
+
 export const fetchRecentProducts = async (limit: number) => {
   const response = await axios.get(
     `${baseUrl}/products/latest/?limit=${limit}`
   );
+  return response.data;
+};
+
+export interface PostProductProps {
+  name: string;
+  description: string;
+  category: string;
+  photos: string[];
+  price: number;
+  userId: number;
+  jwt: string;
+}
+
+export const PostProduct = async (Product: PostProductProps) => {
+  const headers = {
+    "Content-Type": "application/json",
+    "x-access-token": Product.jwt || "null",
+  };
+  const body = { ...Product, jwt: null };
+  const response = await axios.post(`${baseUrl}/products`, body, {
+    headers,
+  });
   return response.data;
 };

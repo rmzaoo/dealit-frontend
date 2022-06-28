@@ -2,7 +2,11 @@ import React from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 import { HideInput, ImageUploadArea, ImageUploader } from "./styled";
 
-const ImageProductUploader = () => {
+interface ChooseCategoryModalProps {
+  onImageSubmit: (image: string | null) => void;
+}
+
+const ImageProductUploader = ({ onImageSubmit }: ChooseCategoryModalProps) => {
   const [productsImage, setProductsImage] = React.useState<
     Array<string | null>
   >([null, null, null, null, null, null]);
@@ -25,7 +29,7 @@ const ImageProductUploader = () => {
           if (item === null) {
             productsImage[index] = "" + image;
             setProductsImage([...productsImage]);
-            console.log(productsImage[0]);
+            onImageSubmit(productsImage[0]);
             return true;
           }
         });

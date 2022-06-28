@@ -75,6 +75,16 @@ const SellDetailsContainer = styled.div`
 
 const StyledPrimaryInput = styled(PrimaryInput)`
   color: #000;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 `;
 
 const StyledDescriptionInput = styled.textarea`
@@ -115,16 +125,10 @@ const BoxCategoriesButton = styled.div`
   }
 `;
 
-
-
 const StyledIcon = styled(MdArrowRight)`
   font-size: 35px;
   color: white;
 `;
-
-
-
-
 
 export {
   SellProductsContainer,

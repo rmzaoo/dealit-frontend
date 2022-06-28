@@ -34,7 +34,7 @@ const LoginRegisterContainer = ({ type, className }: Props) => {
   const [showSuggestion, setShowSuggestion] = useState(false);
 
   const [values, setValues] = React.useState<LoginRegisterProps>({
-    name: "",
+    title: "",
     phone: "",
     email: "",
     password: "",
@@ -94,7 +94,7 @@ const LoginRegisterContainer = ({ type, className }: Props) => {
         toast.success(" Registration successful. Redirecting to login page");
         setTimeout(() => {
           setValues({
-            name: "",
+            title: "",
             phone: "",
             email: "",
             password: "",
