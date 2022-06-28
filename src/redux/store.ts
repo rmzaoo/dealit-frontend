@@ -17,8 +17,7 @@ const initialState = {
   addresses: [],
   creditCards: [],
   cartData: [],
-  cartIsOpen: false,
-  cartIsOpenSidebar: false,
+  cartOpened: false,
   categories: await fetchCategories().then((data) =>
     data.map((e: any) => {
       return {
@@ -54,12 +53,10 @@ function reducer(
               return e;
             }),
           };
-    case "SEND_DATA":
-      console.log(action.payload);
+    case "SEND_OPENED":
       return {
         ...state,
-        cartisOpen: action.payload.opened,
-        cartIsOpenSidebar: action.payload.animateOut,
+        cartIsOpened: action.payload.opened,
       };
     default:
       return state;

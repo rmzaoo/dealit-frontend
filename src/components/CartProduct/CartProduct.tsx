@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import noImage from "../../assets/noImageAvailable.png";
 import { Container, ProductPhotoDiv, ProductDetails, Trash } from "./style";
@@ -67,17 +67,17 @@ const CartProduct = ({
                 : prodPrice}
               $
             </span>
-            <span style={{ fontSize: "16px", margin: "8px" }}>
+            <span style={{ fontSize: "16px", margin: "8px", width: "130px" }}>
               Quantity: {prodQuantity}
               <button
                 onClick={() => handleProductPlus()}
-                style={{ marginLeft: "10px" }}
+                style={{ margin: "5px" }}
               >
                 +
               </button>
               <button
                 onClick={() => handleProductMinus()}
-                style={{ marginLeft: "10px" }}
+                style={{ margin: "5px" }}
               >
                 -
               </button>
@@ -85,6 +85,11 @@ const CartProduct = ({
             <button
               onClick={() => {
                 handleProductTrash();
+              }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <Trash />

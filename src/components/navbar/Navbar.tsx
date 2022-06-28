@@ -17,21 +17,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const context: any = useSelector((state) => state);
-  const [opened, setOpened]: any = useState(
-    context.cart.cartIsOpenSidebar === false ? true : false
-  );
+  const [opened, setOpened]: any = useState(context.cartIsOpened);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function handleClick() {
-    if (context.cart.cartIsOpenSidebar === undefined) {
-      setOpened(true);
-    } else if (context.cart.cartIsOpenSidebar === false) {
-      setOpened(true);
-    } else {
-      setOpened(false);
-    }
-    dispatch({ type: "SEND_DATA", payload: { opened } });
+    context.cartIsOpened === undefined
+      ? setOpened(true)
+      : setOpened(!context.cartIsOpened);
+    console.log(context.cartIsOpened);
+    dispatch({ type: "SEND_OPENED", payload: { opened } });
   }
 
   return (

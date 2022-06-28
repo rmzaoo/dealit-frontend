@@ -4,6 +4,7 @@ import {
   CloseButton,
   CombinedPrice,
   PageOutSidebar,
+  ProductsContainer,
   SidebarContainer,
   SidebarOut,
 } from "./style";
@@ -17,22 +18,22 @@ const Sidebar: any = () => {
   let productCounter = 1;
   const [productPrice, setProductPrice] = useState(0);
   const context: any = useSelector((state) => state);
-  const [animateOut, setAnimateOut] = useState(
-    context.cart.opened === false ? true : false
-  );
+  const [animateOut, setAnimateOut] = useState(false);
+  const [opened, setOpened] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  //const dispatch = useDispatch();
 
   console.log(context);
 
   function handleNavigate() {
     navigate("/");
+    setOpened(false);
     setAnimateOut(true);
   }
   function handleClick() {
     setAnimateOut(true);
-    dispatch({ type: "SEND_DATA", payload: { animateOut } });
+    setOpened(false);
+    dispatch({ type: "SEND_OPENED", payload: { opened } });
   }
   if (context.cart.length === 0) {
     return (
@@ -64,7 +65,7 @@ const Sidebar: any = () => {
               </h1>
               <img
                 src={emptyCart}
-                style={{ width: "80%", height: "100%", marginBottom: "200px" }}
+                style={{ width: "80%", height: "100%", marginBottom: "220px" }}
               />
               <CheckoutButton onClick={() => handleNavigate()}>
                 DISCOVER!
@@ -120,27 +121,27 @@ const Sidebar: any = () => {
               <h2
                 style={{
                   position: "fixed",
-                  top: "30px",
+                  top: "10px",
                 }}
               >
                 Your Cart
               </h2>
-              {context.cart.map((item: any, index: number) => {
-                console.log(context.cart);
-                console.log(productCounter);
-                return (
-                  <>
-                    <CartProduct
-                      id={item.product.id}
-                      name={item.product.name}
-                      photo={item.product.photos[0]}
-                      price={item.product.price}
-                      key={index}
-                      quantity={item.quantity}
-                    ></CartProduct>
-                  </>
-                );
-              })}
+              <ProductsContainer>
+                {context.cart.map((item: any, index: number) => {
+                  return (
+                    <>
+                      <CartProduct
+                        id={item.product.id}
+                        name={item.product.name}
+                        photo={item.product.photos[0]}
+                        price={item.product.price}
+                        key={index}
+                        quantity={item.quantity}
+                      ></CartProduct>
+                    </>
+                  );
+                })}
+              </ProductsContainer>
               <CombinedPrice>
                 <span>Total:</span>
                 <span>{productPrice} $</span>

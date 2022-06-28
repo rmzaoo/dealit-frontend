@@ -75,7 +75,7 @@ const CloseButton = styled.button`
 `;
 const CheckoutButton = styled.button`
   position: fixed;
-  bottom: 50px;
+  bottom: 20px;
   width: 14vh;
   font-size: 18px;
   color: white;
@@ -150,12 +150,24 @@ const ProductCart = styled(Product)`
 const CombinedPrice = styled.div`
   position: fixed;
   font-size: 20px;
-  bottom: 130px;
+  bottom: 90px;
   display: flex;
   justify-content: space-between;
   width: 12%;
 `;
 
+const ProductsContainer = styled.div`
+  position: relative;
+  top: 10px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  background-color: blue;
+`;
 export {
   SidebarContainer,
   SidebarOut,
@@ -165,4 +177,5 @@ export {
   CombinedPrice,
   PageOutSidebar,
   CheckoutButton,
+  ProductsContainer,
 };

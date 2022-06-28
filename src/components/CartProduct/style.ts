@@ -17,11 +17,13 @@ const Container = styled.div`
     border: 1px solid #e9e9e9;
     color: white;
     cursor: pointer;
+    width: 30px;
+    text-align: center;
   }
   @media only screen and (min-width: 300px) {
     width: 90%;
     height: 220px;
-    margin-top: 40px;
+    margin-top: 28px;
   }
 `;
 const Trash = styled(TbTrash)`
@@ -39,14 +41,14 @@ const ProductPhotoDiv = styled.div`
 
   img {
     width: 100%;
-    height: 18vh;
+    height: 20vh;
     object-fit: cover;
     cursor: pointer;
   }
 `;
 
 const ProductDetails = styled.div`
-  height: 90%;
+  height: 95%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,7 +58,7 @@ const ProductDetails = styled.div`
   margin-left: 10px;
 
   h1 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
   }
