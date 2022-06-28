@@ -13,9 +13,7 @@ const SidebarContainer = styled.div`
   animation: sidebar-open 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  overflow: auto;
 
   @keyframes sidebar-open {
     0% {
@@ -153,20 +151,18 @@ const CombinedPrice = styled.div`
   bottom: 90px;
   display: flex;
   justify-content: space-between;
-  width: 12%;
+  width: 20vh;
 `;
 
 const ProductsContainer = styled.div`
   position: relative;
   top: 10px;
-  overflow: scroll;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 80%;
-  background-color: blue;
 `;
 export {
   SidebarContainer,

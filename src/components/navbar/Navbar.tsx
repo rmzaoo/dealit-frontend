@@ -12,23 +12,19 @@ import Searchbar from "../Searchbar/Searchbar";
 import OpenMobileLateralMenu from "../OpenMobileLateralMenu/OpenMobileLateralMenu";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
-  const context: any = useSelector((state) => state);
-  const [opened, setOpened]: any = useState(context.cartIsOpened);
+  const isOpen: any = useSelector((state: any) => state.cartIsOpened);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function handleClick() {
-    context.cartIsOpened === undefined
-      ? setOpened(true)
-      : setOpened(!context.cartIsOpened);
-    console.log(context.cartIsOpened);
-    dispatch({ type: "SEND_OPENED", payload: { opened } });
-  }
 
+    dispatch({ type: "SEND_OPENED", payload: { opened:true } })
+  }
+console.log("s")
   return (
     <Container>
       <MobileHeader>
@@ -43,7 +39,7 @@ const Navbar = () => {
           <CartButton onClick={() => handleClick()} />
         </ButtonsBar>
       </DesktopHeader>
-      {opened && <Sidebar />}
+      {isOpen && <Sidebar />}
     </Container>
   );
 };

@@ -17,8 +17,8 @@ const Container = styled.div`
     border: 1px solid #e9e9e9;
     color: white;
     cursor: pointer;
+    align-self: center;
     width: 30px;
-    text-align: center;
   }
   @media only screen and (min-width: 300px) {
     width: 90%;
@@ -40,7 +40,7 @@ const ProductPhotoDiv = styled.div`
   height: 100%;
 
   img {
-    width: 100%;
+    width: 12vh;
     height: 20vh;
     object-fit: cover;
     cursor: pointer;
@@ -48,7 +48,7 @@ const ProductPhotoDiv = styled.div`
 `;
 
 const ProductDetails = styled.div`
-  height: 95%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;

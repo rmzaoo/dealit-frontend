@@ -17,7 +17,7 @@ const initialState = {
   addresses: [],
   creditCards: [],
   cartData: [],
-  cartOpened: false,
+  cartIsOpened:false,
   categories: await fetchCategories().then((data) =>
     data.map((e: any) => {
       return {
@@ -48,9 +48,12 @@ function reducer(
         : {
             ...state,
             cart: state.cart.map((e: any) => {
-              if (e.product.id === action.payload.product.id)
-                e.quantity = e.quantity + 1;
-              return e;
+              if (e.product.id === action.payload.product.id) {
+                let numberQuantity = parseInt(e.quantity);
+                e.quantity = numberQuantity + 1;
+                
+                return e;
+              }
             }),
           };
     case "SEND_OPENED":

@@ -20,7 +20,7 @@ import {
 import { ProductPrice } from "../ProductDetailsInfo/style";
 import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AddressesDetailsProp } from "../../hooks/user/useUserByIdFetcher";
 
 interface Props {
@@ -30,11 +30,14 @@ interface Props {
 const ProductDetailsBuyInfo = (props: Props) => {
   const [address, setAddress] = useState<AddressesDetailsProp>();
   const [name, setName] = useState();
-  const [opened, setOpened] = useState(false);
   const [counter, setCounter] = useState(0);
   const [quantity, setQuantity] = useState<string>("1");
   const [isLoading, setIsLoading] = useState(false);
   const product = props.product;
+  const [price, setPrice] = useState(product.price.toLocaleString());
+
+  const context: any = useSelector((state: any) => state);
+  const [opened, setOpened]: any = useState(context.cartIsOpened);
 
   const options: any = {
     weekday: "long",
@@ -57,8 +60,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
   }, []);
 
   function handleDispatch() {
-    setCounter(counter + 1);
-    setOpened(true);
+    dispatch({ type: "SEND_OPENED", payload: { opened: true } });
     dispatch({ type: "ADD", payload: { product, quantity, counter, opened } });
   }
 
@@ -67,9 +69,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
       {name !== undefined && (
         <BuyInfoContainer>
           <PdpBuyDetailsPriceContainer>
-            <ProductPrice>
-              &nbsp; ${product.price.toLocaleString()}
-            </ProductPrice>
+            <ProductPrice>&nbsp; ${price}</ProductPrice>
           </PdpBuyDetailsPriceContainer>
           <ProductDeliveryContainer>
             <ProductDelivery>

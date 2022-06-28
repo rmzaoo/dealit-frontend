@@ -10,7 +10,7 @@ export interface CartProps {
   photo: string;
   price: number;
   className?: string;
-  quantity: number;
+  quantity: string;
 }
 const CartProduct = ({
   id,
@@ -20,7 +20,7 @@ const CartProduct = ({
   className,
   quantity,
 }: CartProps) => {
-  const [prodQuantity, setProdQuantity] = useState(quantity);
+  const [prodQuantity, setProdQuantity] = useState(parseInt(quantity));
   const [prodPrice, setProdPrice] = useState(price);
   const [hideProduct, setHideProduct] = useState(true);
 
@@ -32,7 +32,7 @@ const CartProduct = ({
   }
   function handleProductMinus() {
     if (prodQuantity > 1) {
-      setProdQuantity(() => prodQuantity - 1);
+      setProdQuantity(prodQuantity - 1);
       setProdPrice(price * (prodQuantity - 1));
     } else {
       setProdQuantity(1);
@@ -44,8 +44,6 @@ const CartProduct = ({
     setProdQuantity(0);
     setHideProduct(false);
   }
-  console.log(prodQuantity);
-  console.log(prodPrice);
 
   return (
     <>
