@@ -10,6 +10,7 @@ export const AccOptionContainer = styled.div`
   height: 18%;
   padding: 10px 20px;
   border: 1px solid #116699;
+  margin: 10px;
 `;
 
 export const AccOptionTitleAndInputContainer = styled.div`
@@ -39,7 +40,8 @@ export const AccInputContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  flex-direction: column;
+  margin-top: 5px;
 `;
 
 export const AccOptionButtonsContainer = styled.div`

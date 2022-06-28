@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { updateUsername } from "../../api/updateUser";
-import { fetchUser, fetchUserById } from "../../api/userFetch";
+import {
+  updateUserEmail,
+  updateUsername,
+  updateUserPassword,
+  updateUserPhoneNumber,
+} from "../../api/updateUser";
 import PrimaryInput from "../PrimaryInput/PrimaryInput";
 import {
   AccInputContainer,
@@ -18,26 +22,36 @@ import { useDispatch } from "react-redux";
 interface Props {
   id: number;
   optionName: string;
+  type: string;
   currentValue: string;
   setCurrentValue: React.Dispatch<React.SetStateAction<string>>;
   token: string;
-  originalValue: string;
+  originalValue?: string;
   valueToChange: string;
+  placeholderText: string;
 }
 
 const AccountOptionChange = ({
   id,
+  type,
   optionName,
   currentValue,
   setCurrentValue,
   token,
   originalValue,
   valueToChange,
+  placeholderText,
 }: Props) => {
   const dispatch = useDispatch();
+  const [oldPass, setOldPass] = useState("");
+
   const onInputChange = (e: any) => {
     const { value } = e.target;
     setCurrentValue(value);
+  };
+  const onInputChangePassword = (e: any) => {
+    const { value } = e.target;
+    setOldPass(value);
   };
 
   const saveChange = async () => {
@@ -45,15 +59,29 @@ const AccountOptionChange = ({
       const res = await updateUsername(id, currentValue, token);
       dispatch({ type: "SET_USER", payload: res.user });
     }
+    if (valueToChange === "email") {
+      const res = await updateUserEmail(id, currentValue, token);
+      dispatch({ type: "SET_USER", payload: res.user });
+    }
+    if (valueToChange === "phone") {
+      const res = await updateUserPhoneNumber(id, currentValue, token);
+      dispatch({ type: "SET_USER", payload: res.user });
+    }
+    if (valueToChange === "password") {
+      const res = await updateUserPassword(id, oldPass, currentValue, token);
+      dispatch({ type: "SET_USER", payload: res.user });
+    }
     toast.success("Changed information successfully!");
   };
 
   const resetChanges = () => {
-    if (currentValue !== originalValue) {
-      setCurrentValue(originalValue);
-      toast.success("Changes were resetted successfully!");
-    } else {
-      toast.error("That field is unchanged!");
+    if (originalValue) {
+      if (currentValue !== originalValue) {
+        setCurrentValue(originalValue);
+        toast.success("Changes were resetted successfully!");
+      } else {
+        toast.error("That field is unchanged!");
+      }
     }
   };
 
@@ -64,11 +92,21 @@ const AccountOptionChange = ({
           <AccOptionText>{optionName}</AccOptionText>
         </AccOptionTextContainer>
         <AccInputContainer>
+          {valueToChange === "password" && (
+            <PrimaryInput
+              type="password"
+              placeholder="Old password"
+              value={oldPass}
+              name="password"
+              onChange={onInputChangePassword}
+              required={false}
+            />
+          )}
           <PrimaryInput
-            type="text"
-            placeholder="CurrentName"
+            type={type}
+            placeholder={placeholderText}
             value={currentValue}
-            name="name"
+            name={type}
             onChange={onInputChange}
             required={false}
           />
@@ -83,9 +121,3 @@ const AccountOptionChange = ({
 };
 
 export default AccountOptionChange;
-function id(id: any, currentValue: string, token: string) {
-  throw new Error("Function not implemented.");
-}
-function dispatch(arg0: any) {
-  throw new Error("Function not implemented.");
-}

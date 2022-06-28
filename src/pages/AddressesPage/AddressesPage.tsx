@@ -5,7 +5,7 @@ const AddressesPage = () => {
   return (
     <AddressPageBody>
       <AddressPageTitle>
-        <h2 style={{ color: "white" }}>This is Addresses page!</h2>
+        <h2 style={{ color: "white" }}>My Addresses</h2>
       </AddressPageTitle>
     </AddressPageBody>
   );

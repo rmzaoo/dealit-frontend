@@ -5,7 +5,7 @@ const CreditCardPage = () => {
   return (
     <CardPageBody>
       <CardPageTitle>
-        <h2 style={{ color: "white" }}>This is CreditCard page!</h2>
+        <h2 style={{ color: "white" }}>My Credit cards</h2>
       </CardPageTitle>
     </CardPageBody>
   );
