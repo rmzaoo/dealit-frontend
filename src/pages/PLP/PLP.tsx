@@ -27,7 +27,6 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     } else if (category1) {
@@ -37,7 +36,6 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     }

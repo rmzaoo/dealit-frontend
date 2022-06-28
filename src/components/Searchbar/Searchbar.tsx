@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   SearchBarButton,
@@ -16,9 +16,38 @@ interface Props {
 }
 
 const Searchbar = ({ className }: Props) => {
-  const [value, setValue] = useState("");
+  const wrapperRef = useRef(null);
+  const [value, setValue] = useState<string>("");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [products, setProducts] = useState<any>();
   const navigate = useNavigate();
+
+  const dropDownToggle = () => {
+    setIsOpen(!isOpen);
+    return true;
+  };
+
+  const useOutsideAlerter = (ref: any) => {
+    useEffect(() => {
+      //CLICKED OUTSIDE OF ELEMENT
+      const handler = (event: { target: any }) => {
+        console.log("cima");
+
+        if (isOpen && ref.current && !ref.current.contains(event.target)) {
+          console.log("hey there");
+          setIsOpen(false);
+          setValue("");
+        }
+      };
+
+      //BINDE EVENT LISTENER
+      document.addEventListener("mousedown", handler);
+      return () => {
+        // UNBIND EVENT LISTENER ON CLEANUP
+        document.removeEventListener("mousedown", handler);
+      };
+    }, [ref, isOpen]);
+  };
 
   const filterProducts = (searchValue: string) => {
     const regex = new RegExp(`^${searchValue}`, "gi");
@@ -37,6 +66,8 @@ const Searchbar = ({ className }: Props) => {
     fetchAllProducts(10000).then((products: any) => setProducts(products));
   }, []);
 
+  useOutsideAlerter(wrapperRef);
+
   return (
     <SearchbarContainer className={className}>
       <SearchbarInput
@@ -44,11 +75,12 @@ const Searchbar = ({ className }: Props) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search"
+        onClick={dropDownToggle}
       />
       <SearchBarButton>
         <SearchBarIcon />
       </SearchBarButton>
-      <SearchBarResultsContainer>
+      <SearchBarResultsContainer ref={wrapperRef} isOpen={isOpen}>
         {value.length > 0 ? (
           filterProducts(value).length > 0 ? (
             filterProducts(value).map((product: any) => {

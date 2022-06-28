@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
 
+interface Props {
+  isOpen?: boolean;
+}
+
 const SearchbarInput = styled.input`
   width: 100%;
   border: none;
@@ -56,6 +60,7 @@ const SearchBarResultsContainer = styled.div`
   overflow-y: auto;
   max-height: 250px;
   z-index: 1000;
+  scale: ${(props: Props) => (props.isOpen ? 1 : 0)};
 `;
 
 const SearchBarResultItem = styled.div`
