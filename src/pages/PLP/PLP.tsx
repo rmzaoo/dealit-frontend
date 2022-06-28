@@ -28,7 +28,6 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     } else if (category1) {
@@ -38,11 +37,15 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     }
   }, [currentPage, category1, category2]);
+
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [category1, category2]);
 
   return (
     <Container>
