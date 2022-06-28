@@ -171,7 +171,9 @@ const StyledSpan = styled.span`
   width: auto;
 `;
 const DisabledButton = styled(PrimaryButton)`
-  pointer-events: none;
+  &:hover {
+    cursor: no-drop;
+  }
 `;
 
 export {

@@ -27,7 +27,7 @@ const AIButton = styled.div`
   &:hover {
 
   }
-`;
+`
 
 const ChatIcon = styled(BsChatSquareDotsFill)`
   height: 30px;

@@ -12,6 +12,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
 import axios from "axios";
+import { MdStayCurrentLandscape } from "react-icons/md";
 
 const PLP = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,6 +41,7 @@ const PLP = () => {
         });
     }
   }, [currentPage, category1, category2]);
+
 
   useEffect(() => {
     setCurrentPage(1);

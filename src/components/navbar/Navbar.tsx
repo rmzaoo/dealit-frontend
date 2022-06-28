@@ -11,9 +11,20 @@ import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import OpenMobileLateralMenu from "../OpenMobileLateralMenu/OpenMobileLateralMenu";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../Sidebar/Sidebar";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
+  const isOpen: any = useSelector((state: any) => state.cartIsOpened);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function handleClick() {
+
+    dispatch({ type: "SEND_OPENED", payload: { opened:true } })
+  }
+console.log("s")
   return (
     <Container>
       <MobileHeader>
@@ -25,9 +36,10 @@ const Navbar = () => {
         <ButtonsBar>
           <SellButton>Sell With US</SellButton>
           <LoginButton onClick={() => navigate("/login")} />
-          <CartButton onClick={() => navigate("/cart")} />
+          <CartButton onClick={() => handleClick()} />
         </ButtonsBar>
       </DesktopHeader>
+      {isOpen && <Sidebar />}
     </Container>
   );
 };

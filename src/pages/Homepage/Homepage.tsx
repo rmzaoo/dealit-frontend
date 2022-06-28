@@ -20,7 +20,6 @@ import ProductListing from "../../components/ProductListing/ProductListing";
 import { faqQuestions } from "../../api/faqFetch";
 import { ProductProps } from "../../components/Product/Product";
 import { useRandomProductFetcher } from "../../hooks/products/useRandomProductFetcher";
-import { useAllProductsFetcher } from "../../hooks/products/useAllProductsFetcher";
 import { useRecentProductsFetcher } from "../../hooks/products/useRecentProductsFetcher";
 
 const Homepage = () => {
