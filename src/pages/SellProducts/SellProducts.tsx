@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ChooseCategoryModal from "../../components/ChooseCategoryModal/ChooseCategoryModal";
 import ImageProductUploader from "../../components/ImageProductUploader/ImageProductUploader";
 import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
 import {
@@ -14,6 +15,7 @@ import {
 
 const SellProducts = () => {
   const [productsImage, setProductsImage] = useState([]);
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
 
   return (
     <SellProductsContainer>
@@ -27,7 +29,9 @@ const SellProducts = () => {
         </div>
         <div className="input-sell-container">
           <span>Category</span>
-          <BoxCategoriesButton>
+          <BoxCategoriesButton
+            onClick={() => setShowCategoryModal(!showCategoryModal)}
+          >
             <p>Choose a category</p>
             <StyledIcon />
           </BoxCategoriesButton>
@@ -60,6 +64,9 @@ const SellProducts = () => {
         </p>
         <SecundaryButton>Publish my product</SecundaryButton>
       </SellDetailsContainer>
+      {showCategoryModal && (
+        <ChooseCategoryModal closeModal={() => setShowCategoryModal(false)} />
+      )}
     </SellProductsContainer>
   );
 };

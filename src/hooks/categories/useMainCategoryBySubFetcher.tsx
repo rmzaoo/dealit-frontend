@@ -9,7 +9,7 @@ export interface mainCategoryProps {
     upperLevel: null;
     image: string;
   };
-  subcategory: {
+  subcategories: {
     id: number;
     name: string;
     level: number;
