@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import AccountOptionChange from "../../components/AccountOptionChange/AccountOptionChange";
-import { SecurityPageBody, SecurityPageTitle } from "./style";
+import { SecurityPageBody, SecurityPageTitleContainer } from "./style";
 
 export interface InitialStateProps {
   user: {
@@ -30,9 +30,9 @@ const AccountSettingsPage = () => {
   if (user) {
     return (
       <SecurityPageBody>
-        <SecurityPageTitle>
+        <SecurityPageTitleContainer>
           <h2>Log In & Security</h2>
-        </SecurityPageTitle>
+        </SecurityPageTitleContainer>
         <AccountOptionChange
           id={user.id}
           optionName="Name"

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PrimaryInput from "../PrimaryInput/PrimaryInput";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 
 export const AccOptionContainer = styled.div`
@@ -6,11 +7,25 @@ export const AccOptionContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 50%;
+  width: 55%;
   height: 18%;
-  padding: 10px 20px;
+  padding-left: 20px;
   border: 1px solid #116699;
   margin: 10px;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    width: 70%;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 75%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const AccOptionTitleAndInputContainer = styled.div`
@@ -25,15 +40,29 @@ export const AccOptionTitleAndInputContainer = styled.div`
 export const AccOptionTextContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   height: 30%;
-  padding-left: 5px;
   width: 100%;
 `;
 
 export const AccOptionText = styled.p`
   font-size: 1rem;
   font-weight: bold;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const AccInputContainer = styled.div`
@@ -41,7 +70,7 @@ export const AccInputContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 5px;
+  width: 50%;
 `;
 
 export const AccOptionButtonsContainer = styled.div`
@@ -51,6 +80,12 @@ export const AccOptionButtonsContainer = styled.div`
   flex-direction: column;
   width: 50%;
   height: 100%;
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    width: 40%;
+    align-items: flex-end;
+  }
 `;
 
 export const SaveButton = styled(SecundaryButton)`
@@ -72,6 +107,7 @@ export const SaveButton = styled(SecundaryButton)`
   //Mobile
   @media screen and (max-width: 480px) {
     width: 25%;
+    font-size: 0.8rem;
   }
 `;
 
@@ -94,5 +130,24 @@ export const ResetButton = styled(SecundaryButton)`
   //Mobile
   @media screen and (max-width: 480px) {
     width: 25%;
+    font-size: 0.8rem;
+  }
+`;
+
+export const StyledPrimaryInput = styled(PrimaryInput)`
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    font-size: 17px;
+  }
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 11px;
   }
 `;

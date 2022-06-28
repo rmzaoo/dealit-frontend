@@ -16,6 +16,7 @@ import {
   AccOptionTitleAndInputContainer,
   ResetButton,
   SaveButton,
+  StyledPrimaryInput,
 } from "./style";
 import { useDispatch } from "react-redux";
 
@@ -93,7 +94,7 @@ const AccountOptionChange = ({
         </AccOptionTextContainer>
         <AccInputContainer>
           {valueToChange === "password" && (
-            <PrimaryInput
+            <StyledPrimaryInput
               type="password"
               placeholder="Old password"
               value={oldPass}
@@ -102,7 +103,7 @@ const AccountOptionChange = ({
               required={false}
             />
           )}
-          <PrimaryInput
+          <StyledPrimaryInput
             type={type}
             placeholder={placeholderText}
             value={currentValue}

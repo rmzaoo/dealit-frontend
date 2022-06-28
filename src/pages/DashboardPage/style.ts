@@ -37,7 +37,7 @@ export const DashboardPageSideBarContainer = styled.div`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    width: 8%;
+    width: 10%;
   }
 `;
 
@@ -46,16 +46,6 @@ export const DashboardPageContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 85%;
-  height: 90%;
-  padding: 5px;
-
-  //Tablets
-  @media screen and (max-width: 768px) {
-    width: 90%;
-  }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-    width: 92%;
-  }
+  height: 95%;
+  padding-bottom: 10px;
 `;

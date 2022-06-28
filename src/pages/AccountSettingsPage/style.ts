@@ -8,13 +8,18 @@ export const SecurityPageBody = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 5px;
 `;
 
-export const SecurityPageTitle = styled(DashboardPageTitle)`
+export const SecurityPageTitleContainer = styled(DashboardPageTitle)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 10%;
+
+  h2 { 
+    font-size: 0.2rem;
+  }
 `;
+
+
