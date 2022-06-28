@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   Category,
   Container,
@@ -12,6 +12,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
 import axios from "axios";
+import { MdStayCurrentLandscape } from "react-icons/md";
 
 const PLP = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,7 +28,6 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     } else if (category1) {
@@ -37,11 +37,16 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     }
   }, [currentPage, category1, category2]);
+
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [category1, category2]);
+
   return (
     <Container>
       <SafeContainer>

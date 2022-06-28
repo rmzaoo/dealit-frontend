@@ -8,8 +8,6 @@ interface Props {
   className?: string;
 }
 
-
-
 const CategoryBar = ({ className }: Props) => {
   const params = useParams();
   const categories = useSelector((state: any) => state.categories);
@@ -17,13 +15,11 @@ const CategoryBar = ({ className }: Props) => {
 
   const navigateMainCat = (category: string) => {
     navigate(`/products/${category}`);
-
-  }
+  };
 
   const navigateSubCat = (category: string) => {
     navigate(`/products/${params.category1}/${category}`);
-
-  }
+  };
 
   return !categories ? null : (
     <>

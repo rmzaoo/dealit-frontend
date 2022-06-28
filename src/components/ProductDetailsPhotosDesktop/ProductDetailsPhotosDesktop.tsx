@@ -52,6 +52,7 @@ const ProductDetailsPhotos = (props: Props) => {
           infinite={false}
           autoPlay={false}
           containerClass="carousel-container"
+          style={{zIndex: "1"}}
         >
           {product.photos.map((value, index) => {
             return (

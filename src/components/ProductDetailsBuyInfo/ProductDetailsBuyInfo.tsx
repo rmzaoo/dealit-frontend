@@ -20,6 +20,8 @@ import {
 import { ProductPrice } from "../ProductDetailsInfo/style";
 import { fetchUserById } from "../../api/userFetch";
 import { ProductDetailsProp } from "../../pages/PDP/PDP";
+import { useDispatch, useSelector } from "react-redux";
+
 
 export interface AddressesDetailsProp {
   id: number;
@@ -39,9 +41,15 @@ interface Props {
 const ProductDetailsBuyInfo = (props: Props) => {
   const [address, setAddress] = useState<AddressesDetailsProp>();
   const [name, setName] = useState();
+  const [counter, setCounter] = useState(0);
   const [quantity, setQuantity] = useState<string>("1");
   const [isLoading, setIsLoading] = useState(false);
   const product = props.product;
+  const [price, setPrice] = useState(product.price.toLocaleString());
+
+  const context: any = useSelector((state: any) => state);
+  const [opened, setOpened]: any = useState(context.cartIsOpened);
+
   const options: any = {
     weekday: "long",
     month: "long",
@@ -52,23 +60,27 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const deliveryDate = new Date(currentDate.setDate(currentDate.getDate() + 4));
   const id = Number(product.userId);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     fetchUserById(id).then((data) => {
       setName(data.username);
       setAddress(data.address);
     });
-
     setIsLoading(false);
   }, []);
+
+  function handleDispatch() {
+    dispatch({ type: "SEND_OPENED", payload: { opened: true } });
+    dispatch({ type: "ADD", payload: { product, quantity, counter, opened } });
+  }
 
   return (
     <BuyInfoBody>
       {name !== undefined && (
         <BuyInfoContainer>
           <PdpBuyDetailsPriceContainer>
-            <ProductPrice>
-              &nbsp; ${product.price.toLocaleString()}
-            </ProductPrice>
+            <ProductPrice>&nbsp; ${price}</ProductPrice>
           </PdpBuyDetailsPriceContainer>
           <ProductDeliveryContainer>
             <ProductDelivery>
@@ -78,7 +90,7 @@ const ProductDetailsBuyInfo = (props: Props) => {
           </ProductDeliveryContainer>
           <ProductQtnContainer>
             <StyledQuantityLabel>
-              Quantity:{" "}
+              Quantity:
               <StyledQuantityInput
                 type="text"
                 name="quantity"
@@ -93,7 +105,9 @@ const ProductDetailsBuyInfo = (props: Props) => {
             </StyledQuantityLabel>
           </ProductQtnContainer>
           <ButtonsContainer>
-            <AddToCartButton>Add to Cart</AddToCartButton>
+            <AddToCartButton onClick={() => handleDispatch()}>
+              Add to Cart
+            </AddToCartButton>
           </ButtonsContainer>
           <ProductDeliveryInfoContainer>
             <IndividualProductDeliveryInfoContainer>
