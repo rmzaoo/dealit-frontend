@@ -24,7 +24,6 @@ const Navbar = () => {
 
     dispatch({ type: "SEND_OPENED", payload: { opened:true } })
   }
-console.log("s")
   return (
     <Container>
       <MobileHeader>

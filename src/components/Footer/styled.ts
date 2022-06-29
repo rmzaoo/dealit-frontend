@@ -24,8 +24,8 @@ const AIButton = styled.div`
   left: 94%;
   padding: 10px;
   cursor: pointer;
-  &:hover {
-
+  @media(max-width: 1320px) {
+    display: none;
   }
 `
 
