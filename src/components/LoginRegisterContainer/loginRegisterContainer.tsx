@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setCookie } from "../../utils/cookies";
 import { toast } from "react-toastify";
 import AddressContainerSuggestion from "../AddressContainerSuggestion/AddressContainerSuggestion";
+import { queryParam } from "../../utils/queryParams";
 
 interface Props {
   type: string;
@@ -32,6 +33,9 @@ const LoginRegisterContainer = ({ type, className }: Props) => {
   const dispatch = useDispatch();
   const [registerPage, setRegisterPage] = useState(0);
   const [showSuggestion, setShowSuggestion] = useState(false);
+  const redirect = queryParam("redirect") || undefined;
+
+  console.log(redirect);
 
   const [values, setValues] = React.useState<LoginRegisterProps>({
     title: "",
@@ -62,7 +66,7 @@ const LoginRegisterContainer = ({ type, className }: Props) => {
           setCookie("token", data.data.res.token, 2);
 
           setTimeout(() => {
-            navigate("/dashboard");
+            redirect ? navigate(redirect) : navigate("/dashboard");
           }, 2000);
         }
       })

@@ -94,13 +94,25 @@ const SellProducts = () => {
         console.log("success", data);
       })
       .catch((error) => {
-        error.response.status === 401 && navigate("/login");
-        error.response.status === 403 && navigate("/login");
+        error.response.status === 401 &&
+          navigate("/login?redirect=/sell-product");
+        error.response.status === 403 &&
+          navigate("/login?redirect=/sell-product");
         error.response.status === 400 && toast.error("Fill all the fields");
         error.response.status === 500 &&
           toast.error("Error while adding product");
       });
   };
+
+  const { isLogged, isLoading, error } = useAuthenticationValidation(
+    getCookie("token")
+  );
+
+  useLayoutEffect(() => {
+    if (!isLoading && !isLogged) {
+      navigate("/login?redirect=/sell-product");
+    }
+  }, [isLoading]);
 
   return (
     <SellProductsContainer>
