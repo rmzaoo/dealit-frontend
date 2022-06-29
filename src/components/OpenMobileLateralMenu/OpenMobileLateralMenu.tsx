@@ -30,7 +30,7 @@ const OpenMobileLateralMenu = () => {
             <ButtonsMobile>
               <LoginButton onClick={() => navigate("/login")} />
               <CartButton onClick={() => navigate("/cart")} />
-              <PrimaryButton>Sell With US</PrimaryButton>
+              <PrimaryButton onClick={() => navigate("/sell-product")}>Sell With US</PrimaryButton>
             </ButtonsMobile>
             <MobileCategoryBar />
           </div>

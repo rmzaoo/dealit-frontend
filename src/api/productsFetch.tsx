@@ -35,7 +35,6 @@ export const fetchProductByCategoryPerPage = async (
   return response.data;
 };
 
-
 export const fetchProductById = async (id: number) => {
   const response = await axios.get(`${baseUrl}/products/${id}`);
   return response.data;
@@ -45,5 +44,41 @@ export const fetchRecentProducts = async (limit: number) => {
   const response = await axios.get(
     `${baseUrl}/products/latest/?limit=${limit}`
   );
+  return response.data;
+};
+
+export interface PostProductProps {
+  name: string;
+  description: string;
+  category: string;
+  photos: File[];
+  price: number;
+  userId: string;
+  jwt: string;
+}
+
+export const PostProduct = async (Product: PostProductProps) => {
+  const { jwt, ...body } = Product;
+  const formData = new FormData();
+
+  formData.append("name", body.name);
+  formData.append("description", body.description);
+  formData.append("category", body.category);
+  formData.append("price", body.price.toString());
+  formData.append("userId", body.userId);
+
+  body.photos.forEach((photo) => {
+    formData.append("photos", photo);
+  });
+
+  const response = await axios({
+    url: "http://10.10.225.145:3330/dealit/api/products",
+    method: "post",
+    headers: {
+      "x-access-token": Product.jwt || "null",
+    },
+    data: formData,
+  });
+
   return response.data;
 };
