@@ -12,6 +12,7 @@ export const AccOptionContainer = styled.div`
   padding-left: 20px;
   border: 1px solid #116699;
   margin: 10px;
+  border-radius: 7px;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {

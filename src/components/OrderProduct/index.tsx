@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderContainer = () => {
+const OrderProduct = () => {
 
     return (
         <>
@@ -8,4 +8,5 @@ const OrderContainer = () => {
     )
 }
 
-export default OrderContainer;
+export default OrderProduct;
+

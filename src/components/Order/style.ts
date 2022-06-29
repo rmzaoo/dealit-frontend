@@ -9,6 +9,7 @@ export const OrderContainer = styled.div`
   height: 25%;
   border: 1px solid #116699;
   margin-top: 20px;
+  border-radius: 7px;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
@@ -19,4 +20,28 @@ export const OrderContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 75%;
   }
+`;
+
+export const OrderContainerHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 30%;
+  background-color: #00bcd4;
+  width: 100%;
+  border: 1px solid #116699;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+`;
+
+export const OrderContainerBody = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70%;
+  width: 100%;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 `;
