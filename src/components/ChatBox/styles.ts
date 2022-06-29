@@ -93,6 +93,6 @@ export const AIText = styled.p`
   text-align: flex-start;
   width: 80%;
   color: black;
-  background-color: whitesmoke; //rgba(189, 220, 240, 1);
+  background-color: whitesmoke;
   border-radius: 5px;
 `;

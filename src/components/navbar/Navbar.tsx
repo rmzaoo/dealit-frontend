@@ -26,14 +26,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const cartRecovery = localStorage.getItem("shoppingCart");
-    console.log(cartRecovery);
-    console.log(localStorage.getItem("shoppingCart"));
+
     if (cartRecovery) {
       dispatch({
         type: "SET_CART",
         payload: { cartRecovery: JSON.parse(cartRecovery) },
       });
-      console.log(cartRecovery);
     }
   }, []);
 
@@ -46,7 +44,9 @@ const Navbar = () => {
       <DesktopHeader>
         <Searchbar />
         <ButtonsBar>
-          <SellButton onClick={() => navigate("/sell-product")}>Sell With US</SellButton>
+          <SellButton onClick={() => navigate("/sell-product")}>
+            Sell With US
+          </SellButton>
           <LoginButton onClick={() => navigate("/login")} />
           <CartButton onClick={() => handleClick()} />
         </ButtonsBar>

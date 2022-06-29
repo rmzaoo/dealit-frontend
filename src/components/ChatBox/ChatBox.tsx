@@ -42,7 +42,6 @@ const ChatBox = ({ isOpen }: Props) => {
 
   const handleKeyPress = (e: any) => {
     if (e.key === "Enter") {
-      console.log("caca");
       onClick();
     }
   };
