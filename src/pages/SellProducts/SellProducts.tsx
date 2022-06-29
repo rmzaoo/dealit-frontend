@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -6,6 +6,8 @@ import { PostProduct } from "../../api/productsFetch";
 import ChooseCategoryModal from "../../components/ChooseCategoryModal/ChooseCategoryModal";
 import ImageProductUploader from "../../components/ImageProductUploader/ImageProductUploader";
 import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
+import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { getCookie } from "../../utils/cookies";
 import {
   BoxCategoriesButton,
   SellDetailsContainer,
@@ -19,11 +21,21 @@ import {
 const SellProducts = () => {
   const navigate = useNavigate();
   const [showCategoryModal, setShowCategoryModal] = useState(false);
-  const [sellProduct, setSellProduct] = useState({
+
+  interface sellProductProps {
+    title: string;
+    description: string;
+    price: number;
+    category: string;
+    photos: File[];
+    subcategory: string;
+  }
+
+  let [sellProduct, setSellProduct] = useState<sellProductProps>({
     title: "",
     description: "",
-    photo: [],
     category: "",
+    photos: [],
     subcategory: "",
     price: 0,
   });
@@ -41,9 +53,10 @@ const SellProducts = () => {
     setShowCategoryModal(false);
   };
 
-  const onImageSubmit = (image: string) => {
-    console.log(image);
-    // setSellProduct(newSellProduct);
+  const onPhotoSubmit = (photos: File[]) => {
+    const tempPhotos = [...sellProduct.photos, ...photos];
+    [...sellProduct.photos, ...photos].length > 6 && tempPhotos.splice(6);
+    setSellProduct({ ...sellProduct, photos: tempPhotos });
   };
 
   const onSubmitProduct = () => {
@@ -52,47 +65,46 @@ const SellProducts = () => {
       sellProduct.category.length === 0 ||
       sellProduct.subcategory.length === 0 ||
       sellProduct.description.length === 0 ||
+      sellProduct.photos.length === 0 ||
       sellProduct.price === 0
     ) {
-      alert("fill all the fields");
+      toast.error("Fill all the fields");
       return;
     }
 
     if (readRules === false) {
-      alert("Please, read the rules and accept them");
+      toast.error("Please, read the rules and accept them");
       return;
     }
 
     const preparePost = {
       name: sellProduct.title,
       description: sellProduct.description,
-      category: sellProduct.category,
-      photos: sellProduct.photo,
+      category: sellProduct.subcategory,
+      photos: sellProduct.photos,
       price: sellProduct.price,
       userId: user.id,
       jwt: user.token,
     };
 
-    console.log(preparePost);
-
-    // PostProduct(preparePost)
-    //   .then((data) => {
-    //     toast.success("Product added successfully");
-    //     navigate("/dashboard");
-    //   })
-    //   .catch((error) => {
-    //     console.log();
-    //     error.response.status === 401 && toast.error("Unauthorized");
-    //     error.response.status === 400 && toast.error("Fill all the fields");
-    //     error.response.status === 500 &&
-    //       toast.error("Error while adding product");
-    //   });
+    PostProduct(preparePost)
+      .then((data) => {
+        toast.success("Product added successfully");
+        navigate("/dashboard");
+        console.log("success", data);
+      })
+      .catch((error) => {
+        error.response.status === 401 && navigate("/login");
+        error.response.status === 403 && navigate("/login");
+        error.response.status === 400 && toast.error("Fill all the fields");
+        error.response.status === 500 &&
+          toast.error("Error while adding product");
+      });
   };
 
   return (
     <SellProductsContainer>
       <TitlePage>Publish your product</TitlePage>
-
       <SellDetailsContainer>
         <h3>More details, more opportunities</h3>
         <div className="input-sell-container">
@@ -124,7 +136,9 @@ const SellProducts = () => {
       </SellDetailsContainer>
       <SellDetailsContainer>
         <h3>Photos</h3>
-        <ImageProductUploader onImageSubmit={(image) => onImageSubmit(image)} />
+        <ImageProductUploader
+          onPhotoSubmit={(photos: File[]) => onPhotoSubmit(photos)}
+        />
       </SellDetailsContainer>
       <SellDetailsContainer>
         <h3>How it is your product?</h3>

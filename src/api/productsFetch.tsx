@@ -1,5 +1,4 @@
 import axios from "axios";
-import { MdPhotoSizeSelectActual } from "react-icons/md";
 
 const baseUrl = "https://dealit-backend.herokuapp.com/dealit/api";
 
@@ -52,20 +51,34 @@ export interface PostProductProps {
   name: string;
   description: string;
   category: string;
-  photos: string[];
+  photos: File[];
   price: number;
-  userId: number;
+  userId: string;
   jwt: string;
 }
 
 export const PostProduct = async (Product: PostProductProps) => {
-  const headers = {
-    "Content-Type": "application/json",
-    "x-access-token": Product.jwt || "null",
-  };
-  const body = { ...Product, jwt: null };
-  const response = await axios.post(`${baseUrl}/products`, body, {
-    headers,
+  const { jwt, ...body } = Product;
+  const formData = new FormData();
+
+  formData.append("name", body.name);
+  formData.append("description", body.description);
+  formData.append("category", body.category);
+  formData.append("price", body.price.toString());
+  formData.append("userId", body.userId);
+
+  body.photos.forEach((photo) => {
+    formData.append("photos", photo);
   });
+
+  const response = await axios({
+    url: "http://10.10.225.145:3330/image-upload",
+    method: "post",
+    headers: {
+      "x-access-token": Product.jwt || "null",
+    },
+    data: formData,
+  });
+
   return response.data;
 };

@@ -1,12 +1,13 @@
 import React from "react";
 import { AiOutlineCamera } from "react-icons/ai";
+import { toast } from "react-toastify";
 import { HideInput, ImageUploadArea, ImageUploader } from "./styled";
 
 interface ChooseCategoryModalProps {
-  onImageSubmit: (image: string | null) => void;
+  onPhotoSubmit: (images: File[]) => void;
 }
 
-const ImageProductUploader = ({ onImageSubmit }: ChooseCategoryModalProps) => {
+const ImageProductUploader = ({ onPhotoSubmit }: ChooseCategoryModalProps) => {
   const [productsImage, setProductsImage] = React.useState<
     Array<string | null>
   >([null, null, null, null, null, null]);
@@ -14,10 +15,11 @@ const ImageProductUploader = ({ onImageSubmit }: ChooseCategoryModalProps) => {
   const onFileUpload = (e: any) => {
     const files = e.target.files;
 
-    if (!productsImage.includes(null)) {
-      alert("You can only upload 6 images");
+    if (!productsImage.includes(null) || files.length > 6) {
+      toast.error("You can upload only 6 images");
       return;
     }
+    onPhotoSubmit(files);
 
     Object.values(files).map((file: any) => {
       const reader = new FileReader();
@@ -29,7 +31,6 @@ const ImageProductUploader = ({ onImageSubmit }: ChooseCategoryModalProps) => {
           if (item === null) {
             productsImage[index] = "" + image;
             setProductsImage([...productsImage]);
-            onImageSubmit(productsImage[0]);
             return true;
           }
         });
