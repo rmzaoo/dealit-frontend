@@ -60,8 +60,8 @@ const CheckoutProduct = ({
           }}
         >
           <h1 onClick={() => navigate(`/product/${id}`)}>{name}</h1>
-          <span style={{ fontSize: "16px", width: "130px" }}>
-            Quantity: {prodQuantity}
+          <span style={{ fontSize: "16px", width: "100%" }}>
+            Quantity & Price: {prodQuantity} x {price}$
           </span>
         </div>
         <div

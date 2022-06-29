@@ -37,7 +37,7 @@ const Checkout = styled.div`
   top: 0;
   right: 50;
   height: 100%;
-  width: 100vh;
+  width: 70%;
   background-color: #131a22;
   animation: sidebar-open 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: flex;
@@ -57,6 +57,10 @@ const Checkout = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    right: 0;
+  }
+  @media screen and (min-width: 769px) {
+    width: 50%;
   }
 `;
 const CheckoutContainer = styled.div`
