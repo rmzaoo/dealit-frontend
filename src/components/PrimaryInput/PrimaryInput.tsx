@@ -1,6 +1,7 @@
 import React, { InputHTMLAttributes } from "react";
 import { StyledInput } from "./styled";
 
+
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   // type?: HTMLInputTypeAttribute;
   // placeholder?: string;

@@ -1,13 +1,13 @@
 import React from "react";
 import S from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import {
   MobileProductImgContainer,
   MobileProductImg,
   ProductMobileShowcasedPhotoContainer,
 } from "./style";
 import noImage from "../../assets/noImageAvailable.png";
+import { ProductDetailsProp } from "../../pages/PDP/PDP";
 
 interface Props {
   product: ProductDetailsProp;

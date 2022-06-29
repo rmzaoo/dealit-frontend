@@ -1,0 +1,126 @@
+"filename", "language", "TypeScript", "TypeScript React", "XML", "JSON", "JSON with Comments", "HTML", "comment", "blank", "total"
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/index.html", "HTML", 0, 0, 0, 0, 0, 22, 2, 4, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/package-lock.json", "JSON", 0, 0, 0, 4712, 0, 0, 0, 1, 4713
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/package.json", "JSON", 0, 0, 0, 52, 0, 0, 0, 1, 53
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/Navigation.tsx", "TypeScript React", 0, 45, 0, 0, 0, 0, 0, 3, 48
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/api/authFetch.tsx", "TypeScript React", 0, 34, 0, 0, 0, 0, 0, 6, 40
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/api/categoryFetch.tsx", "TypeScript React", 0, 10, 0, 0, 0, 0, 0, 3, 13
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/api/faqFetch.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 3, 27
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/api/productsFetch.tsx", "TypeScript React", 0, 42, 0, 0, 0, 0, 0, 7, 49
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/api/updateUser.tsx", "TypeScript React", 0, 66, 0, 0, 0, 0, 0, 8, 74
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/api/userFetch.tsx", "TypeScript React", 0, 35, 0, 0, 0, 0, 0, 5, 40
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/assets/details.svg", "XML", 0, 0, 91, 0, 0, 0, 0, 0, 91
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/assets/login.svg", "XML", 0, 0, 1, 0, 0, 0, 0, 0, 1
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/assets/shopping.svg", "XML", 0, 0, 1, 0, 0, 0, 0, 0, 1
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/AccountOptionChange/AccountOptionChange.tsx", "TypeScript React", 0, 98, 0, 0, 0, 0, 0, 7, 105
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/AccountOptionChange/style.ts", "TypeScript", 77, 0, 0, 0, 0, 0, 6, 15, 98
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/AddressContainerSuggestion/AddressContainerSuggestion.tsx", "TypeScript React", 0, 68, 0, 0, 0, 0, 0, 8, 76
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/AddressContainerSuggestion/__tests__/AddressContainerSuggestion.test.tsx", "TypeScript React", 0, 52, 0, 0, 0, 0, 0, 6, 58
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/AddressContainerSuggestion/styled.ts", "TypeScript", 48, 0, 0, 0, 0, 0, 1, 9, 58
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Breadcrumb/Breadcrumb.tsx", "TypeScript React", 0, 39, 0, 0, 0, 0, 0, 5, 44
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Breadcrumb/__tests__/breadcrumb.test.tsx", "TypeScript React", 0, 15, 0, 0, 0, 0, 0, 2, 17
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Breadcrumb/style.ts", "TypeScript", 30, 0, 0, 0, 0, 0, 2, 7, 39
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/CategoryBar/CategoryBar.tsx", "TypeScript React", 0, 47, 0, 0, 0, 0, 0, 11, 58
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/CategoryBar/__tests__/CategoryBar.test.tsx", "TypeScript React", 0, 30, 0, 0, 0, 0, 0, 9, 39
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/CategoryBar/style.ts", "TypeScript", 31, 0, 0, 0, 0, 0, 0, 6, 37
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/DashboardPageTitle/DashboardPageTitle.tsx", "TypeScript React", 0, 9, 0, 0, 0, 0, 0, 4, 13
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/DashboardPageTitle/style.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 3, 6, 30
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/DashboardSideBarButton/DashboardSideBarButton.tsx", "TypeScript React", 0, 63, 0, 0, 0, 0, 0, 8, 71
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/DashboardSideBarButton/style.ts", "TypeScript", 73, 0, 0, 0, 0, 0, 11, 18, 102
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Faq/Faq.tsx", "TypeScript React", 0, 33, 0, 0, 0, 0, 0, 5, 38
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Faq/__tests__/faq.test.tsx", "TypeScript React", 0, 19, 0, 0, 0, 0, 0, 4, 23
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Faq/styled.ts", "TypeScript", 40, 0, 0, 0, 0, 0, 0, 10, 50
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Footer/Footer.tsx", "TypeScript React", 0, 11, 0, 0, 0, 0, 0, 4, 15
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Footer/__tests__/footer.test.tsx", "TypeScript React", 0, 11, 0, 0, 0, 0, 0, 2, 13
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Footer/styled.ts", "TypeScript", 17, 0, 0, 0, 0, 0, 0, 3, 20
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/LoginRegisterContainer/__tests__/loginRegisterContainer.test.tsx", "TypeScript React", 0, 108, 0, 0, 0, 0, 0, 33, 141
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/LoginRegisterContainer/loginRegisterContainer.tsx", "TypeScript React", 0, 263, 0, 0, 0, 0, 0, 19, 282
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/LoginRegisterContainer/styled.ts", "TypeScript", 43, 0, 0, 0, 0, 0, 0, 10, 53
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Logo/Logo.tsx", "TypeScript React", 0, 13, 0, 0, 0, 0, 0, 3, 16
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Logo/__tests__/logo.test.tsx", "TypeScript React", 0, 12, 0, 0, 0, 0, 0, 4, 16
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Logo/style.ts", "TypeScript", 22, 0, 0, 0, 0, 0, 0, 6, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/OpenMobileLateralMenu/OpenMobileLateralMenu.tsx", "TypeScript React", 0, 40, 0, 0, 0, 0, 0, 4, 44
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/OpenMobileLateralMenu/__tests__/openmobilelatealmenu.test.tsx", "TypeScript React", 0, 14, 0, 0, 0, 0, 0, 3, 17
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/OpenMobileLateralMenu/style.ts", "TypeScript", 108, 0, 0, 0, 0, 0, 0, 15, 123
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/OrderContainer/OrderContainer.tsx", "TypeScript React", 0, 8, 0, 0, 0, 0, 0, 4, 12
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/PrimaryButton/PrimaryButton.tsx", "TypeScript React", 0, 15, 0, 0, 0, 0, 0, 4, 19
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/PrimaryButton/__tests__/primarybutton.test.tsx", "TypeScript React", 0, 14, 0, 0, 0, 0, 0, 4, 18
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/PrimaryButton/style.ts", "TypeScript", 17, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/PrimaryInput/PrimaryInput.tsx", "TypeScript React", 0, 30, 0, 0, 0, 0, 0, 4, 34
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/PrimaryInput/styled.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 4, 17
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Product/Product.tsx", "TypeScript React", 0, 31, 0, 0, 0, 0, 0, 4, 35
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Product/__tests__/product.test.tsx", "TypeScript React", 0, 23, 0, 0, 0, 0, 0, 5, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Product/styled.ts", "TypeScript", 51, 0, 0, 0, 0, 0, 0, 10, 61
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsBuyInfo/ProductDetailsBuyInfo.tsx", "TypeScript React", 0, 112, 0, 0, 0, 0, 0, 9, 121
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsBuyInfo/__tests__/ProductDetailsBuyInfo.test.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 3, 27
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsBuyInfo/style.ts", "TypeScript", 187, 0, 0, 0, 0, 0, 18, 38, 243
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsInfo/ProductDetailsInfo.tsx", "TypeScript React", 0, 47, 0, 0, 0, 0, 0, 5, 52
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsInfo/__tests__/product.test.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 4, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsInfo/style.ts", "TypeScript", 112, 0, 0, 0, 0, 0, 15, 23, 150
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsPhotosDesktop/ProductDetailsPhotosDesktop.tsx", "TypeScript React", 0, 69, 0, 0, 0, 0, 2, 6, 77
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsPhotosDesktop/__tests__/ProductDeatailsPhotosDesktop.test.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 4, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsPhotosDesktop/style.ts", "TypeScript", 63, 0, 0, 0, 0, 0, 3, 12, 78
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsPhotosMobileTablet/ProductDetailsPhotosMobileTablet.tsx", "TypeScript React", 0, 62, 0, 0, 0, 0, 2, 8, 72
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsPhotosMobileTablet/__tests__/ProductDetailsPhotosMobileTablet.test.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 4, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductDetailsPhotosMobileTablet/style.ts", "TypeScript", 31, 0, 0, 0, 0, 0, 2, 6, 39
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductListing/ProductListing.tsx", "TypeScript React", 0, 48, 0, 0, 0, 0, 0, 4, 52
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductListing/__tests__/productListing.test.tsx", "TypeScript React", 0, 34, 0, 0, 0, 0, 0, 2, 36
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/ProductListing/styles.ts", "TypeScript", 481, 0, 0, 0, 0, 0, 4, 29, 514
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Searchbar/Searchbar.tsx", "TypeScript React", 0, 15, 0, 0, 0, 0, 0, 4, 19
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Searchbar/__test__/searchbar.test.tsx", "TypeScript React", 0, 9, 0, 0, 0, 0, 0, 3, 12
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/Searchbar/style.ts", "TypeScript", 43, 0, 0, 0, 0, 0, 0, 7, 50
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/SecundaryButton/SecundaryButton.tsx", "TypeScript React", 0, 15, 0, 0, 0, 0, 0, 4, 19
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/SecundaryButton/__tests__/SecundaryButton.test.tsx", "TypeScript React", 0, 16, 0, 0, 0, 0, 0, 4, 20
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/SecundaryButton/style.ts", "TypeScript", 17, 0, 0, 0, 0, 0, 0, 3, 20
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/SimilarProducts/SimilarProducts.tsx", "TypeScript React", 0, 23, 0, 0, 0, 0, 0, 5, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/SimilarProducts/__tests__/SimilarProducts.test.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 4, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/TextLink/TextLink.tsx", "TypeScript React", 0, 10, 0, 0, 0, 0, 0, 4, 14
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/TextLink/__tests__/textlink.test.tsx", "TypeScript React", 0, 15, 0, 0, 0, 0, 0, 4, 19
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/TextLink/style.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/navbar/Navbar.tsx", "TypeScript React", 0, 33, 0, 0, 0, 0, 0, 3, 36
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/navbar/__tests__/navbar.test.tsx", "TypeScript React", 0, 14, 0, 0, 0, 0, 0, 3, 17
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/components/navbar/style.ts", "TypeScript", 87, 0, 0, 0, 0, 0, 0, 16, 103
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/global.ts", "TypeScript", 25, 0, 0, 0, 0, 0, 0, 8, 33
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/categories/useMainCategoryBySubFetcher.tsx", "TypeScript React", 0, 27, 0, 0, 0, 0, 0, 4, 31
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/products/__tests__/useRandomProductFetcher.test.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 6, 30
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/products/useAllProductsFetcher.tsx", "TypeScript React", 0, 11, 0, 0, 0, 0, 0, 2, 13
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/products/useProductByCategoryFetcher.tsx", "TypeScript React", 0, 14, 0, 0, 0, 0, 0, 2, 16
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/products/useRandomProductFetcher.tsx", "TypeScript React", 0, 11, 0, 0, 0, 0, 0, 2, 13
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/products/useRecentProductsFetcher.tsx", "TypeScript React", 0, 11, 0, 0, 0, 0, 0, 2, 13
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/user/__tests__/useAuthenticationValidation.test.tsx", "TypeScript React", 0, 41, 0, 0, 0, 0, 0, 7, 48
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/user/__tests__/useSearchAddressComplete.test.tsx", "TypeScript React", 0, 47, 0, 0, 0, 0, 0, 7, 54
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/user/useAuthenticationValidation.tsx", "TypeScript React", 0, 25, 0, 0, 0, 0, 0, 5, 30
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/hooks/user/useSearchAddressComplete.tsx", "TypeScript React", 0, 25, 0, 0, 0, 0, 0, 7, 32
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/main.tsx", "TypeScript React", 0, 24, 0, 0, 0, 0, 0, 2, 26
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/AccountSettingsPage/AccountSettingsPage.tsx", "TypeScript React", 0, 61, 0, 0, 0, 0, 0, 5, 66
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/AccountSettingsPage/style.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 4, 22
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/AddressesPage/AddressesPage.tsx", "TypeScript React", 0, 12, 0, 0, 0, 0, 0, 3, 15
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/AddressesPage/style.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 3, 21
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/App/App.tsx", "TypeScript React", 0, 16, 0, 0, 0, 0, 0, 3, 19
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/CreditCardPage/CreditCardPage.tsx", "TypeScript React", 0, 12, 0, 0, 0, 0, 0, 3, 15
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/CreditCardPage/style.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 4, 22
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/DashboardPage/DashboardPage.tsx", "TypeScript React", 0, 65, 0, 0, 0, 0, 0, 7, 72
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/DashboardPage/style.ts", "TypeScript", 36, 0, 0, 0, 0, 0, 2, 6, 44
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/Homepage/Homepage.tsx", "TypeScript React", 0, 132, 0, 0, 0, 0, 0, 8, 140
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/Homepage/__tests__/Homepage.test.tsx", "TypeScript React", 0, 20, 0, 0, 0, 0, 0, 4, 24
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/Homepage/style.ts", "TypeScript", 192, 0, 0, 0, 0, 0, 0, 33, 225
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/LoginRegisterPage/LoginRegisterPage.tsx", "TypeScript React", 0, 52, 0, 0, 0, 0, 0, 7, 59
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/LoginRegisterPage/__tests__/LoginRegisterPage.test.tsx", "TypeScript React", 0, 49, 0, 0, 0, 0, 0, 9, 58
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/LoginRegisterPage/styled.ts", "TypeScript", 99, 0, 0, 0, 0, 0, 0, 17, 116
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/OrdersPage/OrdersPage.tsx", "TypeScript React", 0, 12, 0, 0, 0, 0, 0, 3, 15
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/OrdersPage/style.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 3, 21
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/PDP/PDP.tsx", "TypeScript React", 0, 106, 0, 0, 0, 0, 0, 11, 117
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/PDP/style.ts", "TypeScript", 86, 0, 0, 0, 0, 0, 10, 22, 118
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/PLP/PLP.tsx", "TypeScript React", 0, 90, 0, 0, 0, 0, 0, 5, 95
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/PLP/style.ts", "TypeScript", 177, 0, 0, 0, 0, 0, 0, 19, 196
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/ProfilePage/ProfilePage.tsx", "TypeScript React", 0, 12, 0, 0, 0, 0, 0, 3, 15
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/pages/ProfilePage/style.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 3, 21
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/redux/store.ts", "TypeScript", 36, 0, 0, 0, 0, 0, 0, 5, 41
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/utils/cookies.ts", "TypeScript", 26, 0, 0, 0, 0, 0, 0, 2, 28
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/utils/queryParams.tsx", "TypeScript React", 0, 4, 0, 0, 0, 0, 0, 2, 6
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/src/vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 1, 1, 2
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/tsconfig.json", "JSON with Comments", 0, 0, 0, 0, 21, 0, 0, 1, 22
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/tsconfig.node.json", "JSON", 0, 0, 0, 8, 0, 0, 0, 1, 9
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/vercel.json", "JSON", 0, 0, 0, 3, 0, 0, 0, 1, 4
+"/Users/goncalovieira/Desktop/Dealit/dealit-frontend/vite.config.ts", "TypeScript", 17, 0, 0, 0, 0, 0, 1, 2, 20
+"Total", "-", 2409, 2867, 93, 4775, 21, 22, 85, 808, 11080

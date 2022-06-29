@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
   DashboardPageContainer,
@@ -9,15 +9,19 @@ import { CgProfile } from "react-icons/cg";
 import { BsBoxSeam, BsFillSignpost2Fill } from "react-icons/bs";
 import { AiOutlineSecurityScan } from "react-icons/ai";
 import { FaWallet } from "react-icons/fa";
+import { BiLogOut } from "react-icons/bi";
 import DashboardSideBarButton from "../../components/DashboardSideBarButton/DashboardSideBarButton";
 import { getCookie } from "../../utils/cookies";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
-import { IconType } from "react-icons";
 
 export interface DashboardOptions {
   icon: JSX.Element;
   text: string;
   path: string;
+}
+export interface LogoutProps {
+  icon: JSX.Element;
+  text: string;
 }
 
 const DashboardPage = () => {
@@ -36,6 +40,11 @@ const DashboardPage = () => {
     },
     { icon: <FaWallet size={28} />, text: "My cards", path: "./cards" },
   ];
+  const logoutBtn: LogoutProps = {
+    icon: <BiLogOut size={28} />,
+    text: "Logout",
+  };
+
   const { isLogged, isLoading, error } = useAuthenticationValidation(
     getCookie("token")
   );
@@ -47,11 +56,10 @@ const DashboardPage = () => {
     }
   }, [isLoading]);
 
-
   return !isLoading && isLogged ? (
     <DashboardPageContainer>
       <DashboardPageSideBarContainer>
-        <DashboardSideBarButton options={options} />
+        <DashboardSideBarButton options={options} logout={logoutBtn} />
       </DashboardPageSideBarContainer>
       <DashboardPageContentContainer>
         <Outlet />

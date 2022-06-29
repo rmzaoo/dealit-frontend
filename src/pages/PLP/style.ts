@@ -107,7 +107,7 @@ const SafeContainer = styled.div`
 `;
 
 const Category = styled.div`
-  margin-top: 10px;
+  margin-top: 70px;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -4,7 +4,7 @@ import DashboardPageTitle from "../../components/DashboardPageTitle/DashboardPag
 export const OrderPageBody = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100%;

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   Category,
   Container,
@@ -12,6 +12,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { PrimaryButton } from "../../components/PrimaryButton/style";
 import axios from "axios";
+import { MdStayCurrentLandscape } from "react-icons/md";
 
 const PLP = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,35 +28,40 @@ const PLP = () => {
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
-    }
-    else if (category1) {
+    } else if (category1) {
       axios
         .get(
           `https://dealit-backend.herokuapp.com/dealit/api/products/category/${category1}?page=${currentPage}`
         )
         .then((response: any) => {
           setCurrentProds(response.data);
-          console.log(response.data);
           return currentProds;
         });
     }
   }, [currentPage, category1, category2]);
+
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [category1, category2]);
+
   return (
     <Container>
       <SafeContainer>
         <Category>
-          <h1>Category</h1>
           <div>
-            <span style={{textDecoration: category2 ? 'underline': "none", cursor: category2 ? 'pointer' : ""}} onClick={() => navigate(`/products/${category1}`)}>
+            <span
+              style={{ fontSize: "18px", cursor: category2 ? "pointer" : "" }}
+              onClick={() => navigate(`/products/${category1}`)}
+            >
               {category1}
             </span>
             {category2 && (
               <>
-                <span> &#62; </span>
-                <span>{category2}</span>
+                <span style={{ fontSize: "18px" }}> &#62; </span>
+                <span style={{ fontSize: "18px" }}>{category2}</span>
               </>
             )}
           </div>
@@ -76,7 +82,7 @@ const PLP = () => {
             </PrimaryButton>
           )}
           <StyledSpan>Page {currentPage}</StyledSpan>
-          {currentPage === 2 ? (
+          {currentProds.length < 6 ? (
             <DisabledButton>Next</DisabledButton>
           ) : (
             <PrimaryButton

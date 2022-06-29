@@ -10,7 +10,7 @@ import {
   ProductShowcasedPhotoContainer,
 } from "./style";
 import noImage from "../../assets/noImageAvailable.png";
-import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
+import { ProductDetailsProp } from "../../pages/PDP/PDP";
 
 interface Props {
   product: ProductDetailsProp;
@@ -52,6 +52,7 @@ const ProductDetailsPhotos = (props: Props) => {
           infinite={false}
           autoPlay={false}
           containerClass="carousel-container"
+          style={{zIndex: "1"}}
         >
           {product.photos.map((value, index) => {
             return (
