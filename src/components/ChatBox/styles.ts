@@ -5,26 +5,38 @@ interface Props {
 }
 
 export const ChatContainer = styled.div`
-  background-color: white;
+  background-color: rgba(21, 90, 110, 0.6);
   display: flex;
   flex-direction: column;
   position: fixed;
   padding: 10px;
   width: 400px;
   height: 38%;
-  z-index: 1000;
+  z-index: 10;
   top: 48%;
-  left: 70%;
+  left: 68%;
   border-radius: 5px;
   scale: ${(props: Props) => (props.isOpen ? 1 : 0)};
+  -webkit-transform: scale(${(props: Props) => (props.isOpen ? 1.0 : 0.0)});
 `;
+
+export const ChatTitle = styled.p`
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+`;
+
 export const HistDiv = styled.div`
-  background-color: blue;
+  background-color: rgba(84, 128, 168, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
   height: 80%;
   border-radius: 5px;
-  overflow: scroll;
+  overflow-y: scroll;
 `;
+
 export const InputDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -36,26 +48,26 @@ export const InputDiv = styled.div`
 `;
 
 export const ChatInput = styled.input`
-  background-color: red;
+  background-color: whitesmoke;
   width: 88%;
   height: 90%;
   border-radius: 5px;
   padding: 3px;
   border: 0px;
+
 `;
 
 export const SubmitButton = styled.button`
   width: 10%;
   height: 100%;
   color: #fff;
-  background-color: #10a37f;
+  background-color: rgb(32,90,90);
   border: none;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
   font-size: 16px;
   line-height: 24px;
-  font-family: "ColfaxAI", Helvetica, sans-serif;
 `;
 
 export const UserText = styled.p`
@@ -63,11 +75,14 @@ export const UserText = styled.p`
   padding: 4px;
   display: flex;
   justify-content: center;
+  margin-left: 20%;
   align-items: center;
+  text-align: flex-start;
+  align-self: flex-end;
   width: 80%;
   color: black;
-  background-color: rgb(173, 232, 228);
-  border-radius: 4px;
+  background-color: rgba(177, 216, 246, 1);
+  border-radius: 5px;
 `;
 
 export const AIText = styled.p`
@@ -76,8 +91,11 @@ export const AIText = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: flex-start;
   width: 80%;
   color: black;
-  background-color: rgb(242, 108, 96);
-  border-radius: 4px;
+  background-color: whitesmoke;//rgba(189, 220, 240, 1);
+  border-radius: 5px;
 `;
+
+

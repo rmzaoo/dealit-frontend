@@ -42,7 +42,6 @@ function reducer(
           check = true;
         }
       });
-      console.log(!check);
       return !check
         ? { ...state, cart: [...state.cart, action.payload] }
         : {

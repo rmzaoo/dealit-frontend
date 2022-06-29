@@ -129,7 +129,6 @@ const Sidebar: any = () => {
               </h2>
               <ProductsContainer>
                 {context.cart.map((item: any, index: number) => {
-                  console.log(item.quantity);
                   return (
                     <>
                       <CartProduct
