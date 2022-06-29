@@ -86,13 +86,21 @@ const CheckoutOut = styled.div`
   top: 0;
   right: 50;
   height: 100%;
-  width: 100vh;
+  width: 70%;
   background-color: #131a22;
   animation: sidebar-close 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    right: 0;
+  }
+  @media screen and (min-width: 769px) {
+    width: 50%;
+  }
 
   @keyframes sidebar-close {
     0% {
@@ -103,10 +111,6 @@ const CheckoutOut = styled.div`
       opacity: 0;
       transform: translateX(100%);
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
   }
 `;
 const PageOutSidebar = styled.div`

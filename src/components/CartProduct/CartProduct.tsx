@@ -70,6 +70,7 @@ const CartProduct = ({
         }
       })
     );
+    localStorage.setItem("shoppingCart", cart);
   }, [cart]);
 
   function handleProductTrash() {
