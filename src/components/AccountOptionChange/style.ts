@@ -22,10 +22,6 @@ export const AccOptionContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 75%;
   }
-
-  //Mobile
-  @media screen and (max-width: 480px) {
-  }
 `;
 
 export const AccOptionTitleAndInputContainer = styled.div`
