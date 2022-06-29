@@ -136,7 +136,7 @@ const ContainerProducts = styled.div`
     height: 72%;
   }
   @media screen and (min-width: 992px) {
-    height: 76%;
+    height: 78%;
   }
 `;
 
@@ -157,6 +157,10 @@ const PageBottoms = styled.div`
     width: 6vh;
     margin: 0 10px;
 
+    @media screen and (min-width: 300px) {
+      width: 8vh;
+      margin: 0 8px;
+    }
     @media screen and (min-width: 992px) {
       width: 2vh;
       margin: 0 8px;

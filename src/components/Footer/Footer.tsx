@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, AIButton, ChatIcon } from "./styled";
+import { Container, AIButton, ChatIcon, AIButtonAfter } from "./styled";
 import ChatBox from "../ChatBox/ChatBox";
 
 const Footer = () => {
@@ -11,9 +11,16 @@ const Footer = () => {
       <Container>
         <span>&#169; Dealit {year}</span>
       </Container>
-      <AIButton onClick={() => setIsOpen(!isOpen)}>
-        <ChatIcon />
-      </AIButton>
+      {isOpen === false ? (
+        <AIButton onClick={() => setIsOpen(!isOpen)}>
+          <ChatIcon />
+        </AIButton>
+      ) : (
+        <AIButtonAfter onClick={() => setIsOpen(!isOpen)}>
+          <ChatIcon />
+        </AIButtonAfter>
+      )}
+
       <ChatBox isOpen={isOpen} />
     </>
   );

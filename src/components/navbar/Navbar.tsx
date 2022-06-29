@@ -21,9 +21,20 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   function handleClick() {
-
-    dispatch({ type: "SEND_OPENED", payload: { opened:true } })
+    dispatch({ type: "SEND_OPENED", payload: { opened: true } });
   }
+
+  useEffect(() => {
+    const cartRecovery = localStorage.getItem("shoppingCart");
+
+    if (cartRecovery) {
+      dispatch({
+        type: "SET_CART",
+        payload: { cartRecovery: JSON.parse(cartRecovery) },
+      });
+    }
+  }, []);
+
   return (
     <Container>
       <MobileHeader>
@@ -33,7 +44,9 @@ const Navbar = () => {
       <DesktopHeader>
         <Searchbar />
         <ButtonsBar>
-          <SellButton onClick={() => navigate("/sell-product")}>Sell With US</SellButton>
+          <SellButton onClick={() => navigate("/sell-product")}>
+            Sell With US
+          </SellButton>
           <LoginButton onClick={() => navigate("/login")} />
           <CartButton onClick={() => handleClick()} />
         </ButtonsBar>

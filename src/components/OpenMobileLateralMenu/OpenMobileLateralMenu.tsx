@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CategoryBar from "../CategoryBar/CategoryBar";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import { useDispatch } from "react-redux";
 import {
   ButtonsMobile,
   CartButton,
@@ -12,10 +13,24 @@ import {
   MobileLateralMenu,
   MobileSearchbar,
 } from "./style";
+import { ProductDetailsProp } from "../../pages/PDP/PDP";
 
-const OpenMobileLateralMenu = () => {
+interface Props {
+  product?: ProductDetailsProp;
+}
+
+const OpenMobileLateralMenu = (props: Props) => {
+  const [quantity, setQuantity] = useState<string>("1");
+  const dispatch = useDispatch();
+  const product = props.product;
   const [opened, setOpened] = useState(false);
   const navigate = useNavigate();
+
+  function handleDispatch() {
+    dispatch({ type: "SEND_OPENED", payload: { opened: true } });
+    dispatch({ type: "ADD", payload: { product, quantity, opened } });
+    dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
+  }
 
   return (
     <Container>
@@ -29,8 +44,10 @@ const OpenMobileLateralMenu = () => {
           >
             <ButtonsMobile>
               <LoginButton onClick={() => navigate("/login")} />
-              <CartButton onClick={() => navigate("/cart")} />
-              <PrimaryButton onClick={() => navigate("/sell-product")}>Sell With US</PrimaryButton>
+              <CartButton onClick={() => handleDispatch()} />
+              <PrimaryButton onClick={() => navigate("/sell-product")}>
+                Sell With US
+              </PrimaryButton>
             </ButtonsMobile>
             <MobileCategoryBar />
           </div>

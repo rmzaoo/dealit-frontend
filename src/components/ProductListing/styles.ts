@@ -9,12 +9,12 @@ const MainProductCard = styled(Product)`
   display: flex;
   flex-direction: column;
 
-  @media only screen and (min-width: 200px) {
-    width: 130px;
-    height: 140px;
+  @media only screen and (max-width: 200px) {
+    width: 90px;
+    height: 150px;
 
     h1 {
-      font-size: 12px;
+      font-size: 9px;
       margin: 0;
       width: 100%;
       height: 100%;
@@ -24,7 +24,7 @@ const MainProductCard = styled(Product)`
       text-align: center;
     }
     img {
-      height: 80px;
+      height: 46px;
       border-radius: 10px 10px 0px 0px;
       width: 130px;
       object-fit: contain;
@@ -36,37 +36,39 @@ const MainProductCard = styled(Product)`
       text-align: center;
     }
   }
-  @media only screen and (min-width: 360px) {
-    width: 80px;
-    height: 140px;
+  @media only screen and (min-width: 315px) {
+    width: 110px;
+    height: 120px;
 
     h1 {
-      font-size: 7px;
+      font-size: 9px;
       margin: 0;
       width: 100%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
     img {
-      height: 42px;
+      height: 58px;
       border-radius: 10px 10px 0px 0px;
-      width: 160px;
+      width: 130px;
+      object-fit: contain;
     }
     span {
-      font-size: 7px;
+      font-size: 10px;
       height: 60%;
       width: 100%;
       text-align: center;
     }
   }
   @media only screen and (min-width: 400px) {
-    width: 120px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 
     h1 {
-      font-size: 9px;
+      font-size: 10px;
       margin: 0;
       width: 100%;
       height: 100%;
@@ -80,7 +82,32 @@ const MainProductCard = styled(Product)`
       width: 160px;
     }
     span {
-      font-size: 9px;
+      font-size: 12px;
+      height: 60%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  @media only screen and (min-width: 455px) {
+    width: 160px;
+    height: 180px;
+
+    h1 {
+      font-size: 11px;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      height: 90px;
+      border-radius: 10px 10px 0px 0px;
+      width: 160px;
+    }
+    span {
+      font-size: 12px;
       height: 60%;
       width: 100%;
       text-align: center;
@@ -113,11 +140,11 @@ const MainProductCard = styled(Product)`
     }
   }
   @media only screen and (min-width: 800px) {
-    width: 160px;
-    height: 200px;
+    width: 180px;
+    height: 220px;
 
     h1 {
-      font-size: 10px;
+      font-size: 11px;
       margin: 0;
       width: 100%;
       height: 100%;
@@ -126,12 +153,12 @@ const MainProductCard = styled(Product)`
       justify-content: center;
     }
     img {
-      height: 70px;
+      height: 90px;
       border-radius: 10px 10px 0px 0px;
       width: 190px;
     }
     span {
-      font-size: 10px;
+      font-size: 12px;
       height: 60%;
       width: 100%;
       text-align: center;

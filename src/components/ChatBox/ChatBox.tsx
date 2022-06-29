@@ -1,4 +1,4 @@
-import { JSXElementConstructor, useState } from "react";
+import { useState } from "react";
 import {
   ChatContainer,
   HistDiv,
@@ -40,6 +40,12 @@ const ChatBox = ({ isOpen }: Props) => {
     setInput("");
   };
 
+  const handleKeyPress = (e: any) => {
+    if (e.key === "Enter") {
+      onClick();
+    }
+  };
+
   return (
     <>
       <ChatContainer isOpen={isOpen}>
@@ -52,6 +58,7 @@ const ChatBox = ({ isOpen }: Props) => {
             placeholder="Enter any question!"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
           <SubmitButton onClick={onClick}>
             <GiMagnifyingGlass size="2x" />
