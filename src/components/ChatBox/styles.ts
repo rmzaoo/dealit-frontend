@@ -6,7 +6,7 @@ interface Props {
 
 export const ChatContainer = styled.div`
   background-color: white;
-  display: flex;
+  display: none;
   flex-direction: column;
   position: fixed;
   padding: 10px;

@@ -15,25 +15,34 @@ import emptyCart from "../../assets/emptyCart.svg";
 import { useNavigate } from "react-router";
 
 const Sidebar: any = () => {
-  const [productPrice, setProductPrice] = useState(0);
   const context: any = useSelector((state) => state);
   const [animateOut, setAnimateOut] = useState(false);
   const [opened, setOpened] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const combinedPrice = context.cartCombinedPrice;
+
+  useEffect(() => {
+    dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
+  }, []);
+
   function handleNavigate() {
     navigate("/");
     setOpened(false);
     setAnimateOut(true);
-   setTimeout( () => dispatch({ type: "SEND_OPENED", payload: { opened:false } }), 500)
-
+    setTimeout(
+      () => dispatch({ type: "SEND_OPENED", payload: { opened: false } }),
+      500
+    );
   }
   function handleClick() {
     setOpened(false);
     setAnimateOut(true);
-    setTimeout( () => dispatch({ type: "SEND_OPENED", payload: { opened:false } }), 500)
-
+    setTimeout(
+      () => dispatch({ type: "SEND_OPENED", payload: { opened: false } }),
+      500
+    );
   }
 
   if (context.cart.length === 0) {
@@ -128,15 +137,16 @@ const Sidebar: any = () => {
                 Your Cart
               </h2>
               <ProductsContainer>
+                {console.log(context)}
                 {context.cart.map((item: any, index: number) => {
-                  console.log(item.quantity);
+                  console.log(item);
                   return (
                     <>
                       <CartProduct
                         id={item.product.id}
                         name={item.product.name}
                         photo={item.product.photos[0]}
-                        price={item.product.price * item.quantity}
+                        price={item.product.price}
                         key={index}
                         quantity={item.quantity}
                       ></CartProduct>
@@ -146,7 +156,9 @@ const Sidebar: any = () => {
               </ProductsContainer>
               <CombinedPrice>
                 <span>Total:</span>
-                <span>{productPrice} $</span>
+                <span>
+                  {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
+                </span>
               </CombinedPrice>
               <CheckoutButton>CHECKOUT</CheckoutButton>
             </SidebarContainer>
@@ -182,7 +194,9 @@ const Sidebar: any = () => {
             </ProductsContainer>
             <CombinedPrice>
               <span>Total:</span>
-              <span>{productPrice} $</span>
+              <span>
+                {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
+              </span>
             </CombinedPrice>
             <CheckoutButton>CHECKOUT</CheckoutButton>
           </SidebarOut>

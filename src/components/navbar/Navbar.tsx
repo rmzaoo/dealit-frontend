@@ -21,10 +21,22 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   function handleClick() {
-
-    dispatch({ type: "SEND_OPENED", payload: { opened:true } })
+    dispatch({ type: "SEND_OPENED", payload: { opened: true } });
   }
-console.log("s")
+
+  useEffect(() => {
+    const cartRecovery = localStorage.getItem("shoppingCart");
+    console.log(cartRecovery);
+    console.log(localStorage.getItem("shoppingCart"));
+    if (cartRecovery) {
+      dispatch({
+        type: "SET_CART",
+        payload: { cartRecovery: JSON.parse(cartRecovery) },
+      });
+      console.log(cartRecovery);
+    }
+  }, []);
+
   return (
     <Container>
       <MobileHeader>
