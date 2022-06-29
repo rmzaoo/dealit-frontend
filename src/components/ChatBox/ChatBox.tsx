@@ -6,8 +6,11 @@ import {
   InputDiv,
   SubmitButton,
   UserText,
-  AIText
+  AIText,
+  ChatTitle,
 } from "./styles";
+import { fetchCompletion } from "../../api/completionFetch";
+import { GiMagnifyingGlass } from "react-icons/gi";
 
 interface Props {
   isOpen: boolean;
@@ -15,26 +18,33 @@ interface Props {
 
 const ChatBox = ({ isOpen }: Props) => {
   const [input, setInput] = useState("");
-  const [history] = useState<any>([]);
+  const [history, setHistory] = useState<any>([
+    <AIText>Hello! I'm dealio! Feel free to ask me anything!</AIText>,
+  ]);
 
-  async function onClick() {
-    history.push(<UserText>{input}</UserText>);
-    const response = await fetch("/api/generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ question: input }),
-    });
-    const data = await response.json();
-    history.push(<AIText>{data.result}</AIText>);
+  const onClick = async () => {
+    const h = history;
+    h.push(<UserText key={input + Math.random()}>{input}</UserText>);
+    setHistory(h);
+    const response: { response: string } = await fetchCompletion(input);
+    setTimeout(
+      () =>
+        setHistory([
+          ...history,
+          <AIText key={response.response + Math.random()}>
+            {response.response}
+          </AIText>,
+        ]),
+      1000
+    );
     setInput("");
-  }
+  };
 
   return (
     <>
       <ChatContainer isOpen={isOpen}>
-        <HistDiv />
+        <ChatTitle>Dealio, the AI Assistant</ChatTitle>
+        <HistDiv>{history}</HistDiv>
         <InputDiv>
           <ChatInput
             type="text"
@@ -43,7 +53,9 @@ const ChatBox = ({ isOpen }: Props) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <SubmitButton type="button" />
+          <SubmitButton onClick={onClick}>
+            <GiMagnifyingGlass size="2x" />
+          </SubmitButton>
         </InputDiv>
       </ChatContainer>
     </>
