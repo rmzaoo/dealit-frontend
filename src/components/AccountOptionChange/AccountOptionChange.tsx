@@ -115,7 +115,9 @@ const AccountOptionChange = ({
       </AccOptionTitleAndInputContainer>
       <AccOptionButtonsContainer>
         <SaveButton onClick={() => saveChange()}>Save</SaveButton>
-        <ResetButton onClick={() => resetChanges()}>Reset</ResetButton>
+        {valueToChange !== "password" && (
+          <ResetButton onClick={() => resetChanges()}>Reset</ResetButton>
+        )}
       </AccOptionButtonsContainer>
     </AccOptionContainer>
   );

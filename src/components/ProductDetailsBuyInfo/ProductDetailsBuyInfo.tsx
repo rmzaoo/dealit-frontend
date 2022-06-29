@@ -43,7 +43,6 @@ const ProductDetailsBuyInfo = (props: Props) => {
   const [name, setName] = useState();
   const [counter, setCounter] = useState(0);
   const [quantity, setQuantity] = useState<string>("1");
-  const [isLoading, setIsLoading] = useState(false);
   const product = props.product;
   const [price, setPrice] = useState(product.price.toLocaleString());
 
@@ -67,7 +66,6 @@ const ProductDetailsBuyInfo = (props: Props) => {
       setName(data.username);
       setAddress(data.address);
     });
-    setIsLoading(false);
   }, []);
 
   function handleDispatch() {

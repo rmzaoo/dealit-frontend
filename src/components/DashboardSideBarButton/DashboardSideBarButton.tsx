@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { useDispatch } from "react-redux";
 import {
   DashboardOptions,
   LogoutProps,
@@ -22,6 +23,7 @@ interface Props {
 }
 
 const AccountSideBarButtons = ({ options, logout }: Props) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { isLogged, isLoading, error } = useAuthenticationValidation(
@@ -37,6 +39,7 @@ const AccountSideBarButtons = ({ options, logout }: Props) => {
   const logoutFunc = () => {
     deleteCookie("token");
     toast.success("Logged out!");
+    dispatch({ type: "RESET_INITIAL_STATE", payload: {} });
     navigate("/");
   };
 
@@ -68,3 +71,6 @@ const AccountSideBarButtons = ({ options, logout }: Props) => {
 };
 
 export default AccountSideBarButtons;
+function dispatch(arg0: () => void) {
+  throw new Error("Function not implemented.");
+}

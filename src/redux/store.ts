@@ -116,6 +116,8 @@ function reducer(
         cartCombinedPrice:
           state.cartCombinedPrice - parseFloat(action.payload.price),
       };
+    case "RESET_INITIAL_STATE":
+      return initialState;
     default:
       return state;
   }

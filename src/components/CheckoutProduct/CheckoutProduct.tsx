@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import noImage from "../../assets/noImageAvailable.png";
-import { Container, ProductPhotoDiv, ProductDetails } from "./style";
+import { Container } from "./style";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductById } from "../../api/productsFetch";
 
 export interface CartProps {
   id: number;
