@@ -7,30 +7,42 @@ export const PDPContainer = styled.div`
   background-color: #27364b;
   flex-direction: column;
   width: 100%;
-  padding-top: 8%;
-  height: fit-content;
+  height: 180vh;
   background-image: linear-gradient(175deg, #27364b 5%, #0e1318 100%);
-  padding-top: 50px;
+
+  
+
+  //Tablets
+  @media screen and (max-width: 768) {
+    height: 200vh;
+  }
+
 `;
 
 export const ProductDetailsContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  padding-top: 10px;
+  height: 50%;
+  margin-top: 10%;
+
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
+    margin-top: 15%;
+  }
 
   //Tablets
   @media screen and (max-width: 768px) {
     overflow-x: hidden;
-    height: fit-content;
+    height: 90%;
+    margin-top: 13%;
   }
 
   //Mobile
   @media screen and (max-width: 480px) {
-    margin-top: 0px;
+    margin-top: 18%;
   }
 `;
 
@@ -50,7 +62,7 @@ export const ProductContainer = styled.div`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    height: 100%;
+    height: 80%;
   }
 `;
 
@@ -59,7 +71,7 @@ export const SecondHalfOfScreenContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 90%;
-  height: 70vh;
+  height: 50%;
   padding: 20px;
 `;
 
@@ -96,18 +108,10 @@ export const BreadCrumbDiv = styled.div`
   align-items: center;
   width: 90%;
   padding-left: 1%;
-  margin-top: 10px;
 
-  //Laptops and small screens
-  @media screen and (max-width: 1024px) {
-    height: 0%;
-    margin-top: 50px;
-  }
 
   //Tablets
   @media screen and (max-width: 768px) {
-    margin-top: 10px;
-    height: 100%;
-    width: 90%;
+    height: 5%;
   }
 `;

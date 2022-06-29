@@ -1,10 +1,13 @@
 import React from "react";
+import { ProfilePageBody, ProfilePageTitle } from "./style";
 
 const ProfilePage = () => {
   return (
-    <div>
-      <h2 style={{color: 'white'}}>This is Profile page!</h2>
-    </div>
+    <ProfilePageBody>
+      <ProfilePageTitle>
+        <h2>My Profile</h2>
+      </ProfilePageTitle>
+    </ProfilePageBody>
   );
 };
 

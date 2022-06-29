@@ -10,7 +10,7 @@ import {
   ProductShowcasedPhotoContainer,
 } from "./style";
 import noImage from "../../assets/noImageAvailable.png";
-import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
+import { ProductDetailsProp } from "../../pages/PDP/PDP";
 
 interface Props {
   product: ProductDetailsProp;

@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Container, AIButton, ChatIcon } from "./styled";
 import ChatBox from "../ChatBox/ChatBox";
 
-
-
 const Footer = () => {
   const year = new Date().getFullYear();
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -14,9 +12,9 @@ const Footer = () => {
         <span>&#169; Dealit {year}</span>
       </Container>
       <AIButton onClick={() => setIsOpen(!isOpen)}>
-        <ChatIcon/>
+        <ChatIcon />
       </AIButton>
-      <ChatBox isOpen={isOpen}/>
+      <ChatBox isOpen={isOpen} />
     </>
   );
 };

@@ -31,9 +31,7 @@ const Searchbar = ({ className }: Props) => {
     useEffect(() => {
       //CLICKED OUTSIDE OF ELEMENT
       const handler = (event: { target: any }) => {
-
         if (isOpen && ref.current && !ref.current.contains(event.target)) {
-          console.log("hey there");
           setIsOpen(false);
           setValue("");
         }
