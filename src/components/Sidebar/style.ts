@@ -8,7 +8,7 @@ const SidebarContainer = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 18%;
+  width: 30vh;
   background-color: #131a22;
   animation: sidebar-open 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: flex;
@@ -25,6 +25,10 @@ const SidebarContainer = styled.div`
       transform: translateX(0);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const PageOutSidebar = styled.div`
   position: fixed;
@@ -35,6 +39,10 @@ const PageOutSidebar = styled.div`
   height: 200%;
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const SidebarOut = styled.div`
@@ -50,6 +58,10 @@ const SidebarOut = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 
   @keyframes sidebar-close {
     0% {

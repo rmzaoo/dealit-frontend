@@ -19,6 +19,7 @@ const Container = styled.div`
     cursor: pointer;
     align-self: center;
     width: 30px;
+    margin-bottom: 10px;
   }
   @media only screen and (min-width: 300px) {
     width: 90%;

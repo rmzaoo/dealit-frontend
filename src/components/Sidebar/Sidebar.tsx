@@ -147,7 +147,7 @@ const Sidebar: any = () => {
                         photo={item.product.photos[0]}
                         price={item.product.price}
                         key={index}
-                        quantity={item.quantity}
+                        quantity={Number(item.quantity)}
                       ></CartProduct>
                     </>
                   );
