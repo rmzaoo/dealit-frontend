@@ -11,6 +11,7 @@ import OrdersPage from "./pages/OrdersPage/OrdersPage";
 import AccountSettingsPage from "./pages/AccountSettingsPage/AccountSettingsPage";
 import AddressesPage from "./pages/AddressesPage/AddressesPage";
 import CreditCardPage from "./pages/CreditCardPage/CreditCardPage";
+import SellProducts from "./pages/SellProducts/SellProducts";
 
 const Navigation = () => {
   return (
@@ -33,6 +34,8 @@ const Navigation = () => {
             <Route path="addresses" element={<AddressesPage />} />
             <Route path="cards" element={<CreditCardPage />} />
           </Route>
+
+          <Route path="/sell-product" element={<SellProducts />} />
         </Route>
         <Route path="/login" element={<LoginRegisterPage type="login" />} />
         <Route
