@@ -189,9 +189,12 @@ const SellProducts = () => {
           To publish your product, you must agree to the{" "}
           <Link to="/rules">rules</Link>.
         </p>
-        <SecundaryButton onClick={onSubmitProduct}>
-          Publish my product
-        </SecundaryButton>
+
+        <div className="btnsubmit">
+          <SecundaryButton onClick={onSubmitProduct}>
+            Publish my product
+          </SecundaryButton>
+        </div>
       </SellDetailsContainer>
       {showCategoryModal && (
         <ChooseCategoryModal

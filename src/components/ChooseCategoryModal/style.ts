@@ -37,6 +37,7 @@ const ModalCategory = styled.div`
 
   h3 {
     font-size: 25px;
+    text-align: center;
   }
 
   @media screen and (max-width: 768px) {
@@ -45,6 +46,9 @@ const ModalCategory = styled.div`
     height: 100%;
     padding: 0;
     border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   @keyframes fadeIn {
@@ -64,6 +68,12 @@ const PrincipalContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 15px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 80%;
+  }
 `;
 
 const CategoryBlock = styled.div`
@@ -87,10 +97,9 @@ const CategoryBlock = styled.div`
 const SecondaryContainer = styled.div`
   display: flex;
   width: 100%;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   height: 70%;
-
 
   .principal-category {
     width: 60%;
@@ -98,6 +107,8 @@ const SecondaryContainer = styled.div`
     > p {
       font-size: 20px;
       transition: opacity 0.3s ease-in-out;
+      margin-left: 10px;
+      font-weight: bolder;
 
       &:hover {
         cursor: pointer;
@@ -114,6 +125,8 @@ const SecondaryContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
+    text-align: center;
+
   }
 `;
 

@@ -72,7 +72,7 @@ export const PostProduct = async (Product: PostProductProps) => {
   });
 
   const response = await axios({
-    url: "http://10.10.225.145:3330/image-upload",
+    url: "http://10.10.225.145:3330/dealit/api/products",
     method: "post",
     headers: {
       "x-access-token": Product.jwt || "null",

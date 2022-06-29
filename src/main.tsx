@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import GlobalStyle from "./global";
+import GlobalStyle from "./GlobalStyle";
 import Navigation from "./Navigation";
 import { Provider } from "react-redux";
 import store from "./redux/store";

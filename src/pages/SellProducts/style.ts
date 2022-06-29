@@ -4,10 +4,8 @@ import PrimaryInput from "../../components/PrimaryInput/PrimaryInput";
 
 const SellProductsContainer = styled.div`
   background-color: red;
-  height: 100vh;
   margin-top: 108px;
   width: 100%;
-  overflow: auto;
   position: absolute;
   background-color: #27364b;
   background-image: linear-gradient(175deg, #27364b 5%, #0e1318 100%);
@@ -57,6 +55,10 @@ const SellDetailsContainer = styled.div`
     cursor: pointer;
   }
 
+  &:last-child {
+    margin-bottom: 60px;
+  }
+
   .input-sell-container {
     display: flex;
     width: 60%;
@@ -70,6 +72,11 @@ const SellDetailsContainer = styled.div`
     @media screen and (max-width: 768px) {
       width: 100%;
     }
+  }
+
+  .btnsubmit {
+    color: white;
+    font-size: 18px;
   }
 `;
 
