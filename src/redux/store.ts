@@ -17,7 +17,7 @@ const initialState = {
   addresses: [],
   creditCards: [],
   cartData: [],
-  cartIsOpened:false,
+  cartIsOpened: false,
   categories: await fetchCategories().then((data) =>
     data.map((e: any) => {
       return {
@@ -50,7 +50,7 @@ function reducer(
               if (e.product.id === action.payload.product.id) {
                 let numberQuantity = parseInt(e.quantity);
                 e.quantity = numberQuantity + 1;
-                
+
                 return e;
               }
             }),
@@ -60,6 +60,8 @@ function reducer(
         ...state,
         cartIsOpened: action.payload.opened,
       };
+    case "RESET_INITIAL_STATE":
+      return initialState;
     default:
       return state;
   }
