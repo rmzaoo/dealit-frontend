@@ -16,7 +16,7 @@ export const ProductInfoContainer = styled.div`
   //Tablets
   @media screen and (max-width: 768px) {
     width: 100%;
-    height: 100%;
+    height: 50%;
     padding: 2px;
   }
 `;
@@ -98,7 +98,18 @@ export const ProductDescriptionContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
-  height: 60%;
+  height: 40%;
+
+  //Tablets
+  @media screen and (max-width: 768) {
+    font-size: 1rem;
+    height: 30%;
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const ProductDescription = styled.p`
@@ -113,13 +124,13 @@ export const ProductDescription = styled.p`
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
     font-size: 1rem;
-    height: 40%;
+    height: 100%;
   }
 
   //Tablets
   @media screen and (max-width: 768) {
     font-size: 1rem;
-    height: 30%;
+    height: 100%;
   }
 
   //Mobile

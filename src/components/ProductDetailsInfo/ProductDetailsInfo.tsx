@@ -10,7 +10,7 @@ import {
   ProductPriceContainer,
 } from "./style";
 import ProductDetailsPhotosMobileTablet from "../ProductDetailsPhotosMobileTablet/ProductDetailsPhotosMobileTablet";
-import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
+import { ProductDetailsProp } from "../../pages/PDP/PDP";
 
 interface Props {
   product: ProductDetailsProp;

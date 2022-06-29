@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import DashboardPageTitle from "../../components/DashboardPageTitle/DashboardPageTitle";
 
-export const OrderPageBody = styled.div`
+export const ProfilePageBody = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -11,7 +11,7 @@ export const OrderPageBody = styled.div`
   padding: 10px;
 `;
 
-export const OrderPageHeader = styled(DashboardPageTitle)`
+export const ProfilePageTitle = styled(DashboardPageTitle)`
   display: flex;
   justify-content: flex-start;
   align-items: center;

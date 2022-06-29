@@ -18,10 +18,21 @@ import {
   StyledQuantityInput,
 } from "./style";
 import { ProductPrice } from "../ProductDetailsInfo/style";
-import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import { fetchUserById } from "../../api/userFetch";
+import { ProductDetailsProp } from "../../pages/PDP/PDP";
 import { useDispatch, useSelector } from "react-redux";
-import { AddressesDetailsProp } from "../../hooks/user/useUserByIdFetcher";
+
+
+export interface AddressesDetailsProp {
+  id: number;
+  country: string;
+  city: string;
+  zipCode: string;
+  street: string;
+  houseNumber: string;
+  isFavorite: boolean;
+  userId: number;
+}
 
 interface Props {
   product: ProductDetailsProp;

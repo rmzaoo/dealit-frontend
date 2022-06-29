@@ -11,10 +11,19 @@ import {
   SecondHalfOfScreenContainer,
   SimilarProductsContainer,
 } from "./style";
-import { ProductDetailsProp } from "../../hooks/products/useProductByIdFetcher";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import SimilarProducts from "../../components/SimilarProducts/SimilarProducts";
 import { fetchProductById } from "../../api/productsFetch";
+
+export interface ProductDetailsProp {
+  id: number;
+  name: string;
+  userId: number;
+  description: string;
+  categoryName: string;
+  photos: string[];
+  price: number;
+}
 
 const PDP = () => {
   const [isLoading, setLoading] = useState(true);
