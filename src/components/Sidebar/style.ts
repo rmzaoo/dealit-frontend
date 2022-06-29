@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import Product from "../Product/Product";
+import SecundaryButton from "../SecundaryButton/SecundaryButton";
 
 const SidebarContainer = styled.div`
   position: fixed;
@@ -30,6 +31,80 @@ const SidebarContainer = styled.div`
     width: 100%;
   }
 `;
+const Checkout = styled.div`
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  right: 50;
+  height: 100%;
+  width: 100vh;
+  background-color: #131a22;
+  animation: sidebar-open 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @keyframes sidebar-open {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+const CheckoutContainer = styled.div`
+  heigth: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+`;
+const TotalContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  justify-content: center;
+  align-items: center;
+`;
+const CheckoutOut = styled.div`
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  right: 50;
+  height: 100%;
+  width: 100vh;
+  background-color: #131a22;
+  animation: sidebar-close 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @keyframes sidebar-close {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
 const PageOutSidebar = styled.div`
   position: fixed;
   z-index: 10;
@@ -51,7 +126,7 @@ const SidebarOut = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 18%;
+  width: 30vh;
   background-color: #131a22;
   animation: sidebar-close 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   display: flex;
@@ -83,29 +158,10 @@ const CloseButton = styled.button`
   margin: 5px;
   cursor: pointer;
 `;
-const CheckoutButton = styled.button`
+const CheckoutButton = styled(SecundaryButton)`
   position: fixed;
-  bottom: 20px;
-  width: 14vh;
-  font-size: 18px;
-  color: white;
-  margin: 5px;
-  cursor: pointer;
-  padding: 14px 10px;
-  border: 1px solid #169;
-  border-radius: 5px;
-  transition: opacity 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #169;
-
-  &:hover {
-    opacity: 0.8;
-    cursor: pointer;
-    border-radius: 7px;
-  }
+  bottom: 30px;
+  height: 3vh;
 `;
 
 const ArrowRight = styled(IoMdArrowRoundForward)`
@@ -176,6 +232,7 @@ const ProductsContainer = styled.div`
   width: 100%;
   height: 80%;
 `;
+
 export {
   SidebarContainer,
   SidebarOut,
@@ -186,4 +243,8 @@ export {
   PageOutSidebar,
   CheckoutButton,
   ProductsContainer,
+  Checkout,
+  CheckoutOut,
+  CheckoutContainer,
+  TotalContainer,
 };
