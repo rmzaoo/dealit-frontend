@@ -15,6 +15,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+
 const Navbar = () => {
   const isOpen: any = useSelector((state: any) => state.cartIsOpened);
   const navigate = useNavigate();

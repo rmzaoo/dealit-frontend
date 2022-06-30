@@ -234,6 +234,7 @@ const ProductsContainer = styled.div`
   position: relative;
   top: 10px;
   overflow: auto;
+  
   display: flex;
   flex-direction: column;
   align-items: center;

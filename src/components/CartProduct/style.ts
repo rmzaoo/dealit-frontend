@@ -11,6 +11,7 @@ const Container = styled.div`
   border-radius: 0px;
   background-color: transparent;
   background-image: none;
+  overflow-x: hidden;
 
   button {
     background-color: transparent;
