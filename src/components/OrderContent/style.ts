@@ -30,8 +30,8 @@ export const OrderDeliveryText = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
 
-   //Laptops and small screens
-   @media screen and (max-width: 1024px) {
+  //Laptops and small screens
+  @media screen and (max-width: 1024px) {
     font-size: 1rem;
   }
 
@@ -54,4 +54,20 @@ export const OrderContentDetailsProducts = styled.div`
   height: 100%;
   width: 100%;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 7px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #808080;
+    border-radius: 7px;
+  }
 `;

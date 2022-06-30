@@ -52,7 +52,8 @@ export const OrderProductNameContainer = styled.div`
 export const OrderProductName = styled.div`
   font-size: 1rem;
   width: 80%;
-
+  text-align: center;
+  
   //Tablets
   @media screen and (max-width: 768px) {
     font-size: 0.9rem;
