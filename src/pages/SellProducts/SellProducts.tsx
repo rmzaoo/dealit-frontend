@@ -153,7 +153,7 @@ const SellProducts = () => {
         />
       </SellDetailsContainer>
       <SellDetailsContainer>
-        <h3>How it is your product?</h3>
+        <h3>Describe your product! Give as many information as you can.</h3>
         <div className="input-sell-container">
           <span>Description</span>
           <StyledDescriptionInput
@@ -164,7 +164,7 @@ const SellProducts = () => {
           />
         </div>
         <div className="input-sell-container">
-          <span>price? We work with prices in US dollars</span>
+          <span>Price? Our preferred currency is US dollars ($)</span>
           <div>
             <StyledPrimaryInput
               placeholder="e.g. 100"
@@ -183,11 +183,12 @@ const SellProducts = () => {
       </SellDetailsContainer>
 
       <SellDetailsContainer>
-        <h3>You read the rules?</h3>
+        <h3>Dealit terms of use</h3>
+        <span>Please read our Terms of Use.</span>
         <p>
           <input type="checkbox" onChange={() => setReadRules(!readRules)} />
           To publish your product, you must agree to the{" "}
-          <Link to="/rules">rules</Link>.
+          <Link to="/rules">Terms of Use</Link>.
         </p>
 
         <div className="btnsubmit">

@@ -54,14 +54,13 @@ export const ChatInput = styled.input`
   border-radius: 5px;
   padding: 3px;
   border: 0px;
-
 `;
 
 export const SubmitButton = styled.button`
   width: 10%;
   height: 100%;
   color: #fff;
-  background-color: rgb(32,90,90);
+  background-color: rgb(32, 90, 90);
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -94,8 +93,6 @@ export const AIText = styled.p`
   text-align: flex-start;
   width: 80%;
   color: black;
-  background-color: whitesmoke;//rgba(189, 220, 240, 1);
+  background-color: whitesmoke;
   border-radius: 5px;
 `;
-
-

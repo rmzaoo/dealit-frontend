@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import noImage from "../../assets/noImageAvailable.png";
 import { Container, ProductPhotoDiv, ProductDetails, Trash } from "./style";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchProductByCategory,
+  fetchProductById,
+} from "../../api/productsFetch";
 
 export interface CartProps {
   id: number;
@@ -10,7 +14,7 @@ export interface CartProps {
   photo: string;
   price: number;
   className?: string;
-  quantity: string;
+  quantity: number;
 }
 const CartProduct = ({
   id,
@@ -20,81 +24,104 @@ const CartProduct = ({
   className,
   quantity,
 }: CartProps) => {
-  const [prodQuantity, setProdQuantity] = useState(parseInt(quantity));
-  const [prodPrice, setProdPrice] = useState(price);
-  const [hideProduct, setHideProduct] = useState(true);
+  const [prodQuantity, setProdQuantity] = useState(quantity);
+  const [prodPrice, setProdPrice] = useState(price * quantity);
+  const cart = useSelector((state: any) => state.cart);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  function handleProductPlus() {
-    setProdQuantity(() => prodQuantity + 1);
-    setProdPrice(price * (prodQuantity + 1));
+  async function handleProductPlus() {
+    const fetchProd = await fetchProductById(id);
+    dispatch({
+      type: "ADD",
+      payload: { product: fetchProd, quantity: prodQuantity },
+    });
+    dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
   }
-  function handleProductMinus() {
-    if (prodQuantity > 1) {
-      setProdQuantity(prodQuantity - 1);
-      setProdPrice(price * (prodQuantity - 1));
-    } else {
-      setProdQuantity(1);
-      setProdPrice(prodPrice * prodQuantity);
+
+  async function handleProductMinus() {
+    if (quantity === 1 || quantity === 0) {
+      return;
     }
+    dispatch({
+      type: "REMOVE",
+      payload: { id },
+    });
+    dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
   }
+
+  useEffect(() => {
+    setProdQuantity(quantity);
+  }, []);
+
+  useEffect(() => {
+    setProdQuantity(
+      cart.map((e: any) => {
+        if (e.product.id === id) {
+          return e.quantity;
+        }
+      })
+    );
+    setProdPrice(
+      cart.map((e: any) => {
+        if (e.product.id === id) {
+          return e.quantity * e.product.price;
+        }
+      })
+    );
+    localStorage.setItem("shoppingCart", cart);
+  }, [cart]);
 
   function handleProductTrash() {
-    setProdQuantity(0);
-    setHideProduct(false);
+    dispatch({ type: "REMOVE_ALL", payload: { id } });
+    dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
+    localStorage.setItem("shoppingCart", cart.cart);
   }
 
   return (
     <>
-      {hideProduct && (
-        <Container className={className}>
-          <ProductPhotoDiv>
-            <img
-              src={photo}
-              onError={(e) => (e.currentTarget.src = noImage)}
-              alt="product in cart"
-              onClick={() => navigate(`/product/${id}`)}
-            />
-          </ProductPhotoDiv>
-          <ProductDetails>
-            <h1 onClick={() => navigate(`/product/${id}`)}>{name}</h1>
-            <span>
-              {prodQuantity > 1
-                ? Math.round((prodPrice + Number.EPSILON) * 100) / 100
-                : prodPrice}
-              $
-            </span>
-            <span style={{ fontSize: "16px", margin: "8px", width: "130px" }}>
-              Quantity: {prodQuantity}
-              <button
-                onClick={() => handleProductPlus()}
-                style={{ margin: "5px" }}
-              >
-                +
-              </button>
-              <button
-                onClick={() => handleProductMinus()}
-                style={{ margin: "5px" }}
-              >
-                -
-              </button>
-            </span>
+      <Container className={className}>
+        <ProductPhotoDiv>
+          <img
+            src={photo}
+            onError={(e) => (e.currentTarget.src = noImage)}
+            alt="product in cart"
+            onClick={() => navigate(`/product/${id}`)}
+          />
+        </ProductPhotoDiv>
+        <ProductDetails>
+          <h1 onClick={() => navigate(`/product/${id}`)}>{name}</h1>
+          <span>{prodPrice} $</span>
+          <span style={{ fontSize: "16px", margin: "8px", width: "130px" }}>
+            Quantity: {prodQuantity}
             <button
-              onClick={() => {
-                handleProductTrash();
-              }}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
+              onClick={() => handleProductMinus()}
+              style={{ margin: "5px" }}
             >
-              <Trash />
+              -
             </button>
-          </ProductDetails>
-        </Container>
-      )}
+            <button
+              onClick={() => handleProductPlus()}
+              style={{ margin: "5px" }}
+            >
+              +
+            </button>
+          </span>
+          <button
+            onClick={() => {
+              handleProductTrash();
+            }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Trash />
+          </button>
+        </ProductDetails>
+      </Container>
     </>
   );
 };

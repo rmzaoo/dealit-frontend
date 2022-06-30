@@ -71,7 +71,12 @@ const ProductDetailsBuyInfo = (props: Props) => {
   function handleDispatch() {
     dispatch({ type: "SEND_OPENED", payload: { opened: true } });
     dispatch({ type: "ADD", payload: { product, quantity, counter, opened } });
+    dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
   }
+
+  useEffect(() => {
+    localStorage.setItem("shoppingCart", JSON.stringify(context.cart));
+  }, [context]);
 
   return (
     <BuyInfoBody>
