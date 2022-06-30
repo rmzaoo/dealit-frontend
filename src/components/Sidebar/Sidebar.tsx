@@ -20,6 +20,27 @@ import { useNavigate } from "react-router";
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { toast } from "react-toastify";
+import { addZeroes } from "../../utils/addZeroes";
+import { countDecimals } from "../../utils/countDecimals";
+import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { getCookie } from "../../utils/cookies";
+import { orderFetch } from "../../api/orderFetch";
+import { fetchCreditCardsByUserId } from "../../api/creditCardFetch";
+
+export interface InitialStateProps {
+  user: {
+    id: number;
+    username: string;
+    email: string;
+    phone: string;
+    photo: string;
+    token: string;
+  };
+  cart: [];
+  orders: [];
+  addresses: [];
+  creditCards: [];
+}
 
 const Sidebar: any = () => {
   const context: any = useSelector((state) => state);
@@ -27,6 +48,11 @@ const Sidebar: any = () => {
   const [prodCounter, setProdCounter] = useState(0);
   const [opened, setOpened] = useState(true);
   const [openedCheckout, setOpenedCheckout] = useState(false);
+  const user = useSelector((state: InitialStateProps) => state.user);
+  const creditCard = useSelector(
+    (state: InitialStateProps) => state.creditCards
+  );
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -59,17 +85,25 @@ const Sidebar: any = () => {
   function openCheckout() {
     setOpenedCheckout(true);
   }
-  const showToast = () => {
-    toast.info("🛠 This feature is in development!", {
-      position: "top-right",
-      autoClose: 4000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+  const showToast = async () => {
+    const cc = await fetchCreditCardsByUserId(user.id, user.token);
+
+    const finalOrder: any = await orderFetch(
+      user.id,
+      cc[0].id,
+      user.token,
+      context.cart
+    );
+    if (finalOrder.data.message === "Order successfully saved to database") {
+      toast.success(
+        "Your order has been placed! Check your dashboard for more info"
+      );
+      setTimeout(() => navigate("/dashboard/orders"), 1500);
+    }
   };
+  const { isLogged, isLoading, error } = useAuthenticationValidation(
+    getCookie("token")
+  );
 
   if (context.cart.length === 0) {
     return (
@@ -220,15 +254,16 @@ const Sidebar: any = () => {
             </ProductsContainer>
             <CombinedPrice>
               <span>Total:</span>
-              <span>
-                {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
-              </span>
+              <span>{combinedPrice} $</span>
             </CombinedPrice>
             <CheckoutButton onClick={() => openCheckout()}>
               Checkout
             </CheckoutButton>
           </SidebarOut>
-        ) : animateOut === false && openedCheckout === true ? (
+        ) : animateOut === false &&
+          openedCheckout === true &&
+          isLogged &&
+          !isLoading ? (
           <>
             <PageOutSidebar onClick={() => handleClick()} />
             <Checkout>
@@ -253,12 +288,18 @@ const Sidebar: any = () => {
                 })}
               </ProductsContainer>
               <TotalContainer>
-                <h1>Total: {combinedPrice}</h1>
+                <h1>
+                  Total:{" "}
+                  {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
+                </h1>
                 <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
               </TotalContainer>
             </Checkout>
           </>
-        ) : (
+        ) : animateOut === true &&
+          openedCheckout === true &&
+          isLogged &&
+          !isLoading ? (
           <CheckoutOut>
             <CloseButton onClick={() => handleClick()}>
               <ArrowRight />
@@ -281,10 +322,26 @@ const Sidebar: any = () => {
               })}
             </ProductsContainer>
             <TotalContainer>
-              <h1>Total: {combinedPrice}</h1>
+              <h1>
+                Total:{" "}
+                {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
+              </h1>
               <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
             </TotalContainer>
           </CheckoutOut>
+        ) : (
+          <>
+            <PageOutSidebar onClick={() => handleClick()} />
+            <SidebarContainer>
+              <CloseButton onClick={() => handleClick()}>
+                <ArrowRight />
+              </CloseButton>
+              <h1>Login to continue!</h1>
+              <SecundaryButton onClick={() => navigate("/login")}>
+                Login
+              </SecundaryButton>
+            </SidebarContainer>
+          </>
         )}
       </>
     );

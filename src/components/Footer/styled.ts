@@ -23,7 +23,17 @@ const AIButton = styled.div`
   left: 94%;
   padding: 10px;
   cursor: pointer;
-  @media (max-width: 1320px) {
+
+  @media (max-width: 1000px) {
+    left: 90%;
+  }
+  @media (max-width: 650px) {
+    left: 85%;
+  }
+  @media (max-width: 400px) {
+    left: 80%;
+  }
+  @media (max-width: 300px) {
     display: none;
   }
 `;
@@ -34,7 +44,17 @@ const AIButtonAfter = styled.div`
   left: 94%;
   padding: 10px;
   cursor: pointer;
-  @media (max-width: 1320px) {
+
+  @media (max-width: 1000px) {
+    left: 90%;
+  }
+  @media (max-width: 650px) {
+    left: 85%;
+  }
+  @media (max-width: 400px) {
+    left: 80%;
+  }
+  @media (max-width: 300px) {
     display: none;
   }
 

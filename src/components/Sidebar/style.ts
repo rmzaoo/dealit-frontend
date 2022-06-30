@@ -31,6 +31,7 @@ const SidebarContainer = styled.div`
     width: 100%;
   }
 `;
+
 const Checkout = styled.div`
   position: fixed;
   z-index: 11;
