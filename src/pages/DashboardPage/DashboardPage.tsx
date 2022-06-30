@@ -33,12 +33,13 @@ const DashboardPage = () => {
       text: "Account Settings",
       path: "./settings",
     },
-    {
+    /** 
+    { 
       icon: <BsFillSignpost2Fill size={28} />,
       text: "My addresses",
       path: "./addresses",
     },
-    { icon: <FaWallet size={28} />, text: "My cards", path: "./cards" },
+    { icon: <FaWallet size={28} />, text: "My cards", path: "./cards" }, */
   ];
   const logoutBtn: LogoutProps = {
     icon: <BiLogOut size={28} />,

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
   OrderProductContainer,
+  OrderProductName,
+  OrderProductNameAndQuantityContainer,
   OrderProductNameContainer,
   OrderProductPhoto,
   OrderProductPhotoContainer,
@@ -42,17 +44,21 @@ const OrderProduct = ({ products, product }: Props) => {
       <OrderProductPhotoContainer>
         <OrderProductPhoto src={product.photo} />
       </OrderProductPhotoContainer>
+      <OrderProductNameAndQuantityContainer>
       <OrderProductNameContainer>
-        <p>{product.name}</p>
+        <OrderProductName>{product.name}</OrderProductName>
       </OrderProductNameContainer>
       <OrderProductQuantityContainer>
         <OrderProductQuantityTextContainer>
           <OrderProductQuantityText>Quantity:</OrderProductQuantityText>
         </OrderProductQuantityTextContainer>
         <OrderProductQuantityValueContainer>
-          <OrderProductQuantityValue>{quantity}</OrderProductQuantityValue>
+          <OrderProductQuantityValue>
+            {product.quantity}
+          </OrderProductQuantityValue>
         </OrderProductQuantityValueContainer>
       </OrderProductQuantityContainer>
+      </OrderProductNameAndQuantityContainer>
     </OrderProductContainer>
   );
 };
