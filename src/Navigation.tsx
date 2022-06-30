@@ -9,9 +9,8 @@ import PLP from "./pages/PLP/PLP";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import OrdersPage from "./pages/OrdersPage/OrdersPage";
 import AccountSettingsPage from "./pages/AccountSettingsPage/AccountSettingsPage";
-import AddressesPage from "./pages/AddressesPage/AddressesPage";
-import CreditCardPage from "./pages/CreditCardPage/CreditCardPage";
 import SellProducts from "./pages/SellProducts/SellProducts";
+import MyProducts from "./pages/MyProducts/MyProducts";
 
 const Navigation = () => {
   return (
@@ -31,8 +30,11 @@ const Navigation = () => {
             <Route index element={<ProfilePage />} />
             <Route path="orders" element={<OrdersPage />} />
             <Route path="settings" element={<AccountSettingsPage />} />
+            <Route path="myProducts" element={<MyProducts />} />
+            {/** 
             <Route path="addresses" element={<AddressesPage />} />
             <Route path="cards" element={<CreditCardPage />} />
+            */}
           </Route>
 
           <Route path="/sell-product" element={<SellProducts />} />

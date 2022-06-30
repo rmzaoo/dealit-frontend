@@ -9,7 +9,7 @@ export const OrderPageBody = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  margin-top: 50px;
 `;
 
 export const OrderPageHeader = styled(DashboardPageTitle)`
@@ -44,16 +44,4 @@ export const OrderButtonContainer = styled.div`
   align-items: center;
 `;
 
-export const OrdersContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 80%;
-`
-export const SingleOrderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
