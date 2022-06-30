@@ -1,45 +1,45 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { fetchOrdersByUserId } from "../../api/ordersFetch";
-import Order from "../../components/Order";
+import Order from "../../components/Order/Order";
 import { InitialStateProps } from "../AccountSettingsPage/AccountSettingsPage";
 import { ProductDetailsProp } from "../PDP/PDP";
 import {
   OrderPageBody,
   OrderPageHeader,
   OrdersButtonsContainer,
-  OrdersContainer,
   StyledTextLink,
 } from "./style";
 
 export interface OrderProp {
-  map(arg0: (value: OrderProp[], key: any) => void): React.ReactNode;
-  order: OrderDetailsProp[];
-  products: ProductDetailsProp[];
-}
-
-export interface OrderDetailsProp {
+  length: number;
   id: number;
-  buyer: Date;
-  sendDate: Date;
-  deliveryDate: Date;
+  buyDate: Date;
+  sendDate?: Date;
+  deliveryDate?: Date;
   userId: number;
-  sellerName: string;
   creditCardId: number;
+  total: number;
+  productsInOrder: ProductDetailsProp[];
 }
 
 const OrdersPage = () => {
   const user = useSelector((state: InitialStateProps) => state.user);
   const [sortBy, setSortBy] = useState<string>("bought");
-  const [orders, setOrders] = useState<OrderProp[]>();
+  const [orders, setOrders] = useState<OrderProp>();
 
   useLayoutEffect(() => {
     fetchOrdersByUserId(user.id, user.token).then((data) => {
+      console.log(data);
       setOrders(data);
     });
   }, []);
 
+  console.log(orders);
+
   if (orders) {
+    if (orders.length > 1) {
+    }
     return (
       <OrderPageBody>
         <OrderPageHeader>
@@ -59,19 +59,13 @@ const OrdersPage = () => {
             Sold
           </StyledTextLink>
         </OrdersButtonsContainer>
-        <OrdersContainer>
-          <>
-            {sortBy === "bought" &&
-              orders.map((value: OrderProp, key: number) => {
-                console.log(value.order);
-                <Order order={value.order} buyer={user.username} />;
-              })}
-          </>
-        </OrdersContainer>
+        {/**  <OrdersContainer>*/}
+        {sortBy === "bought" && <Order order={orders} buyer={user.username} />}
+        {/** </OrdersContainer>*/}
       </OrderPageBody>
     );
   } else {
-    return null;
+    return <h1>Not Found!</h1>;
   }
 };
 
