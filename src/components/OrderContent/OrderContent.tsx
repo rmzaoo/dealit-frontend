@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { OrderProp } from "../../pages/OrdersPage/OrdersPage";
-import { ProductDetailsProp } from "../../pages/PDP/PDP";
 import OrderProduct, { OrderProductProp } from "../OrderProduct/OrderProduct";
 import {
   OrderContentDetailsContainer,
@@ -36,8 +35,6 @@ const OrderContent = ({ orderDetails, products }: Props) => {
       setDelivDate(delivDate);
     }
   }, []);
-
-  console.log(delivDate);
 
   if (products) {
     return (

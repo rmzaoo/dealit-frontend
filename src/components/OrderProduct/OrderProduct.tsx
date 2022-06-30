@@ -37,8 +37,6 @@ const OrderProduct = ({ products, product }: Props) => {
     setQuantity(qtn);
   }, [product]);
 
-  console.log(product);
-
   return (
     <OrderProductContainer>
       <OrderProductPhotoContainer>

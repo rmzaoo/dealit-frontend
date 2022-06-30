@@ -44,5 +44,5 @@ export const OrderContainerBody = styled.div`
   width: 100%;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  overflow-x: auto;
+  overflow: auto;
 `;

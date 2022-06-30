@@ -17,7 +17,6 @@ const ProfilePage = () => {
 
   const user = useSelector((state: any) => state.user);
 
-  console.log(user);
 
   return (
     <ProfilePageBody>
