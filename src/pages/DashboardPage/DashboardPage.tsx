@@ -13,6 +13,7 @@ import { BiLogOut } from "react-icons/bi";
 import DashboardSideBarButton from "../../components/DashboardSideBarButton/DashboardSideBarButton";
 import { getCookie } from "../../utils/cookies";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { MdOutlineSell } from "react-icons/md";
 
 export interface DashboardOptions {
   icon: JSX.Element;
@@ -32,6 +33,11 @@ const DashboardPage = () => {
       icon: <AiOutlineSecurityScan size={28} />,
       text: "Account Settings",
       path: "./settings",
+    },
+    {
+      icon: <MdOutlineSell size={28} />,
+      text: "My Products",
+      path: "./myProducts",
     },
     /** 
     { 
