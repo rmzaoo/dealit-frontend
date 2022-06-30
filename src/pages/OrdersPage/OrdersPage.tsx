@@ -3,17 +3,35 @@ import { useSelector } from "react-redux";
 import { fetchOrdersByUserId } from "../../api/ordersFetch";
 import Order from "../../components/Order";
 import { InitialStateProps } from "../AccountSettingsPage/AccountSettingsPage";
+import { ProductDetailsProp } from "../PDP/PDP";
 import {
   OrderPageBody,
   OrderPageHeader,
   OrdersButtonsContainer,
+  OrdersContainer,
   StyledTextLink,
 } from "./style";
+
+export interface OrderProp {
+  map(arg0: (value: OrderProp[], key: any) => void): React.ReactNode;
+  order: OrderDetailsProp[];
+  products: ProductDetailsProp[];
+}
+
+export interface OrderDetailsProp {
+  id: number;
+  buyer: Date;
+  sendDate: Date;
+  deliveryDate: Date;
+  userId: number;
+  sellerName: string;
+  creditCardId: number;
+}
 
 const OrdersPage = () => {
   const user = useSelector((state: InitialStateProps) => state.user);
   const [sortBy, setSortBy] = useState<string>("bought");
-  const [orders, setOrders] = useState<any>();
+  const [orders, setOrders] = useState<OrderProp[]>();
 
   useLayoutEffect(() => {
     fetchOrdersByUserId(user.id, user.token).then((data) => {
@@ -41,9 +59,15 @@ const OrdersPage = () => {
             Sold
           </StyledTextLink>
         </OrdersButtonsContainer>
-        {sortBy === "bought" && (
-          <Order order={orders[0]} buyer={user.username} />
-        )}
+        <OrdersContainer>
+          <>
+            {sortBy === "bought" &&
+              orders.map((value: OrderProp, key: number) => {
+                console.log(value.order);
+                <Order order={value.order} buyer={user.username} />;
+              })}
+          </>
+        </OrdersContainer>
       </OrderPageBody>
     );
   } else {
