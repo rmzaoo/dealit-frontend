@@ -7,7 +7,7 @@ export const OrderContentDetailsContainer = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 10px;
+  padding-top: 10px;
 `;
 
 export const OrderContentDetailsDeliveryDateContainer = styled.div`
@@ -18,7 +18,17 @@ export const OrderContentDetailsDeliveryDateContainer = styled.div`
   height: 10%;
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
   }
 `;
+
+export const OrderContentDetailsProducts = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+`
+

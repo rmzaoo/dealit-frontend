@@ -18,7 +18,7 @@ export const OrderTitleContainer = styled.div`
 `;
 
 export const OrderDetailsTitle = styled.p`
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: black;
 `;
 
@@ -30,7 +30,7 @@ export const OrderDetailsTextContainer = styled.div`
 `;
 
 export const OrderText = styled.p`
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: black;
     font-weight: bold;
 `

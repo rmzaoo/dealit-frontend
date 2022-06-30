@@ -73,7 +73,7 @@ export const PostProduct = async (Product: PostProductProps) => {
 
   const response = await axios({
     url: `${baseUrl}/products/`,
-    method: "post",
+    method: "POST",
     headers: {
       "x-access-token": Product.jwt || "null",
     },
