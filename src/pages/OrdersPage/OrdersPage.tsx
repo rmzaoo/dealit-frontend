@@ -41,7 +41,9 @@ const OrdersPage = () => {
             Sold
           </StyledTextLink>
         </OrdersButtonsContainer>
-        <Order order={orders[0]} buyer={user.username} />
+        {sortBy === "bought" && (
+          <Order order={orders[0]} buyer={user.username} />
+        )}
       </OrderPageBody>
     );
   } else {

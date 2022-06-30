@@ -6,7 +6,7 @@ export const OrderContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 60%;
-  height: 25%;
+  height: 40%;
   border: 1px solid #116699;
   margin-top: 20px;
   border-radius: 7px;
@@ -27,7 +27,7 @@ export const OrderContainerHeader = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 30%;
+  height: 25%;
   background-color: #00bcd4;
   width: 100%;
   border: 1px solid #116699;
@@ -40,8 +40,9 @@ export const OrderContainerBody = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 70%;
+  height: 75%;
   width: 100%;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
+  overflow-x: auto;
 `;

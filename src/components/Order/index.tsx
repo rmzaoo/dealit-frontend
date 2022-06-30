@@ -23,8 +23,6 @@ const Order = ({ order, buyer }: Props) => {
   const orderProducts = order.products;
   const placeDate = new Date(orderDetails.buyDate);
 
-  console.log(orderDetails);
-  console.log(orderProducts);
 
   return (
     <OrderContainer>
@@ -38,7 +36,10 @@ const Order = ({ order, buyer }: Props) => {
         <OrderHeaderDetails title={"Order Number"} value={orderDetails.id} />
       </OrderContainerHeader>
       <OrderContainerBody>
-        <OrderContent deliveryDate={orderDetails.deliveryDate} />
+        <OrderContent
+          deliveryDate={orderDetails.deliveryDate}
+          products={orderProducts}
+        />
       </OrderContainerBody>
     </OrderContainer>
   );
