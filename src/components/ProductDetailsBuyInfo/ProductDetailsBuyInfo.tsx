@@ -22,7 +22,6 @@ import { fetchUserById } from "../../api/userFetch";
 import { ProductDetailsProp } from "../../pages/PDP/PDP";
 import { useDispatch, useSelector } from "react-redux";
 
-
 export interface AddressesDetailsProp {
   id: number;
   country: string;
@@ -72,12 +71,14 @@ const ProductDetailsBuyInfo = (props: Props) => {
     dispatch({ type: "SEND_OPENED", payload: { opened: true } });
     dispatch({ type: "ADD", payload: { product, quantity, counter, opened } });
     dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
+    setQuantity("1");
   }
 
   useEffect(() => {
     localStorage.setItem("shoppingCart", JSON.stringify(context.cart));
   }, [context]);
 
+  console.log(quantity);
   return (
     <BuyInfoBody>
       {name !== undefined && (

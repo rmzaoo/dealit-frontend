@@ -98,7 +98,11 @@ const Sidebar: any = () => {
       toast.success(
         "Your order has been placed! Check your dashboard for more info"
       );
-      setTimeout(() => navigate("/dashboard/orders"), 1500);
+      setTimeout(() => {
+        setAnimateOut(false);
+        setOpenedCheckout(false);
+        navigate("/dashboard/orders");
+      }, 1500);
     }
   };
   const { isLogged, isLoading, error } = useAuthenticationValidation(
@@ -254,7 +258,9 @@ const Sidebar: any = () => {
             </ProductsContainer>
             <CombinedPrice>
               <span>Total:</span>
-              <span>{combinedPrice} $</span>
+              <span>
+                {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
+              </span>
             </CombinedPrice>
             <CheckoutButton onClick={() => openCheckout()}>
               Checkout
@@ -292,7 +298,7 @@ const Sidebar: any = () => {
                   Total:{" "}
                   {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
                 </h1>
-                <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
+                <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
               </TotalContainer>
             </Checkout>
           </>
@@ -326,22 +332,11 @@ const Sidebar: any = () => {
                 Total:{" "}
                 {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
               </h1>
-              <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
+              <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
             </TotalContainer>
           </CheckoutOut>
         ) : (
-          <>
-            <PageOutSidebar onClick={() => handleClick()} />
-            <SidebarContainer>
-              <CloseButton onClick={() => handleClick()}>
-                <ArrowRight />
-              </CloseButton>
-              <h1>Login to continue!</h1>
-              <SecundaryButton onClick={() => navigate("/login")}>
-                Login
-              </SecundaryButton>
-            </SidebarContainer>
-          </>
+          navigate("/login")
         )}
       </>
     );
