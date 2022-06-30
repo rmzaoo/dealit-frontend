@@ -1,6 +1,6 @@
 import React from "react";
-import OrderContent from "../OrderContent";
-import OrderHeaderDetails from "../OrderHeaderDetails";
+import OrderContent from "../OrderContent/OrderContent";
+import OrderHeaderDetails from "../OrderHeaderDetails/OrderHeaderDetails";
 import {
   OrderContainer,
   OrderContainerBody,
@@ -19,12 +19,10 @@ const Order = ({ order, buyer }: Props) => {
     day: "numeric",
   };
 
-  const orderDetails = order.order;
-  const orderProducts = order.products;
+  const orderDetails = order[0];
+  const orderProducts = order[0].products;
   const placeDate = new Date(orderDetails.buyDate);
-
-  console.log(orderDetails);
-  console.log(orderProducts);
+  console.log(order);
 
   return (
     <OrderContainer>
@@ -33,12 +31,15 @@ const Order = ({ order, buyer }: Props) => {
           title={"Order placed"}
           value={placeDate.toLocaleDateString("en-US", options)}
         />
-        <OrderHeaderDetails title={"Total"} value={"-"} />
+        <OrderHeaderDetails title={"Total"} value={"$" + orderDetails.total} />
         <OrderHeaderDetails title={"Sent to"} value={buyer} />
         <OrderHeaderDetails title={"Order Number"} value={orderDetails.id} />
       </OrderContainerHeader>
       <OrderContainerBody>
-        <OrderContent deliveryDate={orderDetails.deliveryDate} />
+        <OrderContent
+          orderDetails={orderDetails}
+          products={orderProducts}
+        />
       </OrderContainerBody>
     </OrderContainer>
   );

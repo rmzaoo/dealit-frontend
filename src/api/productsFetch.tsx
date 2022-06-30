@@ -72,8 +72,8 @@ export const PostProduct = async (Product: PostProductProps) => {
   });
 
   const response = await axios({
-    url: "https://dealit-backend.herokuapp.com/dealit/api/products",
-    method: "post",
+    url: `${baseUrl}/products/`,
+    method: "POST",
     headers: {
       "x-access-token": Product.jwt || "null",
     },

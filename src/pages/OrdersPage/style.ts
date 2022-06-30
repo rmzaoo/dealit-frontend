@@ -43,3 +43,17 @@ export const OrderButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const OrdersContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+`
+export const SingleOrderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+

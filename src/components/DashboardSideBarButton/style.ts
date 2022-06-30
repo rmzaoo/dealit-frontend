@@ -7,7 +7,8 @@ export const DashboardButtonsContainer = styled.div`
   align-items: center;
   color: white;
   flex-direction: column;
-  height: 60%;
+  height: 50%;
+  width: 90%;
 `;
 
 export const DashboardNavButtonsContainer = styled.div`
