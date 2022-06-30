@@ -30,7 +30,7 @@ const DashboardPage = () => {
     { icon: <BsBoxSeam size={28} />, text: "My Orders", path: "./orders" },
     {
       icon: <AiOutlineSecurityScan size={28} />,
-      text: "Log in and security",
+      text: "Account Settings",
       path: "./settings",
     },
     {

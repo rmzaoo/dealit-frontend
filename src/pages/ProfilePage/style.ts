@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import DashboardPageTitle from "../../components/DashboardPageTitle/DashboardPageTitle";
+import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
 
 const ProfilePageBody = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const BannerProfile = styled.img`
 const PhotoContainer = styled.div`
   height: 150px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 `;
 
@@ -44,8 +45,23 @@ const PhotoProfile = styled.img`
 `;
 
 const ProfileInfo = styled.div`
+  width: 100%;
+  margin-left: 25px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
 
+  span {
+    font-size: 60px;
+    letter-spacing: 3px;
+    font-weight: normal;
+  }
+`;
 
+const CustomSecundaryButton = styled(SecundaryButton)`
+  font-size: 30px;
+  margin: 0 20px;
 `;
 
 export {
@@ -55,5 +71,6 @@ export {
   PhotoProfile,
   BannerContainer,
   PhotoContainer,
-  ProfileInfo
+  ProfileInfo,
+  CustomSecundaryButton,
 };

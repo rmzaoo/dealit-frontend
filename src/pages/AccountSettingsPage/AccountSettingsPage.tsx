@@ -31,7 +31,7 @@ const AccountSettingsPage = () => {
     return (
       <SecurityPageBody>
         <SecurityPageTitleContainer>
-          <h2>Log In & Security</h2>
+          <h2>Account Settings</h2>
         </SecurityPageTitleContainer>
         <AccountOptionChange
           id={user.id}
