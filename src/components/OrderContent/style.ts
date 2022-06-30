@@ -25,7 +25,6 @@ export const OrderContentDetailsDeliveryDateContainer = styled.div`
 
 export const OrderContentDetailsProducts = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
