@@ -8,7 +8,7 @@ const Container = styled.div`
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  margin: 4px 0px 18px 26px;
+  margin: 15px 10px;
   padding-bottom: 12px;
   border-bottom: 1px solid white;
   h1 {

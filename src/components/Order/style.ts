@@ -6,19 +6,24 @@ export const OrderContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 60%;
-  height: 40%;
+  height: 50%;
   border: 1px solid #116699;
   margin-top: 20px;
   border-radius: 7px;
 
   //Laptops and small screens
   @media screen and (max-width: 1024px) {
-    width: 70%;
+    width: 65%;
   }
 
   //Tablets
   @media screen and (max-width: 768px) {
-    width: 75%;
+    width: 75%
+  }
+
+  //Mobile
+  @media screen and (max-width: 480px) {
+    width: 80%
   }
 `;
 
@@ -44,5 +49,4 @@ export const OrderContainerBody = styled.div`
   width: 100%;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  overflow: auto;
 `;
