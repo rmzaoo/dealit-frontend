@@ -30,15 +30,19 @@ const Order = ({ order, buyer }: Props) => {
           title={"Order placed"}
           value={placeDate.toLocaleDateString("en-US", options)}
         />
-        <OrderHeaderDetails title={"Total"} value={"$" + orderDetails.total} />
+        <OrderHeaderDetails
+          title={"Total"}
+          value={
+            "$" +
+            Math.round((Number(orderDetails.total) + Number.EPSILON) * 100) /
+              100
+          }
+        />
         <OrderHeaderDetails title={"Sent to"} value={buyer} />
         <OrderHeaderDetails title={"Order Number"} value={orderDetails.id} />
       </OrderContainerHeader>
       <OrderContainerBody>
-        <OrderContent
-          orderDetails={orderDetails}
-          products={orderProducts}
-        />
+        <OrderContent orderDetails={orderDetails} products={orderProducts} />
       </OrderContainerBody>
     </OrderContainer>
   );

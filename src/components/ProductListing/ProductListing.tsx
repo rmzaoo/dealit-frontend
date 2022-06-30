@@ -22,7 +22,10 @@ const ProductListing = ({ oneColumn, products, className }: Props) => {
               <MainProductCard
                 name={element.name}
                 photos={element.photos}
-                price={element.price}
+                price={
+                  Math.round((Number(element.price) + Number.EPSILON) * 100) /
+                  100
+                }
                 id={element.id}
                 key={index.toString()}
               />
@@ -36,7 +39,10 @@ const ProductListing = ({ oneColumn, products, className }: Props) => {
               <MainProductCardOneColumn
                 name={element.name}
                 photos={element.photos}
-                price={element.price}
+                price={
+                  Math.round((Number(element.price) + Number.EPSILON) * 100) /
+                  100
+                }
                 id={element.id}
                 key={index.toString()}
               />
