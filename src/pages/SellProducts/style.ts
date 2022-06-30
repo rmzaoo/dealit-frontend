@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PrimaryInput from "../../components/PrimaryInput/PrimaryInput";
 
 const SellProductsContainer = styled.div`
-  background-color: red;
   margin-top: 108px;
   width: 100%;
   position: absolute;
