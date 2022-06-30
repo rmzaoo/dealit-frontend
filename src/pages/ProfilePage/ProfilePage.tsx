@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   BannerContainer,
@@ -14,18 +15,20 @@ import {
 const ProfilePage = () => {
   const navigate = useNavigate();
 
+  const user = useSelector((state: any) => state.user);
+
+  console.log(user);
 
   return (
     <ProfilePageBody>
       <ContainerPhotos>
         <BannerContainer>
-          <BannerProfile src="https://pbs.twimg.com/profile_banners/44196397/1576183471/1500x500" />
+          <BannerProfile src="https://i.imgur.com/KjfWGVh.jpeg" />
         </BannerContainer>
         <PhotoContainer>
-          <PhotoProfile src="https://pbs.twimg.com/profile_images/1529956155937759233/Nyn1HZWF_400x400.jpg" />
+          <PhotoProfile src={user.photo} />
           <ProfileInfo>
-            <span>Helon Muskatel</span>
-
+            <span>{user.username}</span>
             <CustomSecundaryButton
               onClick={() => navigate("/dashboard/settings")}
             >

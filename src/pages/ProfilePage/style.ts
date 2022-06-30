@@ -1,5 +1,5 @@
+import { screen } from "@testing-library/react";
 import styled from "styled-components";
-import DashboardPageTitle from "../../components/DashboardPageTitle/DashboardPageTitle";
 import SecundaryButton from "../../components/SecundaryButton/SecundaryButton";
 
 const ProfilePageBody = styled.div`
@@ -9,15 +9,24 @@ const ProfilePageBody = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow: scroll;
 `;
 
 const ContainerPhotos = styled.div`
   width: 100%;
   height: 450px;
+
+  @media (max-width: 768px) {
+    height: 500px;
+  }
 `;
 
 const BannerContainer = styled.div`
   height: 300px;
+
+  @media screen and (max-width: 768px) {
+    height: 200px;
+  }
 `;
 
 const BannerProfile = styled.img`
@@ -32,6 +41,13 @@ const PhotoContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
+  @media screen and (max-width: 768px) {
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const PhotoProfile = styled.img`
@@ -42,6 +58,12 @@ const PhotoProfile = styled.img`
   border: 1px solid #169;
   margin-top: -150px;
   margin-left: 50px;
+
+  @media screen and (max-width: 768px) {
+    height: 150px;
+    margin-left: 0;
+    margin-top: -100px;
+  }
 `;
 
 const ProfileInfo = styled.div`
@@ -50,18 +72,35 @@ const ProfileInfo = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
 
   span {
     font-size: 60px;
     letter-spacing: 3px;
     font-weight: normal;
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0px;
+
+    span {
+      font-size: 45px;
+      font-weight: bolder;
+    }
+  }
 `;
 
 const CustomSecundaryButton = styled(SecundaryButton)`
   font-size: 30px;
   margin: 0 20px;
+
+  @media screen and (max-width: 768px) {
+    margin: 20px 0;
+    font-size: 18px;
+  }
 `;
 
 export {
