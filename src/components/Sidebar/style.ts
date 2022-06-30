@@ -129,7 +129,7 @@ const SidebarOut = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 30vh;
+  width: 40vh;
   background-color: #131a22;
   animation: sidebar-close 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   display: flex;

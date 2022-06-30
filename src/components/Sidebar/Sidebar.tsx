@@ -298,7 +298,7 @@ const Sidebar: any = () => {
                   Total:{" "}
                   {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
                 </h1>
-                <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
+                <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
               </TotalContainer>
             </Checkout>
           </>
@@ -332,7 +332,7 @@ const Sidebar: any = () => {
                 Total:{" "}
                 {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
               </h1>
-              <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
+              <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
             </TotalContainer>
           </CheckoutOut>
         ) : (
