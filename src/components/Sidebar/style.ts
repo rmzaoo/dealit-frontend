@@ -31,6 +31,7 @@ const SidebarContainer = styled.div`
     width: 100%;
   }
 `;
+
 const Checkout = styled.div`
   position: fixed;
   z-index: 11;
@@ -234,7 +235,6 @@ const ProductsContainer = styled.div`
   position: relative;
   top: 10px;
   overflow: auto;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
