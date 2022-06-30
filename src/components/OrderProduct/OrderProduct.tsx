@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ProductDetailsProp } from "../../pages/PDP/PDP";
 import {
   OrderProductContainer,
   OrderProductNameContainer,
@@ -12,9 +11,17 @@ import {
   OrderProductQuantityValueContainer,
 } from "./style";
 
+export interface OrderProductProp {
+  map(arg0: (value: any, key: any) => JSX.Element): React.ReactNode;
+  name: string;
+  photo: string;
+  quantity: number;
+  price: string;
+}
+
 interface Props {
-  products: ProductDetailsProp[];
-  product: ProductDetailsProp;
+  products: OrderProductProp[];
+  product: OrderProductProp;
 }
 
 const OrderProduct = ({ products, product }: Props) => {
@@ -35,7 +42,7 @@ const OrderProduct = ({ products, product }: Props) => {
   return (
     <OrderProductContainer>
       <OrderProductPhotoContainer>
-        <OrderProductPhoto src={product} />
+        <OrderProductPhoto src={product.photo} />
       </OrderProductPhotoContainer>
       <OrderProductNameContainer>
         <p>{product.name}</p>

@@ -30,12 +30,9 @@ const OrdersPage = () => {
 
   useLayoutEffect(() => {
     fetchOrdersByUserId(user.id, user.token).then((data) => {
-      console.log(data);
       setOrders(data);
     });
   }, []);
-
-  console.log(orders);
 
   if (orders) {
     if (orders.length > 1) {
