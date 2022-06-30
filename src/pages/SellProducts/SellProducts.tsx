@@ -21,6 +21,7 @@ import {
 const SellProducts = () => {
   const navigate = useNavigate();
   const [showCategoryModal, setShowCategoryModal] = useState(false);
+  const [uploadingProduct, setUploadingProduct] = useState(false);
 
   interface sellProductProps {
     title: string;
@@ -60,6 +61,11 @@ const SellProducts = () => {
   };
 
   const onSubmitProduct = () => {
+    if (uploadingProduct) {
+      toast.warn("Wait a moment, we are uploading your product");
+      return;
+    }
+
     if (
       sellProduct.title.length === 0 ||
       sellProduct.category.length === 0 ||
@@ -87,6 +93,8 @@ const SellProducts = () => {
       jwt: user.token,
     };
 
+    toast.success("Submitting product...");
+    setUploadingProduct(true);
     PostProduct(preparePost)
       .then((data) => {
         toast.success("Product added successfully");
@@ -99,8 +107,10 @@ const SellProducts = () => {
         error.response.status === 403 &&
           navigate("/login?redirect=/sell-product");
         error.response.status === 400 && toast.error("Fill all the fields");
-        error.response.status === 500 &&
-          toast.error("Error while adding product");
+        toast.error("Error while adding product");
+      })
+      .finally(() => {
+        setUploadingProduct(false);
       });
   };
 
