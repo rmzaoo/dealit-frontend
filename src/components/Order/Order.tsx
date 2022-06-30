@@ -19,10 +19,9 @@ const Order = ({ order, buyer }: Props) => {
     day: "numeric",
   };
 
-  const orderDetails = order[0];
-  const orderProducts = order[0].products;
+  const orderDetails = order;
+  const orderProducts = order.products;
   const placeDate = new Date(orderDetails.buyDate);
-  console.log(order);
 
   return (
     <OrderContainer>

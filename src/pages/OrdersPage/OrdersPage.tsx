@@ -12,6 +12,7 @@ import {
 } from "./style";
 
 export interface OrderProp {
+  map(arg0: (value: any, key: any) => JSX.Element): React.ReactNode;
   length: number;
   id: number;
   buyDate: Date;
@@ -35,8 +36,6 @@ const OrdersPage = () => {
   }, []);
 
   if (orders) {
-    if (orders.length > 1) {
-    }
     return (
       <OrderPageBody>
         <OrderPageHeader>
@@ -57,7 +56,11 @@ const OrdersPage = () => {
           </StyledTextLink>
         </OrdersButtonsContainer>
         {/**  <OrdersContainer>*/}
-        {sortBy === "bought" && <Order order={orders} buyer={user.username} />}
+        {sortBy === "bought" &&
+          orders.map((value: any, key: any) => {
+            console.log(value);
+            return <Order order={value} buyer={user.username} />;
+          })}
         {/** </OrdersContainer>*/}
       </OrderPageBody>
     );
