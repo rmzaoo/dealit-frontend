@@ -5,6 +5,8 @@ import {
   OrderContentDetailsContainer,
   OrderContentDetailsDeliveryDateContainer,
   OrderContentDetailsProducts,
+  OrderDeliveryText,
+  OrderDeliveryTextContainer,
 } from "./style";
 
 interface Props {
@@ -42,14 +44,18 @@ const OrderContent = ({ orderDetails, products }: Props) => {
         {delivDate && (
           <OrderContentDetailsDeliveryDateContainer>
             {orderDetails.deliveryDate && (
-              <h2>
-                Delivered in {delivDate.toLocaleDateString("en-US", options)}
-              </h2>
+              <OrderDeliveryTextContainer>
+                <OrderDeliveryText>
+                  Delivered in {delivDate.toLocaleDateString("en-US", options)}
+                </OrderDeliveryText>
+              </OrderDeliveryTextContainer>
             )}
-            <h2>
-              Expected to arrive in{" "}
-              {delivDate.toLocaleDateString("en-US", options)}
-            </h2>
+            <OrderDeliveryTextContainer>
+              <OrderDeliveryText>
+                Expected to arrive in{" "}
+                {delivDate.toLocaleDateString("en-US", options)}
+              </OrderDeliveryText>
+            </OrderDeliveryTextContainer>
           </OrderContentDetailsDeliveryDateContainer>
         )}
         <OrderContentDetailsProducts>

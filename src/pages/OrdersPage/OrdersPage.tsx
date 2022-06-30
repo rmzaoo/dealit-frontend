@@ -7,8 +7,6 @@ import { ProductDetailsProp } from "../PDP/PDP";
 import {
   OrderPageBody,
   OrderPageHeader,
-  OrdersButtonsContainer,
-  StyledTextLink,
 } from "./style";
 
 export interface OrderProp {
@@ -26,7 +24,6 @@ export interface OrderProp {
 
 const OrdersPage = () => {
   const user = useSelector((state: InitialStateProps) => state.user);
-  const [sortBy, setSortBy] = useState<string>("bought");
   const [orders, setOrders] = useState<OrderProp>();
 
   useLayoutEffect(() => {
@@ -41,27 +38,10 @@ const OrdersPage = () => {
         <OrderPageHeader>
           <h2>My Orders</h2>
         </OrderPageHeader>
-        <OrdersButtonsContainer>
-          <StyledTextLink
-            active={sortBy === "bought"}
-            onClick={() => setSortBy("bought")}
-          >
-            Bought
-          </StyledTextLink>
-          <StyledTextLink
-            active={sortBy === "sold"}
-            onClick={() => setSortBy("sold")}
-          >
-            Sold
-          </StyledTextLink>
-        </OrdersButtonsContainer>
-        {/**  <OrdersContainer>*/}
-        {sortBy === "bought" &&
-          orders.map((value: any, key: any) => {
+          {orders.map((value: any, key: any) => {
             console.log(value);
             return <Order order={value} buyer={user.username} />;
           })}
-        {/** </OrdersContainer>*/}
       </OrderPageBody>
     );
   } else {
