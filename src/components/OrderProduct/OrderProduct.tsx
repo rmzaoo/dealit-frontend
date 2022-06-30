@@ -30,10 +30,12 @@ const OrderProduct = ({ products, product }: Props) => {
     setQuantity(qtn);
   }, [product]);
 
+  console.log(product);
+
   return (
     <OrderProductContainer>
       <OrderProductPhotoContainer>
-        <OrderProductPhoto src={product.photos[0]} />
+        <OrderProductPhoto src={product} />
       </OrderProductPhotoContainer>
       <OrderProductNameContainer>
         <p>{product.name}</p>
