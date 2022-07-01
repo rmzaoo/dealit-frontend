@@ -62,7 +62,7 @@ const Checkout = styled.div`
   }
 `;
 const CheckoutContainer = styled.div`
-  heigth: 100%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -223,6 +223,10 @@ const CombinedPrice = styled.div`
   display: flex;
   justify-content: space-between;
   width: 20vh;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const ProductsContainer = styled.div`
@@ -235,6 +239,11 @@ const ProductsContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 80%;
+
+  @media screen and (max-width: 768px) {
+    height: 72%;
+    top: 20px;
+  }
 
   &::-webkit-scrollbar {
     width: 5px;
