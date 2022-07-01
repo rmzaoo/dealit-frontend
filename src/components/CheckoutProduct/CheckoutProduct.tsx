@@ -40,13 +40,13 @@ const CheckoutProduct = ({
         }
       })
     );
-    setProdPrice(
-      cart.map((e: any) => {
-        if (e.product.id === id) {
-          return e.quantity * e.product.price;
-        }
-      })
-    );
+    let finalPrice = 0;
+    cart.forEach((e: any) => {
+      if (e.product.id === id) {
+        finalPrice = e.quantity * e.product.price;
+      }
+    });
+    setProdPrice(finalPrice);
   }, [cart]);
   return (
     <>
@@ -72,7 +72,7 @@ const CheckoutProduct = ({
             justifyContent: "center",
           }}
         >
-          <span>{prodPrice}$</span>
+          <span>{Math.round((prodPrice + Number.EPSILON) * 100) / 100}$</span>
         </div>
       </Container>
     </>
