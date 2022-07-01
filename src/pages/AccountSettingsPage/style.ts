@@ -22,10 +22,6 @@ export const SecurityPageTitleContainer = styled(DashboardPageTitle)`
   align-items: center;
   width: 100%;
   height: 10%;
-
-  h2 { 
-    font-size: 0.2rem;
-  }
 `;
 
 
