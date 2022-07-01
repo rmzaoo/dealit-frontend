@@ -7,7 +7,7 @@ export const OrderProductContainer = styled.div`
   flex-direction: row;
   width: 100%;
   height: 90%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const OrderProductPhotoContainer = styled.div`
@@ -53,6 +53,7 @@ export const OrderProductName = styled.div`
   font-size: 1rem;
   width: 80%;
   text-align: center;
+  font-weight: bold;
   
   //Tablets
   @media screen and (max-width: 768px) {

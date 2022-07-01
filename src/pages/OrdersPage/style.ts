@@ -9,7 +9,6 @@ export const OrderPageBody = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin-top: 50px;
 `;
 
 export const OrderIllustrationPageBody = styled.div`
