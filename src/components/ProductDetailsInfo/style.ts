@@ -137,6 +137,19 @@ export const ProductDescription = styled.p`
   @media screen and (max-width: 480px) {
     font-size: 0.8rem;
   }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #808080;
+  }
 `;
 
 export const ProductDetailsPhotosMobileTabletContainer = styled.div`

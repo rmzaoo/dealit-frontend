@@ -103,6 +103,71 @@ const CustomSecundaryButton = styled(SecundaryButton)`
   }
 `;
 
+const StatsDiv = styled.div`
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const StatDiv = styled.div`
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+`;
+
+const StatName = styled.p`
+  color: white;
+  border-bottom: 1px solid #02a4e3;
+  padding: 10px 5px;
+  font-size: 20px;
+  width: 70%;
+  text-align: center;
+  margin: 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const LowerDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const InnerStatDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: 70%;
+`;
+
+const SubStatName = styled.p`
+  color: white;
+  border-bottom: 1px solid #02a4e3;
+  padding: 10px 5px;
+  font-size: 12px;
+`;
+
+const SubStatNumber = styled.p`
+  color: white;
+  font-size: 16px;
+`;
+
 export {
   ProfilePageBody,
   ContainerPhotos,
@@ -112,4 +177,11 @@ export {
   PhotoContainer,
   ProfileInfo,
   CustomSecundaryButton,
+  StatsDiv,
+  StatDiv,
+  StatName,
+  LowerDiv,
+  InnerStatDiv,
+  SubStatName,
+  SubStatNumber,
 };
