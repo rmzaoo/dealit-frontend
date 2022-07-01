@@ -20,8 +20,6 @@ import { useNavigate } from "react-router";
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { toast } from "react-toastify";
-import { addZeroes } from "../../utils/addZeroes";
-import { countDecimals } from "../../utils/countDecimals";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
 import { getCookie } from "../../utils/cookies";
 import { orderFetch } from "../../api/orderFetch";
@@ -49,9 +47,6 @@ const Sidebar: any = () => {
   const [opened, setOpened] = useState(true);
   const [openedCheckout, setOpenedCheckout] = useState(false);
   const user = useSelector((state: InitialStateProps) => state.user);
-  const creditCard = useSelector(
-    (state: InitialStateProps) => state.creditCards
-  );
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
