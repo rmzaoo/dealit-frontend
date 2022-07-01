@@ -20,6 +20,7 @@ import { useNavigate } from "react-router";
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { toast } from "react-toastify";
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const Sidebar: any = () => {
   const context: any = useSelector((state) => state);
@@ -254,7 +255,10 @@ const Sidebar: any = () => {
               </ProductsContainer>
               <TotalContainer>
                 <h1>Total: {combinedPrice}</h1>
-                <SecundaryButton onClick={showToast}>Proceed</SecundaryButton>
+                <PayPalScriptProvider options={{ "client-id": "test" }}>
+                  <PayPalButtons style={{ layout: "horizontal" }} />
+                </PayPalScriptProvider>
+                {/* <SecundaryButton onClick={showToast}>Proceed</SecundaryButton> */}
               </TotalContainer>
             </Checkout>
           </>
