@@ -38,7 +38,6 @@ const OrdersPage = () => {
     });
   }, []);
 
-  console.log(orders);
 
   if (orders) {
     if (orders.length > 0) {
