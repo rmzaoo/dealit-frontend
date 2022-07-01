@@ -61,6 +61,13 @@ const Sidebar: any = () => {
     setProdCounter(prodCounter + 1);
   }, [context]);
 
+  const initialOptions = {
+    "client-id": "test",
+    currency: "USD",
+    intent: "capture",
+    "data-client-token": "abc123xyz==",
+};
+
   function handleNavigate() {
     navigate("/");
     setOpened(false);
@@ -290,19 +297,16 @@ const Sidebar: any = () => {
                 })}
               </ProductsContainer>
               <TotalContainer>
-<<<<<<< HEAD
                 <h1>Total: {combinedPrice}</h1>
                 <PayPalScriptProvider options={{ "client-id": "test" }}>
                   <PayPalButtons style={{ layout: "horizontal" }} />
                 </PayPalScriptProvider>
                 {/* <SecundaryButton onClick={showToast}>Proceed</SecundaryButton> */}
-=======
                 <h1>
                   Total:{" "}
                   {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
                 </h1>
                 <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
->>>>>>> master
               </TotalContainer>
             </Checkout>
           </>
