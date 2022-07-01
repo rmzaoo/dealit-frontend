@@ -8,6 +8,12 @@ export const SecurityPageBody = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  
+
+  //Tablets
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+  }
 `;
 
 export const SecurityPageTitleContainer = styled(DashboardPageTitle)`
@@ -16,10 +22,6 @@ export const SecurityPageTitleContainer = styled(DashboardPageTitle)`
   align-items: center;
   width: 100%;
   height: 10%;
-
-  h2 { 
-    font-size: 0.2rem;
-  }
 `;
 
 

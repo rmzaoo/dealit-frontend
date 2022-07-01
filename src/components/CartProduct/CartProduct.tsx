@@ -12,7 +12,7 @@ export interface CartProps {
   id: number;
   name: string;
   photo: string;
-  price: number;
+  price: string;
   className?: string;
   quantity: number;
 }
@@ -25,7 +25,7 @@ const CartProduct = ({
   quantity,
 }: CartProps) => {
   const [prodQuantity, setProdQuantity] = useState(quantity);
-  const [prodPrice, setProdPrice] = useState(price * quantity);
+  const [prodPrice, setProdPrice] = useState(Number(price) * quantity);
   const cart = useSelector((state: any) => state.cart);
 
   const navigate = useNavigate();
@@ -70,13 +70,13 @@ const CartProduct = ({
         }
       })
     );
-    localStorage.setItem("shoppingCart", cart);
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
   }, [cart]);
 
   function handleProductTrash() {
     dispatch({ type: "REMOVE_ALL", payload: { id } });
     dispatch({ type: "SET_COMBINED_PRICE", payload: {} });
-    localStorage.setItem("shoppingCart", cart.cart);
+    localStorage.setItem("shoppingCart", JSON.stringify(cart.cart));
   }
 
   return (

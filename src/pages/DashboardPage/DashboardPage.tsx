@@ -13,6 +13,7 @@ import { BiLogOut } from "react-icons/bi";
 import DashboardSideBarButton from "../../components/DashboardSideBarButton/DashboardSideBarButton";
 import { getCookie } from "../../utils/cookies";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
+import { MdOutlineSell } from "react-icons/md";
 
 export interface DashboardOptions {
   icon: JSX.Element;
@@ -30,15 +31,21 @@ const DashboardPage = () => {
     { icon: <BsBoxSeam size={28} />, text: "My Orders", path: "./orders" },
     {
       icon: <AiOutlineSecurityScan size={28} />,
-      text: "Log in and security",
+      text: "Account Settings",
       path: "./settings",
     },
     {
+      icon: <MdOutlineSell size={28} />,
+      text: "My Products",
+      path: "./myProducts",
+    },
+    /** 
+    { 
       icon: <BsFillSignpost2Fill size={28} />,
       text: "My addresses",
       path: "./addresses",
     },
-    { icon: <FaWallet size={28} />, text: "My cards", path: "./cards" },
+    { icon: <FaWallet size={28} />, text: "My cards", path: "./cards" }, */
   ];
   const logoutBtn: LogoutProps = {
     icon: <BiLogOut size={28} />,

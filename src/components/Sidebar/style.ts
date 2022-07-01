@@ -9,7 +9,7 @@ const SidebarContainer = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 30vh;
+  width: 40vh;
   background-color: #131a22;
   animation: sidebar-open 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: flex;
@@ -31,6 +31,7 @@ const SidebarContainer = styled.div`
     width: 100%;
   }
 `;
+
 const Checkout = styled.div`
   position: fixed;
   z-index: 11;
@@ -59,12 +60,9 @@ const Checkout = styled.div`
     width: 100%;
     right: 0;
   }
-  @media screen and (min-width: 769px) {
-    width: 50%;
-  }
 `;
 const CheckoutContainer = styled.div`
-  heigth: 100%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -97,9 +95,6 @@ const CheckoutOut = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     right: 0;
-  }
-  @media screen and (min-width: 769px) {
-    width: 50%;
   }
 
   @keyframes sidebar-close {
@@ -134,7 +129,7 @@ const SidebarOut = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 30vh;
+  width: 40vh;
   background-color: #131a22;
   animation: sidebar-close 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   display: flex;
@@ -228,17 +223,40 @@ const CombinedPrice = styled.div`
   display: flex;
   justify-content: space-between;
   width: 20vh;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const ProductsContainer = styled.div`
   position: relative;
   top: 10px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 80%;
+
+  @media screen and (max-width: 768px) {
+    height: 72%;
+    top: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #808080;
+  }
 `;
 
 export {

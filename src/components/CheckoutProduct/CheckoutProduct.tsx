@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Container } from "./style";
 import { useDispatch, useSelector } from "react-redux";
+import { addZeroes } from "../../utils/addZeroes";
+import { countDecimals } from "../../utils/countDecimals";
 
 export interface CartProps {
   id: number;
   name: string;
   photo: string;
-  price: number;
+  price: string;
   className?: string;
   quantity: number;
 }
@@ -20,7 +22,7 @@ const CheckoutProduct = ({
   quantity,
 }: CartProps) => {
   const [prodQuantity, setProdQuantity] = useState(quantity);
-  const [prodPrice, setProdPrice] = useState(price * quantity);
+  const [prodPrice, setProdPrice] = useState(Number(price) * quantity);
   const cart = useSelector((state: any) => state.cart);
 
   const navigate = useNavigate();
@@ -46,7 +48,6 @@ const CheckoutProduct = ({
       })
     );
   }, [cart]);
-
   return (
     <>
       <Container className={className}>
