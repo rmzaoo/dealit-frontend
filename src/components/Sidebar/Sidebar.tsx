@@ -20,7 +20,7 @@ import { useNavigate } from "react-router";
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
 import SecundaryButton from "../SecundaryButton/SecundaryButton";
 import { toast } from "react-toastify";
-import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { PayPalButtons } from "@paypal/react-paypal-js";
 import useAuthenticationValidation from "../../hooks/user/useAuthenticationValidation";
 import { getCookie } from "../../utils/cookies";
 import { orderFetch } from "../../api/orderFetch";
@@ -60,13 +60,6 @@ const Sidebar: any = () => {
   useEffect(() => {
     setProdCounter(prodCounter + 1);
   }, [context]);
-
-  const initialOptions = {
-    "client-id": "test",
-    currency: "USD",
-    intent: "capture",
-    "data-client-token": "abc123xyz==",
-};
 
   function handleNavigate() {
     navigate("/");
@@ -111,6 +104,33 @@ const Sidebar: any = () => {
   const { isLogged, isLoading, error } = useAuthenticationValidation(
     getCookie("token")
   );
+
+  const createOrder = (data: any, actions: any) => {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            currency_code: "USD",
+            value: data.amount,
+          },
+          items: data.items,
+        },
+      ],
+    });
+  };
+
+  const onApprove = async (data: any, actions: any) => {
+    const order = await actions.order.capture();
+    console.log("order", order);
+
+    toast.success(
+      "Your order has been placed! Check your dashboard for more info"
+    );
+  };
+
+  const onError = (err: any) => {
+    console.log("err", err);
+  };
 
   if (context.cart.length === 0) {
     return (
@@ -298,15 +318,14 @@ const Sidebar: any = () => {
               </ProductsContainer>
               <TotalContainer>
                 <h1>Total: {combinedPrice}</h1>
-                <PayPalScriptProvider options={{ "client-id": "test" }}>
-                  <PayPalButtons style={{ layout: "horizontal" }} />
-                </PayPalScriptProvider>
-                {/* <SecundaryButton onClick={showToast}>Proceed</SecundaryButton> */}
-                <h1>
-                  Total:{" "}
-                  {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
-                </h1>
-                <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
+                <PayPalButtons
+                  style={{ layout: "horizontal" }}
+                  createOrder={createOrder}
+                  onApprove={onApprove}
+                  onError={onError}
+                />
+
+                {/* <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton> */}
               </TotalContainer>
             </Checkout>
           </>
@@ -340,7 +359,9 @@ const Sidebar: any = () => {
                 Total:{" "}
                 {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
               </h1>
-              <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
+              <SecundaryButton onClick={showToast}>
+                Confirm Order
+              </SecundaryButton>
             </TotalContainer>
           </CheckoutOut>
         ) : (
