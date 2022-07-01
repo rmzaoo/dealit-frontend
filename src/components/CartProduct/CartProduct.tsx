@@ -63,13 +63,13 @@ const CartProduct = ({
         }
       })
     );
-    setProdPrice(
-      cart.map((e: any) => {
-        if (e.product.id === id) {
-          return e.quantity * e.product.price;
-        }
-      })
-    );
+    let finalPrice = 0;
+    cart.forEach((e: any) => {
+      if (e.product.id === id) {
+        finalPrice = e.quantity * e.product.price;
+      }
+    });
+    setProdPrice(finalPrice);
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
   }, [cart]);
 
@@ -92,7 +92,7 @@ const CartProduct = ({
         </ProductPhotoDiv>
         <ProductDetails>
           <h1 onClick={() => navigate(`/product/${id}`)}>{name}</h1>
-          <span>{prodPrice} $</span>
+          <span>{Math.round((prodPrice + Number.EPSILON) * 100) / 100} $</span>
           <span style={{ fontSize: "16px", margin: "8px", width: "130px" }}>
             Quantity: {prodQuantity}
             <button

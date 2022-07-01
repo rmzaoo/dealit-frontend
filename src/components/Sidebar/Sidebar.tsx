@@ -243,9 +243,7 @@ const Sidebar: any = () => {
                       id={item.product.id}
                       name={item.product.name}
                       photo={item.product.photos[0]}
-                      price={item.product.price.filter(
-                        (p: any) => p != undefined
-                      )}
+                      price={item.product.price}
                       key={index}
                       quantity={Number(item.quantity)}
                     ></CartProduct>
