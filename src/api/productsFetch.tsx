@@ -39,6 +39,18 @@ export const fetchProductById = async (id: number) => {
   const response = await axios.get(`${baseUrl}/products/${id}`);
   return response.data;
 };
+export const fetchProductByUserId = async (id: number) => {
+  const response = await axios.get(`${baseUrl}/products/user/${id}`);
+  return response.data;
+};
+export const fetchProductStatsByUserId = async (id: number, token: string) => {
+  const headers = {
+    "Content-Type": "application/json",
+    "x-access-token": token || "null",
+  };
+  const response = await axios.get(`${baseUrl}/product-stats/user/${id}`, {headers});
+  return response.data;
+};
 
 export const fetchRecentProducts = async (limit: number) => {
   const response = await axios.get(

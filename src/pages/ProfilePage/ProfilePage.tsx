@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchOrdersByUserId } from "../../api/ordersFetch";
+import { fetchProductStatsByUserId } from "../../api/productsFetch";
 import {
   BannerContainer,
   BannerProfile,
@@ -34,6 +35,10 @@ const ProfilePage = () => {
     fetchOrdersByUserId(user.id, user.token).then((data) =>
       setUserOrders(data)
     );
+    fetchProductStatsByUserId(user.id, user.token).then((data) => {
+      setSoldProdsN(data.num);
+      setSoldProdsM(data.sum);
+    });
   }, []);
   useEffect(() => {
     if (userOrders) {
@@ -63,7 +68,7 @@ const ProfilePage = () => {
             <CustomSecundaryButton
               onClick={() => navigate("/dashboard/settings")}
             >
-              <IoMdSettings/>
+              <IoMdSettings />
             </CustomSecundaryButton>
           </ProfileInfo>
         </PhotoContainer>
@@ -93,7 +98,7 @@ const ProfilePage = () => {
             </InnerStatDiv>
             <InnerStatDiv>
               <SubStatName>Earned</SubStatName>
-              <SubStatNumber>{soldProdsM}</SubStatNumber>
+              <SubStatNumber>{Math.round((soldProdsM + Number.EPSILON) * 100) / 100} $</SubStatNumber>
             </InnerStatDiv>
           </LowerDiv>
         </StatDiv>
@@ -102,7 +107,11 @@ const ProfilePage = () => {
           <LowerDiv>
             <InnerStatDiv>
               <SubStatName>$(U.S. Dollars)</SubStatName>
-              <SubStatNumber>{soldProdsM - boughtProdsM}</SubStatNumber>
+              <SubStatNumber>
+                {Math.round(
+                  (soldProdsM - boughtProdsM + Number.EPSILON) * 100
+                ) / 100}
+              </SubStatNumber>
             </InnerStatDiv>
           </LowerDiv>
         </StatDiv>
