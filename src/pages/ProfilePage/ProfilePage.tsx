@@ -19,6 +19,7 @@ import {
   SubStatName,
   SubStatNumber,
 } from "./style";
+import { IoMdSettings } from "react-icons/io";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const ProfilePage = () => {
             <CustomSecundaryButton
               onClick={() => navigate("/dashboard/settings")}
             >
-              Edit Profile
+              <IoMdSettings/>
             </CustomSecundaryButton>
           </ProfileInfo>
         </PhotoContainer>
@@ -77,7 +78,9 @@ const ProfilePage = () => {
             </InnerStatDiv>
             <InnerStatDiv>
               <SubStatName>Spent</SubStatName>
-              <SubStatNumber>{Math.round((boughtProdsM + Number.EPSILON) * 100) / 100} $</SubStatNumber>
+              <SubStatNumber>
+                {Math.round((boughtProdsM + Number.EPSILON) * 100) / 100} $
+              </SubStatNumber>
             </InnerStatDiv>
           </LowerDiv>
         </StatDiv>

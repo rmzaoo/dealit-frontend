@@ -96,3 +96,22 @@ export const AIText = styled.p`
   background-color: whitesmoke;
   border-radius: 5px;
 `;
+
+export const AIButton = styled.button`
+  margin: 4px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: underline;
+  width: 80%;
+  color: black;
+  background-color: #02a4e3;
+  border-radius: 5px;
+  border: 1px solid #02a4e3;
+  &:hover {
+    background-color: rgb(28, 165, 164);
+    cursor: pointer;
+  }
+`;
