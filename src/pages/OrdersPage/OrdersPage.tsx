@@ -5,9 +5,15 @@ import Order from "../../components/Order/Order";
 import { InitialStateProps } from "../AccountSettingsPage/AccountSettingsPage";
 import { ProductDetailsProp } from "../PDP/PDP";
 import {
+  OrderIllustrationPageBody,
+  OrderImageContainer,
   OrderPageBody,
   OrderPageHeader,
+  OrderPageImgAndTextContainer,
+  OrderPageText,
+  OrderPageTextContainer,
 } from "./style";
+import noOrder from "../../assets/noOrder.svg";
 
 export interface OrderProp {
   map(arg0: (value: any, key: any) => JSX.Element): React.ReactNode;
@@ -32,20 +38,39 @@ const OrdersPage = () => {
     });
   }, []);
 
+  console.log(orders);
+
   if (orders) {
-    return (
-      <OrderPageBody>
-        <OrderPageHeader>
-          <h2>My Orders</h2>
-        </OrderPageHeader>
+    if (orders.length > 0) {
+      return (
+        <OrderPageBody>
+          <OrderPageHeader>
+            <h2>My Orders</h2>
+          </OrderPageHeader>
           {orders.map((value: any, key: any) => {
-            console.log(value);
             return <Order order={value} buyer={user.username} />;
           })}
-      </OrderPageBody>
-    );
+        </OrderPageBody>
+      );
+    } else {
+      return (
+        <OrderIllustrationPageBody>
+          <OrderPageHeader>
+            <h2>My Orders</h2>
+          </OrderPageHeader>
+          <OrderPageImgAndTextContainer>
+            <OrderPageTextContainer>
+              <OrderPageText>No orders have been placed!</OrderPageText>
+            </OrderPageTextContainer>
+            <OrderImageContainer>
+              <img src={noOrder} />
+            </OrderImageContainer>
+          </OrderPageImgAndTextContainer>
+        </OrderIllustrationPageBody>
+      );
+    }
   } else {
-    return <h1>Not Found!</h1>;
+    return null;
   }
 };
 
