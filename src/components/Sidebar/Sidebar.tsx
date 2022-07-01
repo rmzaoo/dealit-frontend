@@ -243,7 +243,9 @@ const Sidebar: any = () => {
                       id={item.product.id}
                       name={item.product.name}
                       photo={item.product.photos[0]}
-                      price={item.product.price}
+                      price={item.product.price.filter(
+                        (p: any) => p != undefined
+                      )}
                       key={index}
                       quantity={Number(item.quantity)}
                     ></CartProduct>
@@ -293,7 +295,9 @@ const Sidebar: any = () => {
                   Total:{" "}
                   {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
                 </h1>
-                <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
+                <SecundaryButton onClick={showToast}>
+                  Confirm Order
+                </SecundaryButton>
               </TotalContainer>
             </Checkout>
           </>
@@ -327,7 +331,9 @@ const Sidebar: any = () => {
                 Total:{" "}
                 {Math.round((combinedPrice + Number.EPSILON) * 100) / 100} $
               </h1>
-              <SecundaryButton onClick={showToast}>Confirm Order</SecundaryButton>
+              <SecundaryButton onClick={showToast}>
+                Confirm Order
+              </SecundaryButton>
             </TotalContainer>
           </CheckoutOut>
         ) : (
