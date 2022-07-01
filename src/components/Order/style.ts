@@ -23,7 +23,7 @@ export const OrderContainer = styled.div`
 
   //Mobile
   @media screen and (max-width: 480px) {
-    width: 80%
+    width: 85%
   }
 `;
 

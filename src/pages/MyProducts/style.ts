@@ -19,4 +19,15 @@ export const MyProductsTitleContainer = styled(DashboardPageTitle)`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10%
 `;
+
+export const ProductsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
+  padding-top: 60px;
+`
