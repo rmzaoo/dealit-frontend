@@ -4,7 +4,7 @@
 https://dealit.rafaelmartins.pt/
 
 ## Descripton
-This project was made as a final project for mindera school. The purpose is to be an e-coomerce with the partcularity that the customer can also sell products.
+This project was made as a final project for mindera school. The purpose is to be an e-commerce with the partcularity that the customer can also sell products.
 
 
 ## Back-End
